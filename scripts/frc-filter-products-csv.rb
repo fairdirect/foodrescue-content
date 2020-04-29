@@ -10,9 +10,9 @@ version = '0.1'
 # Command line documentation that's also the spec for a command line parser.
 # 
 # Format specs:
-#   http://docopt.org/
+#     http://docopt.org/
 # Library docs:
-#   https://github.com/docopt/docopt.rb
+#     https://github.com/docopt/docopt.rb
 doc = <<DOCOPT
 Transform the CSV file with Open Food Facts products to another with only relevant colums.
 
@@ -23,31 +23,31 @@ discarded.
 The output will always be comma-separated and field values quoted with ".
 
 Usage:
-  #{__FILE__} [options] INFILE OUTFILE
-  #{__FILE__} -h | --help
-  #{__FILE__} -v | --version
+    #{__FILE__} [options] INFILE OUTFILE
+    #{__FILE__} -h | --help
+    #{__FILE__} -v | --version
 
 Examples:
-  #{__FILE__} --columns code,product_name,categories in.csv out.csv
-  #{__FILE__} --columns code,product_name,categories,categories_tags,categories_en,main_category,main_category_en in.csv out.csv
+    #{__FILE__} --columns code,product_name,categories in.csv out.csv
+    #{__FILE__} --columns code,product_name,categories,categories_tags,categories_en,main_category,main_category_en in.csv out.csv
 
 Options:
-  -c COLS, --columns COLS       Comma-separated list of column to include in the output CSV.
-                                You can use all column headers from the input CSV. The columns 
-                                order must be the same as in the input CSV file.
-  -r COLS, --required COLS      Comma-separated list of columns for which a value is required 
-                                in order to include a record into the output file.
-  -h, --help                    Show this screen.
-  -v, --version                 Show version.
+    -c COLS, --columns COLS       Comma-separated list of column to include in the output CSV.
+                                  You can use all column headers from the input CSV. The columns 
+                                  order must be the same as in the input CSV file.
+    -r COLS, --required COLS      Comma-separated list of columns for which a value is required 
+                                  in order to include a record into the output file.
+    -h, --help                    Show this screen.
+    -v, --version                 Show version.
 
 DOCOPT
 
 # Obtain the arguments and make sure the script is invoked correctly.
 begin
-  args = Docopt::docopt(doc, {version: version, help: true})
+    args = Docopt::docopt(doc, {version: version, help: true})
 rescue Docopt::Exit => e
-  puts e.message
-  exit
+    puts e.message
+    exit
 end 
 
 # TODO (later): Open INFILE, read the headers line, and raise an error if any of the 
@@ -68,15 +68,15 @@ csv_read_options = { headers: true, col_sep: "\t", quote_char: "\u{2723}" }
 # See: "Processing large CSV files with Ruby", https://dalibornasevic.com/posts/68
 CSV.foreach(args['INFILE'], csv_read_options) do |record|
   
-  # Work with Hash as CSV::Row objects do not support #slice etc..
-  record = record.to_hash
+    # Work with Hash as CSV::Row objects do not support #slice etc..
+    record = record.to_hash
 
-  # Do not process this record if any value in required columns is empty.
-  next if record.slice(*required_columns).any? { |key, value| value.nil? }
+    # Do not process this record if any value in required columns is empty.
+    next if record.slice(*required_columns).any? { |key, value| value.nil? }
 
-  # Filter fields = { fieldname1: "value1", fieldname2: "value2", …} by given fieldnames.
-  # ("*columns" works to pass an array as a variable number of individual arguments.)
-  # TODO (later): Order output values according to the order in output_columns, i.e. 
-  #   allow re-ordering columns with this script. Also adapt the -c option documentation afterwards.
-  outfile << record.slice(*output_columns)
+    # Filter fields = { fieldname1: "value1", fieldname2: "value2", …} by given fieldnames.
+    # ("*columns" works to pass an array as a variable number of individual arguments.)
+    # TODO (later): Order output values according to the order in output_columns, i.e. 
+    #   allow re-ordering columns with this script. Also adapt the -c option documentation afterwards.
+    outfile << record.slice(*output_columns)
 end
