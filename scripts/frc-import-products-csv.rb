@@ -8,8 +8,8 @@ require "csv"
 require "sqlite3"
 
 # Local, non-gem includes.
-require_relative 'food_rescue_database'
-require_relative 'utils'
+require_relative '../lib/food_rescue_database'
+require_relative '../lib/utils'
 
 
 #############################################################################
@@ -68,6 +68,10 @@ end
 
 begin
     db = FoodRescueDatabase.new args['DBFILE']
+
+    # TODO: Make sure the category tables exist. If not, print a helpful error message telling the user to run the 
+    # category import script first.
+
     db.prepare_product_tables(args['--continue'])
 
     # To keep the memory footprint small, read one line at a time with CSV.foreach().
@@ -84,8 +88,8 @@ begin
             # TODO (later): Also process tag-type categories. It requires adding the category tags to the database.
             #     But, the cleaner option is to remove the (inconsistent) use of category tags from the OFF CSV file.
             #
-            # NOTE: Category names in the Open Food Facts CSV export may have a language prefix ("fr:") but do not 
-            # have a language tag ("fr-BE:") prefix. The latter only appears in the Open Food Facts category taxonomy.
+            # NOTE: Category names in the Open Food Facts CSV export may have a language prefix ("fr:") but never 
+            # have a language tag prefix ("fr-BE:"). The latter only appears in the Open Food Facts category taxonomy.
             next if /^[a-z][a-z]:[a-z-]+$/.match?(cat)
 
             if match = /^([a-z][a-z]):(.+)$/.match(cat)

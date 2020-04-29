@@ -9,7 +9,7 @@ require "sqlite3"
 require 'awesome_print'
 
 # Local, non-gem includes.
-require_relative 'food_rescue_database'
+require_relative '../lib/food_rescue_database'
 
 
 #############################################################################

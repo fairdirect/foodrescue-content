@@ -1,4 +1,6 @@
-#!/usr/bin/ruby
+#!/usr/bin/env ruby
+# NOTE: Above shebang selects the first Ruby found in $PATH and is standard practice to work with 
+# multiple installed versions and version switchers like chruby; see https://stackoverflow.com/a/2792076
 
 require 'docopt'
 require 'csv'

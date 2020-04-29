@@ -183,7 +183,7 @@ class FoodRescueDatabase < SQLite3::Database
         begin
             execute "INSERT INTO categories (name, lang) VALUES (?, ?)", [name, lang]
         rescue SQLite3::ConstraintException => e
-            puts "WARNING: ".in_yellow + "Category '#{lang}:#{name}' already exists in the database. Ignoring."
+            puts "WARNING:".in_orange + " Category '#{lang}:#{name}' already exists in the database. Ignoring."
         end
     end
 
@@ -206,7 +206,7 @@ class FoodRescueDatabase < SQLite3::Database
             begin
                 execute "INSERT INTO categories_structure VALUES (?, ?)", [cat_id, parent_id]
             rescue SQLite3::ConstraintException => e
-                puts "WARNING: ".in_yellow + "Parent category definition already exists in database. Ignoring.\n" +
+                puts "WARNING:".in_orange + " Parent category definition already exists in database. Ignoring.\n" +
                      "    <#{parent_lang}:#{parent_name}\n" +
                      "    #{cat_lang}:#{cat_name}"
             end
@@ -225,7 +225,7 @@ class FoodRescueDatabase < SQLite3::Database
         
         execute "UPDATE categories SET product_count = ? WHERE name = ? LIMIT 1", [product_count, cat_name]
 
-        puts 'WARNING: '.in_yellow + "Could not add product count to category '#{cat_name}'. Ignoring." if changes == 0
+        puts "WARNING:".in_orange + " Could not add product count to category '#{cat_name}'. Ignoring." if changes == 0
     end
 
     # Save one product to the database.
@@ -259,7 +259,7 @@ class FoodRescueDatabase < SQLite3::Database
             begin
                 execute "INSERT INTO product_categories VALUES (?, ?)", [product_id, category_id]
             rescue SQLite3::ConstraintException => e
-                puts 'WARNING: '.in_yellow + "Category #{cat[:name]} assigned twice to product #{product_code}. Ignoring."
+                puts "WARNING:".in_orange + " Category '#{cat[:name]}' assigned twice to product #{product_code}. Ignoring."
             end
         end
 
@@ -274,7 +274,7 @@ class FoodRescueDatabase < SQLite3::Database
             begin
                 execute "INSERT INTO product_countries VALUES (?, ?)",  [product_id, country_id]
             rescue SQLite3::ConstraintException => e
-                puts 'WARNING: '.in_yellow + "Country #{country} assigned twice to product #{product_code}. Ignoring."
+                puts "WARNING:".in_orange + " Country '#{country}' assigned twice to product #{product_code}. Ignoring."
             end
         end
 
