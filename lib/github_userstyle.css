@@ -6,12 +6,14 @@
  *    - for Firefox: https://addons.mozilla.org/en-US/firefox/addon/styl-us/
  *    - for Chrome: https://chrome.google.com/webstore/detail/stylus/clngdbkpkpeebahjckkjfobafhncgmne?hl=en-US
  * 2. Click "Stylus Icon → Manage → Write New Style".
- * 3. Name your style "Github Markdown Fixes" and set "Applies to: URLs matching the regexp: https://github.com/.*\.md".
+ * 3. Name your style "Github Markdown Fixes" and set "Applies to: URLs starting with: https://github.com/".
  * 4. Copy the content of this file into you userstyle.
  * 5. Save your userstyle and enjoy.
  */
 
-/* Fix that annoying "sublist has roman numerals" issue. */
-ol ol, ul ol {
+/* Fix the annoying "Markdown sublist renders with roman numerals" issue.
+ * (Solves it for any Markdown file and in Github issues.) */
+.markdown-body ol ol, 
+.markdown-body ul ol {
     list-style-type: decimal;
 }
