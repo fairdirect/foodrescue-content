@@ -1,2 +1,18 @@
+# General.
 /Gemfile.lock
 /build/
+
+# Exclude database content files but re-include the right versions.
+
+/content-categories/**
+!/content-categories/Makefile
+!/content-categories/categories-json.2-pretty.json
+!/content-categories/categories-txt.1-downloaded.txt
+
+content-knowledge/**
+!/content-knowledge/Makefile
+
+content-products/**
+!/content-products/Makefile
+!/content-products/products-csv.2-filtered.csv
+!/content-products/products-delta.*.2-filtered.json
