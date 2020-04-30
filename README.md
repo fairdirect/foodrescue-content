@@ -3,11 +3,11 @@
 
 ## Contents
 
-**[1. Overview](#1-overview)**
-**[2. Repository Structure](2-repository-structure)**
-**[3. Installation](3-installation)**
-**[4. Usage](4-usage)**
-**[5. Development Guide](5-development-guide)**
+**[1. Overview](#1-overview)**  
+**[2. Repository Structure](2-repository-structure)**  
+**[3. Installation](3-installation)**  
+**[4. Usage](4-usage)**  
+**[5. Development Guide](5-development-guide)**  
 **[6. License](6-license)**
 
 
@@ -24,7 +24,7 @@ In addition, the following re-usable pieces of this repository will be interesti
 
 ## 2. Repository Structure
 
-**A self-contained repository.** Source code is everything to reliably build the outputs. External libraries can be omitted as long as they can be reliably obtained on demand in the required version. The latter is difficult for datasets. For example, the Open Food Facts dataset utilized here does not come in versioned releases. So to make build outputs reproducible and allow error isolation, relevant subsets of the Open Food Facts dataset are included in this repository. That data is not compressed, allowing for space-efficiently handling of revisions by git.
+**A self-contained repository.** Source code is everything to reliably build the outputs. External libraries can be omitted as long as they can be reliably obtained on demand in the required version. The latter is difficult for datasets. For example, the Open Food Facts dataset utilized here does not come in versioned releases. So to make build outputs reproducible and allow error isolation, relevant subsets of the Open Food Facts dataset are included in this repository. That data is not compressed, allowing for space-efficiently handling of revisions by Git.
 
 **Files and folders.**
 
@@ -47,6 +47,7 @@ However, for server environments and also to separate your various Ruby projects
     ```
     sudo apt update
     sudo apt install build-essential
+
     cd ~/some-temp-dir/
     wget -O ruby-install-0.7.0.tar.gz https://github.com/postmodern/ruby-install/archive/v0.7.0.tar.gz
     tar -xzvf ruby-install-0.7.0.tar.gz
@@ -68,7 +69,7 @@ However, for server environments and also to separate your various Ruby projects
     cd chruby-0.3.9/
     sudo checkinstall make install
 
-    # Add the lines to load chruby to your ~/.bashrc:
+    # Run this to make your ~/.bashrc include chruby on login.
     printf '%s\n' \
         "# Load chruby, a tool to switch between Ruby versions." \
         "source /usr/local/share/chruby/chruby.sh" \
