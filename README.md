@@ -4,11 +4,11 @@
 ## Contents
 
 **[1. Overview](#1-overview)**  
-**[2. Repository Structure](2-repository-structure)**  
-**[3. Installation](3-installation)**  
-**[4. Usage](4-usage)**  
-**[5. Development Guide](5-development-guide)**  
-**[6. License](6-license)**
+**[2. Repository Structure](#2-repository-structure)**  
+**[3. Installation](#3-installation)**  
+**[4. Usage](#4-usage)**  
+**[5. Development Guide](#5-development-guide)**  
+**[6. License and Credits](#6-license-and-credits)**
 
 
 ## 1. Overview
@@ -126,8 +126,19 @@ The different import scripts need to run in a certain order because each will re
 The easiest is to adapt your own build process based on the existing `Makefile`.
 
 
-## 6. License
+## 6. License and Credits
 
-License differs between files of different origins, as follows:
+**Licenses.** This repository exclusively contains material under free software licencses, open content licenses and open database licenses. Different licenses apply to different parts, as follows:
 
-[TODO]
+* **License for the database.** All files in folders `contents-*/`, taken together, are "the database". The database is made available under the [Open Database License v1.0 (ODbL)](https://opendatacommons.org/licenses/odbl/1.0/). A copy of the license text is provided in [LICENSE.ODbL.md](https://github.com/fairdirect/foodrescue-content/blob/master/LICENSE.ODbL.md). Files that are generated automatically during the build process and include content from the database are governed by the same license.
+
+* **License for database contents.** While the database license governs the rights to the database as a whole, all individual contents of the database (as defined above) are additionally covered by the [Database Contents License v1.0 (DbCL)](https://opendatacommons.org/licenses/dbcl/1.0/). A copy of the license text is provided in [LICENSE.DbCL.md](https://github.com/fairdirect/foodrescue-content/blob/master/LICENSE.DbCL.md). Database content in files generated automatically during the build process is governed by the same license.
+
+* **License for all other material.** Everything in this repository that is not "database" or "database contents" as described above is considered "other material" and licensed under the MIT license. A copy of the license text is provided in [LICENSE.MIT.md](https://github.com/fairdirect/foodrescue-content/blob/master/LICENSE.MIT.md).
+
+
+**Credits.** Within the rights granted by the applicable licenses, this repository contains works of the following open source projects, authors or groups, which are hereby credited for their contributions and for holding the copyright to their contributions:
+
+* **[Open Food Facts](https://openfoodfacts.org/).** The database in this repository contains information from [Open Food Facts](https://openfoodfacts.org/), which is made available here under the [Open Database License v1.0 (ODbL)](https://opendatacommons.org/licenses/odbl/1.0/). Individual contents of the database are available under the [Database Contents License](https://opendatacommons.org/licenses/dbcl/1.0/). Our re-use of the Open Food Facts data is also additionally governed by the Open Food Facts [Terms of use, contribution and re-use](https://world.openfoodfacts.org/terms-of-use), specifically the sections "General terms and conditions" and "Terms and conditions for re-use".
+
+* **[IQAndreas/markdown-licenses](https://github.com/IQAndreas/markdown-licenses).** Provides orginal open source licenses in Markdown format. Some of them have been used in the `LICENSE.*.md` files in this repository. Specifically, ODbL 1.0 has been obtained from [pull request #8](https://github.com/IQAndreas/markdown-licenses/pull/8) by [scubbx](https://github.com/scubbx).
