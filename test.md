@@ -8,7 +8,7 @@
 <ol>
     <li>List item</li>
     <li>List item
-        <ol>
+        <ol style="list-style-type:decimal">
             <li>List sub-item</li>
             <li>List sub-item</li>
         </ol>
