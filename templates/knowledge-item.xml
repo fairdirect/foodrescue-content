@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<topic type="storage_instructions" version="5.1"
+       xmlns="http://docbook.org/ns/docbook"
+       xmlns:xlink="http://www.w3.org/1999/xlink"
+       xmlns:xila="http://www.w3.org/2001/XInclude/local-attributes"
+       xmlns:xi="http://www.w3.org/2001/XInclude"
+       xmlns:trans="http://docbook.org/ns/transclusion"
+       xmlns:svg="http://www.w3.org/2000/svg"
+       xmlns:m="http://www.w3.org/1998/Math/MathML"
+       xmlns:html="http://www.w3.org/1999/xhtml"
+       xmlns:db="http://docbook.org/ns/docbook">
+  <info>
+    <title>Crisp bread is ok when still crunchy</title>
+
+    <author>
+      <personname><firstname>Matthias</firstname>
+      <surname>Ansorg</surname></personname>
+
+      <affiliation>
+        <shortaffil>Fairdirect</shortaffil>
+
+        <orgname>Fairdirect e.V.</orgname>
+      </affiliation>
+    </author>
+
+    <edition><date>2020-05-01</date> <!-- See: https://tdg.docbook.org/tdg/5.1/edition.html --></edition>
+
+    <abstract>
+      <para>When crisp bread is still crunchy, it is still good to eat.</para>
+    </abstract>
+
+    <subjectset scheme="off-categories-subset-frc">
+      <subject>
+        <subjectterm>breads</subjectterm>
+      </subject>
+
+      <subject>
+        <subjectterm>crisp breads</subjectterm>
+      </subject>
+    </subjectset>
+
+    <!-- NOTE: This file contains a single language version of the content. Upon translation, a 
+    target file per language is created, and a translation management system helps to keep both in sync. -->
+  </info>
+
+  <para>When crisp bread is still crunchy, it is still good to eat. This is
+  described in more detail here, including literature references.</para>
+
+  <para>Allowed values for title@type:<itemizedlist>
+      <listitem>
+        <para>risks</para>
+      </listitem>
+
+      <listitem>
+        <para>edibility_assessment</para>
+      </listitem>
+
+      <listitem>
+        <para>symptoms</para>
+      </listitem>
+
+      <listitem>
+        <para>edible_parts</para>
+      </listitem>
+
+      <listitem>
+        <para>storage_overview</para>
+      </listitem>
+
+      <listitem>
+        <para>storage_instructions</para>
+      </listitem>
+
+      <listitem>
+        <para>preservation</para>
+      </listitem>
+
+      <listitem>
+        <para>reuse_and_recycling</para>
+      </listitem>
+    </itemizedlist></para>
+
+  <para>Allowed values for subjectset with @scheme =
+  off-categories-subset-frc<itemizedlist>
+      <listitem>
+        <para>A documented subset of the Open Food Facts field "categories".
+        That field has been defined for the purposes of food rescue content.
+        Category names must be given in their English, original form, not the
+        tagged form. No language prefix must be included – this is also not
+        necessary, as the subset only contains categories that have an English
+        name.</para>
+      </listitem>
+    </itemizedlist></para>
+
+  <xi:include href="bibliography.xml"/>
+</topic>
