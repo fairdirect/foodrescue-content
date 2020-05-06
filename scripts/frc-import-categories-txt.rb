@@ -208,7 +208,7 @@ begin
   args = Docopt::docopt(doc, {version: version, help: true})
 rescue Docopt::Exit => e
   puts e.message
-  exit
+  exit -1
 end
 
 
@@ -285,6 +285,7 @@ begin
 
 rescue ArgumentError => e
   puts e.message
+  exit -1
 ensure
   db.close if db
 end

@@ -47,7 +47,7 @@ begin
     args = Docopt::docopt(doc, {version: version, help: true})
 rescue Docopt::Exit => e
     puts e.message
-    exit
+    exit -1
 end 
 
 # TODO (later): Open INFILE, read the headers line, and raise an error if any of the 

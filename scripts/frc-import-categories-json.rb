@@ -137,7 +137,7 @@ begin
     args = Docopt::docopt(doc, {version: version, help: true})
 rescue Docopt::Exit => e
     puts e.message
-    exit
+    exit -1
 end
 
 

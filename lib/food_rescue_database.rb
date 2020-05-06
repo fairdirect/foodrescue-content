@@ -12,7 +12,7 @@ require_relative 'utils'
 
 # Interface to the SQLite data storage for food rescue content.
 # 
-# == Table design
+# ## Table design
 # 
 # Table structure follows standard SQLite practice by default (integer primary keys as alias for ROWID), with 
 # exceptions only for data that (1) will be included in distributed versions of the database and (2) wher significant 
@@ -43,7 +43,7 @@ require_relative 'utils'
 # **Table countries.** Nothing to optimize, as this table contains few values an is not included into distributable 
 # versions anyway.
 # 
-# == Hints on SQLite quirks
+# ## Hints on SQLite quirks
 # 
 # * There is no need to write "INTEGER PRIMARY KEY NOT NULL", as that is equivalent to "INTEGER PRIMARY KEY" because 
 #   when attempting to insert NULL, the system will choose a non-NULL value automatically (see 
