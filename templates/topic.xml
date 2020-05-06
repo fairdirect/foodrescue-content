@@ -12,16 +12,7 @@
   <info>
     <title>Crisp bread is ok when still crunchy</title>
 
-    <author>
-      <personname><firstname>Matthias</firstname>
-      <surname>Ansorg</surname></personname>
-
-      <affiliation>
-        <shortaffil>Fairdirect</shortaffil>
-
-        <orgname>Fairdirect e.V.</orgname>
-      </affiliation>
-    </author>
+    <xi:include href="author-n-n.xml"/>
 
     <edition><date>2020-05-01</date> <!-- See: https://tdg.docbook.org/tdg/5.1/edition.html --></edition>
 
@@ -73,6 +64,10 @@
 
       <listitem>
         <para>preservation</para>
+      </listitem>
+
+      <listitem>
+        <para>preparation</para>
       </listitem>
 
       <listitem>
