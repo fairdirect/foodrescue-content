@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    This file provides the author information for the topic-foodkeeper-*.xml files.
+    Since the original FoodKeeper content appears both on a website and mobile apps 
+    and it was not clear who its original author is, both the app author and website 
+    author are credite. The author of the food-rescue-content software is included as 
+    editor as the final form of the reused FoodKeeper content is defined by the 
+    food-rescue-content software.
+
+    Author information about the FoodKeeper app as per: 
+        https://play.google.com/store/apps/details?id=gov.usda.fsis.foodkeeper2
+        https://www.fsis.usda.gov/wps/portal/informational/contactus
+    Author information about the (identical) FoodKeeper web content as per:
+        https://www.foodsafety.gov/keep-food-safe/foodkeeper-app
+        https://www.foodsafety.gov/about 
+-->
+<authorgroup version="5.1" xmlns="http://docbook.org/ns/docbook"
+             xmlns:ns7="http://docbook.org/ns/transclusion" xmlns:ns6="http://www.w3.org/2000/svg"
+             xmlns:ns5="http://www.w3.org/1999/xhtml" xmlns:ns4="http://www.w3.org/1998/Math/MathML"
+             xmlns:ns2="http://www.w3.org/1999/xlink" xmlns:ns="http://docbook.org/ns/docbook">
+    <author>
+        <orgname class="other" otherclass="government">United States Department of
+        Agriculture</orgname>
+
+        <orgdiv>Food Safety and Inspection Service</orgdiv>
+
+        <uri>https://www.fsis.usda.gov/</uri>
+
+        <address>
+            <street>1400 Independence Avenue, S.W.</street>
+            <city>Washington, D.C.</city>
+            <postcode>20250-3700</postcode>
+            <country>United States of America</country>
+        </address>
+    </author>
+
+    <author>
+        <orgname class="other" otherclass="government">United States Department of Health &amp;
+        Human Services</orgname>
+
+        <orgdiv>Web Communications and New Media Division</orgdiv>
+
+        <uri>https://www.hhs.gov/</uri>
+
+        <address>
+    		<street>200 Independence Avenue, S.W.</street>
+            <city>Washington, D.C.</city>
+            <postcode>20201</postcode>
+            <country>United States of America</country>
+        </address>
+    </author>
+
+    <editor>
+        <personname>
+            <firstname>Matthias</firstname>
+
+            <surname>Ansorg</surname>
+        </personname>
+
+        <affiliation>
+            <shortaffil>Fairdirect</shortaffil>
+
+            <orgname>Fairdirect e.V.</orgname>
+        </affiliation>
+    </editor>
+</authorgroup>

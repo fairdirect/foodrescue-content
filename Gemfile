@@ -27,3 +27,7 @@ gem 'sqlite3', '~> 1.4', '>= 1.4.2'
 # Better object etc. debug output.
 # https://github.com/awesome-print/awesome_print#awesome-print
 gem 'awesome_print'
+
+# Fast and small XML parser and builder.
+# https://github.com/ohler55/ox
+gem 'ox', '~> 2.13', '>= 2.13.2'

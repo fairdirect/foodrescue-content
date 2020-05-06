@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bibliography version="5.1" xmlns="http://docbook.org/ns/docbook"
+              xmlns:ns7="http://docbook.org/ns/transclusion"
+              xmlns:ns6="http://www.w3.org/1999/xlink" xmlns:ns5="http://www.w3.org/2000/svg"
+              xmlns:ns4="http://www.w3.org/1999/xhtml"
+              xmlns:ns3="http://www.w3.org/1998/Math/MathML"
+              xmlns:ns="http://docbook.org/ns/docbook">
+    <title>Bibliography</title>
+
+    <bibliodiv>
+        <title>Websites, Software, Databases</title>
+
+        <biblioentry>
+            <abbrev>USDA-1</abbrev>
+
+            <title>FoodKeeper</title>
+
+            <author>
+                <orgname class="other" otherclass="government">United States Department of
+                Agriculture</orgname>
+
+                <orgdiv>Food Safety and Inspection Service</orgdiv>
+
+                <uri>https://www.fsis.usda.gov/</uri>
+
+                <address>
+                    <street>1400 Independence Avenue, S.W.</street>
+                    <city>Washington, D.C.</city>
+                    <postcode>20250-3700</postcode>
+                    <country>United States of America</country>
+                </address>
+            </author>
+
+            <edition>Version 7.0.0 from 2017-11-14</edition>
+
+            <abstract>
+                <para>A mobile application for Android with food safety information.</para>
+            </abstract>
+
+            <legalnotice>
+                <para>As a work of the Federal Government of the United States, this work is in the
+                public domain. See:
+                https://en.wikipedia.org/wiki/Copyright_status_of_works_by_the_federal_government_of_the_United_States</para>
+            </legalnotice>
+
+            <biblioid class="other" otherclass="android_app_id">gov.usda.fsis.foodkeeper2</biblioid>
+
+            <biblioid
+            class="uri">https://play.google.com/store/apps/details?id=gov.usda.fsis.foodkeeper2</biblioid>
+
+            <publisher>
+                <publishername>Google Commerce Ltd</publishername>
+            </publisher>
+        </biblioentry>
+    </bibliodiv>
+</bibliography>

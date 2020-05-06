@@ -1,7 +1,7 @@
 # Food Rescue Content
 
 
-## Contents
+**Table of Contents**
 
 **[1. Overview](#1-overview)**  
 **[2. Repository Structure](#2-repository-structure)**  
@@ -9,6 +9,8 @@
 **[4. Usage](#4-usage)**  
 **[5. Development Guide](#5-development-guide)**  
 **[6. License and Credits](#6-license-and-credits)**
+
+------
 
 
 ## 1. Overview
@@ -140,5 +142,7 @@ The easiest is to adapt your own build process based on the existing `Makefile`.
 **Credits.** Within the rights granted by the applicable licenses, this repository contains works of the following open source projects, authors or groups, which are hereby credited for their contributions and for holding the copyright to their contributions:
 
 * **[Open Food Facts](https://openfoodfacts.org/).** The database in this repository contains information from [Open Food Facts](https://openfoodfacts.org/), which is made available here under the [Open Database License v1.0 (ODbL)](https://opendatacommons.org/licenses/odbl/1.0/). Individual contents of the database are available under the [Database Contents License](https://opendatacommons.org/licenses/dbcl/1.0/). Our re-use of the Open Food Facts data is also additionally governed by the Open Food Facts [Terms of use, contribution and re-use](https://world.openfoodfacts.org/terms-of-use), specifically the sections "General terms and conditions" and "Terms and conditions for re-use".
+
+* **[FoodKeeper App](https://www.foodsafety.gov/keep-food-safe/foodkeeper-app).** An initiative by the USDA Food Safety and Inspection Service and the United States Department of Health & Human Services, providing food safety and storage information in web and mobile app form. The distributables built from this repository can be built to include this content. As a work of the Federal Government of the United States, this content is in the public domain ([details](https://en.wikipedia.org/wiki/Copyright_status_of_works_by_the_federal_government_of_the_United_States)).
 
 * **[IQAndreas/markdown-licenses](https://github.com/IQAndreas/markdown-licenses).** Provides orginal open source licenses in Markdown format. Some of them have been used in the `LICENSE.*.md` files in this repository. Specifically, ODbL 1.0 has been obtained from [pull request #8](https://github.com/IQAndreas/markdown-licenses/pull/8) by [scubbx](https://github.com/scubbx).

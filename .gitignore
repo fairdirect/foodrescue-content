@@ -2,17 +2,27 @@
 /Gemfile.lock
 /build/
 
-# Exclude database content files but re-include the right versions.
+
+# Excluding everything from the content-* directories, except re-including the "right stuff":
+# * A single, processed and minified version of downloaded third-party content.
+# * Manually created files for bibliography, author descriptions etc.
+# * Makefiles
 
 /content-categories/**
 !/content-categories/Makefile
 !/content-categories/categories-json.2-pretty.json
 !/content-categories/categories-txt.1-downloaded.txt
 
-content-knowledge/**
-!/content-knowledge/Makefile
-
 content-products/**
 !/content-products/Makefile
 !/content-products/products-csv.2-filtered.csv
 !/content-products/products-delta.*.2-filtered.json
+
+content-topics/**
+!/content-topics/Makefile
+!/content-topics/author-*.xml
+!/content-topics/bibliography.xml
+!/content-topics/FoodKeeper.sqlite3
+!/content-topics/topics-*
+# The FoodKeeper topics are automatically generated, exclude to avoid redundancy.
+/content-topics/topics-foodkeeper-*
