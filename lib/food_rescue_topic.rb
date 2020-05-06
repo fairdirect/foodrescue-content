@@ -88,22 +88,26 @@ class FoodRescueTopic
     # @param text [String]  The summary, as plain text.
     def abstract=(text);                @abstract = text end
 
-
     # Set the topic's main content.
     # 
     # @param elements [Array<Ox::Element>]  The elements that form the main content.
     # 
     # TODO (later): Also support a plaintext parameter. Good for automatic content generation for testing.
     # TODO (later, maybe): Also support XML given as a text string.
-    def main=(elements);                     @main = elements end
+    def main=(elements);                @main = elements end
 
 
     # Set the works of literature used to write this topic.
     # 
-    # This will be rendered as an unspecific literature reference at the bottom of the topic.
+    # This will be rendered as an unspecific literature reference at the bottom of the topic. The 
+    # `ref_details` part will only be shown when enabling debugging information or similar.
     # 
-    # @param works [Array<String>]  The identifiers of the literature works in the bibliography, 
-    #   using the value of the works' DocBook XML `biblioentry`.`abbrev` elements.
+    # @param works [Array<Hash>]  The literature works used, with references to which parts were used.
+    #   Each hash describes one work used, as follows: `{id: '…', ref: '…', ref_details: '…'}`. The 
+    #   `id` key identifies the work via its `biblioentry`.`abbrev` DocBook element value.
+    #   `ref` key leads to a page or chapter etc. reference, while the `ref_details` key leads to 
+    #   more detailed information that is only relevant for debugging automatically imported content. 
+    #   For example, it can contain the database ID of source records.
     def literature_used=(works)         @literature_used = works end
 
 
@@ -157,7 +161,7 @@ class FoodRescueTopic
     end
 
 
-    # TODO: Documentation.
+    # Render the metadata of this topic to a DocBook XML `info` element.
     protected 
     def docbook_info
         info = Ox::Element.new('info')
@@ -189,6 +193,35 @@ class FoodRescueTopic
         end
 
         return info
+    end
+
+
+    # Render the list of literature used to DocBook XML.
+    # 
+    # @return [Array<Ox::Element>]
+    # 
+    # TODO: Render the literature references as proper DoxBook XML elements, not as plain text.
+    #   This has to include an element for conditional presentation of the `ref_details` value, 
+    #   which is only relevant when debugging where errors in the topics come from.
+    protected
+    def docbook_literature_used 
+        literature_list = Ox::Element.new('itemizedlist')
+
+        @literature_used.each do |item|
+            reference_text = [ item[:ref], item[:ref_details] ].compact.join(', ')
+            reference_text = if reference_text.empty? then item[:id] else "#{item[:id]} (#{reference_text})" end
+
+            literature_list << (
+                Ox::Element.new('listitem') << (
+                    Ox::Element.new('para') << reference_text
+                )
+            )
+        end
+
+        return [ 
+            Ox::Element.new('para') << "Literature used: ", 
+            literature_list
+        ]
     end
 
 
@@ -225,6 +258,8 @@ class FoodRescueTopic
         topic = docbook_topic_element
         topic << docbook_info
         @main.each { |element| topic << element }
+        docbook_literature_used.each { |element| topic << element }
+
         topic << docbook_bibliography
 
         doc << docbook_instruct

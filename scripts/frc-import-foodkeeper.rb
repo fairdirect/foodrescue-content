@@ -33,8 +33,7 @@ doc = <<DOCOPT
 Converts the content from the USDA FoodKeeper Android app to DocBook 5.1 XML format.
 
 The script reads the FoodKeeper database from DBFILE and writes its output XML files 
-to files named PREFIXnnnn.xml, where nnnn is a 4-digit, zero-padded number. The 
-convention for PREFIX is to include the author, here: "topic-foodkeeper-". If files 
+to files named PREFIXnnn.xml, where nnnn is a 3-digit, zero-padded number. If files 
 with PREFIX exist, this script will refuse to run.
 
 Full process to convert FoodKeeper data:
@@ -42,37 +41,40 @@ Full process to convert FoodKeeper data:
 1. Obtain the .apk file of FoodKeeper on your desktop computer. The FoodKeeper app 
    is linked from the FoodKeeper website (https://www.foodsafety.gov/keep-food-safe/foodkeeper-app).
    A good, cross-platform option is using Raccoon (https://raccoon.onyxbits.de/).
-2. Install apktool: `sudo apt install apktool`
-3. Use apktool to decode (unzip and decompile) the APK package: 
-   apktool decode gov.usda.fsis.foodkeeper2-46.apk
+2. Unzip the APK package: 
+   unzip decode gov.usda.fsis.foodkeeper2-46.apk
 4. Get the database out of the decoded files:
    cp gov.usda.fsis.foodkeeper2-46/assets/databases/foodkeeper.db FoodKeeper.sqlite3
-5. Run this script to convert database contents to knowledge items in DocBook format:
-   frc-createcontent-foodkeeper.rb FoodKeeper.sqlite3
+5. Run this script to convert the database to DocBook XML topics.
+
+Examples: For the foodrescue-content repo, the command to run is:
+
+    scripts/frc-import-foodkeeper.rb \
+        content-topics/FoodKeeper.sqlite3 \
+        content-topics/topics-foodkeeper-en/topic-foodkeeper-
+
+convention for PREFIX is to include the author, here: "topic-foodkeeper-".
 
 Usage:
-  #{__FILE__} DBFILE PREFIX
-  #{__FILE__} -h | --help
-  #{__FILE__} -v | --version
+    #{__FILE__} DBFILE PREFIX
+    #{__FILE__} -h | --help
+    #{__FILE__} -v | --version
 
 Options:
-  -h, --help                     Show this screen.
-  -v, --version                  Show version.
+    -h, --help                     Show this screen.
+    -v, --version                  Show version.
 
 DOCOPT
 
-# ## Structure of the FoodKeeper app database
+# ## Table structure of the FoodKeeper App database
 #
 # * **FOOD_CATEGORY, FOOD_CATEGORY_ES, FOOD_CATEGORY_PT.** The 25 main and sub categories 
 #   of food found on the app's start screen. Not all categories have sub-categories, but if 
 #   one has them, then products can not be in the main category.
 # * **PRODUCTS, PRODUCTS_ES, PRODUCTS_PT.** The main table with all storage durations 
-#   and instructions for 396 products. Products are rather types of products, defined by 
-#   column "Name" for the general type and "Name_subtitle" for an optional specification, 
-#   esp. used where "Name" is identical for several products. There are three columns per 
-#   storage estimation, with suffixes _Min, _Max and _Metric. The last one contains the 
-#   unit (weeks, days etc.) as text. There is one table per language, where all tips and other 
-#   texts are translated and all numbers appear redundantly. Translation is complete. 
+#   and instructions for 396 products. Products are rather types of products. There is one 
+#   table per language, where all tips and other texts are translated and all numbers appear 
+#   redundantly. Translation is complete.
 # * **COOKING_METHODS, COOKING_METHODS_ES, COOKING_METHODS_PT.** Cooking instructions for 
 #   89 products. Could be part of PRODUCTS since it's a 1:1 relation. One table per language, 
 #   but only the "Cooking_Method" column is really a free-text field that needs translation.
@@ -83,7 +85,38 @@ DOCOPT
 # * **SEARCH_HISTORY.** The user's search history in the app. Not relevant.
 # * **RECALLS.** Product recalls. Not relevant here.
 # 
-# ## Other observations about the FoodKeeper app
+#
+# ## Column structure of the PRODUCTS table in the FoodKeeper App database
+# 
+# * **Name.** Defines the general type of product.
+# * **Name_subtitle.** An optional, more detailed definition of the type of product, used esp. 
+#   where "Name" is identical for several products.
+# * **\*_Min, \*_Max, \*_Metric.** The storage duration range for a specific storage type. 
+#   The `_Metric` column contains the unit ("Days", "Weeks" etc.).
+# * **Pantry_(Min|Max|Metric).** The "general" pantry storage, independent of whether the package is already 
+#   opened or not. Only 6 products have this. A value here is mutually exclusive with a value 
+#   in any of the other two pantry storage types.
+# * **DOP_Pantry_(Min|Max|Metric).** Storage in the pantry from the date of purchase. Without opening 
+#   the package, as otherwise also having the "pantry after opening" storage type would make no sense. 
+#   Products can have values heere and in the "pantry after opening" columns at the same time.
+# * **Pantry_After_Opening_(Min|Max|Metric).** Values can appear here in addition to `DOP_Pantry_(Min|Max|Metric)`.
+# 
+# For the refrigeration and freezing related columns, the same relationship between columns applies as 
+# for the pantry storage related columns.
+# 
+# * **Pantry_tips, Refrigerate_tips, Freeze_Tips.** These are the only relevant columns with tips. 
+#   The columns `DOP_*_tips` are all empty, and other tips columns do not even exist. Logically, some 
+#   tips here refer storage types stored in other columns than `Pantry_*`, `Refrigerate_*` or 
+#   `Freeze_*`, for example the tip "After opening time applies to prepared product.". So these tips 
+#   should be rendered once for the whole list of pantry, refrigerator or freezer storage instructions, 
+#   as they seem to apply to the whole list.
+# * **DOP_Pantry_tips, DOP_Refrigerate_tips, DOP_Freeze_Tips.** These columns are completely empty, see:
+#   `SELECT ID, DOP_Pantry_tips FROM PRODUCTS WHERE DOP_Pantry_tips != '';`
+# 
+# All columns are of data type "TEXT".
+# 
+#
+# ## Other observations about the FoodKeeper App
 # 
 # * The app is 94 MiB in size and basically all of that is consumed by high-dpi stock images 
 #   in PNG format (!), used in the app in the background.
@@ -91,6 +124,7 @@ DOCOPT
 #   translations, cooking methods and cooking tips are saved. And because each column has a 
 #   SQLite3 ROWID column. 120 kiB would be achievable easily.
 # 
+#
 # ## Remaining work for future extensions
 # 
 # TODO (later): Refactor code in this script into a class FoodKeeperDatabase, stored in the 
@@ -184,12 +218,13 @@ def basic_topic(product_id, db)
     # Of course the value can be overwritten as needed after this function returned.
     topic.abstract= '' 
 
-    topic.literature_used= [ 'USDA-1' ]
+    topic.literature_used= [ {id: 'USDA-1', ref_details: "PRODUCTS.ID=#{product_id}"} ]
 
     topic.bibliography= { include_from: 'bibliography.xml' }
 
     return topic
 end
+
 
 # Render the specified product's shelf life into a string like "6-9 Months".
 # 
@@ -198,7 +233,8 @@ end
 # @param db [SQLite3::Database]  The database connection to the FoodKeeper database.
 # @param field_prefix [String]  The prefix of the FoodKeeper database columns (in table PRODUCTS) to 
 #   use when rendering the shelf life string. For example, `Pantry`.
-# @return [String]  The shelf life string.
+# @return [String]  The shelf life string. It may contain XML, so must be added as raw content to 
+#   an XML file. It may be the empty string if no information is present.
 def shelf_life(product_id, db, field_prefix)
     product = db.get_first_row('SELECT * FROM PRODUCTS WHERE ID = ?', [ product_id ])
 
@@ -208,23 +244,26 @@ def shelf_life(product_id, db, field_prefix)
     max_duration = product["#{field_prefix}_Max"]
     duration_metric = product["#{field_prefix}_Metric"]
 
-    text_after = 
-        case field_prefix
-        when 'Pantry';                      'in the pantry, whether package is sealed or not'
-        when 'DOP_Pantry';                  'in the pantry, if the package is still sealed'
+    text_after = case field_prefix
+        when 'Pantry';                      'in the pantry, whether sealed or not'
+        when 'DOP_Pantry';                  'in the pantry, if still sealed'
         when 'Pantry_After_Opening';        'in the pantry, after opening the package'
-        when 'Refrigerate';                 'in the fridge, whether package is sealed or not'
-        when 'DOP_Refrigerate';             'in the fridge, if the package is still sealed'
-        when 'Refrigerate_After_Opening';   'in the fridge, after opening the package'
-        when 'Refrigerate_After_Thawing';   'in the fridge, after thawing the item'
-        when 'Freeze';                      'in the freezer, whether package is sealed or not'
-        when 'DOP_Freeze';                  'in the freezer, if the package is still sealed'
-        end
+        when 'Refrigerate';                 'in the fridge, whether sealed or not'
+        when 'DOP_Refrigerate';             'in the fridge, if stored there immediately after purchase, whether sealed or not'
+        when 'Refrigerate_After_Opening';   'in the fridge, if stored there after opening the package'
+        when 'Refrigerate_After_Thawing';   'in the fridge, if stored there after thawing a frozen item, whether sealed or not'
+        when 'Freeze';                      'in the freezer, whether sealed or not'
+        when 'DOP_Freeze';                  'in the freezer, if stored there immediately after purchase, whether sealed or not'
+    end
 
-    if min_duration == max_duration
-        "#{min_duration} #{duration_metric} #{text_after}"
+    if min_duration.empty?
+        ""
+    elsif min_duration == max_duration
+        "<emphasis>#{min_duration} #{duration_metric}</emphasis> #{text_after}"
     else
-        "#{min_duration}–#{max_duration} #{duration_metric} #{text_after}"
+        # An en dash, like here, is the correct typography for a range. See:
+        # https://en.wikipedia.org/wiki/Dash#Ranges_of_values
+        "<emphasis>#{min_duration}–#{max_duration} #{duration_metric}</emphasis> #{text_after}"
     end
 end
 
@@ -234,17 +273,25 @@ end
 # @param product_id [Integer]  The FoodKeeper database's PRODUCTS.ID value of the product about which 
 #   the topic will be about.
 # @param db [SQLite3::Database]  The database connection to the FoodKeeper database.
-# @param field_prefix [String]  The column prefix specifying the type of shelflife in the FoodKeeper 
-#   database, table `PRODUCTS`. For example, `Pantry`.
+# @param storage_type [Symbol]  The storage type to generate instructions for. Any of `:pantry`, 
+#   `:refrigerate`, `:freeze`. If omitted, instructions for all storage types are included.
 # @return [String]  The storage tips string, which can be the empty string.
-def storage_tips(product_id, db, field_prefix)
+def storage_tips(product_id, db, storage_type: nil)
     product = db.get_first_row('SELECT * FROM PRODUCTS WHERE ID = ?', [ product_id ])
 
-    # The suffix should be "_Tips" everywhere, but there are mistakes in the DB column names. So:
-    field_name = field_prefix + (if field_prefix.include?('Freeze') then '_Tips' else '_tips' end)
-
-    return '' if product[field_name].nil?
-    return '. ' + product[field_name] + '.'
+    # Note that tips fields are either named `*_Tips` or `*_tips`. It should be `*_Tips` everywhere, 
+    # as SQLite3 column names are case-independent, this sloppyness is tolerated in the database. 
+    # But not for the hash keys here.
+    case storage_type
+    when :pantry
+        product['Pantry_tips']
+    when :refrigerate
+        product['Refrigerate_tips']
+    when :freeze
+        product['Freeze_Tips']
+    when nil
+        "#{product['Pantry_tips']} #{product['Refrigerate_tips']} #{product['Freeze_Tips']}"
+    end
 end
 
 
@@ -253,12 +300,12 @@ end
 # @param product_id [Integer]  The FoodKeeper database's PRODUCTS.ID value of the product about which 
 #   the topic will be about.
 # @param db [SQLite3::Database]  The database connection to the FoodKeeper database.
-# @param storage_type [Symbol]  The storage type to generate instructions for. Any of `pantry`, `refrigerate`, `freeze`.
+# @param storage_type [Symbol]  The storage type to generate instructions for. Any of `:pantry`, `:refrigerate`, `:freeze`.
 #   If omitted, instructions for all storage types are included.
 # @param include_tips [Boolean]  Whether to also include more detailed storage tips, or just show 
 #   storage durations.
 # @return [Ox::Element]
-def storage_instructions(product_id, db, storage_type: nil, include_tips: true)
+def storage_durations(product_id, db, storage_type: nil, include_tips: true)
     # Field / column prefixes by storage type. 
     field_prefixes = {
         pantry:      [ 'Pantry',      'DOP_Pantry',      'Pantry_After_Opening'                                   ],
@@ -267,22 +314,36 @@ def storage_instructions(product_id, db, storage_type: nil, include_tips: true)
     }
     field_prefixes[nil] = field_prefixes.values.flatten # All if storage type not given.
 
+    instructions = Ox::Element.new('itemizedlist')
     selected_prefixes = field_prefixes[storage_type]
 
-    product = db.get_first_row('SELECT * FROM PRODUCTS WHERE ID = ?', [ product_id ])
-    is_empty = lambda { |k,v| v.empty? }
-    instructions = Ox::Element.new('itemizedlist')
-
     selected_prefixes.each do |prefix|
-        next if product["#{prefix}_Min"].empty?
-
-        instruction = shelf_life(product_id, db, prefix) + 
-            (storage_tips(product_id, db, prefix) if include_tips)
-        instructions << (Ox::Element.new('listitem') << (Ox::Element.new('para') << instruction))
+        instruction = shelf_life(product_id, db, prefix) 
+        instructions << (
+            Ox::Element.new('listitem') << (Ox::Element.new('para') << Ox::Raw.new(instruction))
+        ) unless instruction.empty?
     end
 
     return instructions
 end
+
+
+# Generate an introductory sentence for the list of estimated storage durations.
+# 
+# @param product_id [Integer]  The FoodKeeper database's PRODUCTS.ID value of the product about which 
+#   the topic will be about.
+# @param db [SQLite3::Database]  The database connection to the FoodKeeper database.
+def storage_intro_text(product_id, db)
+    product = db.get_first_row('SELECT * FROM PRODUCTS WHERE ID = ?', [ product_id ])
+
+    name = if product['Name_subtitle'].empty? 
+        then product['Name'] 
+        else "#{product['Name']}, #{product['Name_subtitle']}" 
+    end
+
+    return "The typical storage life of '#{name}' is:"
+end
+
 
 # Create a topic from given FoodKeeper product data for the "Storage Overview" section.
 # in the "Storage Overview" section.
@@ -298,10 +359,10 @@ def storage_overview_topic(product_id, db)
     topic.title= 'Storage Durations'
     topic.section= 'storage_overview'
 
-    intro = Ox::Element.new('para') << 'The typical storage life of this item is:'
-    list = storage_instructions(product_id, db)
-    outro = Ox::Element.new('para') # No text, as this part is unused so far.
-    topic.main= [intro, list, outro]
+    intro = Ox::Element.new('para') << storage_intro_text(product_id, db)
+    list = storage_durations(product_id, db, include_tips: false)
+
+    topic.main= [intro, list]
 
     return topic
 end
@@ -319,10 +380,11 @@ def pantry_storage_topic(product_id, db)
     topic.title= 'Pantry storage'
     topic.section= 'storage_instructions'
 
-    intro = Ox::Element.new('para') << 'The typical storage life of this item in the pantry is:'
-    list = storage_instructions(product_id, db, storage_type: :pantry, include_tips: true)
-    outro = Ox::Element.new('para') << 'Storage life affects quality. The item may or may not be safe to eat afterwards. Details may be provided below.'
-    topic.main= [intro, list, outro]
+    intro = Ox::Element.new('para') << storage_intro_text(product_id, db)
+    list = storage_durations(product_id, db, storage_type: :pantry)
+    tips = Ox::Element.new('para') << storage_tips(product_id, db, storage_type: :pantry)
+    outro = Ox::Element.new('para') << 'Storage life affects quality. This item may or may not be safe to eat afterwards. Details may be provided below.'
+    topic.main= [intro, list, tips, outro]
 
     return topic
 end
@@ -340,10 +402,11 @@ def fridge_storage_topic(product_id, db)
     topic.title= 'Fridge storage'
     topic.section= 'storage_instructions'
 
-    intro = Ox::Element.new('para') << 'The typical storage life of this item in the fridge is:'
-    list = storage_instructions(product_id, db, storage_type: :refrigerate, include_tips: true)
-    outro = Ox::Element.new('para') << 'Storage life affects quality. The item may or may not be safe to eat afterwards. Details may be provided below.'
-    topic.main= [intro, list, outro]
+    intro = Ox::Element.new('para') << storage_intro_text(product_id, db)
+    list = storage_durations(product_id, db, storage_type: :refrigerate)
+    tips = Ox::Element.new('para') << storage_tips(product_id, db, storage_type: :refrigerate)
+    outro = Ox::Element.new('para') << 'Storage life affects quality. This item may or may not be safe to eat afterwards. Details may be provided below.'
+    topic.main= [intro, list, tips, outro]
 
     return topic
 end
@@ -361,10 +424,11 @@ def freezer_storage_topic(product_id, db)
     topic.title= 'Freezer storage'
     topic.section= 'storage_instructions'
 
-    intro = Ox::Element.new('para') << 'The typical storage life of this item in the freezer is:'
-    list = storage_instructions(product_id, db, storage_type: :freeze, include_tips: true)
-    outro = Ox::Element.new('para') << 'Storage life affects quality. The item may or may not be safe to eat afterwards. Details may be provided below.'
-    topic.main= [intro, list, outro]
+    intro = Ox::Element.new('para') << storage_intro_text(product_id, db)
+    list = storage_durations(product_id, db, storage_type: :freeze)
+    tips = Ox::Element.new('para') << storage_tips(product_id, db, storage_type: :freeze)
+    outro = Ox::Element.new('para') << 'Storage life affects quality. This item may or may not be safe to eat afterwards. Details may be provided below.'
+    topic.main= [intro, list, tips, outro]
 
     return topic
 end
