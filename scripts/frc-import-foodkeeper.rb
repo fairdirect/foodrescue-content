@@ -34,7 +34,7 @@ Converts the content from the USDA FoodKeeper Android app to DocBook 5.1 XML for
 
 The script reads the FoodKeeper database from DBFILE and writes its output XML files 
 to files named PREFIXnnn.xml, where nnnn is a 3-digit, zero-padded number. If files 
-with PREFIX exist, this script will refuse to run.
+with PREFIX exist, this script will refuse to run. DBFILE will not be modified.
 
 Full process to convert FoodKeeper data:
 
@@ -483,12 +483,24 @@ end
 
 # Convert FoodKeeper products to DocBook XML.
 begin
-    db = SQLite3::Database.new args['DBFILE'], { results_as_hash: true }
-    create_categories_mapping(db)
+    # Create an in-memory database to avoid changing the on-disk database. This connection must be 
+    # kept open, because when the last connection to an in-memory database closes, its data is gone. 
+    # It uses shared cache mode to allow other database connections to see the same data.
+    # See: https://www.sqlite.org/inmemorydb.html
+    mem_db = SQLite3::Database.new 'file::memory:?cache=shared', { results_as_hash: true }
+
+    # Fill the in-memory database from the on-disk database. See:
+    # https://www.sqlite.org/lang_vacuum.html#vacuuminto
+    # https://stackoverflow.com/a/58932207
+    file_db = SQLite3::Database.new args['DBFILE'], { results_as_hash: true }
+    file_db.execute("VACUUM INTO 'file::memory:?cache=shared'")
+    file_db.close
+
+    create_categories_mapping(mem_db)
   
     # Load each FoodKeeper product (in English) and convert it to DocBook XML files.
-    db.execute('SELECT ID FROM PRODUCTS') do |product|
-        import_product(product['ID'], db, args['PREFIX'])
+    mem_db.execute('SELECT ID FROM PRODUCTS') do |product|
+        import_product(product['ID'], mem_db, args['PREFIX'])
     end
 
     # TODO (later): Also load the FoodKeeper products in Spanish and Portuguese and convert them to 
@@ -498,5 +510,6 @@ rescue ArgumentError => e
     $stderr.puts e.backtrace
     exit -1
 ensure
-    db.close if db
+    file_db.close if file_db
+    mem_db.close if mem_db
 end
