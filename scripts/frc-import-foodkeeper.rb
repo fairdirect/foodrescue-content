@@ -6,15 +6,11 @@
 # TODO: Fix the gem, then remove this.
 $VERBOSE = nil
 
-# Stdlib includes.
-# require 'dir'
-
 # Gem includes. See Gemfile.
 require 'docopt'
 require "sqlite3"
 require 'awesome_print'
 require 'ox'
-require 'ap'
 
 # Local, non-gem includes.
 require_relative '../lib/food_rescue_topic'
@@ -52,8 +48,6 @@ Examples: For the foodrescue-content repo, the command to run is:
     scripts/frc-import-foodkeeper.rb \
         content-topics/FoodKeeper.sqlite3 \
         content-topics/topics-foodkeeper-en/topic-foodkeeper-
-
-convention for PREFIX is to include the author, here: "topic-foodkeeper-".
 
 Usage:
     #{__FILE__} DBFILE PREFIX

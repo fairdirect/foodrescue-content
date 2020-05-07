@@ -32,8 +32,10 @@ end
 # format used to store these units of knowledge.
 class FoodRescueTopic
 
-    # TODO (later): Documentation.
-    def initialize(docbook_path: nil)
+    # Create a new food rescue topic, empty or with values read from a XML file.
+    # 
+    # @param path [String]  Path to a DocBook 5.1 XML file to initialize the object from.
+    def initialize(path=nil)
 
         # Initialize optional elements so no errors will happen when saving to DocBook / SQLite.
         @author = {}
@@ -42,7 +44,7 @@ class FoodRescueTopic
         @literature_used = []
         @bibliography = {}
 
-        # TODO (later): Create the topic from the data in a DocBook XML file, if specified.
+        # TODO: Create the topic from the data in a DocBook XML file, if specified.
         # Could be possible with the object marshalling (deserialization) functions of Ox.
         # See: http://www.ohler.com/ox/Ox.html#load_file-class_method
     end
