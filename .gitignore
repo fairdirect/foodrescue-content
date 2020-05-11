@@ -20,9 +20,7 @@ content-products/**
 
 content-topics/**
 !/content-topics/Makefile
-!/content-topics/author-*.xml
-!/content-topics/bibliography.xml
-!/content-topics/FoodKeeper.sqlite3
-!/content-topics/topics-*
-# The FoodKeeper topics are automatically generated, exclude to avoid redundancy.
-/content-topics/topics-foodkeeper-*
+!/content-topics/foodkeeper
+!/content-topics/foodkeeper/author-foodkeeper.xml
+!/content-topics/foodkeeper/bibliography-foodkeeper.xml
+!/content-topics/foodkeeper/FoodKeeper.sqlite3
