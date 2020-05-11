@@ -2,25 +2,19 @@
 /Gemfile.lock
 /build/
 
-
-# Excluding everything from the content-* directories, except re-including the "right stuff":
-# * A single, processed and minified version of downloaded third-party content.
-# * Manually created files for bibliography, author descriptions etc.
-# * Makefiles
-
-/content-categories/**
-!/content-categories/Makefile
+# Only keep a single, processed and minified version of downloaded files.
+/content-categories/categories-*
 !/content-categories/categories-json.2-pretty.json
 !/content-categories/categories-txt.1-downloaded.txt
 
-content-products/**
-!/content-products/Makefile
+# Only keep a single, processed and minified version of downloaded files.
+content-products/products-*
 !/content-products/products-csv.2-filtered.csv
 !/content-products/products-delta.*.2-filtered.json
 
-content-topics/**
-!/content-topics/Makefile
-!/content-topics/foodkeeper
-!/content-topics/foodkeeper/author-foodkeeper.xml
-!/content-topics/foodkeeper/bibliography-foodkeeper.xml
-!/content-topics/foodkeeper/FoodKeeper.sqlite3
+# Ignore the downloaded Android app from which the FoodKeeper database comes.
+content-topics-foodkeeper/FoodKeeper.AndroidApp.apk
+
+# Ignore some old work for template development.
+templates/FoodRescueManual.LEGACY.fodt
+templates/FoodRescueManual.LEGACY.OFFCatMarker.png
