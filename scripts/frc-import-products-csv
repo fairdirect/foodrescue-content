@@ -106,7 +106,8 @@ begin
         db.add_product code, categories, countries
     end
 rescue => e
-    puts "ERROR: ".in_red + e.message
+    $stderr.puts "ERROR: ".in_red + e.message
+    exit -1
 ensure
     db.close if db
 end

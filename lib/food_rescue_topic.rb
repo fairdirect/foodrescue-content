@@ -81,15 +81,20 @@ class FoodRescueTopic
     # Set the topic's Open Food Fact categories.
     # 
     # This food rescue topic will be displayed for all products in the given OFF categories.
-    # @param categories [Array<String>]  The categories, given with their full names without 
+    # @param categories [Array<String>]  The categories, given with their full English names without 
     #   language prefixes.
+    # 
+    # TODO: Also support language prefixes.
+    # TODO: Also support tag versions of category identifiers. They would be immediately converted 
+    #   to full names if possible.
     def off_categories=(categories);    @off_categories = categories end
 
 
     # Set the topic's summary text.
-    # @param text [String]  The summary, as plain text.
+    # @param text [String]  The summary, as plain text. The empty string if there is no abstract.
     def abstract=(text);                @abstract = text end
 
+    
     # Set the topic's main content.
     # 
     # @param elements [Array<Ox::Element>]  The elements that form the main content.
@@ -113,10 +118,13 @@ class FoodRescueTopic
     def literature_used=(works)         @literature_used = works end
 
 
-    # Set the content of the bibliography section available for literature references in this topic.
+    # Set the content of the bibliography section available for literature referenced in this topic.
     # 
     # The bibliography may contain more works than referenced in this topic, allowing to share it 
-    # between topics. In the rendered output, only those works will be listed that are in use.
+    # between topics. In the rendered output, only those works will be listed that are in use. If 
+    # this field contains no data, the handling object may look in its existing literature database 
+    # for the bibliographic references, because the IDs of these references must be unique within 
+    # one project.
     # 
     # @param biblio [Hash]  Defines the bibliography section or where to obtain it. Keys:
     #   * include_from: relative or absolute path to a XML file with the <author> element
@@ -293,10 +301,12 @@ class FoodRescueTopic
 
     # Write this topic to the given SQLite3 database.
     # 
-    # @param db [SQLite3::Database]  The database connection to use for writing the topic. The following 
-    #   table structure must exist in it: (TODO).
+    # @param db [FoodRescueDatabase]  The database interface to use for writing the topic.
     public
     def to_sqlite(db)
-        # TODO
+        # Delegate to FoodRescueDatabase because handling SQL queries is in its domain. (This is 
+        # different from #to_docbook, which is implemented in this class because there is not yet a 
+        # class to handle DocBook files.)
+        db.add_topic self
     end
 end

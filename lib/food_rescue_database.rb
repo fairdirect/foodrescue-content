@@ -63,6 +63,9 @@ class FoodRescueDatabase < SQLite3::Database
         # https://sqlite.org/pragma.html#pragma_synchronous and we don't care that the database might become 
         # corrupted on power outage. Because it can be simply generated anew by running the import scripts again.
         execute "PRAGMA synchronous = OFF;"
+
+        # TODO (later): Run all prepare_*_tables methods here. This guarantees that any FoodRescueDatabase 
+        # object can take any kind of record without further checks and preparations.
     end
 
     # Helper method to determine the main name of a category
@@ -81,10 +84,11 @@ class FoodRescueDatabase < SQLite3::Database
         return [ full_name[:cat_names][0][:value], full_name[:lang] ]
     end
 
-    # Create or re-create the SQLite tables for categories their hierarchy.
+
+    # Create the SQLite tables for categories their hierarchy.
     #
     # @param allow_reuse [Boolean]  If true, no error will occur in case tables of the 
-    # same structure already exist.
+    #   same structure already exist.
     # @see FoodRescueDatabase  Gives the reasoning for the table structure.
     def prepare_category_tables(allow_reuse=false)
         if_not_exists = if allow_reuse then "IF NOT EXISTS" else "" end
@@ -110,6 +114,40 @@ class FoodRescueDatabase < SQLite3::Database
         # TODO (later): Raise an exception if allow_reuse==false and a table exists.
         # TODO (later): Raise an exception if allow_reuse==true but the existing tables have a different structure.
     end
+
+
+    # Create the SQLite tables for topics (units of knowledge about food rescue).
+    #
+    # @param allow_reuse [Boolean]  If true, no error will occur in case tables of the 
+    #   same structure already exist.
+    def prepare_topic_tables(allow_reuse: false)
+        if_not_exists = if allow_reuse then "IF NOT EXISTS" else "" end
+
+        execute_batch "
+            CREATE TABLE #{if_not_exists} topics (
+                id            INTEGER PRIMARY KEY, --alias of ROWID as per https://stackoverflow.com/a/8246737
+                title         TEXT,                
+                lang          TEXT,                --language tag such as 'en', 'en-GB'
+                section       TEXT,                --string ID of the section to show the topic in
+                author_id     INTEGER,             
+                version       TEXT,                --version date in yyyy-mm-dd format
+                text          TEXT,                --topic main content
+                FOREIGN KEY (author_id) REFERENCES authors(id)
+            );
+
+            CREATE TABLE #{if_not_exists} topic_categories (
+                topic_id      INTEGER,
+                category_id   INTEGER,
+                PRIMARY KEY (topic_id, category_id),
+                FOREIGN KEY (topic_id) REFERENCES topics(id),
+                FOREIGN KEY (category_id) REFERENCES categories(id)
+            ) WITHOUT ROWID;
+        "
+
+        # TODO (later): Raise an exception if allow_reuse==false and a table exists.
+        # TODO (later): Raise an exception if allow_reuse==true but the existing tables have a different structure.
+    end
+
 
     # Create or re-create the SQLite tables for products. Requires category tables to exist.
     # 
@@ -153,6 +191,7 @@ class FoodRescueDatabase < SQLite3::Database
         # TODO (later): Raise an exception if allow_reuse==true but the existing tables have a different structure.
     end
 
+
     # Record the names of a category definition to the database.
     # 
     # @param [Hash] block  A nested Hash of the following structure. In this structure, there is always an array around the nested 
@@ -187,6 +226,7 @@ class FoodRescueDatabase < SQLite3::Database
         end
     end
 
+
     # Record the parent categories of a category into the database.
     # 
     # Will result in a warning when the referenced parent categories do not exist in the database.
@@ -213,6 +253,7 @@ class FoodRescueDatabase < SQLite3::Database
         end
     end
 
+
     # Save the number of products for which a category is used to the database.
     # 
     # @param [String] cat_name  Identifying name of the category to save the product count for. 
@@ -227,6 +268,7 @@ class FoodRescueDatabase < SQLite3::Database
 
         puts "WARNING:".in_orange + " Could not add product count to category '#{cat_name}'. Ignoring." if changes == 0
     end
+
 
     # Save one product to the database.
     # 
@@ -278,6 +320,18 @@ class FoodRescueDatabase < SQLite3::Database
             end
         end
 
+    end
+
+    # Save one topic of food rescue content to the database.
+    # 
+    # The given topic can mention bibliographic references. If it does, these must already exist in 
+    # the database. The topic can also mention an author name. If it exists in the database, it will 
+    # be referenced, otherwise a new record will be created.
+    # 
+    # @param topic [FoodRescueTopic]  The topic to add.
+    # @raise [ArgumentError]  If a referenced author or literature record does not exist in the database.
+    def add_topic(topic)
+        # TODO: Implementation.
     end
 
 end
