@@ -1,11 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <bibliography version="5.1" xmlns="http://docbook.org/ns/docbook"
               xmlns:ns7="http://docbook.org/ns/transclusion"
-              xmlns:ns6="http://www.w3.org/1999/xlink" xmlns:ns5="http://www.w3.org/2000/svg"
+              xmlns:ns6="http://www.w3.org/1999/xlink"
+              xmlns:ns5="http://www.w3.org/2000/svg"
               xmlns:ns4="http://www.w3.org/1999/xhtml"
               xmlns:ns3="http://www.w3.org/1998/Math/MathML"
               xmlns:ns="http://docbook.org/ns/docbook">
+
+    <!--
+        Bibliography in DocBook 5.1 XML format.
+        
+        No longer in use, as bibliography is now managed in BibTeX format via asciidoctor-bibtex.
+    -->
+
     <title>Bibliography</title>
+
+    <bibliodiv>
+        <title>Books</title>
+
+        <biblioentry>
+            <abbrev>Sperber+2009</abbrev>
+
+            <title>Compendium of the Microbiological Spoilage of Foods and
+                Beverages</title>
+
+            <authorgroup>
+                <editor>
+                    <personname><firstname>William</firstname><surname>Sperber</surname></personname>
+                </editor>
+
+                <editor>
+                    <personname><firstname>Michael</firstname><surname>Doyle</surname></personname>
+                </editor>
+            </authorgroup>
+
+            <copyright>
+                <year>2009</year>
+
+                <holder>Springer Science+Business Media, LLC</holder>
+            </copyright>
+
+            <biblioid class="isbn">978-1-4419-0825-4</biblioid>
+
+            <publisher>
+                <publishername>Springer</publishername>
+            </publisher>
+        </biblioentry>
+    </bibliodiv>
 
     <bibliodiv>
         <title>Websites, Software, Databases</title>
@@ -53,4 +94,5 @@
             </publisher>
         </biblioentry>
     </bibliodiv>
+
 </bibliography>
