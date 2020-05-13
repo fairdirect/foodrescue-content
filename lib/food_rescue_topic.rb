@@ -9,6 +9,7 @@ require 'date'
 require 'sqlite3'
 require 'awesome_print'
 require 'ox'
+require 'asciidoctor'
 
 
 module Ox::HasAttrs
@@ -94,14 +95,32 @@ class FoodRescueTopic
     # @param text [String]  The summary, as plain text. The empty string if there is no abstract.
     def abstract=(text);                @abstract = text end
 
-    
+
     # Set the topic's main content.
     # 
-    # @param elements [Array<Ox::Element>]  The elements that form the main content.
+    # @param main_content [Array<Ox::Element>|String]  The object(s) that form the main content, in the 
+    #   format specified by `format`.
+    # @param format [Symbol]  The format to interpret main_content. One of:
+    #   * `:docbook_dom` if `main_content` is Array<Ox::Element>. This is the default.
+    #   * `:asciidoc` if `main_content` is a String with [Asciidoctor markup](https://asciidoctor.org/docs/asciidoc-syntax-quick-reference)
+    #   * `:plaintext` if `main_content` is a plain text String. Internally this is just a synonym for 
+    #      `:asciidoc` since plaintext strings are valid AsciiDoc.
     # 
-    # TODO (later): Also support a plaintext parameter. Good for automatic content generation for testing.
-    # TODO (later, maybe): Also support XML given as a text string.
-    def main=(elements);                @main = elements end
+    # TODO (later): Also support DocBook XML given as a text string, using format `:docbook`.
+    def main=(main_content, format: :docbook_dom)
+        case format
+        when :docbook_dom
+            @main = main_content
+
+        when :asciidoc, :plaintext
+            @main = []
+            docbook_string = Asciidoctor.convert main_content, backend: 'docbook', safe: :safe
+
+            # To parse XML with Ox, we need a single root element. So we wrap and unwrap the content.
+            docbook_dom = Ox.parse "<container>#{docbook_string}</container>"
+            @main = docbook_dom.nodes
+        end
+    end
 
 
     # Set the works of literature used to write this topic.

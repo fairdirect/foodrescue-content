@@ -25,9 +25,15 @@ gem 'csv'
 gem 'sqlite3', '~> 1.4', '>= 1.4.2'
 
 # Better object etc. debug output.
-# https://github.com/awesome-print/awesome_print#awesome-print
+# https://github.com/awesome-print/awesome_print
 gem 'awesome_print'
 
 # Fast and small XML parser and builder.
 # https://github.com/ohler55/ox
 gem 'ox', '~> 2.13', '>= 2.13.2'
+
+# Plaintext format to write DocBook documents.
+# https://asciidoctor.org/docs/user-manual/
+# https://www.rubydoc.info/gems/asciidoctor
+# https://github.com/asciidoctor/asciidoctor
+gem 'asciidoctor'
