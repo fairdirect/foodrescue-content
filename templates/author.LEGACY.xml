@@ -1,18 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-    This file provides the author information for the topic-foodkeeper-*.xml files.
-    Since the original FoodKeeper content appears both on a website and mobile apps 
-    and it was not clear who its original author is, both the app author and website 
-    author are credite. The author of the food-rescue-content software is included as 
-    editor as the final form of the reused FoodKeeper content is defined by the 
-    food-rescue-content software.
+    Example for defining authors in DocBook 5.1 XML.
 
-    Author information about the FoodKeeper app as per: 
-        https://play.google.com/store/apps/details?id=gov.usda.fsis.foodkeeper2
-        https://www.fsis.usda.gov/wps/portal/informational/contactus
-    Author information about the (identical) FoodKeeper web content as per:
-        https://www.foodsafety.gov/keep-food-safe/foodkeeper-app
-        https://www.foodsafety.gov/about 
+    This example is about authorship of the FoodKeeper software application. No longer in use as 
+    AsciiDoc is the new source format. DocBook is still used as a target format.
 -->
 <authorgroup version="5.1" xmlns="http://docbook.org/ns/docbook"
              xmlns:ns7="http://docbook.org/ns/transclusion" xmlns:ns6="http://www.w3.org/2000/svg"
