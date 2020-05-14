@@ -1,4 +1,5 @@
-# Utility functions for this project.
+# Various re-usable utility functions and classes.
+
 
 # Extend String with ways to colorize text for terminal output.
 # 
@@ -37,4 +38,17 @@ class String
     def underlined;    stylize(4, 24) end
     def blinking;      stylize(5, 25) end
     def reversed;      stylize(7, 27) end
+end
+
+
+module Ox::HasAttrs
+    # Add a method for mass assigning attributes, in analogy to the mass read method #attributes.
+    # 
+    # @param attributes [Hash]  The attributes to assign.
+    # @see #attributes
+    # @see http://www.ohler.com/ox/Ox/HasAttrs.html#attributes-instance_method
+    # TODO: Suggest this as a feature upstream in Ox::HasAttrs.
+    def attributes= (attributes)
+        attributes.each { |key, value| self[key] = value }
+    end
 end

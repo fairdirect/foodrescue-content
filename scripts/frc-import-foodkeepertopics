@@ -28,9 +28,8 @@ version = '0.1'
 doc = <<DOCOPT
 Converts the content from the USDA FoodKeeper Android app to DocBook 5.1 XML format.
 
-The script reads the FoodKeeper database from DBFILE and writes its output XML files 
-to files named PREFIXnnn.xml, where nnnn is a 3-digit, zero-padded number. If files 
-with PREFIX exist, this script will refuse to run. DBFILE will not be modified.
+The script reads the FoodKeeper database from FK_DBFILE and writes its output to 
+the food rescue content database FRC_DBFILE.
 
 Full process to convert FoodKeeper data:
 
@@ -50,7 +49,7 @@ Examples: For the foodrescue-content repo, the command to run is:
         content-topics/topics-foodkeeper-en/topic-foodkeeper-
 
 Usage:
-    #{__FILE__} DBFILE PREFIX
+    #{__FILE__} FK_DBFILE FRC_DBFILE
     #{__FILE__} -h | --help
     #{__FILE__} -v | --version
 
@@ -59,6 +58,7 @@ Options:
     -v, --version                  Show version.
 
 DOCOPT
+
 
 # ## Table structure of the FoodKeeper App database
 #
@@ -198,7 +198,40 @@ end
 def basic_topic(product_id, db)
     topic = FoodRescueTopic.new
 
-    topic.author= { include_from: 'author_foodkeeper.xml' }
+    # Author information about the FoodKeeper app.
+    # 
+    # Since the original FoodKeeper content appears both on a website and mobile apps 
+    # and it was not clear who its original author is, both the app author and website 
+    # author are credite. The author of the food-rescue-content software is included as 
+    # in role "conversion", as the final form of the reused FoodKeeper content is defined 
+    # by the foodrescue-content software.
+    # 
+    # Author information about the FoodKeeper app as per: 
+    #     https://play.google.com/store/apps/details?id=gov.usda.fsis.foodkeeper2
+    #     https://www.fsis.usda.gov/wps/portal/informational/contactus
+    # Author information about the (identical) FoodKeeper web content as per:
+    #     https://www.foodsafety.gov/keep-food-safe/foodkeeper-app
+    #     https://www.foodsafety.gov/about 
+    topic.author= [
+        {
+            role:       'author',
+            orgname:    'United States Department of Agriculture',
+            orgdiv:     'Food Safety and Inspection Service',
+            uri:        'https://www.fsis.usda.gov/'
+        },
+        {
+            role:       'author',
+            orgname:    'United States Department of Health & Human Services',
+            orgdiv:     'Web Communications and New Media Division',
+            uri:        'https://www.hhs.gov/'
+        },
+        {
+            role:       'conversion',
+            givenname:  'Matthias',
+            surname:    'Ansorg',
+            orgname:    'Fairdirect e.V.'
+        }
+    ]
 
     # As of 2020-05-02, the topic's version date is the "Updated" date of the FoodKeeper app on Google Play.
     # The website notes however " Date Last Reviewed: April 26, 2019", so might contain more recent 
@@ -212,9 +245,8 @@ def basic_topic(product_id, db)
     # Of course the value can be overwritten as needed after this function returned.
     topic.abstract= '' 
 
-    topic.literature_used= [ {id: 'USDA-1', ref_details: "PRODUCTS.ID=#{product_id}"} ]
-
-    topic.bibliography= { include_from: 'bibliography.xml' }
+    topic.extra_bibrefs= [ {id: 'USDA-1', ref_details: "PRODUCTS.ID=#{product_id}"} ]
+    topic.bibliography= ['USDA-1']
 
     return topic
 end
@@ -428,32 +460,29 @@ def freezer_storage_topic(product_id, db)
 end
 
 
-# Import a single FoodKeeper product by converting its data into corresponding DocBook XML files.
+# Import a single FoodKeeper product to the SQLite3 database.
 # 
 # @param product_id [Integer]  The FoodKeeper database's PRODUCTS.ID value of the product about which 
 #   the topic will be about.
-# @param db [SQLite3::Database]  The database connection to the FoodKeeper database.
-# @param file_prefix [String]  The prefix to use for the DocBook XML output files. The system will choose 
-#   the next available filename by combining the prefix, the next available sequence number and the 
-#   `.xml` filename extension. The prefix may start with a path. Everything after the last "/" (or the 
-#   whole if there is none) is considered the filename prefix.
-def import_product(product_id, db, file_prefix)
+# @param fk_db [SQLite3::Database]  The database connection to the FoodKeeper database.
+# @param frc_db [FoodRescueDatabase]  The database connection to the database with food rescue content.
+def import_product(product_id, fk_db, frc_db)
     product = db.get_first_row('SELECT * FROM PRODUCTS WHERE ID = ?', [ product_id ])
 
     topics = []
-    topics << storage_overview_topic(product_id, db)
-    topics << pantry_storage_topic(product_id, db) \
+    topics << storage_overview_topic(product_id, fk_db)
+    topics << pantry_storage_topic(product_id, fk_db) \
         unless product['Pantry_tips'].empty? and product['DOP_Pantry_tips'].empty?
-    topics << fridge_storage_topic(product_id, db) \
+    topics << fridge_storage_topic(product_id, fk_db) \
         unless product['Refrigerate_tips'].empty? and product['DOP_Refrigerate_tips'].empty?
-    topics << freezer_storage_topic(product_id, db) \
+    topics << freezer_storage_topic(product_id, fk_db) \
         unless product['Freeze_Tips'].empty? and product['DOP_Freeze_Tips'].empty?
 
     # TODO (later): Create and write a topic for the "Preparation Instructions" section.
     # (Using the content from the COOKING_METHODS and COOKING_TIPS tables.)
 
-    # Write all topics to disk as DocBook XML files.
-    topics.each { |t| t.to_docbook(file_prefix: file_prefix, file_padding: 3) }
+    # Write all topics to the food rescue content database.
+    topics.each { |t| t.to_sqlite(frc_db) }
 end
 
 
@@ -468,33 +497,35 @@ rescue Docopt::Exit => e
     exit -1
 end
 
-# Refuse to run if any files with PREFIX already exist.
-# (It indicates output / leftovers from a previous run, and we don't want to make a mess.)
-unless Dir.glob("#{args['PREFIX']}*").empty?
-    $stderr.puts "Output files with the given prefix #{args['PREFIX']} already exist. Exiting."
-    exit -1
-end
 
-# Convert FoodKeeper products to DocBook XML.
+# Convert FoodKeeper products to food rescue content in a SQLite3 database.
 begin
     # Create an in-memory database to avoid changing the on-disk database. This connection must be 
     # kept open, because when the last connection to an in-memory database closes, its data is gone. 
     # It uses shared cache mode to allow other database connections to see the same data.
     # See: https://www.sqlite.org/inmemorydb.html
-    mem_db = SQLite3::Database.new 'file::memory:?cache=shared', { results_as_hash: true }
+    fk_mem_db = SQLite3::Database.new 'file::memory:?cache=shared', { results_as_hash: true }
 
     # Fill the in-memory database from the on-disk database. See:
     # https://www.sqlite.org/lang_vacuum.html#vacuuminto
     # https://stackoverflow.com/a/58932207
-    file_db = SQLite3::Database.new args['DBFILE'], { results_as_hash: true }
-    file_db.execute("VACUUM INTO 'file::memory:?cache=shared'")
-    file_db.close
+    fk_file_db = SQLite3::Database.new args['FK_DBFILE'], { results_as_hash: true }
+    fk_file_db.execute("VACUUM INTO 'file::memory:?cache=shared'")
+    fk_file_db.close
 
-    create_categories_mapping(mem_db)
+    create_categories_mapping(fk_mem_db)
+
+    # TODO: Make sure that the USDA-1 literature source is inside the target database, otherwise add it 
+    # using static content provided inside this script. The key "USDA-1" should be blocked (defined with 
+    # empty values) in the project's global bibliography.bib file so that the content of this literature 
+    # reference can be managed in this script without key conflicts.
+
+    # Database connection to the food rescue content database (the target).
+    frc_db = FoodRescueDatabase.new args['FRC_DBFILE']
   
-    # Load each FoodKeeper product (in English) and convert it to DocBook XML files.
-    mem_db.execute('SELECT ID FROM PRODUCTS') do |product|
-        import_product(product['ID'], mem_db, args['PREFIX'])
+    # Load each (English) FoodKeeper product and import it into the database.
+    fk_mem_db.execute('SELECT ID FROM PRODUCTS') do |product|
+        import_product(product['ID'], fk_mem_db, frc_db)
     end
 
     # TODO (later): Also load the FoodKeeper products in Spanish and Portuguese and convert them to 
@@ -504,6 +535,7 @@ rescue ArgumentError => e
     $stderr.puts e.backtrace
     exit -1
 ensure
-    file_db.close if file_db
-    mem_db.close if mem_db
+    fk_file_db.close if fk_file_db
+    fk_mem_db.close if fk_mem_db
+    frc_db.close if frc_db
 end

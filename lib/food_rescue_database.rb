@@ -7,23 +7,23 @@ require 'sqlite3'
 require 'awesome_print'
 
 # Local, non-gem includes.
-require_relative 'utils'
+require_relative '../lib/utils'
 
 
 # Interface to the SQLite data storage for food rescue content.
 # 
 # ## Table design
 # 
-# Table structure follows standard SQLite practice by default (integer primary keys as alias for ROWID), with 
-# exceptions only for data that (1) will be included in distributed versions of the database and (2) wher significant 
+# Table structure follows standard SQLite3 practice by default (integer primary keys as alias for ROWID), with 
+# exceptions only for data that (1) will be included in distributed versions of the database and (2) where significant 
 # amounts of storage space can be saved (roughly meaning >200 kiB unpacked per intervention). So far that means:
 # 
 # **Table categories.** Nothing to optimize. Column id is an alias for ROWID, using 64 bit per value. But at <5000 
 # records in this table for distributed SQLite files, the wasted storage is only 5000 * (8-2 Byte) = 30 kB.
 # 
-# **Tables categories_structure, product_categories, product_countries.** Using WITHOUT ROWID, as the table includes 
-# two columns that are useful together as a primary key, so no additional ROWID column is needed. It would be 
-# additional, since only one-column INTEGER PRIMARY KEY columns become an alias of ROWID 
+# **Tables categories_structure, product_categories, product_countries, topic_categories.** Using WITHOUT ROWID, 
+# as the table includes two columns that are useful together as a primary key, so no additional ROWID column is 
+# needed. It would be additional, since only one-column INTEGER PRIMARY KEY columns become an alias of ROWID 
 # (https://www.sqlite.org/lang_createtable.html#rowid). The two columns of the primary key refer to ROWID columns in 
 # another table, but because they are not ROWID columns themselves, storage on disk only needs as much space as the 
 # integer values, not 8 byte constantly (see https://www.sqlite.org/datatype3.html#storage_classes_and_datatypes).
@@ -40,8 +40,10 @@ require_relative 'utils'
 # than the other alternative for this case of not having a products table at all (since it has no other attributes 
 # right now). Having a products table is also more flexible for future expansion.
 # 
-# **Table countries.** Nothing to optimize, as this table contains few values an is not included into distributable 
+# **Table countries.** Nothing to optimize, as this table contains few values and is not included into distributable 
 # versions anyway.
+# 
+# **Table topics.** Nothing to optimize, as this table contains few records.
 # 
 # ## Hints on SQLite quirks
 # 
@@ -95,19 +97,20 @@ class FoodRescueDatabase < SQLite3::Database
 
         execute_batch "
             CREATE TABLE #{if_not_exists} categories (
-                id            INTEGER PRIMARY KEY, --alias of ROWID as per https://stackoverflow.com/a/8246737
-                name          TEXT,                --the English name, otherwise the first available name
-                lang          TEXT,                --language tag such as 'en', 'en-GB'
-                local_names   JSON,                --array of name objects, each with 'name' and 'lang' properties
-                product_count INTEGER              --number of products in this category
+                id              INTEGER PRIMARY KEY, -- alias of ROWID as per https://stackoverflow.com/a/8246737
+                name            TEXT,                -- the English name, otherwise the first available name
+                lang            TEXT,                -- language tag such as 'en', 'en-GB'
+                local_names     JSON,                -- array of name objects, each with 'name' and 'lang' properties
+                product_count   INTEGER              -- number of products in this category
             );
 
             CREATE TABLE #{if_not_exists} categories_structure (
-                category_id   INTEGER,
-                parent_id     INTEGER,
-                PRIMARY KEY (category_id, parent_id),
-                FOREIGN KEY (category_id) REFERENCES categories(id),
-                FOREIGN KEY (parent_id) REFERENCES categories(id)
+                category_id     INTEGER,
+                parent_id       INTEGER,
+                ----
+                PRIMARY KEY     (category_id, parent_id),
+                FOREIGN KEY     (category_id) REFERENCES categories(id),
+                FOREIGN KEY     (parent_id) REFERENCES categories(id)
             ) WITHOUT ROWID;
         "
 
@@ -124,27 +127,85 @@ class FoodRescueDatabase < SQLite3::Database
         if_not_exists = if allow_reuse then "IF NOT EXISTS" else "" end
 
         execute_batch "
-            CREATE TABLE #{if_not_exists} topics (
-                id            INTEGER PRIMARY KEY, --alias of ROWID as per https://stackoverflow.com/a/8246737
-                title         TEXT,                
-                lang          TEXT,                --language tag such as 'en', 'en-GB'
-                section       TEXT,                --string ID of the section to show the topic in
-                author_id     INTEGER,             
-                version       TEXT,                --version date in yyyy-mm-dd format
-                text          TEXT,                --topic main content
-                FOREIGN KEY (author_id) REFERENCES authors(id)
+            CREATE TABLE #{if_not_exists} authors (
+                id              INTEGER PRIMARY KEY, -- alias of ROWID as per https://stackoverflow.com/a/8246737
+                givenname       TEXT,
+                honorific       TEXT,
+                middlenames     TEXT,
+                surname         TEXT
+                orgname         TEXT, -- if filled in addition to a person name, it's the affiliation
+                orgdiv          TEXT,
+                uri             TEXT,
+                email           TEXT
             );
 
+            CREATE TABLE #{if_not_exists} literature (
+                id              TEXT PRIMARY KEY,   -- Literature work ID. Same as its BibTeX key and AsciiDoc anchor / label.
+                abbrev          TEXT,               -- Display text for the list item identifier in the bibliography. 
+                                                    -- Same as its AsciiDoc xreftext and DocBook bibliograpy abbrev element.
+                                                    -- See: https://asciidoctor.org/docs/user-manual/#user-biblio
+                entry           TEXT                -- Bibliography entry of one literature work, pre-rendered to DocBook XML.
+            ) WITHOUT ROWID;
+
+            CREATE TABLE #{if_not_exists} topics (
+                id              INTEGER PRIMARY KEY, -- alias of ROWID as per https://stackoverflow.com/a/8246737
+                section         TEXT,                -- string ID of the section to show the topic in
+                version         TEXT,                -- version date in yyyy-mm-dd format
+                ----
+                FOREIGN KEY     (author_id) REFERENCES authors(id)
+            );
+
+            CREATE TABLE #{if_not_exists} topic_authors (
+                topic_id        INTEGER,
+                author_id       TEXT,
+                role            TEXT,               -- author's role in producing the topic
+                ----
+                PRIMARY KEY     (topic_id, author_id),
+                FOREIGN KEY     (topic_id) REFERENCES topics(id),
+                FOREIGN KEY     (author_id) REFERENCES authors(id)
+            ) WITHOUT ROWID;
+
+            CREATE TABLE #{if_not_exists} topic_texts (
+                topic_id        INTEGER,
+                lang            TEXT,                -- language tag such as 'en', 'en-GB'
+                title           TEXT,                
+                text            TEXT,                -- topic main content
+                ----
+                PRIMARY KEY     (topic_id, lang)
+            ) WITHOUT ROWID;
+
             CREATE TABLE #{if_not_exists} topic_categories (
-                topic_id      INTEGER,
-                category_id   INTEGER,
-                PRIMARY KEY (topic_id, category_id),
-                FOREIGN KEY (topic_id) REFERENCES topics(id),
-                FOREIGN KEY (category_id) REFERENCES categories(id)
+                topic_id        INTEGER,
+                category_id     INTEGER,
+                ----
+                PRIMARY KEY     (topic_id, category_id),
+                FOREIGN KEY     (topic_id) REFERENCES topics(id),
+                FOREIGN KEY     (category_id) REFERENCES categories(id)
+            ) WITHOUT ROWID;
+
+            -- Table that (redundantly but in a normalized way) records to which literature records a topic's 
+            -- text refers to.
+            CREATE TABLE #{if_not_exists} topic_literature (
+                topic_id        INTEGER,
+                literature_id   TEXT,
+                ----
+                PRIMARY KEY     (topic_id, literature_id),
+                FOREIGN KEY     (topic_id) REFERENCES topics(id),
+                FOREIGN KEY     (literature_id) REFERENCES literature(id),
             ) WITHOUT ROWID;
         "
 
+        # TODO (later): Import bibliography.bib completely. This requires columns for all BibTeX fields in table literature. 
+        # Currently, asciidoctor-bibtext creates the pre-rendered literature entries at the time of importing content to this 
+        # database. That works, but loses semantics, so that on export to DocBook etc., only the same style of references can be 
+        # used. When importing the complete BibTeX file to this table, asciidoctor-bibtex will still determine the inline 
+        # citation labels, but the bibliography entry styles can be determined on export using bibtex-ruby 
+        # (https://github.com/inukshuk/bibtex-ruby) or similar. Also, export of raw bibliograpy to DocBook is possible then. 
+        # But then again, this is important, just about keeping all semantic information in this database in a principled way.
+        # It might be better not to try to be a literature database and rather be content with BibTeX pre-rendering.
+
         # TODO (later): Raise an exception if allow_reuse==false and a table exists.
+
         # TODO (later): Raise an exception if allow_reuse==true but the existing tables have a different structure.
     end
 
@@ -161,29 +222,31 @@ class FoodRescueDatabase < SQLite3::Database
 
         execute_batch "
             CREATE TABLE #{if_not_exists} products (
-                id             INTEGER PRIMARY KEY,
-                code           INTEGER
+                id              INTEGER PRIMARY KEY,
+                code            INTEGER
             ) WITHOUT ROWID;
 
             CREATE TABLE #{if_not_exists} product_categories (
-                product_id     INTEGER,
-                category_id    INTEGER,
-                PRIMARY KEY (product_id, category_id),
-                FOREIGN KEY (product_id) REFERENCES products(id),
-                FOREIGN KEY (category_id) REFERENCES categories(id)
+                product_id      INTEGER,
+                category_id     INTEGER,
+                ----
+                PRIMARY KEY     (product_id, category_id),
+                FOREIGN KEY     (product_id) REFERENCES products(id),
+                FOREIGN KEY     (category_id) REFERENCES categories(id)
             ) WITHOUT ROWID;
 
             CREATE TABLE #{if_not_exists} countries (
-                id             INTEGER PRIMARY KEY,  --alias of ROWID as per https://stackoverflow.com/a/8246737
-                name           TEXT                  --English-language country name
+                id              INTEGER PRIMARY KEY,  --alias of ROWID as per https://stackoverflow.com/a/8246737
+                name            TEXT                  --English-language country name
             );
 
             CREATE TABLE #{if_not_exists} product_countries (
-                product_id     INTEGER,
-                country_id     INTEGER,
-                PRIMARY KEY (product_id, country_id),
-                FOREIGN KEY (product_id) REFERENCES products(id),
-                FOREIGN KEY (country_id) REFERENCES countries(id)
+                product_id      INTEGER,
+                country_id      INTEGER,
+                ----
+                PRIMARY KEY     (product_id, country_id),
+                FOREIGN KEY     (product_id) REFERENCES products(id),
+                FOREIGN KEY     (country_id) REFERENCES countries(id)
             ) WITHOUT ROWID;
         "
 
@@ -211,9 +274,11 @@ class FoodRescueDatabase < SQLite3::Database
     #       ...
     #     ],
     #     :properties => [
-    #        ... not evaluate here ... 
+    #        ... not evaluated here ... 
     #     ]
     #   }
+    # 
+    # TODO: Require to be passed a FoodRescueCategory object.
     def add_category(block)
         name, lang = self.class.cat_main_name(block)
 
@@ -322,6 +387,34 @@ class FoodRescueDatabase < SQLite3::Database
 
     end
 
+
+    # Fill an author's record in the database with the given field values, but only where there is no value yet.
+    # 
+    # @param id [Integer]  ID database table `authors` of the author record to update.
+    # @param fields [Hash<String>]  Hash of author record fieldnames and values to set, keyed by symbol or string.
+    def complete_author id, fields
+
+        fields.each do |key, value|
+            next if value.nil? or value.empty?
+
+            column = key.to_s
+            db_field_is_filled = get_first_value("SELECT ? NOT NULL AND ? != '' FROM authors WHERE id = ?", column, column, id)
+            next if db_field_is_filled
+
+            execute "UPDATE authors SET ? = ? WHERE id = ? LIMIT 1", column, value, id
+        end
+    end
+
+
+    # Save the text of one food rescue topic to the database.
+    def add_text topic_id, lang, title, text
+        text_string = Ox.dump(text)
+        execute 
+            "INSERT INTO topic_texts (topic_id, lang, title, text) VALUES (?, ?, ?, ?)",
+            topic_id, lang, title, text
+    end
+
+
     # Save one topic of food rescue content to the database.
     # 
     # The given topic can mention bibliographic references. If it does, these must already exist in 
@@ -331,7 +424,73 @@ class FoodRescueDatabase < SQLite3::Database
     # @param topic [FoodRescueTopic]  The topic to add.
     # @raise [ArgumentError]  If a referenced author or literature record does not exist in the database.
     def add_topic(topic)
-        # TODO: Implementation.
-    end
 
+        # Write the topics table entry.
+        execute "INSERT INTO topics (section, version) VALUES (?, ?)", topic.section, topic.edition
+        topic_id = get_first_value "SELECT last_insert_rowid()"
+
+        # Ensure that referenced authors exist in the authors table, if necessary creating them.
+        # Also create the required topic_authors table entries.
+        topic.authors.each do |author|
+
+            # Check if there is a record exactly corresponding to the "identifying" parts of an author.
+            # (More than one result would be an error. Not happening, as we check before adding right here.)
+            author_record = execute "
+                SELECT * FROM authors 
+                WHERE givenname = ? AND middlenames = ? AND surname = ? AND orgname = ?
+                LIMIT 1", 
+                author[:givenname], author[:middlenames], author[:surname], author[:orgname]
+
+            if author_record.nil?
+                # Create a not-yet-existing author record.
+                execute "
+                    INSERT INTO authors (givenname, honorific, middlenames, surname, orgname, orgdiv, uri, email) 
+                    VALUES (?, ?, ?, ?, ?, ?, ?, ?)", 
+                    author[:givenname], author[:honorific], author[:middlenames], author[:surname], author[:orgname], author[:orgdiv], author[:uri], author[:email]
+
+                author_id = get_first_value "SELECT last_insert_rowid()"
+            else
+                author_id = author_record['id']
+
+                # Add more information (if we have) to the existing author record.
+                complete_author author_id, author.slice(:honorific, :orgdiv, :uri, :email)
+            end
+
+            # Record the connection between this topic and the author record.
+            execute "
+                INSERT INTO topic_authors (topic_id, author_id, role)
+                VALUES (?, ?, ?)", 
+                topic_id, author_id, author[:role]
+        end
+
+        # Write the topic_categories table entry.
+        topic.off_categories.each do |cat|
+            cat_id = get_first_value "SELECT id FROM categories WHERE name = cat AND lang LIKE 'en%'"
+            raise RuntimeError, "Referenced category #{cat} not found." if cat_id.nil?
+            # TODO (later): Instead of raising an error, create the category while logging a notice.
+
+            execute "INSERT INTO topic_categories (category_id, topic_id) VALUES (?, ?)", cat_id, topic_id
+        end
+
+        # Ensure that referenced literature works exist in the literature table. Raise an error if not.
+        # Also write the topic_literature table entries.
+        topic.bibliography.each do |bibtex_key|
+            literature_record = execute "SELECT * FROM literature WHERE id = ? LIMIT 1", bibtex_key
+
+            if literature_record.nil?
+                raise RuntimeError, "Referenced literature work #{bibtex_key} not found in database."
+            else 
+                execute 
+                    "INSERT INTO topic_literature (topic_id, literature_id) VALUES (?, ?)", 
+                    topic_id, bibtex_key
+            end
+        end
+
+        # Finalize literature references in the topic main text by processing with asciidoctor-bibtex.
+        # TODO
+
+        # Write the topic_texts table entry.
+        # TODO: Add multiple texts once a topic can contain the texts and titles for multiple languages.
+        add_text topic_id, 'en', topic.title, topic.main
+    end
 end

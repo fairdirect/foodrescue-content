@@ -1,0 +1,148 @@
+#!/usr/bin/env ruby
+# NOTE: Above shebang selects the first Ruby found in $PATH and is standard practice to work with 
+# multiple installed versions and version switchers like chruby; see https://stackoverflow.com/a/2792076
+
+# Gem includes. See Gemfile.
+require 'docopt'
+require 'csv'
+require 'sqlite3'
+
+# Local, non-gem includes.
+require_relative '../lib/food_rescue_database'
+require_relative '../lib/food_rescue_topic'
+require_relative '../lib/utils'
+
+
+#############################################################################
+# UTILITIES
+
+version = '0.1'
+
+# Command line documentation that's also the spec for a command line parser.
+# 
+# Format specs:
+#   http://docopt.org/
+# Library docs:
+#   https://github.com/docopt/docopt.rb
+doc = <<DOCOPT
+Import food rescue content topics from CSV into a SQLite3 database.
+
+The script reads all CSV entries from INFILE and writes the converted data to the SQLite3 database 
+DBFILE. It will write into database table topics, creating it if it does not exist. It expects 
+author and bibliography tables and records, as referenced in the CSV file, to exist. See 
+frc-import-docbooktopics for importing these.
+
+INFILE is expected to have the following header and columns, in any order. Any additional column 
+will be silently ignored.
+
+* ID
+* Title
+* Topic type
+* Categories (multiple values separated by newlines)
+* Author
+* Version date
+* Abstract (this column is optional)
+* Text (one value with newlines)
+* Literature (multiple values separated by newlines; no brackets "[]" around references; this 
+  column is optional)
+
+Usage:
+    #{__FILE__} [options] INFILE DBFILE
+    #{__FILE__} -h | --help
+    #{__FILE__} -v | --version
+
+Options:
+    -h, --help          Show this screen.
+    -v, --version       Show version.
+
+DOCOPT
+
+
+#############################################################################
+# MAIN PROGRAM
+
+# (1) Set up.
+# ----------------------------------------------------------
+
+# Argument parsing.
+begin
+    args = Docopt::docopt(doc, {version: version, help: true})
+rescue Docopt::Exit => e
+    puts e.message
+    exit -1
+end
+
+
+# (2) Import topics.
+# ----------------------------------------------------------
+
+begin
+    db = FoodRescueDatabase.new args['DBFILE']
+
+    db.prepare_topic_tables(allow_reuse: true)
+
+    # TODO: Implement importing referenced entries of bibliography.bib before starting to 
+    # import topics.
+
+    # TODO (later): Make sure the expected columns exist in the CSV file, as indicated by the header.
+
+    # To keep the memory footprint small, read one line at a time with CSV.foreach().
+    # See: "Processing large CSV files with Ruby", https://dalibornasevic.com/posts/68
+    CSV.foreach(args['INFILE'], { headers: true }) do |record|
+      
+        topic = new FoodRescueTopic
+
+        topic.title= record['Title']
+
+        names = record['Author'].split
+        topic.author= case names.length
+            when 0
+                { givenname: '', surname: '' }
+            when 1
+                { givenname: '', surname: names[0] }
+            when >=2
+                { givenname: names[0], middlenames: names[1..-2], surname: names[-1] }
+        end
+
+        topic.edition= Date.parse(record['Version date'])
+
+        topic.section= record['Topic type']
+
+        categories = if record['Categories'].nil? then [] else record['Categories'].split("\n") end
+        categories = categories.filter_map do |cat|
+            # Ignore categories given as a category tag (such as "fr:test-tag") rather than the full name.
+            # TODO (later): Also process tag-type categories. It requires adding the category tags to the database.
+            if /^[a-z][a-z]:[a-z-]+$/.match?(cat)
+                $stderr.puts 'WARNING: '.in_orange + "Ignoring unrecognized category #{cat}."
+                next
+            end
+
+            # Ignore categories given with a language prefix ("fr:") or language tag prefix ("fr-BE:").
+            # TODO (later): Also process categories given with a language (tag) prefix.
+            if /^[a-z][a-z]:.+$/.match?(cat) or /^[a-z][a-z]-[A-Z][A-Z]:.+$/.match?(cat)
+                $stderr.puts 'WARNING: '.in_orange + "Ignoring unrecognized category #{cat}."
+                next
+            end
+
+            cat
+        end
+        topic.off_categories= categories
+
+        topic.abstract= if record.key?('Topic type') then record['Topic type'] else nil end
+
+        topic.literature_used= if record.key?('Literature') then record['Literature'].split("\n") else nil end
+
+        # Not giving a bibliography list will make the database use its existing list to look up 
+        # literature references.
+        topic.bibliography= {}
+
+        topic.main= record['Text'], format: :asciidoc
+
+        topic.to_sqlite(db)
+    end
+rescue => e
+    $stderr.puts "ERROR: ".in_red + e.message
+    exit -1
+ensure
+    db.close if db
+end

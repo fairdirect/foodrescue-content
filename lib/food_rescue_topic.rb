@@ -11,102 +11,100 @@ require 'awesome_print'
 require 'ox'
 require 'asciidoctor'
 
-
-module Ox::HasAttrs
-
-    # Add a method for mass assigning attributes, in analogy to the mass read method #attributes.
-    # 
-    # @param attributes [Hash]  The attributes to assign.
-    # @see #attributes
-    # @see http://www.ohler.com/ox/Ox/HasAttrs.html#attributes-instance_method
-    # TODO: Suggest this as a feature upstream in Ox::HasAttrs.
-    def attributes= (attributes)
-        attributes.each { |key, value| self[key] = value }
-    end
-end
+require_relative '../lib/utils'
 
 
-# Represents a food rescue content topic, and its representation in a DocBook XML file.
+# A topic of food rescue content.
 # 
-# A unit of knowledge about food rescue is called a "topic". The name is in analogy to 
-# [DocBook 5.1 Topics](https://www.xmlmind.com/tutorials/DocBookAssemblies/), the file 
-# format used to store these units of knowledge.
+# One FoodRescueTopic represents one record in database table `topics`. Connected records in other database 
+# tables are referenced by their IDs, without storing their data directly here. (The exception are the 
+# author records.)
+# 
+# "Topic" means a unit of knowledge about food rescue. The name is in analogy to 
+# [DocBook 5.1 Topics](https://www.xmlmind.com/tutorials/DocBookAssemblies/).
 class FoodRescueTopic
 
-    # Create a new food rescue topic, empty or with values read from a XML file.
+    # The topic's title.
+    # @return [String]
+    # @todo Support multiple titles, one per language.
+    attr_accessor :title 
+
+
+    # The topic's author(s).
     # 
-    # @param path [String]  Path to a DocBook 5.1 XML file to initialize the object from.
-    def initialize(path=nil)
-
-        # Initialize optional elements so no errors will happen when saving to DocBook / SQLite.
-        @author = {}
-        @off_categories = []
-        @abstract = ''
-        @literature_used = []
-        @bibliography = {}
-
-        # TODO: Create the topic from the data in a DocBook XML file, if specified.
-        # Could be possible with the object marshalling (deserialization) functions of Ox.
-        # See: http://www.ohler.com/ox/Ox.html#load_file-class_method
-    end
-
-
-    # Set the topic's title.
-    # @param title [String]
-    def title=(title);                  @title = title end
+    # @return [Array<Hash>]  The topic's authors, one per array element. Hash keys:
+    #   * `:role`: Contribution of the given author. Values can be "author", "editor", any of the 
+    #     `<othercredit class="">` values ([see](https://tdg.docbook.org/tdg/5.1/othercredit.html)) or 
+    #     any other value. The latter case, is equivalent to `<othercredit class="other" otherclass="…">`
+    #     in DocBook. The default is "author".
+    #   * `:givenname`: givenname of the author
+    #   * `:honorific`: honorifi title of the author
+    #   * `:middlenames`: pre-rendered list of all names between givenname and surname, separated with space characters
+    #   * `:surname`: surname of the author
+    #   * `:orgname`: the organization name of the author, if the author is an organization; or the author's 
+    #      organizational affiliation if the author is a person (means, any of the name keys is present)
+    #   * `:orgdiv`: the organization's division, if the author is an organization
+    #   * `:uri`: the author's URI, applicable to both persons and organizations
+    #   * `:email`: the author's e-mail address, applicable to both persons and organizations
+    attr_accessor :authors
 
 
-    # Set the topic's author.
-    # @param author [Hash]  Defines the author name or where to obtain it. Keys:
-    #   * include_from: relative or absolute path to a XML file with the <author> element
-    #   * firstname: firstname of the author if given directly
-    #   * lastname: lastname of the author if given directly
-    def author=(author);                @author = author end
+    # The topic's version date. If not set at output time, the default is `Date.today`.
+    # @return [Date]
+    attr_accessor :edition
 
 
-    # Set the topic's version date. If not set at output time, the default is `Date.today`.
-    # @param date [Date]
-    def edition=(date);                 @edition = date end
-
-
-    # Set the topic's section (the part where this topic will appear when being displayed as part of a food 
-    # item's associated food rescue content).
+    # The topic's section, wich is the part where this topic will appear when being displayed as part of 
+    # a food item's associated food rescue content.
     # 
-    # @param section [String]  The section name. The values follow closely the section headings 
+    # @return [String]  The section name. The values follow closely the section headings 
     #   in rendered food rescue content: `risks`, `edibility_assessment`, `symptoms`, 
     #   `edible_parts`, `storage_overview`, `storage_instructions`, `preservation`, `preparation`, 
     #   `reuse_and_recycling`.
-    def section=(section);              @section = section end
+    attr_accessor :section
 
 
-    # Set the topic's Open Food Fact categories.
+    # The topic's Open Food Fact categories.
     # 
-    # This food rescue topic will be displayed for all products in the given OFF categories.
-    # @param categories [Array<String>]  The categories, given with their full English names without 
+    # Their effect is that a food rescue topic is displayed for all products in the given categories.
+    # 
+    # @return [Array<String>]  The categories, given with their full English names without 
     #   language prefixes.
     # 
+    # TODO: Rename to "categories" to comply with the object-relational mapping scheme.
     # TODO: Also support language prefixes.
     # TODO: Also support tag versions of category identifiers. They would be immediately converted 
     #   to full names if possible.
-    def off_categories=(categories);    @off_categories = categories end
+    attr_accessor :off_categories
 
 
-    # Set the topic's summary text.
-    # @param text [String]  The summary, as plain text. The empty string if there is no abstract.
-    def abstract=(text);                @abstract = text end
+    # The topic's summary text.
+    # @return [String]  The summary, as plain text. The empty string if there is no abstract.
+    attr_accessor :abstract
 
 
-    # Set the topic's main content.
+    # @overload main
+    #   Gets the topic's main content in DocBook 5.1 XML.
+    #   @return [Array<Ox::Element>]
     # 
-    # @param main_content [Array<Ox::Element>|String]  The object(s) that form the main content, in the 
-    #   format specified by `format`.
-    # @param format [Symbol]  The format to interpret main_content. One of:
-    #   * `:docbook_dom` if `main_content` is Array<Ox::Element>. This is the default.
-    #   * `:asciidoc` if `main_content` is a String with [Asciidoctor markup](https://asciidoctor.org/docs/asciidoc-syntax-quick-reference)
-    #   * `:plaintext` if `main_content` is a plain text String. Internally this is just a synonym for 
-    #      `:asciidoc` since plaintext strings are valid AsciiDoc.
+    # @overload main=(main_content, format)
+    #   Set the topic's main content.
+    #   @param main_content [Array<Ox::Element>|String]  The object(s) that form the main content, in the 
+    #       format specified by `format`.
+    #   @param format [Symbol]  The format to interpret main_content. One of:
+    #       * `:docbook_dom` if `main_content` is Array<Ox::Element>. This is the default.
+    #       * `:asciidoc` if `main_content` is a String with [Asciidoctor markup](https://asciidoctor.org/docs/asciidoc-syntax-quick-reference)
+    #       * `:plaintext` if `main_content` is a plain text String. Internally this is just a synonym for 
+    #         `:asciidoc` since plaintext strings are valid AsciiDoc.
     # 
-    # TODO (later): Also support DocBook XML given as a text string, using format `:docbook`.
+    #   @todo Allow providing texts in multiple languages (see database table topic_texts).
+    #   @todo Rename to "text" to keep in line with the object-relational mapping scheme.
+    #   @todo (later) Also support DocBook XML given as a text string, using format `:docbook`.
+    attr_reader :main
+
+
+    # YARD documentation included at attr_reader :main, ignored here.
+    # See: https://github.com/lsegal/yard/blob/master/docs/GettingStarted.md#documentation-for-a-separate-attribute-writer
     def main=(main_content, format: :docbook_dom)
         case format
         when :docbook_dom
@@ -123,32 +121,56 @@ class FoodRescueTopic
     end
 
 
-    # Set the works of literature used to write this topic.
+    # Bibliographic references to works used to write this topic in addition to those references 
+    # contained in the topic text.
     # 
-    # This will be rendered as an unspecific literature reference at the bottom of the topic. The 
-    # `ref_details` part will only be shown when enabling debugging information or similar.
+    # This is used to render a list of additional literature references below the topic text. 
+    # In contrast to referencing literature explicitly from inside the topic text, it is not 
+    # explicated which information in the topic text comes from each of these extra literature references.
     # 
-    # @param works [Array<Hash>]  The literature works used, with references to which parts were used.
-    #   Each hash describes one work used, as follows: `{id: '…', ref: '…', ref_details: '…'}`. The 
-    #   `id` key identifies the work via its `biblioentry`.`abbrev` DocBook element value.
-    #   `ref` key leads to a page or chapter etc. reference, while the `ref_details` key leads to 
-    #   more detailed information that is only relevant for debugging automatically imported content. 
-    #   For example, it can contain the database ID of source records.
-    def literature_used=(works)         @literature_used = works end
+    # These extra references refer to works in a topic's bibliography, so works referenced here must 
+    # also be included into `#bibliography`.
+    # 
+    # @return [Array<Hash>]  The literature works used, with references to which parts were used.
+    #   Each hash describes one work used, with keys as follows: 
+    #   * `id`: Identifies the work via its BibTeX key, as recorded in `literature.id` in the database.
+    #   * `ref`: A reference to a page, chapter or similar part identifier of the work used.
+    #   * `ref_details`: Detailed information about the reference that is only shown when debugging 
+    #     automatically imported content. For example, it can contain the database ID of a source record.
+    attr_accessor :extra_bibrefs
 
 
-    # Set the content of the bibliography section available for literature referenced in this topic.
+    # The works of literature referenced in the topic text and in `#extra_bibrefs`.
     # 
-    # The bibliography may contain more works than referenced in this topic, allowing to share it 
-    # between topics. In the rendered output, only those works will be listed that are in use. If 
-    # this field contains no data, the handling object may look in its existing literature database 
-    # for the bibliographic references, because the IDs of these references must be unique within 
-    # one project.
+    # Only include works of literature that are indeed referenced, as otherwise the literature list 
+    # below a topic becomes unnecessary long.
     # 
-    # @param biblio [Hash]  Defines the bibliography section or where to obtain it. Keys:
-    #   * include_from: relative or absolute path to a XML file with the <author> element
-    # @todo Also implement a way to specify the bibliography section directly.
-    def bibliography=(bibliography)     @bibliography = bibliography end
+    # @return [Array<String>]  The literature works in the topic's bibliography, each represented by 
+    #   its BibTeX key, as recorded in `literature.id` in the database.
+    # 
+    # TODO: Create bibliography(data_source) to obtain teh actual bibliographic data from either a 
+    #   SQLite3 database or a BibTeX file. Given the object-relational mapping scheme used and the 
+    #   independence of FoodRescueTopics from a database, this is the right way to implement this.
+    attr_accessor :bibliography
+
+
+    # Create a new food rescue topic, empty or with values read from a XML file.
+    # 
+    # @param path [String]  Path to an AsciiDoc file to initialize the object from.
+    public
+    def initialize(path=nil)
+
+        # Initialize optional elements so no errors will happen when saving to DocBook / SQLite.
+        @authors = []
+        @off_categories = []
+        @abstract = ''
+        @extra_bibrefs = []
+        @bibliography = []
+
+        # TODO: Create the topic from the data in a DocBook XML file, if specified.
+        # Could be possible with the object marshalling (deserialization) functions of Ox.
+        # See: http://www.ohler.com/ox/Ox.html#load_file-class_method
+    end
 
 
     # TODO: Documentation.
@@ -164,7 +186,7 @@ class FoodRescueTopic
 
     # TODO: Documentation.
     protected
-    def docbook_topic_element
+    def docbook_topic
         topic = Ox::Element.new('topic')
 
         # TODO Re-enable the "nicer" assignment below once it stops messing up the 
@@ -190,6 +212,78 @@ class FoodRescueTopic
     end
 
 
+    # Render the author metadata of this topic to a DocBook XML `author`or `authorgroup` element.
+    protected
+    def docbook_authors
+        # TODO: Is this the right way? Or do we have to return nil?
+        return '' if @authors.length == 0
+
+        @authors.each |author| do
+            author[:role] = 'author' unless author.key? :role
+
+            # Create the correct outer element for the author / editor / collaborator.
+            case author[:role]
+            when 'author'
+                author_element = Ox::Element.new('author')
+            when 'editor'
+                author_element = Ox::Element.new('editor')
+            when 'copyeditor', 'graphicdesigner', 'productioneditor', 'technicaleditor',\
+                    'translator', 'indexer', 'proofreader', 'coverdesigner', 'interiordesigner',\
+                    'illustrator', 'reviewer', 'typesetter', 'conversion'
+                author_element = Ox::Element.new('othercredit')
+                author_element[:class] = author[:role]
+            else 
+                author_element = Ox::Element.new('othercredit')
+                author_element[:class] = 'other'
+                author_element[:otherclass] = author[:role]
+            end
+
+            # Create the correct inner elements for person / organization names.
+            if author.key? :surname # Author is a person.
+                personname_element = Ox::Element.new('personname')
+                personname_element << (Ox::Element.new('givenname') << author[:givenname]) if author.key? :givenname
+                personname_element << (Ox::Element.new('honorific') << author[:honorific]) if author.key? :honorific
+                if author.key? :middlenames
+                    author[:middlenames].split.each do |name| 
+                        middlename = Ox::Element.new('othername') << name
+                        middlename[:role] = 'middlename'
+                        personname_element << middlename
+                    end
+                end
+                personname_element << (Ox::Element.new('surname') << author[:surname]) if author.key? :surname
+
+                author_element << personname_element
+
+                if author.key? :orgname # Author is a person but affiliation is given.
+                    affiliation_element = Ox::Element.new('affiliation')
+                    affiliation_element << (Ox::Element.new('orgname') << author[:orgname]) if author.key? :orgname
+                    affiliation_element << (Ox::Element.new('orgdiv') << author[:orgdiv]) if author.key? :orgdiv
+                    
+                    author_element << affiliation_element
+                end
+
+            elsif author.key? :orgname # Author is an organization.
+                author_element = (Ox::Element.new('orgname') << author[:orgname]) if author.key? :orgname
+                author_element = (Ox::Element.new('orgdiv') << author[:orgname]) if author.key? :orgdiv
+            end
+
+            author_element = (Ox::Element.new('email') << author[:email]) if author.key? :email
+            author_element = (Ox::Element.new('uri') << author[:uri]) if author.key? :uri
+
+            result << author_element
+        end
+
+        # Wrap the result in <authorgroup>…</authorgroup> if necessary.
+        if result.length > 1
+            authorgroup_element = Ox::Element.new('authorgroup')
+            result.each {|e| authorgroup_element << e}
+            result = authorgroup_element
+        end
+
+        return result
+    end
+
+
     # Render the metadata of this topic to a DocBook XML `info` element.
     protected 
     def docbook_info
@@ -198,9 +292,7 @@ class FoodRescueTopic
         title = Ox::Element.new('title') << @title
         info << title
 
-        author = Ox::Element.new('xi:include')
-        author[:href] = 'author-foodkeeper.xml'
-        info << author
+        info << docbook_authors
         
         date = if @edition.nil? then Date.today.iso8601 else @edition.iso8601 end
         info << (Ox::Element.new('edition') << (Ox::Element.new('date') << date))
@@ -225,42 +317,39 @@ class FoodRescueTopic
     end
 
 
-    # Render the list of literature used to DocBook XML.
+    # Render the additional bibliographic references to DocBook XML.
     # 
-    # @return [Array<Ox::Element>]
+    # @return Ox::Element
     # 
     # TODO: Render the literature references as proper DoxBook XML elements, not as plain text.
     #   This has to include an element for conditional presentation of the `ref_details` value, 
     #   which is only relevant when debugging where errors in the topics come from.
     protected
-    def docbook_literature_used 
-        literature_list = Ox::Element.new('itemizedlist')
+    def docbook_extra_bibrefs
+        list = Ox::Element.new('itemizedlist')
 
-        @literature_used.each do |item|
+        @extra_bibrefs.each do |item|
             reference_text = [ item[:ref], item[:ref_details] ].compact.join(', ')
             reference_text = if reference_text.empty? then item[:id] else "#{item[:id]} (#{reference_text})" end
 
-            literature_list << (
+            list << (
                 Ox::Element.new('listitem') << (
                     Ox::Element.new('para') << reference_text
                 )
             )
         end
 
-        return [ 
-            Ox::Element.new('para') << "Literature used: ", 
-            literature_list
-        ]
+        return Ox::Element.new('para') << "Sources used: " << list
     end
 
 
-    # TODO: Documentation.
+    # Render the topic's bibliography to DocBook XML.
     protected 
     def docbook_bibliography
-        bibliography = Ox::Element.new('xi:include')
-        bibliography[:href] = 'bibliography.xml'
-
-        return bibliography
+        # TODO (later): Implementation, rendering the actual, full bibliography list. Not required right 
+        # now as rendering to DocBook is for later when it comes to ebook publishing. Since usually 
+        # multiple topic will be mixed together, their bibliography lists also have to be mixed together. 
+        # Due to this, this method should probably return individually rendered items.
     end
 
 
@@ -284,14 +373,13 @@ class FoodRescueTopic
 
         doc = Ox::Document.new
 
-        topic = docbook_topic_element
+        doc << docbook_instruct
+
+        topic = docbook_topic
         topic << docbook_info
         @main.each { |element| topic << element }
-        docbook_literature_used.each { |element| topic << element }
-
+        topic << docbook_extra_bibrefs
         topic << docbook_bibliography
-
-        doc << docbook_instruct
         doc << topic
 
         # Generate the filename from prefix, number and padding (if needed).
