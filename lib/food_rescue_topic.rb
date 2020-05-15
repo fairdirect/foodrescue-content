@@ -49,8 +49,8 @@ class FoodRescueTopic
     attr_accessor :authors
 
 
-    # The topic's version date. If not set at output time, the default is `Date.today`.
-    # @return [Date]
+    # The topic's version date.
+    # @return [String]  The version date as a String in ISO8601 "yyyy-mm-dd" format. Defaults to today.
     attr_accessor :edition
 
 
@@ -83,39 +83,38 @@ class FoodRescueTopic
     attr_accessor :abstract
 
 
-    # @overload main
-    #   Gets the topic's main content in DocBook 5.1 XML.
-    #   @return [Array<Ox::Element>]
+    # Gets the topic's main content in DocBook 5.1 XML.
     # 
-    # @overload main=(main_content, format)
-    #   Set the topic's main content.
-    #   @param main_content [Array<Ox::Element>|String]  The object(s) that form the main content, in the 
-    #       format specified by `format`.
-    #   @param format [Symbol]  The format to interpret main_content. One of:
-    #       * `:docbook_dom` if `main_content` is Array<Ox::Element>. This is the default.
-    #       * `:asciidoc` if `main_content` is a String with [Asciidoctor markup](https://asciidoctor.org/docs/asciidoc-syntax-quick-reference)
-    #       * `:plaintext` if `main_content` is a plain text String. Internally this is just a synonym for 
-    #         `:asciidoc` since plaintext strings are valid AsciiDoc.
+    # @return [Array<Ox::Element>]
     # 
-    #   @todo Allow providing texts in multiple languages (see database table topic_texts).
-    #   @todo Rename to "text" to keep in line with the object-relational mapping scheme.
-    #   @todo (later) Also support DocBook XML given as a text string, using format `:docbook`.
-    attr_reader :main
+    # @todo Allow providing texts in multiple languages (see database table topic_texts).
+    # @todo Rename to "text" to keep in line with the object-relational mapping scheme.
+    attr_accessor :main
 
 
-    # YARD documentation included at attr_reader :main, ignored here.
-    # See: https://github.com/lsegal/yard/blob/master/docs/GettingStarted.md#documentation-for-a-separate-attribute-writer
-    def main=(main_content, format: :docbook_dom)
+    # Set the topic's main content including format conversion.
+    # 
+    # @param main_content [Array<Ox::Element|String> | String]  The object(s) that form the main content.
+    # @param format [Symbol]  The format to interpret main_content. One of:
+    #   * `:docbook_dom` if `main_content` is `Array<Ox::Element|String>``, as used in `Ox::Element#nodes`. This is the default.
+    #   * `:asciidoc` if `main_content` is a `String` with [Asciidoctor markup](https://asciidoctor.org/docs/asciidoc-syntax-quick-reference)
+    #   * `:plaintext` if `main_content` is a plain text `String`. Internally this is just a synonym for 
+    #     `:asciidoc` since plaintext strings are valid AsciiDoc.
+    # 
+    # @todo (later) Also support DocBook XML given as a text string, using format `:docbook`.
+    def import_main(main_content, format: :docbook_dom)
         case format
         when :docbook_dom
             @main = main_content
 
         when :asciidoc, :plaintext
-            @main = []
             docbook_string = Asciidoctor.convert main_content, backend: 'docbook', safe: :safe
 
-            # To parse XML with Ox, we need a single root element. So we wrap and unwrap the content.
-            docbook_dom = Ox.parse "<container>#{docbook_string}</container>"
+            # docbook_dom may have multiple XML elements at the root level, so we want Ox.parse() 
+            # to return a Ox::Document rather than a single Ox::Element (the only other option).
+            # To recognize a XML document, Ox needs a prepended <?xml?> processing instruction.
+            docbook_dom = Ox.parse "<?xml?>#{docbook_string}"
+
             @main = docbook_dom.nodes
         end
     end
@@ -164,6 +163,7 @@ class FoodRescueTopic
         @authors = []
         @off_categories = []
         @abstract = ''
+        @edition = Date.today.iso8601.to_s
         @extra_bibrefs = []
         @bibliography = []
 
@@ -218,7 +218,7 @@ class FoodRescueTopic
         # TODO: Is this the right way? Or do we have to return nil?
         return '' if @authors.length == 0
 
-        @authors.each |author| do
+        @authors.each do |author|
             author[:role] = 'author' unless author.key? :role
 
             # Create the correct outer element for the author / editor / collaborator.
@@ -289,13 +289,9 @@ class FoodRescueTopic
     def docbook_info
         info = Ox::Element.new('info')
 
-        title = Ox::Element.new('title') << @title
-        info << title
-
+        info << Ox::Element.new('title') << @title
         info << docbook_authors
-        
-        date = if @edition.nil? then Date.today.iso8601 else @edition.iso8601 end
-        info << (Ox::Element.new('edition') << (Ox::Element.new('date') << date))
+        info << (Ox::Element.new('edition') << (Ox::Element.new('date') << @edition))
 
         unless @abstract.empty?
             Ox::Element.new('abstract') << (Ox::Element.new('para') << @abstract)
@@ -319,14 +315,16 @@ class FoodRescueTopic
 
     # Render the additional bibliographic references to DocBook XML.
     # 
-    # @return Ox::Element
+    # @return [Array<Ox::Element>]  DocBook XML content with the bibliographic references, or the empty array if there are none.
     # 
     # TODO: Render the literature references as proper DoxBook XML elements, not as plain text.
     #   This has to include an element for conditional presentation of the `ref_details` value, 
     #   which is only relevant when debugging where errors in the topics come from.
-    protected
-    def docbook_extra_bibrefs
+    public
+    def extra_bibrefs_to_docbook
         list = Ox::Element.new('itemizedlist')
+
+        return [] if @extra_bibrefs.nil? or @extra_bibrefs.empty?
 
         @extra_bibrefs.each do |item|
             reference_text = [ item[:ref], item[:ref_details] ].compact.join(', ')
@@ -339,7 +337,7 @@ class FoodRescueTopic
             )
         end
 
-        return Ox::Element.new('para') << "Sources used: " << list
+        return [Ox::Element.new('simpara') << "Sources used: ", list]
     end
 
 
@@ -378,7 +376,7 @@ class FoodRescueTopic
         topic = docbook_topic
         topic << docbook_info
         @main.each { |element| topic << element }
-        topic << docbook_extra_bibrefs
+        topic << extra_bibrefs_to_docbook
         topic << docbook_bibliography
         doc << topic
 

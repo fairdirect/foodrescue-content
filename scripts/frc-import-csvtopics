@@ -77,7 +77,10 @@ end
 # ----------------------------------------------------------
 
 begin
-    db = FoodRescueDatabase.new args['DBFILE']
+    db = FoodRescueDatabase.new args['DBFILE'], { results_as_hash: true }
+
+    # Debug function to see the database queries executed.
+    # db.trace { |sql_query| puts "#{'DEBUG:'.in_orange} Going to execute: #{sql_query}" if sql_query.match? /SELECT.*FROM authors/ }
 
     db.prepare_topic_tables(allow_reuse: true)
 
@@ -90,23 +93,23 @@ begin
     # See: "Processing large CSV files with Ruby", https://dalibornasevic.com/posts/68
     CSV.foreach(args['INFILE'], { headers: true }) do |record|
       
-        topic = new FoodRescueTopic
+        topic = FoodRescueTopic.new
 
-        topic.title= record['Title']
+        topic.title = record['Title']
 
         names = record['Author'].split
-        topic.author= case names.length
-            when 0
-                { givenname: '', surname: '' }
+        topic.authors = case names.length
             when 1
-                { givenname: '', surname: names[0] }
-            when >=2
-                { givenname: names[0], middlenames: names[1..-2], surname: names[-1] }
+                [{ role: 'author', surname: names[0] }]
+            when 2
+                [{ role: 'author', givenname: names[0], surname: names[1] }]
+            when (3...)
+                [{ role: 'author', givenname: names[0], middlenames: names[1..-2].join, surname: names[-1] }]
         end
 
-        topic.edition= Date.parse(record['Version date'])
+        topic.edition = Date.parse(record['Version date']).iso8601 unless record['Version date'].empty?
 
-        topic.section= record['Topic type']
+        topic.section = record['Topic type']
 
         categories = if record['Categories'].nil? then [] else record['Categories'].split("\n") end
         categories = categories.filter_map do |cat|
@@ -126,22 +129,23 @@ begin
 
             cat
         end
-        topic.off_categories= categories
+        topic.off_categories = categories
 
-        topic.abstract= if record.key?('Topic type') then record['Topic type'] else nil end
+        topic.abstract = if record.key?('Topic type') then record['Topic type'] else nil end
 
-        topic.literature_used= if record.key?('Literature') then record['Literature'].split("\n") else nil end
+        topic.extra_bibrefs = if record.key?('Literature') then record['Literature'].split("\n") else nil end
 
         # Not giving a bibliography list will make the database use its existing list to look up 
         # literature references.
-        topic.bibliography= {}
+        topic.bibliography = {}
 
-        topic.main= record['Text'], format: :asciidoc
+        topic.import_main record['Text'], format: :asciidoc
 
         topic.to_sqlite(db)
     end
 rescue => e
     $stderr.puts "ERROR: ".in_red + e.message
+    $stderr.puts e.backtrace
     exit -1
 ensure
     db.close if db

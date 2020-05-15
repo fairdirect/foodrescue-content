@@ -127,13 +127,17 @@ The different import scripts need to run in a certain order because each will re
 
 The easiest is to adapt your own build process based on the existing `Makefile`.
 
-Guiding principles used in the code are:
+**Guiding principles used in the code:**
 
 * **Object-relational mapping scheme.** The data of database records and application logic related to it is placed into classes created like in Rails ActiveRecord: one class per table, one object per database record, one attribute per column, and lazy loading of connected records from other tables via instance methods. Small tables can be exceptions from the "one class per table" rule. For example, topic author data is also handled by class FoodRescueTopic. Objects delegate behavior related to storing to and loading from the database to a single class FoodRescueDatabase, so that the storage backend can be exchanged easily. All SQLite3 queries are contained within class FoodRescueDatabase.
+
+* **Classes for database tables should use SQLite3 compatible data types for attributes.** All values in SQLite3 are of the storage classes NULL, INTEGER, REAL, TEXT, BLOB ([see](https://www.sqlite.org/datatype3.html)). To avoid useless conversions, attributes in classes representing database tables should use values of the equivalent Ruby data types Nil, Integer, Real and String. The task of these classes is being a database interface, so there is no use for higher-level datatypes in them – for example, no need for FoodRescueTopic#edition to be of type Date when it is saved as storage class TEXT in the database anyway. The exception are attributes where additional semantics are needed for transformations during the object lifetime; for example, Ox::Element to represent DocBook XML in the main text content of FoodRescueTopic.
 
 * **Hashes as lightweight objects.** The SQLite3 interface returns database records as hashes, keyed by fieldname. This data structure is used as a lightweight representation where structured data is needed as for Ruby objects, but without attached behavior, so not requiring a custom class. These objects can be aggregated in arrays or in hashes keyed by database ID. In the latter case, the hashes representing the database records should still have their ID hash key inside in addition, to keep up a uniform interface.
 
 * **Database IDs as even more lightweight objects.** The database ID of an object, as a string, can be used as an even lighter way to represent objects, namely where only a reference is needed and not the data about the object. These can be aggregated in arrays.
+
+* **Data type for DocBook XML content.** `Ox::Document` is meant to store collections of XML elements (inside its `#nodes` array), without being an element itself or rendering to visible XML output. See: `Ox.dump(Ox::Document.new) => "\n"`. So this is used to hand over collections of XML elements, even if this does not represent a fully features XML element. It's cleaner than using the data structure of the `#nodes` arrays directly, which would be `Array<Ox::Element|String>`).
 
 
 ## 6. License and Credits

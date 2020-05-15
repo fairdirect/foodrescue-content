@@ -23,7 +23,7 @@ version = '0.1'
 # Format specs: http://docopt.org/
 # Library docs: https://github.com/docopt/docopt.rb
 doc = <<DOCOPT
-Export ID, category and names of the FoodKeeper database to CSV.
+Export ID, category and names of products in the FoodKeeper database to CSV.
 
 The CSV output can then be used for mapping FoodKeeper products comfortably to Open Food Facts 
 categories. It contains an empty column "Open Food Facts Categories" for that purpose.

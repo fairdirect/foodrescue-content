@@ -1,5 +1,8 @@
 # Various re-usable utility functions and classes.
 
+# Gem includes. See Gemfile.
+require 'ox'
+
 
 # Extend String with ways to colorize text for terminal output.
 # 
