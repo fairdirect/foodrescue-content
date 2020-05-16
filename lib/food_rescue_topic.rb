@@ -71,11 +71,10 @@ class FoodRescueTopic
     # @return [Array<String>]  The categories, given with their full English names without 
     #   language prefixes.
     # 
-    # TODO: Rename to "categories" to comply with the object-relational mapping scheme.
     # TODO: Also support language prefixes.
     # TODO: Also support tag versions of category identifiers. They would be immediately converted 
     #   to full names if possible.
-    attr_accessor :off_categories
+    attr_accessor :categories
 
 
     # The topic's summary text.
@@ -83,39 +82,39 @@ class FoodRescueTopic
     attr_accessor :abstract
 
 
-    # Gets the topic's main content in DocBook 5.1 XML.
+    # The topic's main content in DocBook 5.1 XML.
     # 
-    # @return [Array<Ox::Element>]
+    # @return [Ox::Document]
     # 
     # @todo Allow providing texts in multiple languages (see database table topic_texts).
     # @todo Rename to "text" to keep in line with the object-relational mapping scheme.
-    attr_accessor :main
+    attr_accessor :content
 
 
-    # Set the topic's main content including format conversion.
+    # Set the topic's main content in DocBook 5.1 XML by converting from a different format.
     # 
-    # @param main_content [Array<Ox::Element|String> | String]  The object(s) that form the main content.
-    # @param format [Symbol]  The format to interpret main_content. One of:
-    #   * `:docbook_dom` if `main_content` is `Array<Ox::Element|String>``, as used in `Ox::Element#nodes`. This is the default.
-    #   * `:asciidoc` if `main_content` is a `String` with [Asciidoctor markup](https://asciidoctor.org/docs/asciidoc-syntax-quick-reference)
-    #   * `:plaintext` if `main_content` is a plain text `String`. Internally this is just a synonym for 
+    # @param content [Ox::Document | String]  The object(s) that form the topic's content.
+    # @param format [Symbol]  The format to interpret `content`. One of:
+    #   * `:docbook_dom` if `content` is `Array<Ox::Element|String>``, as used in `Ox::Element#nodes`. This is the default.
+    #   * `:asciidoc` if `content` is a `String` with [Asciidoctor markup](https://asciidoctor.org/docs/asciidoc-syntax-quick-reference)
+    #   * `:plaintext` if `content` is a plain text `String`. Internally this is just a synonym for 
     #     `:asciidoc` since plaintext strings are valid AsciiDoc.
     # 
     # @todo (later) Also support DocBook XML given as a text string, using format `:docbook`.
-    def import_main(main_content, format: :docbook_dom)
+    def import_content(content, format: :docbook_dom)
         case format
         when :docbook_dom
-            @main = main_content
+            @content = content
 
         when :asciidoc, :plaintext
-            docbook_string = Asciidoctor.convert main_content, backend: 'docbook', safe: :safe
+            content_docbook_string = Asciidoctor.convert content, backend: 'docbook', safe: :safe
 
             # docbook_dom may have multiple XML elements at the root level, so we want Ox.parse() 
             # to return a Ox::Document rather than a single Ox::Element (the only other option).
             # To recognize a XML document, Ox needs a prepended <?xml?> processing instruction.
-            docbook_dom = Ox.parse "<?xml?>#{docbook_string}"
+            content_docbook_dom = Ox.parse "<?xml?>#{content_docbook_string}"
 
-            @main = docbook_dom.nodes
+            @content = content_docbook_dom
         end
     end
 
@@ -161,7 +160,7 @@ class FoodRescueTopic
 
         # Initialize optional elements so no errors will happen when saving to DocBook / SQLite.
         @authors = []
-        @off_categories = []
+        @categories = []
         @abstract = ''
         @edition = Date.today.iso8601.to_s
         @extra_bibrefs = []
@@ -298,11 +297,11 @@ class FoodRescueTopic
             info << abstract
         end
 
-        unless @off_categories == [] 
+        unless @categories == [] 
             subjectset = Ox::Element.new('subjectset')
             subjectset[:scheme] = 'off-categories-subset-frc'
 
-            @off_categories.each do |cat|
+            @categories.each do |cat|
                 subjectset << (Ox::Element.new('subject') << (Ox::Element.new('subjectterm') << cat))
             end
 
@@ -315,17 +314,19 @@ class FoodRescueTopic
 
     # Render the additional bibliographic references to DocBook XML.
     # 
-    # @return [Array<Ox::Element>]  DocBook XML content with the bibliographic references, or the empty array if there are none.
+    # @return [Ox::Document | NilClass]  DocBook XML content with the bibliographic references, 
+    #   or `nil` if there are none.
     # 
     # TODO: Render the literature references as proper DoxBook XML elements, not as plain text.
     #   This has to include an element for conditional presentation of the `ref_details` value, 
     #   which is only relevant when debugging where errors in the topics come from.
     public
     def extra_bibrefs_to_docbook
+        return if @extra_bibrefs.nil? or @extra_bibrefs.empty?
+
+        # Render the literature references into a list.
         list = Ox::Element.new('itemizedlist')
-
-        return [] if @extra_bibrefs.nil? or @extra_bibrefs.empty?
-
+        # 
         @extra_bibrefs.each do |item|
             reference_text = [ item[:ref], item[:ref_details] ].compact.join(', ')
             reference_text = if reference_text.empty? then item[:id] else "#{item[:id]} (#{reference_text})" end
@@ -337,7 +338,12 @@ class FoodRescueTopic
             )
         end
 
-        return [Ox::Element.new('simpara') << "Sources used: ", list]
+        # Wrap the list into a XML document object.
+        document = Ox::Document.new 
+        document << (Ox::Element.new('simpara') << "Sources used: ")
+        document << list
+
+        return document
     end
 
 
@@ -375,7 +381,7 @@ class FoodRescueTopic
 
         topic = docbook_topic
         topic << docbook_info
-        @main.each { |element| topic << element }
+        @content.nodes.each { |dom_element| topic << dom_element }
         topic << extra_bibrefs_to_docbook
         topic << docbook_bibliography
         doc << topic

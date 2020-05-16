@@ -175,7 +175,7 @@ end
 # Determine the Open Food Facts categories for this FoodKeeper product.
 # 
 # The mapping conveniently relies on a table `OFF_CATEGORY` that has to be added to the FoodKeeper 
-# database and populated before calling. See #off_categories_data().
+# database and populated before calling. See #categories_data().
 # 
 # @param product_id [Integer]  The FoodKeeper database's PRODUCTS.ID value of the product for which 
 #   to determine the OFF categories.
@@ -183,7 +183,7 @@ end
 # @return [Array<String>]  The OFF categories, using their full English names. Only when no English 
 #   name is available, a name in a different language would be used, with a two-letter language 
 #   prefix such as "fr:French Category Name Here".
-def off_categories(product_id, db)
+def categories(product_id, db)
     db
         .execute('SELECT Name FROM OFF_CATEGORY WHERE Product_ID = ?', [ product_id ])
         .collect { |row| row['Name'] }
@@ -213,7 +213,7 @@ def basic_topic(product_id, db)
     # Author information about the (identical) FoodKeeper web content as per:
     #     https://www.foodsafety.gov/keep-food-safe/foodkeeper-app
     #     https://www.foodsafety.gov/about 
-    topic.authors= [
+    topic.authors = [
         {
             role:       'author',
             orgname:    'United States Department of Agriculture',
@@ -237,17 +237,17 @@ def basic_topic(product_id, db)
     # As of 2020-05-02, the topic's version date is the "Updated" date of the FoodKeeper app on Google Play.
     # The website notes however " Date Last Reviewed: April 26, 2019", so might contain more recent 
     # updates. See https://www.foodsafety.gov/keep-food-safe/foodkeeper-app
-    topic.edition= '2017-11-14'
+    topic.edition = '2017-11-14'
 
     # Fill the topic's Open Food Facts categories.
-    topic.off_categories= off_categories(product_id, db)
+    topic.categories = categories(product_id, db)
 
     # No abstract by default because FoodKeeper topics are very short already.
     # Of course the value can be overwritten as needed after this function returned.
-    topic.abstract= '' 
+    topic.abstract = '' 
 
-    topic.extra_bibrefs= [ {id: 'USDA-1', ref_details: "PRODUCTS.ID=#{product_id}"} ]
-    topic.bibliography= ['USDA-1']
+    topic.extra_bibrefs = [ {id: 'USDA-1', ref_details: "PRODUCTS.ID=#{product_id}"} ]
+    topic.bibliography = ['USDA-1']
 
     return topic
 end
@@ -388,8 +388,7 @@ def storage_overview_topic(product_id, db)
 
     intro = Ox::Element.new('simpara') << storage_intro_text(product_id, db)
     list = storage_durations(product_id, db, include_tips: false)
-
-    topic.main = [intro, list]
+    topic.content = Ox::Document.new << intro << list
 
     return topic
 end
@@ -403,7 +402,6 @@ end
 # @return [FoodRescueTopic]  The created topic.
 def pantry_storage_topic(product_id, db)
     topic = basic_topic(product_id, db)
-
     topic.title= 'Pantry storage'
     topic.section= 'storage_instructions'
 
@@ -411,7 +409,7 @@ def pantry_storage_topic(product_id, db)
     list = storage_durations(product_id, db, storage_type: :pantry)
     tips = Ox::Element.new('simpara') << storage_tips(product_id, db, storage_type: :pantry)
     outro = Ox::Element.new('simpara') << 'Storage life affects quality. This item may or may not be safe to eat afterwards. Details may be provided below.'
-    topic.main = [intro, list, tips, outro]
+    topic.content = Ox::Document.new << intro << list << tips << outro
 
     return topic
 end
@@ -425,7 +423,6 @@ end
 # @return [FoodRescueTopic]  The created topic.
 def fridge_storage_topic(product_id, db)
     topic = basic_topic(product_id, db)
-
     topic.title= 'Fridge storage'
     topic.section= 'storage_instructions'
 
@@ -433,7 +430,7 @@ def fridge_storage_topic(product_id, db)
     list = storage_durations(product_id, db, storage_type: :refrigerate)
     tips = Ox::Element.new('simpara') << storage_tips(product_id, db, storage_type: :refrigerate)
     outro = Ox::Element.new('simpara') << 'Storage life affects quality. This item may or may not be safe to eat afterwards. Details may be provided below.'
-    topic.main = [intro, list, tips, outro]
+    topic.content = Ox::Document.new << intro << list << tips << outro
 
     return topic
 end
@@ -455,7 +452,7 @@ def freezer_storage_topic(product_id, db)
     list = storage_durations(product_id, db, storage_type: :freeze)
     tips = Ox::Element.new('simpara') << storage_tips(product_id, db, storage_type: :freeze)
     outro = Ox::Element.new('simpara') << 'Storage life affects quality. This item may or may not be safe to eat afterwards. Details may be provided below.'
-    topic.main = [intro, list, tips, outro]
+    topic.content = Ox::Document.new << intro << list << tips << outro
 
     return topic
 end

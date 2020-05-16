@@ -55,8 +55,15 @@ require_relative '../lib/utils'
 #   https://www.sqlite.org/withoutrowid.html#differences_from_ordinary_rowid_tables).
 class FoodRescueDatabase < SQLite3::Database
 
+    # Create a connection to a file with a FoodRescueDatabase.
+    # 
+    # @param dbfile [String]  Absolute or relative path to the SQLite3 database file.
+    # @param options [Hash]  Options for the database connection as in `SQLite3::Database#initialize`. 
+    #   By default, `results_as_hash: true` is used but can be overwritten.
     # @see SQLite3::Database#initialize
-    def initialize(dbfile, options)
+    def initialize(dbfile, options = {})
+        options[:results_as_hash] = true unless options.key?(:results_as_hash)
+
         super(dbfile, options)
 
         execute "PRAGMA foreign_keys = ON;"
@@ -172,11 +179,11 @@ class FoodRescueDatabase < SQLite3::Database
             ) WITHOUT ROWID"
 
         execute "
-            CREATE TABLE #{if_not_exists} topic_texts (
+            CREATE TABLE #{if_not_exists} topic_contents (
                 topic_id        INTEGER,
                 lang            TEXT,                -- language tag such as 'en', 'en-GB'
                 title           TEXT,                
-                text            TEXT,                -- topic main content
+                content         TEXT,                -- topic main content
                 ----
                 PRIMARY KEY     (topic_id, lang)
             ) WITHOUT ROWID"
@@ -426,7 +433,7 @@ class FoodRescueDatabase < SQLite3::Database
         # Check if there is a record exactly corresponding to the "identifying" parts of an author.
         # (More than one result would be an error. Not happening, as we check before adding records.)
         # TODO: Create a more compact and readable way to write this query.
-        author_record = get_first_row"
+        author_record = get_first_row "
             SELECT * FROM authors 
             WHERE 
                 #{if author[:givenname].nil?   then 'givenname   IS NULL' else "givenname   = '#{author[:givenname]}'"   end} AND
@@ -435,7 +442,7 @@ class FoodRescueDatabase < SQLite3::Database
                 #{if author[:orgname].nil?     then 'orgname     IS NULL' else "orgname     = '#{author[:orgname]}'"     end} 
             LIMIT 1"
 
-        if author_record.empty? # SQLite3 returns [] if no record is found.
+        if author_record.nil?
             # Create a not-yet-existing author record.
             execute "
                 INSERT INTO authors (givenname, honorific, middlenames, surname, orgname, orgdiv, uri, email) 
@@ -444,9 +451,8 @@ class FoodRescueDatabase < SQLite3::Database
 
             author_id = get_first_value "SELECT last_insert_rowid()"
         else
-            author_id = author_record['id']
-
             # Add more information (if we have) to the existing author record.
+            author_id = author_record['id']
             complete_author author_id, author.slice(:honorific, :orgdiv, :uri, :email)
         end
 
@@ -458,14 +464,16 @@ class FoodRescueDatabase < SQLite3::Database
     end
 
 
-    # Save the text of one food rescue topic to the database.
-    def add_text topic_id, lang, title, text
-        text_string = ''
-        text.each { |t| text_string << Ox.dump(t) unless t.nil?}
-
+    # Save the content of one food rescue topic to the database.
+    # 
+    # @param topic_id [Integer]  ID of the topic as recorded in the database.
+    # @param lang [String]  Language code of the topic's content, for example `en`.
+    # @param title [String]  The topic's title, as a plain text string.
+    # @param content [Ox::Document]  The topic's content in DocBook 5.1 XML.
+    def add_topic_content topic_id, lang, title, content
         execute "
-            INSERT INTO topic_texts (topic_id, lang, title, text) VALUES (?, ?, ?, ?)",
-            topic_id, lang, title, text_string
+            INSERT INTO topic_contents (topic_id, lang, title, content) VALUES (?, ?, ?, ?)",
+            topic_id, lang, title, Ox.dump(content)
     end
 
 
@@ -488,7 +496,7 @@ class FoodRescueDatabase < SQLite3::Database
         topic.authors.each do |author| add_author topic_id, author end
 
         # Write the topic_categories table entry.
-        topic.off_categories.each do |cat|
+        topic.categories.each do |cat|
             cat_id = get_first_value "SELECT id FROM categories WHERE name = ? AND lang LIKE 'en%'", cat
             raise RuntimeError, "Referenced category #{cat} not found." if cat_id.nil?
             # TODO (later): Instead of raising an error, create the category while logging a notice.
@@ -513,8 +521,12 @@ class FoodRescueDatabase < SQLite3::Database
         # Finalize literature references in the topic main text by processing with asciidoctor-bibtex.
         # TODO
 
-        # Write the topic_texts table entry.
-        # TODO: Add multiple texts once a topic can contain the texts and titles for multiple languages.
-        add_text topic_id, 'en', topic.title, topic.main + topic.extra_bibrefs_to_docbook
+        # Write the topic_contents table entry.
+        topic_content = topic.content.dup # Ox::Document#<< modifies the object. A copy prevents the damage.
+        topic.extra_bibrefs_to_docbook.nodes.each do |node|
+            topic_content << node
+        end unless topic.extra_bibrefs_to_docbook.nil? 
+        add_topic_content topic_id, 'en', topic.title, topic_content
+        # TODO: Add multiple topic contents once a topic can contain content and titles for multiple languages.
     end
 end
