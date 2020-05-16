@@ -3,7 +3,7 @@
 # multiple installed versions and version switchers like chruby; see https://stackoverflow.com/a/2792076
 
 # Suppress depreciation warnings from the awesome_print gem.
-# TODO: Fix the gem, then remove this.
+# @todo Fix the gem, then remove this.
 $VERBOSE = nil
 
 # Gem includes. See Gemfile.
@@ -122,20 +122,20 @@ DOCOPT
 #
 # ## Remaining work for future extensions
 # 
-# TODO (later): Refactor code in this script into a class FoodKeeperDatabase, stored in the 
+# @todo (later) Refactor code in this script into a class FoodKeeperDatabase, stored in the 
 # same file in this script (because it is not re-usable).
 # 
-# TODO (later): Normalize the column names in the FoodKeeper database: suffix `_tips` should become 
+# @todo (later) Normalize the column names in the FoodKeeper database: suffix `_tips` should become 
 # `_Tips` everywhere in table `PRODUCTS`.
 # 
-# TODO (later): Also include downloading the FoodKeeper .apk file from Google Play, using 
+# @todo (later) Also include downloading the FoodKeeper .apk file from Google Play, using 
 # a command line interface to Raccoon or similar.
 #
-# TODO (later): Also include extracting the FoodKeeper database from the .apk file. 
+# @todo (later) Also include extracting the FoodKeeper database from the .apk file. 
 # Probably, a simple unzip command (of only the SQLite database) will be sufficient, with no 
 # need for apktool.
 #
-# TODO (later): As an alternative to the above, include a SQL command dump of the 
+# @todo (later) As an alternative to the above, include a SQL command dump of the 
 # FoodKeeper database into the Git repository, and enable this script to read it as an 
 # alternative to being provided a binary SQLite database file. The SQL dump format is 
 # better manageable for Git.
@@ -161,7 +161,7 @@ def create_categories_mapping(db)
     ")
 
     # Insert some dummy data for now.
-    # TODO: Provide the real data.
+    # @todo Provide the real data.
     db.execute('SELECT ID FROM PRODUCTS') do |row|
         db.execute('INSERT INTO OFF_CATEGORY VALUES (?, ?)', [ row['ID'], 'Bee products' ])
         db.execute('INSERT INTO OFF_CATEGORY VALUES (?, ?)', [ row['ID'], 'Beverages' ])
@@ -476,7 +476,7 @@ def import_product(product_id, fk_db, frc_db)
     topics << freezer_storage_topic(product_id, fk_db) \
         unless product['Freeze_Tips'].empty? and product['DOP_Freeze_Tips'].empty?
 
-    # TODO (later): Create and write a topic for the "Preparation Instructions" section.
+    # @todo (later) Create and write a topic for the "Preparation Instructions" section.
     # (Using the content from the COOKING_METHODS and COOKING_TIPS tables.)
 
     # Write all topics to the food rescue content database.
@@ -519,9 +519,9 @@ begin
 
     # Make sure that the USDA-1 literature source is inside the target database, otherwise add it from static content.
     # 
-    # TODO (later): The literature record should be inserted as a BibTeX record transformed with asciidoc-bibtex, to 
+    # @todo (later) The literature record should be inserted as a BibTeX record transformed with asciidoc-bibtex, to 
     # make sure the right citation style is used.
-    # TODO: The key "USDA-1" should be blocked (defined with empty values) in the project's global bibliography.bib 
+    # @todo The key "USDA-1" should be blocked (defined with empty values) in the project's global bibliography.bib 
     # file so that the content of this literature reference can be managed in this script without key conflicts.
     usda1_record = frc_db.execute "SELECT * FROM literature WHERE id = 'USDA-1' LIMIT 1"
     frc_db.execute "
@@ -537,7 +537,7 @@ begin
         import_product(product['ID'], fk_mem_db, frc_db)
     end
 
-    # TODO (later): Also load the FoodKeeper products in Spanish and Portuguese and convert them to 
+    # @todo (later) Also load the FoodKeeper products in Spanish and Portuguese and convert them to 
     # translated DocBook XML files.
 rescue ArgumentError => e
     $stderr.puts e.message

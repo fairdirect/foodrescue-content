@@ -84,10 +84,10 @@ begin
 
     db.prepare_topic_tables(allow_reuse: true)
 
-    # TODO: Implement importing referenced entries of bibliography.bib before starting to 
+    # @todo Implement importing referenced entries of bibliography.bib before starting to 
     # import topics.
 
-    # TODO (later): Make sure the expected columns exist in the CSV file, as indicated by the header.
+    # @todo (later) Make sure the expected columns exist in the CSV file, as indicated by the header.
 
     # To keep the memory footprint small, read one line at a time with CSV.foreach().
     # See: "Processing large CSV files with Ruby", https://dalibornasevic.com/posts/68
@@ -114,14 +114,14 @@ begin
         categories = if record['Categories'].nil? then [] else record['Categories'].split("\n") end
         categories = categories.filter_map do |cat|
             # Ignore categories given as a category tag (such as "fr:test-tag") rather than the full name.
-            # TODO (later): Also process tag-type categories. It requires adding the category tags to the database.
+            # @todo (later) Also process tag-type categories. It requires adding the category tags to the database.
             if /^[a-z][a-z]:[a-z-]+$/.match?(cat)
                 $stderr.puts 'WARNING: '.in_orange + "Ignoring unrecognized category #{cat}."
                 next
             end
 
             # Ignore categories given with a language prefix ("fr:") or language tag prefix ("fr-BE:").
-            # TODO (later): Also process categories given with a language (tag) prefix.
+            # @todo (later) Also process categories given with a language (tag) prefix.
             if /^[a-z][a-z]:.+$/.match?(cat) or /^[a-z][a-z]-[A-Z][A-Z]:.+$/.match?(cat)
                 $stderr.puts 'WARNING: '.in_orange + "Ignoring unrecognized category #{cat}."
                 next

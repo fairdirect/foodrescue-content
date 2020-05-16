@@ -1,6 +1,8 @@
 # General.
 /Gemfile.lock
 /build/
+/doc/
+/.yardoc/
 
 # Only keep the processed versions of downloaded category definition files.
 /content-categories/categories-*

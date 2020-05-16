@@ -3,7 +3,7 @@
 # multiple installed versions and version switchers like chruby; see https://stackoverflow.com/a/2792076
 
 # Suppress depreciation warnings from the awesome_print gem.
-# TODO: Fix the gem, then remove this.
+# @todo Fix the gem, then remove this.
 $VERBOSE = nil
 
 # Gem includes. See Gemfile.

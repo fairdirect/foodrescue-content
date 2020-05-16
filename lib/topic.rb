@@ -1,5 +1,5 @@
 # Suppress depreciation warnings from the awesome_print gem.
-# TODO: Fix the gem, then remove this.
+# @todo Fix the gem, then remove this.
 $VERBOSE = nil
 
 # Stdlib includes.
@@ -26,10 +26,10 @@ require_relative '../lib/utils'
 # [DocBook 5.1 Topics](https://www.xmlmind.com/tutorials/DocBookAssemblies/).
 class FoodRescue::Topic
 
+    public
     # Create a new food rescue topic, empty or with values read from a XML file.
     # 
     # @param path [String]  Path to an AsciiDoc file to initialize the object from.
-    public
     def initialize(path=nil)
 
         # Initialize optional elements so no errors will happen when saving to DocBook / SQLite.
@@ -40,13 +40,14 @@ class FoodRescue::Topic
         @content_xbibrefs = []
         @bibliography = []
 
-        # TODO: Create the topic from the data in a DocBook XML file, if specified.
+        # @todo Create the topic from the data in a DocBook XML file, if specified.
         # Could be possible with the object marshalling (deserialization) functions of Ox.
         # See: http://www.ohler.com/ox/Ox.html#load_file-class_method
     end
 
 
     # The topic's title.
+    # 
     # @return [String]
     # @todo Support multiple titles, one per language.
     attr_accessor :title 
@@ -55,6 +56,7 @@ class FoodRescue::Topic
     # The topic's author(s).
     # 
     # @return [Array<Hash>]  The topic's authors, one per array element. Hash keys:
+    #   
     #   * `:role`: Contribution of the given author. Values can be "author", "editor", any of the 
     #     `<othercredit class="">` values ([see](https://tdg.docbook.org/tdg/5.1/othercredit.html)) or 
     #     any other value. The latter case, is equivalent to `<othercredit class="other" otherclass="…">`
@@ -72,6 +74,7 @@ class FoodRescue::Topic
 
 
     # The topic's version date.
+    # 
     # @return [String]  The version date as a String in ISO8601 "yyyy-mm-dd" format. Defaults to today.
     attr_accessor :edition
 
@@ -92,39 +95,39 @@ class FoodRescue::Topic
     # 
     # @return [Array<String>]  The categories, given with their full English names without 
     #   language prefixes.
-    # 
-    # TODO: Also support language prefixes.
-    # TODO: Also support tag versions of category identifiers. They would be immediately converted 
+    # @todo Also support language prefixes.
+    # @todo Also support tag versions of category identifiers. They would be immediately converted 
     #   to full names if possible.
     attr_accessor :categories
 
 
     # The topic's summary text.
+    # 
     # @return [String]  The summary, as plain text. The empty string if there is no abstract.
     attr_accessor :abstract
 
 
     # The topic's content in DocBook 5.1 XML, excluding parts that are automatically appended 
-    # such as a list of the literature used (@see #content_xbibrefs).
+    # such as a list of the literature used (see {#content_xbibrefs}).
     # 
     # @return [Ox::Document]
-    # 
     # @todo Allow providing texts in multiple languages (see database table topic_texts).
     # @todo Rename to "text" to keep in line with the object-relational mapping scheme.
     attr_accessor :content_proper
 
 
+    public
     # Set the topic's main content in DocBook 5.1 XML by converting from a different format.
     # 
     # @param content [Ox::Document | String]  The object(s) that form the topic's content.
     # @param format [Symbol]  The format to interpret `content`. One of:
-    #   * `:docbook_dom` if `content` is `Array<Ox::Element|String>``, as used in `Ox::Element#nodes`. This is the default.
-    #   * `:asciidoc` if `content` is a `String` with [Asciidoctor markup](https://asciidoctor.org/docs/asciidoc-syntax-quick-reference)
-    #   * `:plaintext` if `content` is a plain text `String`. Internally this is just a synonym for 
+    # 
+    #   * `:docbook_dom` if `content` is `Array<Ox::Element|String>`, as used in {Ox::Element#nodes}. This is the default.
+    #   * `:asciidoc` if `content` is a String with [Asciidoctor markup](https://asciidoctor.org/docs/asciidoc-syntax-quick-reference).
+    #   * `:plaintext` if `content` is a plain text String. Internally this is a synonym for 
     #     `:asciidoc` since plaintext strings are valid AsciiDoc.
     # 
     # @todo (later) Also support DocBook XML given as a text string, using format `:docbook`.
-    public
     def import_content_proper(content, format: :docbook_dom)
         case format
         when :docbook_dom
@@ -154,7 +157,8 @@ class FoodRescue::Topic
     # also be included into `#bibliography`.
     # 
     # @return [Array<Hash>]  The literature works used, with references to which parts were used.
-    #   Each hash describes one work used, with keys as follows: 
+    #   Each hash describes one work used, with keys as follows:
+    # 
     #   * `id`: Identifies the work via its BibTeX key, as recorded in `literature.id` in the database.
     #   * `ref`: A reference to a page, chapter or similar part identifier of the work used.
     #   * `ref_details`: Detailed information about the reference that is only shown when debugging 
@@ -162,6 +166,7 @@ class FoodRescue::Topic
     attr_accessor :content_xbibrefs
 
 
+    public
     # Get the complete content field of this food rescue topic, as it would be stored in a database for 
     # showing to a user.
     # 
@@ -170,8 +175,7 @@ class FoodRescue::Topic
     # 
     # @return [Ox::Document | NilClass]  DocBook XML content with the bibliographic references, 
     #   or `nil` if there are none.
-    # 
-    # TODO: Render the literature references as proper DoxBook XML elements, not as plain text.
+    # @todo Render the literature references as proper DoxBook XML elements, not as plain text.
     #   This has to include an element for conditional presentation of the `ref_details` value, 
     #   which is only relevant when debugging where errors in the topics come from.
     def content 
@@ -207,8 +211,7 @@ class FoodRescue::Topic
     # 
     # @return [Array<String>]  The literature works in the topic's bibliography, each represented by 
     #   its BibTeX key, as recorded in `literature.id` in the database.
-    # 
-    # TODO: Create bibliography(data_source) to obtain teh actual bibliographic data from either a 
+    # @todo Create bibliography(data_source) to obtain teh actual bibliographic data from either a 
     #   SQLite3 database or a BibTeX file. Given the object-relational mapping scheme used and the 
     #   independence of FoodRescue::Topics from a database, this is the right way to implement this.
     attr_accessor :bibliography

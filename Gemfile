@@ -37,3 +37,6 @@ gem 'ox', '~> 2.13', '>= 2.13.2'
 # https://www.rubydoc.info/gems/asciidoctor
 # https://github.com/asciidoctor/asciidoctor
 gem 'asciidoctor'
+
+# Documentation generator for Ruby.
+gem 'yard'

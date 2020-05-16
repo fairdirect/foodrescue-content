@@ -50,7 +50,7 @@ rescue Docopt::Exit => e
     exit -1
 end 
 
-# TODO (later): Open INFILE, read the headers line, and raise an error if any of the 
+# @todo (later) Open INFILE, read the headers line, and raise an error if any of the 
 #   --columns output headers does not exist in the input file.
 output_columns   = if args['--columns'].nil? then [] else args['--columns'].split(',') end
 required_columns = if args['--required'].nil? then [] else args['--required'].split(',') end
@@ -76,7 +76,7 @@ CSV.foreach(args['INFILE'], csv_read_options) do |record|
 
     # Filter fields = { fieldname1: "value1", fieldname2: "value2", …} by given fieldnames.
     # ("*columns" works to pass an array as a variable number of individual arguments.)
-    # TODO (later): Order output values according to the order in output_columns, i.e. 
+    # @todo (later) Order output values according to the order in output_columns, i.e. 
     #   allow re-ordering columns with this script. Also adapt the -c option documentation afterwards.
     outfile << record.slice(*output_columns)
 end

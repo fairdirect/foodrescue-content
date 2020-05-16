@@ -30,7 +30,7 @@ In addition, the following re-usable pieces of this repository will be interesti
 
 **Files and folders.**
 
-[TODO]
+@todo
 
 
 ## 3. Installation
@@ -112,7 +112,7 @@ To generating the food rescue content in the format expected by the Food Rescue 
 make
 ```
 
-[TODO: The Makefile based build process still has to be implemented.]
+@todo The Makefile based build process still has to be implemented.
 
 
 ## 5. Development Guide

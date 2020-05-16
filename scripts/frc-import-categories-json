@@ -150,7 +150,7 @@ json_file = test_and_open(args['INFILE'])
 json = JSON.parse(json_file.read)
 
 # Validate the JSON file against a schema.
-# TODO (later): Switch the following to validate() and show the error if there is one.
+# @todo (later) Switch the following to validate() and show the error if there is one.
 raise ("%s does not contain a valid JSON file" % path) unless schemer.valid?(json)
 
 json_file.close
@@ -158,13 +158,13 @@ json_file.close
 # puts "DEBUG: data as read from JSON (excerpt):"
 # ap json, {limit: true}
 
-# TODO: Convert json so that Ruby symbols can be used as Hash keys, not only strings like now.
+# @todo Convert json so that Ruby symbols can be used as Hash keys, not only strings like now.
 
 
 # (3) Import categories that are not present in the Open Food Facts taxonomy (categories.txt).
 # --------------------------------------------------------------------------------------------
 
-# TODO
+# @todo
 
 
 # (4) Export product count information from the JSON file to the SQLite database.

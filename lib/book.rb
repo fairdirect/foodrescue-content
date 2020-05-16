@@ -1,5 +1,5 @@
 # Suppress depreciation warnings from the awesome_print gem.
-# TODO: Fix the gem, then remove this.
+# @todo Fix the gem, then remove this.
 $VERBOSE = nil
 
 # Gem includes. See Gemfile.
@@ -28,8 +28,8 @@ class FoodRescue::Book
     end
 
 
-    # TODO: Documentation.
     protected
+    # @todo Documentation.
     def instruct_element
         instruct = Ox::Instruct.new(:xml)
         instruct[:version] = '1.0'
@@ -39,8 +39,8 @@ class FoodRescue::Book
     end
 
 
-    # TODO: Documentation.
     protected
+    # @todo Documentation.
     def topic_element
         doc = Ox::Element.new('topic')
 
@@ -56,11 +56,11 @@ class FoodRescue::Book
     end
 
 
-    # Render the author metadata of this topic to a DocBook XML `author`or `authorgroup` element.
     protected
+    # Render the author metadata of this topic to a DocBook XML `author`or `authorgroup` element.
     def author_element(authors)
 
-        # TODO: Is this the right way? Or do we have to return nil?
+        # @todo Is this the right way? Or do we have to return nil?
         return '' if authors.length == 0
 
         authors.each do |author|
@@ -129,8 +129,8 @@ class FoodRescue::Book
     end
 
 
+    protected
     # Render the metadata of this topic to a DocBook XML `info` element.
-    protected 
     def info_element(title, edition, abstract)
         info = Ox::Element.new('info')
 
@@ -158,16 +158,17 @@ class FoodRescue::Book
     end
 
 
+    protected
     # Render the topic's bibliography to DocBook XML.
-    protected 
     def bibliography_element(bibliography)
-        # TODO (later): Implementation, rendering the actual, full bibliography list. Not required right 
+        # @todo (later) Implementation, rendering the actual, full bibliography list. Not required right 
         # now as rendering to DocBook is for later when it comes to ebook publishing. Since usually 
         # multiple topic will be mixed together, their bibliography lists also have to be mixed together. 
         # Due to this, this method should probably return individually rendered items.
     end
 
 
+    public
     # Write one food rescue topic as a DocBook 5.1 XML topic to disk.
     # 
     # @see #write
@@ -178,10 +179,10 @@ class FoodRescue::Book
         doc = Ox::Document.new
 
         doc \
-            << instruct_element
-            << (topic_element 
-                << info_element(topic.title, topic.edition, topic.abstract)
-                << topic.content
+            << instruct_element \
+            << (topic_element \
+                << info_element(topic.title, topic.edition, topic.abstract) \
+                << topic.content \
                 << bibliography_element(topic.bibliography)
             )
 
@@ -209,6 +210,7 @@ class FoodRescue::Book
     end
 
 
+    public
     # Write the book in DocBook 5.1 XML format to the specified file(s).
     # 
     # @param file_prefix [String]  As an alternative to passing `file_name`, you can let the system 
@@ -219,10 +221,8 @@ class FoodRescue::Book
     #   follows the given prefix. Ignored when using `file_name`.
     # @raise [Errno::*]  In case the file cannot be opened for writing. As raised by File#open.
     # @raise [ArgumentError]  In case the padding does not provide enough digits to encode the next filename.
-    public
     def write(file_prefix: nil, file_padding: 3)
         @topics.each { |t| t.write_topic(t, file_prefix: file_prefix, file_padding: 3) }
     end
-
 
 end

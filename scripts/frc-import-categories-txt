@@ -50,15 +50,16 @@ DOCOPT
 
 # Parser for Open Food Facts category hierarchy definition files.
 # 
-# TODO Adapt the parser to also understand the (slightly different) categories.result.txt file. Changes:
-#   There can be a space after the "<" sign indicating a parent category. There can be a space after the property marker.
-# 
 # Data example:
-#   https://github.com/openfoodfacts/openfoodfacts-server/blob/master/taxonomies/categories.txt
-#   https://github.com/openfoodfacts/openfoodfacts-server/blob/master/taxonomies/categories.result.txt (later)
+# * https://github.com/openfoodfacts/openfoodfacts-server/blob/master/taxonomies/categories.txt
+# * https://github.com/openfoodfacts/openfoodfacts-server/blob/master/taxonomies/categories.result.txt (later)
+# 
 # Parser library docs:
-#   https://github.com/kschiess/parslet
-#   https://kschiess.github.io/parslet
+# * https://github.com/kschiess/parslet
+# * https://kschiess.github.io/parslet
+# 
+# @todo Adapt the parser to also understand the (slightly different) categories.result.txt file. Changes:
+#   There can be a space after the "<" sign indicating a parent category. There can be a space after the property marker.
 class CatHierarchyParser < Parslet::Parser
 
   # Characters
@@ -162,10 +163,9 @@ end
 # Note that the result of wrapping `nil` is `[]` and not `[nil]` because iterating over no value should not 
 # execute anything.
 # 
-# TODO The name is not great, as wrapping is not done always but conditionally.
-# 
 # @param obj [mixed]  An Object, Hash, Array or nil.
 # @return The wrapped object.
+# @todo The name is not great, as wrapping is not done always but conditionally.
 def wrap_in_array(obj)
   return [] if obj.nil?
   return [obj] unless obj.is_a? Array
@@ -239,7 +239,7 @@ end
 # (Parslet objects are structured like Hashes, but do not support all its methods which we'll need later.)
 taxonomy = to_hash_recursive(taxonomy)
 
-# TODO: Simplify the taxonomy data structure. Namely: taxonomy[i][:category_block][:parents] and 
+# @todo The name is not great, as wrapping is not done always but conditionally. Simplify the taxonomy data structure. Namely: taxonomy[i][:category_block][:parents] and 
 # taxonomy[i][:category_block][:names] should have a structure of [ {lang: …, name: …}, … ].
 # 
 # This cannot be directly done in the parser as everything it should recognize has to have a name there. That's why the 
@@ -256,7 +256,7 @@ taxonomy.map! do |block|
     block[:category_block][:properties] = wrap_in_array(block[:category_block][:properties])
   end
 
-  # TODO (later): Do the equivalent for synonym blocks and stopword blocks. With the current dataset, all of them have at least two 
+  # @todo (later) Do the equivalent for synonym blocks and stopword blocks. With the current dataset, all of them have at least two 
   # elements so no wrapping is needed, but this is not guaranteed for the future.
 
   block
