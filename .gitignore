@@ -2,19 +2,18 @@
 /Gemfile.lock
 /build/
 
-# Only keep a single, processed and minified version of downloaded files.
+# Only keep the processed versions of downloaded category definition files.
 /content-categories/categories-*
 !/content-categories/categories-json.2-pretty.json
 !/content-categories/categories-txt.1-downloaded.txt
 
-# Only keep a single, processed and minified version of downloaded files.
+# Only keep the processed versions of downloaded products files.
 content-products/products-*
 !/content-products/products-csv.2-filtered.csv
 !/content-products/products-delta.*.2-filtered.json
 
-# Ignore the downloaded Android app from which the FoodKeeper database comes.
+# Ignore the Android app package from which the FoodKeeper database was extracted.
 content-topics-foodkeeper/FoodKeeper.AndroidApp.apk
 
-# Ignore some old work for template development.
-templates/FoodRescueManual.LEGACY.fodt
-templates/FoodRescueManual.LEGACY.OFFCatMarker.png
+# Ignore experiments with no re-usable results.
+experiments/ruby-syntax.rb
