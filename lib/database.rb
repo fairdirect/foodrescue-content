@@ -7,6 +7,7 @@ require 'sqlite3'
 require 'awesome_print'
 
 # Local, non-gem includes.
+require_relative '../lib/food_rescue'
 require_relative '../lib/utils'
 
 
@@ -53,9 +54,9 @@ require_relative '../lib/utils'
 # * There is no need to write "INT PRIMARY KEY" instead of "INTEGER PRIMARY KEY" to avoid creating an alias for ROWID 
 #   columns, as that quirk does not apply for our WITHOUT ROWID tables (see 
 #   https://www.sqlite.org/withoutrowid.html#differences_from_ordinary_rowid_tables).
-class FoodRescueDatabase < SQLite3::Database
+class FoodRescue::Database < SQLite3::Database
 
-    # Create a connection to a file with a FoodRescueDatabase.
+    # Create a connection to a SQLite3 database file with food rescue content.
     # 
     # @param dbfile [String]  Absolute or relative path to the SQLite3 database file.
     # @param options [Hash]  Options for the database connection as in `SQLite3::Database#initialize`. 
@@ -74,10 +75,11 @@ class FoodRescueDatabase < SQLite3::Database
         # corrupted on power outage. Because it can be simply generated anew by running the import scripts again.
         execute "PRAGMA synchronous = OFF;"
 
-        # TODO (later): Run all prepare_*_tables methods here. This guarantees that any FoodRescueDatabase 
+        # TODO (later): Run all prepare_*_tables methods here. This guarantees that any FoodRescue::Database 
         # object can take any kind of record without further checks and preparations.
     end
 
+    
     # Helper method to determine the main name of a category
     # 
     # @param [Hash] block  A description of the category with the same structure as used in method write_cat_names.
@@ -99,7 +101,7 @@ class FoodRescueDatabase < SQLite3::Database
     #
     # @param allow_reuse [Boolean]  If true, no error will occur in case tables of the 
     #   same structure already exist.
-    # @see FoodRescueDatabase  Gives the reasoning for the table structure.
+    # @see FoodRescue::Database  Gives the reasoning for the table structure.
     def prepare_category_tables(allow_reuse=false)
         if_not_exists = if allow_reuse then "IF NOT EXISTS" else "" end
 
@@ -229,7 +231,7 @@ class FoodRescueDatabase < SQLite3::Database
     # 
     # @param allow_reuse [Boolean]  If true, no error will occur in case tables of the 
     # same structure already exist.
-    # @see FoodRescueDatabase  Gives the reasoning for the table structure.
+    # @see FoodRescue::Database  Gives the reasoning for the table structure.
     def prepare_product_tables(allow_reuse=false)
         if_not_exists = if allow_reuse then "IF NOT EXISTS" else "" end
 
@@ -428,7 +430,7 @@ class FoodRescueDatabase < SQLite3::Database
     # Add one author to a topic, creating or completing the author record as needed.
     # 
     # @param topic_id [Integer]
-    # @param author [Hash]  Author data. For the hash keys, see FoodRescueTopic#authors.
+    # @param author [Hash]  Author data. For the hash keys, see `FoodRescue::Topic#authors`.
     def add_author topic_id, author
         # Check if there is a record exactly corresponding to the "identifying" parts of an author.
         # (More than one result would be an error. Not happening, as we check before adding records.)
@@ -483,7 +485,7 @@ class FoodRescueDatabase < SQLite3::Database
     # the database. The topic can also mention an author name. If it exists in the database, it will 
     # be referenced, otherwise a new record will be created.
     # 
-    # @param topic [FoodRescueTopic]  The topic to add.
+    # @param topic [FoodRescue::Topic]  The topic to add.
     # @raise [ArgumentError]  If a referenced author or literature record does not exist in the database.
     def add_topic(topic)
 
@@ -522,11 +524,7 @@ class FoodRescueDatabase < SQLite3::Database
         # TODO
 
         # Write the topic_contents table entry.
-        topic_content = topic.content.dup # Ox::Document#<< modifies the object. A copy prevents the damage.
-        topic.extra_bibrefs_to_docbook.nodes.each do |node|
-            topic_content << node
-        end unless topic.extra_bibrefs_to_docbook.nil? 
-        add_topic_content topic_id, 'en', topic.title, topic_content
+        add_topic_content topic_id, 'en', topic.title, topic.content
         # TODO: Add multiple topic contents once a topic can contain content and titles for multiple languages.
     end
 end

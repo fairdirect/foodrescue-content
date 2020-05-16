@@ -55,3 +55,36 @@ module Ox::HasAttrs
         attributes.each { |key, value| self[key] = value }
     end
 end
+
+
+class Ox::Element
+
+    # Appends a Node (or the nodes of a `Ox::Document` or array) to the Element's nodes array.
+    # 
+    # This overwrites the original `Ox::Element#<<` operator to support merging of documents and arrays. 
+    # The operator could be applies to `Ox::Document` before because it's a subclass of `Ox::Node`. 
+    # But doing so later results in "Unexpected class, Ox::Document, while dumping generic XML". 
+    # Instead, we'll treat `Ox::Document` as a collection of nodes, and just append these nodes.
+    # 
+    # @param appendee [Ox::Node | String | Array] The node or collection of nodes to append. Appending 
+    #   a String means adding a plaintext section to an XML element, without further XML inside.
+    # @return The element itself, after appending the node(s) from the given argument. This allows 
+    #   to chain multiple appends together.
+    def <<(appendee)
+        raise "argument to << must be one of: Ox::Node, String, Array." \
+            unless appendee.is_a?(String) or appendee.is_a?(Ox::Node)
+
+        @nodes = [] if !instance_variable_defined?(:@nodes) or @nodes.nil?
+
+        case appendee
+        when Ox::Document
+            appendee.nodes.each { |n| @nodes << n }
+        when Array
+            appendee.each { |n| @nodes << n }
+        when Ox::Node, String
+            @nodes << appendee
+        end
+
+        self
+    end
+end

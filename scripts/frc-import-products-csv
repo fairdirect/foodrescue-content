@@ -8,7 +8,7 @@ require "csv"
 require "sqlite3"
 
 # Local, non-gem includes.
-require_relative '../lib/food_rescue_database'
+require_relative '../lib/database'
 require_relative '../lib/utils'
 
 
@@ -68,7 +68,7 @@ end
 # ----------------------------------------------------------
 
 begin
-    db = FoodRescueDatabase.new args['DBFILE']
+    db = FoodRescue::Database.new args['DBFILE']
 
     # TODO: Make sure the category tables exist. If not, print a helpful error message telling the user to run the 
     # category import script first.

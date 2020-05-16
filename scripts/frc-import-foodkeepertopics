@@ -13,8 +13,8 @@ require 'awesome_print'
 require 'ox'
 
 # Local, non-gem includes.
-require_relative '../lib/food_rescue_database'
-require_relative '../lib/food_rescue_topic'
+require_relative '../lib/database'
+require_relative '../lib/topic'
 
 
 #############################################################################
@@ -195,9 +195,9 @@ end
 # @param product_id [Integer]  The FoodKeeper database's PRODUCTS.ID value of the product about which 
 #   the topic will be about.
 # @param db [SQLite3::Database]  The database connection to the FoodKeeper database.
-# @return [FoodRescueTopic]  The basic topic that has been created.
+# @return [FoodRescue::Topic]  The basic topic that has been created.
 def basic_topic(product_id, db)
-    topic = FoodRescueTopic.new
+    topic = FoodRescue::Topic.new
 
     # Author information about the FoodKeeper app.
     # 
@@ -246,7 +246,7 @@ def basic_topic(product_id, db)
     # Of course the value can be overwritten as needed after this function returned.
     topic.abstract = '' 
 
-    topic.extra_bibrefs = [ {id: 'USDA-1', ref_details: "PRODUCTS.ID=#{product_id}"} ]
+    topic.content_xbibrefs = [ {id: 'USDA-1', ref_details: "PRODUCTS.ID=#{product_id}"} ]
     topic.bibliography = ['USDA-1']
 
     return topic
@@ -378,7 +378,7 @@ end
 # @param product_id [Integer]  The FoodKeeper database's PRODUCTS.ID value of the product about which 
 #   the topic will be about.
 # @param db [SQLite3::Database]  The database connection to the FoodKeeper database.
-# @return [FoodRescueTopic]  The created topic.
+# @return [FoodRescue::Topic]  The created topic.
 def storage_overview_topic(product_id, db)
     product = db.get_first_row('SELECT * FROM PRODUCTS WHERE ID = ?', [ product_id ])
 
@@ -388,7 +388,7 @@ def storage_overview_topic(product_id, db)
 
     intro = Ox::Element.new('simpara') << storage_intro_text(product_id, db)
     list = storage_durations(product_id, db, include_tips: false)
-    topic.content = Ox::Document.new << intro << list
+    topic.content_proper = Ox::Document.new << intro << list
 
     return topic
 end
@@ -399,7 +399,7 @@ end
 # @param product_id [Integer]  The FoodKeeper database's PRODUCTS.ID value of the product about which 
 #   the topic will be about.
 # @param db [SQLite3::Database]  The database connection to the FoodKeeper database.
-# @return [FoodRescueTopic]  The created topic.
+# @return [FoodRescue::Topic]  The created topic.
 def pantry_storage_topic(product_id, db)
     topic = basic_topic(product_id, db)
     topic.title= 'Pantry storage'
@@ -409,7 +409,7 @@ def pantry_storage_topic(product_id, db)
     list = storage_durations(product_id, db, storage_type: :pantry)
     tips = Ox::Element.new('simpara') << storage_tips(product_id, db, storage_type: :pantry)
     outro = Ox::Element.new('simpara') << 'Storage life affects quality. This item may or may not be safe to eat afterwards. Details may be provided below.'
-    topic.content = Ox::Document.new << intro << list << tips << outro
+    topic.content_proper = Ox::Document.new << intro << list << tips << outro
 
     return topic
 end
@@ -420,7 +420,7 @@ end
 # @param product_id [Integer]  The FoodKeeper database's PRODUCTS.ID value of the product about which 
 #   the topic will be about.
 # @param db [SQLite3::Database]  The database connection to the FoodKeeper database.
-# @return [FoodRescueTopic]  The created topic.
+# @return [FoodRescue::Topic]  The created topic.
 def fridge_storage_topic(product_id, db)
     topic = basic_topic(product_id, db)
     topic.title= 'Fridge storage'
@@ -430,7 +430,7 @@ def fridge_storage_topic(product_id, db)
     list = storage_durations(product_id, db, storage_type: :refrigerate)
     tips = Ox::Element.new('simpara') << storage_tips(product_id, db, storage_type: :refrigerate)
     outro = Ox::Element.new('simpara') << 'Storage life affects quality. This item may or may not be safe to eat afterwards. Details may be provided below.'
-    topic.content = Ox::Document.new << intro << list << tips << outro
+    topic.content_proper = Ox::Document.new << intro << list << tips << outro
 
     return topic
 end
@@ -441,7 +441,7 @@ end
 # @param product_id [Integer]  The FoodKeeper database's PRODUCTS.ID value of the product about which 
 #   the topic will be about.
 # @param db [SQLite3::Database]  The database connection to the FoodKeeper database.
-# @return [FoodRescueTopic]  The created topic.
+# @return [FoodRescue::Topic]  The created topic.
 def freezer_storage_topic(product_id, db)
     topic = basic_topic(product_id, db)
 
@@ -452,7 +452,7 @@ def freezer_storage_topic(product_id, db)
     list = storage_durations(product_id, db, storage_type: :freeze)
     tips = Ox::Element.new('simpara') << storage_tips(product_id, db, storage_type: :freeze)
     outro = Ox::Element.new('simpara') << 'Storage life affects quality. This item may or may not be safe to eat afterwards. Details may be provided below.'
-    topic.content = Ox::Document.new << intro << list << tips << outro
+    topic.content_proper = Ox::Document.new << intro << list << tips << outro
 
     return topic
 end
@@ -463,7 +463,7 @@ end
 # @param product_id [Integer]  The FoodKeeper database's PRODUCTS.ID value of the product about which 
 #   the topic will be about.
 # @param fk_db [SQLite3::Database]  The database connection to the FoodKeeper database.
-# @param frc_db [FoodRescueDatabase]  The database connection to the database with food rescue content.
+# @param frc_db [FoodRescue::Database]  The database connection to the database with food rescue content.
 def import_product(product_id, fk_db, frc_db)
     product = fk_db.get_first_row('SELECT * FROM PRODUCTS WHERE ID = ?', [ product_id ])
 
@@ -480,7 +480,7 @@ def import_product(product_id, fk_db, frc_db)
     # (Using the content from the COOKING_METHODS and COOKING_TIPS tables.)
 
     # Write all topics to the food rescue content database.
-    topics.each { |t| t.to_sqlite(frc_db) }
+    topics.each { |t| frc_db.add_topic(t) }
 end
 
 
@@ -514,7 +514,7 @@ begin
     create_categories_mapping(fk_mem_db)
 
     # Database connection to the food rescue content database (the target).
-    frc_db = FoodRescueDatabase.new args['FRC_DBFILE']
+    frc_db = FoodRescue::Database.new args['FRC_DBFILE']
     frc_db.prepare_topic_tables allow_reuse: true
 
     # Make sure that the USDA-1 literature source is inside the target database, otherwise add it from static content.

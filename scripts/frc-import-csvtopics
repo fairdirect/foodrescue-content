@@ -8,8 +8,8 @@ require 'csv'
 require 'sqlite3'
 
 # Local, non-gem includes.
-require_relative '../lib/food_rescue_database'
-require_relative '../lib/food_rescue_topic'
+require_relative '../lib/database'
+require_relative '../lib/topic'
 require_relative '../lib/utils'
 
 
@@ -77,7 +77,7 @@ end
 # ----------------------------------------------------------
 
 begin
-    db = FoodRescueDatabase.new args['DBFILE']
+    db = FoodRescue::Database.new args['DBFILE']
 
     # Debug function to see the database queries executed.
     # db.trace { |sql_query| puts "#{'DEBUG:'.in_orange} Going to execute: #{sql_query}" if sql_query.match? /SELECT.*FROM authors/ }
@@ -93,7 +93,7 @@ begin
     # See: "Processing large CSV files with Ruby", https://dalibornasevic.com/posts/68
     CSV.foreach(args['INFILE'], { headers: true }) do |record|
       
-        topic = FoodRescueTopic.new
+        topic = FoodRescue::Topic.new
 
         topic.title = record['Title']
 
@@ -133,15 +133,15 @@ begin
 
         topic.abstract = if record.key?('Topic type') then record['Topic type'] else nil end
 
-        topic.extra_bibrefs = if record.key?('Literature') then record['Literature'].split("\n") else nil end
+        topic.content_xbibrefs = if record.key?('Literature') then record['Literature'].split("\n") else nil end
 
         # Not giving a bibliography list will make the database use its existing list to look up 
         # literature references.
         topic.bibliography = {}
 
-        topic.import_content record['Text'], format: :asciidoc
+        topic.import_content_proper record['Text'], format: :asciidoc
 
-        topic.to_sqlite(db)
+        db.add_topic(topic)
     end
 rescue => e
     $stderr.puts "ERROR: ".in_red + e.message

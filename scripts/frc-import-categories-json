@@ -9,7 +9,7 @@ require "sqlite3"
 require 'awesome_print'
 
 # Local, non-gem includes.
-require_relative '../lib/food_rescue_database'
+require_relative '../lib/database'
 
 
 #############################################################################
@@ -172,7 +172,7 @@ json_file.close
 
 begin
 
-    db = FoodRescueDatabase.new args['DBFILE']
+    db = FoodRescue::Database.new args['DBFILE']
 
     json['tags'].each do |cat|
         # For now, we do not import non-taxonomy (known == 0) categories. 
