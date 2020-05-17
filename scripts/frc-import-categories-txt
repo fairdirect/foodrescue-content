@@ -48,32 +48,32 @@ Options:
 DOCOPT
 
 
-# Parser for Open Food Facts category hierarchy definition files.
+# Parser for Open Food Facts category hierarchy definition files, based on the parser generator library "Parslet".
 # 
-# Data example:
-# * https://github.com/openfoodfacts/openfoodfacts-server/blob/master/taxonomies/categories.txt
-# * https://github.com/openfoodfacts/openfoodfacts-server/blob/master/taxonomies/categories.result.txt (later)
+# Example input data:
 # 
-# Parser library docs:
-# * https://github.com/kschiess/parslet
-# * https://kschiess.github.io/parslet
+# * [`categories.txt`](https://github.com/openfoodfacts/openfoodfacts-server/blob/master/taxonomies/categories.txt)
+# * [`categories.result.txt`](https://github.com/openfoodfacts/openfoodfacts-server/blob/master/taxonomies/categories.result.txt) 
+#   (this latter format is not yet supported by may be later)
 # 
+# @see https://kschiess.github.io/parslet Parslet documentation
+# @see https://github.com/kschiess/parslet Parslet source code
 # @todo Adapt the parser to also understand the (slightly different) categories.result.txt file. Changes:
 #   There can be a space after the "<" sign indicating a parent category. There can be a space after the property marker.
 class CatHierarchyParser < Parslet::Parser
 
   # Characters
-  rule(:space) { match('\s').repeat(1) }
-  rule(:less) { str('<') }
-  rule(:colon) { str(':') }
-  rule(:comma) { str(',') }
-  rule(:hash) { str('#') }
+  rule(:space)      { match('\s').repeat(1) }
+  rule(:less)       { str('<') }
+  rule(:colon)      { str(':') }
+  rule(:comma)      { str(',') }
+  rule(:hash)       { str('#') }
   rule(:underscore) { str('_') }
-  rule(:dash) { str('-') }
-  rule(:newline) { str("\n") }
-  rule(:lowercase) { match('[a-z]') }
-  rule(:uppercase) { match('[A-Z]') }
-  rule(:digits) { match('[0-9]') }
+  rule(:dash)       { str('-') }
+  rule(:newline)    { str("\n") }
+  rule(:lowercase)  { match('[a-z]') }
+  rule(:uppercase)  { match('[A-Z]') }
+  rule(:digits)     { match('[0-9]') }
   
   # Small things
   rule(:singlevalue) { match('[^\n]').repeat(1) }
@@ -97,26 +97,60 @@ class CatHierarchyParser < Parslet::Parser
   rule(:blank_lines) { blank_line.repeat(1) }
   rule(:comment_line) { hash >> space.maybe >> singlevalue >> newline }
   rule(:comment_lines) { comment_line.repeat(1) }
-  rule(:synonym_line) { str('synonyms') >> colon >> lang_tag.as(:lang) >> colon >> values.as(:synonyms) >> newline }
-  rule(:synonym_lines) { comment_lines.maybe >> synonym_line >> (synonym_line | comment_line).repeat(0) }
-  rule(:stopword_line) { str('stopwords') >> colon >> lang_tag.as(:lang) >> colon >> values.as(:stopwords) >> newline }
-  rule(:stopword_lines) { comment_lines.maybe >> stopword_line >> (stopword_line | comment_line).repeat(0) }
-  rule(:parent_line) { less >> lang_tag.as(:lang) >> colon >> value.as(:cat_name) >> newline }
-  rule(:parent_lines) { comment_lines.maybe >> parent_line >> (parent_line | comment_line).repeat(0) }
-  rule(:name_line) { lang_tag.as(:lang) >> colon >> values.as(:cat_names) >> newline }
-  rule(:name_lines) { comment_lines.maybe >> name_line >> (name_line | comment_line).repeat(0) }
-  rule(:property_line) { property_name.as(:name) >> colon >> (lang_tag.as(:lang) >> colon).maybe >> singlevalue.as(:value) >> newline }
-  rule(:property_lines) { comment_lines.maybe >> property_line >> (property_line | comment_line).repeat(0) }
-  rule(:category_lines) { parent_lines.maybe.as(:parents) >> name_lines.as(:names) >> property_lines.maybe.as(:properties) }
+  rule(:synonym_line) { 
+    str('synonyms') >> colon >> lang_tag.as(:lang) >> colon >> values.as(:synonyms) >> newline 
+  }
+  rule(:synonym_lines) { 
+    comment_lines.maybe >> synonym_line >> (synonym_line | comment_line).repeat(0) 
+  }
+  rule(:stopword_line) { 
+    str('stopwords') >> colon >> lang_tag.as(:lang) >> colon >> values.as(:stopwords) >> newline 
+  }
+  rule(:stopword_lines) { 
+    comment_lines.maybe >> stopword_line >> (stopword_line | comment_line).repeat(0) 
+  }
+  rule(:parent_line) { 
+    less >> lang_tag.as(:lang) >> colon >> value.as(:cat_name) >> newline 
+  }
+  rule(:parent_lines) { 
+    comment_lines.maybe >> parent_line >> (parent_line | comment_line).repeat(0) 
+  }
+  rule(:name_line) { 
+    lang_tag.as(:lang) >> colon >> values.as(:cat_names) >> newline 
+  }
+  rule(:name_lines) { 
+    comment_lines.maybe >> name_line >> (name_line | comment_line).repeat(0) 
+  }
+  rule(:property_line) { 
+    property_name.as(:name) >> 
+    colon >> 
+    (lang_tag.as(:lang) >> colon).maybe >> 
+    singlevalue.as(:value) >> 
+    newline 
+  }
+  rule(:property_lines) { 
+    comment_lines.maybe >> property_line >> (property_line | comment_line).repeat(0) 
+  }
+  rule(:category_lines) { 
+    parent_lines.maybe.as(:parents) >> name_lines.as(:names) >> property_lines.maybe.as(:properties) 
+  }
   # 
-  # In the :block rule, "| comment_lines" must come last. Parslet is a PEG type parser generator, which does not tolerate 
-  # ambiguity. So it will apply the first match from a rule, rather than be aware of more than one parallel matching possibility. 
-  # If the first match is the simpler possibility, the parser will throw an error when it does not apply further down the line, 
-  # and will not try the more complex possibility afterwards. So instead, the simplest possibility has to come last. This way, 
-  # a comment line at the start of the block is first interpreted as a non-comment block, and only if not possible, as a comment 
-  # block.
-  rule(:block) { synonym_lines.as(:synonym_block) | stopword_lines.as(:stopword_block) | category_lines.as(:category_block) | comment_lines }
-  rule(:file) { block >> (blank_lines >> block).repeat(0) >> blank_lines.maybe }
+  # In the :block rule below, `comment_lines` must come last.
+  # 
+  # Reason: Parslet is a PEG type parser generator, which does not tolerate ambiguity. So it will apply the first match from a 
+  # rule, rather than be aware of more than one parallel matching possibility. If the first match is the simpler possibility, 
+  # the parser will throw an error when it does not apply further down the line, and will not try the more complex possibility 
+  # afterwards. So instead, the simplest possibility has to come last. This way, a comment line at the start of the block is 
+  # first interpreted as a non-comment block, and only if not possible, as a comment block.
+  rule(:block) { 
+    synonym_lines.as(:synonym_block) | 
+    stopword_lines.as(:stopword_block) | 
+    category_lines.as(:category_block) | 
+    comment_lines 
+  }
+  rule(:file) { 
+    block >> (blank_lines >> block).repeat(0) >> blank_lines.maybe 
+  }
 
   root(:file)
 end
@@ -135,8 +169,7 @@ end
 # Transform a nested Object / Hash / Array structure to a nested Hash / Array structure.
 # 
 # @param obj [Array<...>|Hash<...>|Object]  The data structure to transform.
-# @return  The transformed data structure, containing references to any unmodified object from the 
-# original data structure.
+# @return  The transformed data structure, containing references to any unmodified object from the original data structure.
 def to_hash_recursive(obj)
 
   # Array to Array.
@@ -160,8 +193,7 @@ end
 
 # Wrap the given object into an array, except it is an array already.
 # 
-# Note that the result of wrapping `nil` is `[]` and not `[nil]` because iterating over no value should not 
-# execute anything.
+# Note that the result of wrapping `nil` is `[]` and not `[nil]` because iterating over no value should not execute anything.
 # 
 # @param obj [mixed]  An Object, Hash, Array or nil.
 # @return The wrapped object.
@@ -239,14 +271,13 @@ end
 # (Parslet objects are structured like Hashes, but do not support all its methods which we'll need later.)
 taxonomy = to_hash_recursive(taxonomy)
 
-# @todo The name is not great, as wrapping is not done always but conditionally. Simplify the taxonomy data structure. Namely: taxonomy[i][:category_block][:parents] and 
-# taxonomy[i][:category_block][:names] should have a structure of [ {lang: …, name: …}, … ].
-# 
-# This cannot be directly done in the parser as everything it should recognize has to have a name there. That's why the 
-# parser output is called "intermediate tree", needing further adjustments.
+# @todo The name is not great, as wrapping is not done always but conditionally. Simplify the taxonomy data structure. Namely: 
+#   taxonomy[i][:category_block][:parents] and taxonomy[i][:category_block][:names] should have a structure of 
+#   [ {lang: …, name: …}, … ]. This cannot be directly done in the parser as everything it should recognize has to have a name 
+#   there. That's why the parser output is called "intermediate tree", needing further adjustments.
 
 # Normalize the hash structure so that all repeatable hashes are enclosed in arrays to be iterable.
-# @see CatDatabase#write_cat_names  Documents the resulting data structure.
+# @see FoodRescue::Database#add_category  documentation of the resulting data structure for categories
 taxonomy.map! do |block|
 
   if block.key?(:category_block) then
@@ -256,8 +287,8 @@ taxonomy.map! do |block|
     block[:category_block][:properties] = wrap_in_array(block[:category_block][:properties])
   end
 
-  # @todo (later) Do the equivalent for synonym blocks and stopword blocks. With the current dataset, all of them have at least two 
-  # elements so no wrapping is needed, but this is not guaranteed for the future.
+  # @todo (later) Do the equivalent for synonym blocks and stopword blocks. With the current dataset, all of them have at least 
+  #   two elements so no wrapping is needed, but this is not guaranteed for the future.
 
   block
 end

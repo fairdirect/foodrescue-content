@@ -27,7 +27,8 @@ doc = <<DOCOPT
 Import Open Food Facts products from CSV into a SQLite3 database.
 
 The script reads all CSV entries from INFILE and writes the converted data to the SQLite3 database 
-DBFILE. It expects table categories to exist (with columns name and lang) and will add some more tables.
+DBFILE. It expects table categories to exist (with columns name and lang) and will add some more 
+tables.
 
 Currently, only the following data is imported:
 
@@ -70,8 +71,8 @@ end
 begin
     db = FoodRescue::Database.new args['DBFILE']
 
-    # @todo Make sure the category tables exist. If not, print a helpful error message telling the user to run the 
-    # category import script first.
+    # @todo Make sure the category tables exist. If not, print a helpful error message telling the user to run the category 
+    #   import script first.
 
     db.prepare_product_tables(args['--continue'])
 
@@ -87,8 +88,9 @@ begin
         categories = categories.filter_map do |cat|
             # Ignore categories given as a category tag (such as "fr:test-tag") rather than the full name.
             # 
-            # @note Category names in the Open Food Facts CSV export may have a language prefix ("fr:") but never 
-            #   have a language tag prefix ("fr-BE:"). The latter only appears in the Open Food Facts category taxonomy.
+            # Category names in the Open Food Facts CSV export may have a language prefix ("fr:") but never 
+            # have a language tag prefix ("fr-BE:"). The latter only appears in the Open Food Facts category taxonomy.
+            #
             # @todo (later) Also process tag-type categories. It requires adding the category tags to the database.
             #   But, the cleaner option is to remove the (inconsistent) use of category tags from the OFF CSV file.
             next if /^[a-z][a-z]:[a-z-]+$/.match?(cat)

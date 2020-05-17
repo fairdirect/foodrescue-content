@@ -12,13 +12,11 @@ require_relative '../lib/utils'
 
 # A way to create a book with the food rescue content in DocBook 5.1 XML format.
 #
-# This is meant to work with `FoodRescue::Database` as the data source, as that is the 
-# authoritative data source for all export tasks. Further conversion tasks to 
-# EPUB, PDF etc. may be done with XSLT transforms on the generated DocBook files.
+# This is meant to work with `FoodRescue::Database` as the data source, as that is the authoritative data source for all export 
+# tasks. Further conversion tasks to EPUB, PDF etc. may be done with XSLT transforms on the generated DocBook files.
 #
-# @todo Complete the implementation. So far, the code was just moved here from class 
-#   FoodRescue::Topic. It should not take its data from a collection of topics, 
-#   but get a connection to the database to fetch its own data as needed.
+# @todo Complete the implementation. So far, the code was just moved here from class {FoodRescue::Topic}. It should not take 
+#   its data from a collection of topics, but get a connection to the database to fetch its own data as needed.
 class FoodRescue::Book
 
     attr_accessor :topics
@@ -161,10 +159,10 @@ class FoodRescue::Book
     protected
     # Render the topic's bibliography to DocBook XML.
     def bibliography_element(bibliography)
-        # @todo (later) Implementation, rendering the actual, full bibliography list. Not required right 
-        # now as rendering to DocBook is for later when it comes to ebook publishing. Since usually 
-        # multiple topic will be mixed together, their bibliography lists also have to be mixed together. 
-        # Due to this, this method should probably return individually rendered items.
+        # @todo (later) Implementation, rendering the actual, full bibliography list. Not required right now as rendering to 
+        #   DocBook is for later when it comes to ebook publishing. Since usually multiple topic will be mixed together, their 
+        #   bibliography lists also have to be mixed together. Due to this, this method should probably return individually 
+        #   rendered items.
     end
 
 
@@ -172,9 +170,9 @@ class FoodRescue::Book
     # Write one food rescue topic as a DocBook 5.1 XML topic to disk.
     # 
     # @see #write
-    # @todo Modify this to write sections and sub-sections rather than topics. Because when exporting to 
-    #   e-book formats, the content from multiple food rescue topics has to be mixed together for the 
-    #   reader, similarly to what the Food Rescue App does dynamically.
+    # @todo Modify this to write sections and sub-sections rather than topics. Because when exporting to e-book formats, the 
+    #   content from multiple food rescue topics has to be mixed together for the reader, similarly to what the Food Rescue App 
+    #   does dynamically.
     def write_topic(topic, file_prefix: nil, file_padding: 3)
         doc = Ox::Document.new
 

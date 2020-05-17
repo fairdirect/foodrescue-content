@@ -28,12 +28,12 @@ Import Open Food Facts JSON API content about categories into a SQLite3 database
 
 The script reads a file given by INFILE and writes the converted data to a SQLite3 database 
 given by DBFILE. DBFILE must contain a table "categories" with a column "product_count". 
-INFILE must be in the format in which categories are described by the Open Food Facts JSON API, as seen here: 
-https://world.openfoodfacts.org/category/categories
+INFILE must be in the format in which categories are described by the Open Food Facts JSON API, 
+as seen here: https://world.openfoodfacts.org/category/categories
 
 Currently, only the following information is converted into SQLite3 format:
 
-1. product counts per category
+  * product counts per category
 
 Usage:
     #{__FILE__} [options] INFILE DBFILE
@@ -59,18 +59,17 @@ end
 
 # JSON Schema Draft 7 for Open Food Facts category data JSON files.
 # 
-# Data example:
-#     https://world.openfoodfacts.org/category/categories
-# JSON Schema specs: 
-#     https://json-schema.org/draft/2019-09/json-schema-core.html
-# Library docs:
-#     https://github.com/davishmcclurg/json_schemer
 # How to create this schema:
-#     1. Create a short example JSON file with example data.
-#     2. Use https://www.jsonschema.net/home to convert to a JSON Schema in JSON.
-#     3. Use https://codepen.io/jakealbaugh/full/WrLmyG to convert the JSON to a Ruby hash.
-#     4. Make sure the schema does not use Ruby symbols as hash keys, as that woul lead to JSONSchemer::InvalidSymbolKey later.
-#     5. Remove unnecessary parts and add missing parts (here for "sameAs").
+# 
+# 1. Create a short example JSON file with example data.
+# 2. Use https://www.jsonschema.net/home to convert to a JSON Schema in JSON.
+# 3. Use https://codepen.io/jakealbaugh/full/WrLmyG to convert the JSON to a Ruby hash.
+# 4. Make sure the schema does not use Ruby symbols as hash keys, as that woul lead to JSONSchemer::InvalidSymbolKey later.
+# 5. Remove unnecessary parts and add missing parts (here for "sameAs").
+# 
+# @see https://world.openfoodfacts.org/category/categories Data example
+# @see https://json-schema.org/draft/2019-09/json-schema-core.html JSON Schema specs
+# @see https://github.com/davishmcclurg/json_schemer Library docs
 schema = { 
     '$schema' => 'http://json-schema.org/draft-07/schema#',
     'type' => 'object', 
@@ -164,7 +163,7 @@ json_file.close
 # (3) Import categories that are not present in the Open Food Facts taxonomy (categories.txt).
 # --------------------------------------------------------------------------------------------
 
-# @todo
+# @todo Import categories beyond categories.txt.
 
 
 # (4) Export product count information from the JSON file to the SQLite database.
@@ -178,7 +177,6 @@ begin
         # For now, we do not import non-taxonomy (known == 0) categories. 
         # So for speed, no need to even consider them when importing product counts.
         if cat['known']
-            # puts "DEBUG: Going to add product_count of #{cat['products']} for '#{cat['name']}'"
             db.add_product_count(cat['name'], cat['products']) 
         end
     end

@@ -13,54 +13,57 @@ require_relative '../lib/utils'
 
 # Interface to the SQLite data storage for food rescue content.
 # 
+# 
 # ## Database design
 # 
-# Table structure follows standard SQLite3 practice by default (integer primary keys as alias for ROWID), with 
-# exceptions only for data that (1) will be included in distributed versions of the database and (2) where significant 
-# amounts of storage space can be saved (roughly meaning >200 kiB unpacked per intervention). So far that means:
+# Table structure follows standard SQLite3 practice by default (integer primary keys as alias for ROWID), with exceptions only 
+# for data that (1) will be included in distributed versions of the database and (2) where significant amounts of storage space 
+# can be saved (roughly meaning >200 kiB unpacked per intervention). So far that means:
 # 
-# **Table `categories`.** Nothing to optimize. Column id is an alias for ROWID, using 64 bit per value. But at <5000 
-# records in this table for distributed SQLite files, the wasted storage is only 5000 * (8-2 Byte) = 30 kB.
+# **Table `categories`.** Nothing to optimize. Column id is an alias for ROWID, using 64 bit per value. But at <5000 records in 
+# this table for distributed SQLite files, the wasted storage is only 5000 × (8 B - 2 B) = 30 kB.
 # 
-# **Tables categories_structure, product_categories, product_countries, topic_categories.** Using WITHOUT ROWID, 
-# as the table includes two columns that are useful together as a primary key, so no additional ROWID column is 
-# needed. It would be additional, since only one-column INTEGER PRIMARY KEY columns become an alias of ROWID 
-# ({https://www.sqlite.org/lang_createtable.html#rowid see}). The two columns of the primary key refer to ROWID columns in 
-# another table, but because they are not ROWID columns themselves, storage on disk only needs as much space as the 
-# integer values, not 8 byte constantly ({https://www.sqlite.org/datatype3.html#storage_classes_and_datatypes see}).
+# **Tables `categories_structure`, `product_categories`, `product_countries`, `topic_categories`.** No additional ROWID column 
+# is needed as the table includes two columns that are useful together as a primary key. So the table uses `WITHOUT ROWID`. A 
+# ROWID column would take additional space, as only one-column `INTEGER PRIMARY KEY` columns become an alias of ROWID 
+# ([see](https://www.sqlite.org/lang_createtable.html#rowid)). The two columns of the primary key refer to ROWID columns in 
+# another table, but because they are not ROWID columns themselves, storage on disk only needs as much space as the integer 
+# values, not 8 B constantly ([see](https://www.sqlite.org/datatype3.html#storage_classes_and_datatypes)).
 #
-# **Table `products`.** The GTIN code is saved into an integer column. Compared to a 14 Byte string column, that 
-# saves 7 Bytes, given that most numbers are 14 decimal digits long, utilizing 6 or 8 Bytes in storage in the 
-# INTEGER SQLite storage class ({https://www.sqlite.org/datatype3.html#storage_classes_and_datatypes see}). We do 
-# not use the code column directly as primary key because the GTIN numbers stored in it are relatively large 
-# (7 Byte average). No space can be saved for this column, but for columns referencing it in foreign keys: here, 
-# option WITHOUT ROWID and a primary key using the row number needs at most 3 Bytes per value. At 400,000 records like for  
-# the French products, that saves 400,000 * (7 B - 3 B) = 1.6 MB. With only one foreign key referencing the products 
-# table in the distributable version (namely from products_categories), the saving is smaller as the additional 
-# foreign key column also utilizes 3 Bytes: 400,000 * (7 B - 3 B - 3 Byte) = 0.4 MB. That's still useful, and less 
-# than the other alternative for this case of not having a products table at all (since it has no other attributes 
+# **Table `products`.** The GTIN code is saved into an integer column. Compared to a 14 B string column, that saves 7 B, given 
+# that most numbers are 14 decimal digits long, utilizing 6 or 8 B in storage in the INTEGER SQLite storage class 
+# ([see](https://www.sqlite.org/datatype3.html#storage_classes_and_datatypes)). We do not use the code column directly as 
+# primary key because the GTIN numbers stored in it are relatively large (7 B average). No space can be saved for this column, 
+# but for columns referencing it in foreign keys: here, option `WITHOUT ROWID` and a primary key using the row number needs at 
+# most 3 B per value. At 400,000 records like for the French products, that saves 400,000 × (7 B - 3 B) = 1.6 MB. With only one 
+# foreign key referencing the products table in the distributable version (namely from products_categories), the saving is 
+# smaller as the additional foreign key column also utilizes 3 B: 400,000 × (7 B - 3 B - 3 B) = 0.4 MB. That's still useful, 
+# and less than the other alternative for this case of not having a products table at all (since it has no other attributes 
 # right now). Having a products table is also more flexible for future expansion.
 # 
-# **Table `countries`.** Nothing to optimize, as this table contains few values and is not included into distributable 
-# versions anyway.
+# **Table `countries`.** Nothing to optimize. This table contains few values and is not included into distributed databases.
 # 
 # **Table `topics`.** Nothing to optimize, as this table contains few records.
 # 
+# 
 # ## Hints on SQLite quirks
 # 
-# * There is no need to write "INTEGER PRIMARY KEY NOT NULL", as that is equivalent to "INTEGER PRIMARY KEY" because 
-#   when attempting to insert NULL, the system will choose a non-NULL value automatically 
-#   ({https://www.sqlite.org/lang_createtable.html#rowid see}).
-# * There is no need to write "INT PRIMARY KEY" instead of "INTEGER PRIMARY KEY" to avoid creating an alias for ROWID 
-#   columns, as that quirk does not apply for our WITHOUT ROWID tables 
-#   ({https://www.sqlite.org/withoutrowid.html#differences_from_ordinary_rowid_tables see}).
+# * There is no need to write "INTEGER PRIMARY KEY NOT NULL", as that is equivalent to "INTEGER PRIMARY KEY" because when 
+#   attempting to insert NULL, the system will choose a non-NULL value automatically 
+#   ([see](https://www.sqlite.org/lang_createtable.html#rowid)).
+# * There is no need to write "INT PRIMARY KEY" instead of "INTEGER PRIMARY KEY" to avoid creating an alias for ROWID columns, 
+#   as that quirk does not apply for our WITHOUT ROWID tables 
+#   ([see](https://www.sqlite.org/withoutrowid.html#differences_from_ordinary_rowid_tables)).
+# 
+# 
+# @todo Document the remaining database tables and the optimizations used in them.
 class FoodRescue::Database < SQLite3::Database
 
     # Create a connection to a SQLite3 database file with food rescue content.
     # 
     # @param dbfile [String]  Absolute or relative path to the SQLite3 database file.
-    # @param options [Hash]  Options for the database connection as in {SQLite3::Database#initialize}. 
-    #   By default, option `results_as_hash: true` is used unless overwritten.
+    # @param options [Hash]  Options for the database connection as in {SQLite3::Database#initialize}. By default, option 
+    #   `results_as_hash: true` is used unless overwritten.
     # @see SQLite3::Database#initialize
     def initialize(dbfile, options = {})
         options[:results_as_hash] = true unless options.key?(:results_as_hash)
@@ -69,14 +72,14 @@ class FoodRescue::Database < SQLite3::Database
 
         execute "PRAGMA foreign_keys = ON;"
 
-        # Let the OS sync write operations to the database file when it wants rather than after each command.
-        # Because "commits can be orders of magnitude faster with synchronous OFF" as per 
-        # https://sqlite.org/pragma.html#pragma_synchronous and we don't care that the database might become 
-        # corrupted on power outage. Because it can be simply generated anew by running the import scripts again.
+        # Let the OS sync write operations to the database file when it wants rather than after each command. Because "commits 
+        # can be orders of magnitude faster with synchronous OFF" as per https://sqlite.org/pragma.html#pragma_synchronous and 
+        # we don't care that the database might become corrupted on power outage. Because it can be simply generated anew by 
+        # running the import scripts again.
         execute "PRAGMA synchronous = OFF;"
 
-        # @todo (later) Run all prepare_*_tables methods here. This guarantees that any FoodRescue::Database 
-        # object can take any kind of record without further checks and preparations.
+        # @todo (later) Run all prepare_*_tables methods here. This guarantees that any FoodRescue::Database object can take 
+        #   any kind of record without further checks and preparations.
     end
 
     
@@ -87,7 +90,7 @@ class FoodRescue::Database < SQLite3::Database
     # @see #add_category
     def self.cat_main_name(block)
         # Find the "main" name of the category: English one if existing, otherwise first one.
-        full_name = block[:names].select { |name| name[:lang] == 'en'}.first
+        full_name = block[:names].select{ |name| name[:lang] == 'en' }.first
         full_name = block[:names][0] if full_name.nil?
         
         return [ full_name[:cat_names][0][:value], full_name[:lang] ]
@@ -99,7 +102,7 @@ class FoodRescue::Database < SQLite3::Database
     # @param allow_reuse [Boolean]  If true, no error will occur in case tables of the 
     #   same structure already exist.
     # @see FoodRescue::Database  FoodRescue::Database documentation (explains the database design)
-    def prepare_category_tables(allow_reuse=false)
+    def prepare_category_tables(allow_reuse = false)
         if_not_exists = if allow_reuse then "IF NOT EXISTS" else "" end
 
         # Multiple execute statements are preferable over execute_batch as backtraces then indicate the erroneous statement.
@@ -209,16 +212,14 @@ class FoodRescue::Database < SQLite3::Database
             ) WITHOUT ROWID"
 
         # @todo (later) Import bibliography.bib completely. This requires columns for all BibTeX fields in table literature. 
-        # Currently, asciidoctor-bibtext creates the pre-rendered literature entries at the time of importing content to this 
-        # database. That works, but loses semantics, so that on export to DocBook etc., only the same style of references can be 
-        # used. When importing the complete BibTeX file to this table, asciidoctor-bibtex will still determine the inline 
-        # citation labels, but the bibliography entry styles can be determined on export using bibtex-ruby 
-        # (https://github.com/inukshuk/bibtex-ruby) or similar. Also, export of raw bibliograpy to DocBook is possible then. 
-        # But then again, this is important, just about keeping all semantic information in this database in a principled way.
-        # It might be better not to try to be a literature database and rather be content with BibTeX pre-rendering.
-
+        #   Currently, asciidoctor-bibtext creates the pre-rendered literature entries at the time of importing content to this 
+        #   database. That works, but loses semantics, so that on export to DocBook etc., only the same style of references can 
+        #   be used. When importing the complete BibTeX file to this table, asciidoctor-bibtex will still determine the inline 
+        #   citation labels, but the bibliography entry styles can be determined on export using bibtex-ruby 
+        #   (https://github.com/inukshuk/bibtex-ruby) or similar. Also, export of raw bibliograpy to DocBook is possible then. 
+        #   But then again, this is important, just about keeping all semantic information in this database in a principled way.
+        #   It might be better not to try to be a literature database and rather be content with BibTeX pre-rendering.
         # @todo (later) Raise an exception if allow_reuse==false and a table exists.
-
         # @todo (later) Raise an exception if allow_reuse==true but the existing tables have a different structure.
     end
 
@@ -274,8 +275,9 @@ class FoodRescue::Database < SQLite3::Database
 
     # Record the names of a category definition to the database.
     # 
-    # @param [Hash] block  A nested Hash of the following structure. In this structure, there is always an array around the nested 
-    #   hashes, even when the array contains one or even zero elements. This is needed to be able to iterate over these arrays.
+    # @param [Hash] block  A nested Hash of the following structure. In this structure, there is always an array around the 
+    #   nested hashes, even when the array contains one or even zero elements. This is needed to be able to iterate over these 
+    #   arrays.
     # 
     #   ```
     #   {
@@ -324,7 +326,9 @@ class FoodRescue::Database < SQLite3::Database
         block[:parents].each do |parent| 
             parent_name, parent_lang = [ parent[:cat_name], parent[:lang] ]
             parent_id = get_first_value "SELECT id FROM categories WHERE name = ? AND lang = ?", [ parent_name, parent_lang ]
-            if parent_id.nil? then raise ArgumentError, "Parent category '#{parent_lang}:#{parent_name}' not found in database. Ignoring." end
+            if parent_id.nil? 
+                then raise ArgumentError, "Parent category '#{parent_lang}:#{parent_name}' not found in database. Ignoring." 
+            end
             
             begin
                 execute "INSERT INTO categories_structure VALUES (?, ?)", [cat_id, parent_id]
@@ -339,9 +343,8 @@ class FoodRescue::Database < SQLite3::Database
 
     # Save the number of products for which a category is used to the database.
     # 
-    # @param cat_name [String]  Identifying name of the category to save the product count for. 
-    #   Use the English name, and if not available the first name given. Use the full name, not the 
-    #   tokenized form. Do not include a language prefix.
+    # @param cat_name [String]  Identifying name of the category to save the product count for. Use the English name, and if 
+    #   not available the first name given. Use the full name, not the tokenized form. Do not include a language prefix.
     # @param product_count [Integer]  Number of products in this category.
     def add_product_count(cat_name, product_count)
         execute "UPDATE categories SET product_count = ? WHERE name = ? LIMIT 1", [product_count, cat_name]
@@ -353,13 +356,15 @@ class FoodRescue::Database < SQLite3::Database
     # Save one product to the database.
     # 
     # @param product_code [Integer]  Unique product identification number, usually its GTIN code.
-    # @param categories [Array<Hash>]  Full names of the categories assigned to the product. Each array 
-    #   element has the structure `{lang: '…', name: '…'}`, where `lang` is a language code of the form 
-    #   `ab` or `abc` or a language tag of the forms `ab_CD` or `abc_DE`. If a category is not yet known, 
-    #   an entry will be created for it. This does not include any translations of hierarchy information 
-    #   about that category, obviously.
-    # @param countries [Array]  English-language names of countries in which the product is on sale. If a country 
-    #   is not yet known, a record will be created for it.
+    # @param categories [Array<Hash>]  The categories to which the product is assigned. If any of these categories does not 
+    #   yet exist in the database, an entry will be created with its name (excluding name translations or hierarchy information,
+    #   obviously). Each array element is a Hash describing one category, with keys as follows:
+    # 
+    #   * **`:lang`** (String) — A language code of the form `ab` or `abc` or a language tag of the forms `ab_CD` or `abc_DE`.
+    #   * **`:name`** (String) — The full name of the category in the specified language.
+    # 
+    # @param countries [Array]  English-language names of countries in which the product is on sale. If a country is not yet 
+    #   known, a record will be created for it.
     # 
     # @see https://en.wikipedia.org/wiki/Language_localisation#Language_tags_and_codes Wikipedia: Language tags and codes
     def add_product(product_code, categories, countries)
@@ -372,7 +377,9 @@ class FoodRescue::Database < SQLite3::Database
 
         # Associate the product with each category. If necessary, create a category record first.
         categories.each do |cat|
-            category_id = get_first_value "SELECT id FROM categories WHERE name = ? and lang = ? LIMIT 1", [cat[:name], cat[:lang]]
+            category_id = get_first_value "SELECT id FROM categories WHERE name = ? and lang = ? LIMIT 1", 
+                [cat[:name], cat[:lang]]
+
             if category_id.nil? then
                 execute "INSERT INTO categories (name, lang) VALUES (?, ?)", [cat[:name], cat[:lang]]
                 category_id = get_first_value "SELECT last_insert_rowid()"
@@ -426,16 +433,17 @@ class FoodRescue::Database < SQLite3::Database
     # @param topic_id [Integer]
     # @param author [Hash]  Author data. For the hash keys, see {FoodRescue::Topic#authors}.
     def add_author topic_id, author
-        # Check if there is a record exactly corresponding to the "identifying" parts of an author.
-        # (More than one result would be an error. Not happening, as we check before adding records.)
+        # Check if there is a record exactly corresponding to the "identifying" parts of an author. (More than one result would 
+        # be an error. Not happening, as we check before adding records.)
+        # 
         # @todo Create a more compact and readable way to write this query.
         author_record = get_first_row "
             SELECT * FROM authors 
             WHERE 
-                #{if author[:givenname].nil?   then 'givenname   IS NULL' else "givenname   = '#{author[:givenname]}'"   end} AND
-                #{if author[:middlenames].nil? then 'middlenames IS NULL' else "middlenames = '#{author[:middlenames]}'" end} AND
-                #{if author[:surname].nil?     then 'surname     IS NULL' else "surname     = '#{author[:surname]}'"     end} AND
-                #{if author[:orgname].nil?     then 'orgname     IS NULL' else "orgname     = '#{author[:orgname]}'"     end} 
+            #{if author[:givenname].nil?   then 'givenname   IS NULL' else "givenname   = '#{author[:givenname]}'"   end} AND
+            #{if author[:middlenames].nil? then 'middlenames IS NULL' else "middlenames = '#{author[:middlenames]}'" end} AND
+            #{if author[:surname].nil?     then 'surname     IS NULL' else "surname     = '#{author[:surname]}'"     end} AND
+            #{if author[:orgname].nil?     then 'orgname     IS NULL' else "orgname     = '#{author[:orgname]}'"     end} 
             LIMIT 1"
 
         if author_record.nil?
@@ -443,7 +451,8 @@ class FoodRescue::Database < SQLite3::Database
             execute "
                 INSERT INTO authors (givenname, honorific, middlenames, surname, orgname, orgdiv, uri, email) 
                 VALUES (?, ?, ?, ?, ?, ?, ?, ?)", 
-                author[:givenname], author[:honorific], author[:middlenames], author[:surname], author[:orgname], author[:orgdiv], author[:uri], author[:email]
+                author[:givenname], author[:honorific], author[:middlenames], author[:surname], 
+                author[:orgname], author[:orgdiv], author[:uri], author[:email]
 
             author_id = get_first_value "SELECT last_insert_rowid()"
         else
@@ -475,9 +484,8 @@ class FoodRescue::Database < SQLite3::Database
 
     # Save one topic of food rescue content to the database.
     # 
-    # The given topic can mention bibliographic references. If it does, these must already exist in 
-    # the database. The topic can also mention an author name. If it exists in the database, it will 
-    # be referenced, otherwise a new record will be created.
+    # The given topic can mention bibliographic references. If it does, these must already exist in the database. The topic can 
+    # also mention an author name. If it exists in the database, it will be referenced, otherwise a new record will be created.
     # 
     # @param topic [FoodRescue::Topic]  The topic to add.
     # @raise [ArgumentError]  If a referenced author or literature record does not exist in the database.

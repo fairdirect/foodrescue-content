@@ -3,11 +3,20 @@
 
 **Table of Contents**
 
-**[1. Overview](#1-overview)**  
-**[2. Repository Structure](#2-repository-structure)**  
-**[3. Installation](#3-installation)**  
-**[4. Usage](#4-usage)**  
-**[5. Development Guide](#5-development-guide)**  
+**[1. Overview](#1-overview)**
+
+**[2. Repository Structure](#2-repository-structure)**
+
+**[3. Installation](#3-installation)**
+
+**[4. Usage](#4-usage)**
+
+**[5. Development Guide](#5-development-guide)**
+
+    * [5.1. Software Design](#51-software-design)
+    * [5.2. Code Style Guide](#52-code-style-guide)
+    * [5.3. Documentation Style Guide](#53-documentation-style-guide)
+
 **[6. License and Credits](#6-license-and-credits)**
 
 ------
@@ -106,16 +115,13 @@ However, for server environments and also to separate your various Ruby projects
 
 ## 4. Usage
 
-To generating the food rescue content in the format expected by the Food Rescue App, just run:
+To generate the food rescue content in the format expected by the Food Rescue App, just run:
 
 ```
 make
 ```
 
 @todo The Makefile based build process still has to be implemented.
-
-
-## 5. Development Guide
 
 Each script in `scripts/` contains its own usage instructions, which you'll see when executing it with `--help`, such as `frc-import-products-csv --help`.
 
@@ -128,7 +134,10 @@ The different import scripts need to run in a certain order because each will re
 
 The easiest is to adapt your own build process based on the existing `Makefile`.
 
-**Guiding principles for development**
+
+## 5. Development Guide
+
+### 5.1. Software Design
 
 * **Database as authoritative data source.** The SQLite3 database is used as intended for a "data base", as the one-and-only authoritative source for food rescue content. So naturally, the tasks of scripts provided in this repository are to (1) first import all data from various source formats to the database, (2) then do anything else using the data in the database, such as export to a minified database, to a book in DocBook format and so on.
 
@@ -141,6 +150,57 @@ The easiest is to adapt your own build process based on the existing `Makefile`.
 * **Database IDs as even more lightweight objects.** The database ID of an object, as a string, can be used as an even lighter way to represent objects, namely where only a reference is needed and not the data about the object. These can be aggregated in arrays.
 
 * **Data type for DocBook XML content.** `Ox::Document` is meant to store collections of XML elements (inside its `#nodes` array), without being an element itself or rendering to visible XML output. See: `Ox.dump(Ox::Document.new) => "\n"`. So this is used to hand over collections of XML elements, even if this does not represent a fully features XML element. It's cleaner than using the data structure of the `#nodes` arrays directly, which would be `Array<Ox::Element|String>`).
+
+
+### 5.2. Code Style Guide
+
+The guiding idea is to write code that reads almost like natural language. That affects variable and method naming, source code layout and also choice of the logical flow and distributing algorithmic complexity so that one can understand everything while reading through once.
+
+This project relies on [The Ruby Style Guide](https://rubystyle.guide/), but with the following justified exceptions that make code read more like natural language:
+
+* **Maximum Line Length.** The Ruby Style Guide [recommends](https://rubystyle.guide/#80-character-limits) 80 characters. This project uses (1) a soft limit of 100 characters for code and code comments typically read together with the code (with exceptions that can be reasoned for), (2) a hard limit of 128 characters for code, YARD code comments and longer block-style code comments that are not typically read when navigating through code (3) no limit for files where editing with line wrapping enabled is preferable, such as pure Markdown. Reasons: 128 and 100 are nice numbers; Github has a 128 character line length; 128 fixed-width characters fit well on any screen >1200 px when no sidebar is shown, while 100 characters fit well on any screen >1200 px when a sidebar is visible; 100 characters for code lines is within the limits of [recommendations for major programming languages](https://en.wikipedia.org/wiki/Characters_per_line#In_programming) (Python, Android, Google Java, PHP). It is recommended to adapt the font size so that 100 and 128 characters are shown with and without a sidebar, respectively; because screen reading is mostly tedious [because of too small text](http://mikeyanderson.com/optimal_characters_per_line).
+
+* **Two or more empty lines.** The Ruby Style Guide [recommends](https://rubystyle.guide/#two-or-more-empty-lines) "Don’t use several empty lines in a row." However, they are a nice way to add structure for fast visual navigation when scrolling, similar to how in text documents there are also different vertical gaps between chapters and between paragraphs. So this project uses two vertical lines in the following cases: (1) between two methods, classes or modules and (2) before a Markdown header, except there is a preceding header with nothing else in between.
+
+* **Ternary Operator vs `if`.** The Ruby Style Guide [recommends](https://rubystyle.guide/#ternary-operator) to use the ternary operator `? :` rather than a single-line `if … then … else` expression. However, while the latter reads like natural language while it is not clear how to even pronounce the ternary operator. So we don't use the ternary operator at all.
+
+* **`not`, `and`, `or`.** The Ruby Style Guide [says](https://rubystyle.guide/#bang-not-not) "Use `!` instead of `not`." But `not` is much more readable like natural language, given that it is an English word, long enough to not miss it, and separated with a space from the rest of the expression. `!` is more like a formula sign. Granted, `not` needs parentheses in some cases – so `!` is easier to write but `not` is easier to read, and that's more important because "write once, read often". The same applies to `and` and `or` in Boolean expressions, even though The Ruby Style Guide says "The and and or keywords are banned.", again just because of operator precedence. Still use a suffixed `if` or `unless` modifier expression for control flow rather than `or`.
+
+* **Short Methods.** The Ruby Style Guide [recommends](https://rubystyle.guide/#short-methods) to "avoid methods longer than 10 LOC". That is a good rule of thumb, but it depends on what type of software one is developing. The idea is that, for good code readability, the reader should always be able to "keep the control flow of a method in the mind". So the more algorithmically complex, the shorter the methods should be, down to 5 LOC. In low-complexity software with a linear control flow, such as for data format conversion, methods up to one screenful (40 LOC incl. comments) are fine, and for the top-level linear control flow of scripts even 2-3 screenfuls.
+
+* **Method invocation parentheses.** The Ruby Style Guide [says](https://rubystyle.guide/#method-invocation-parens) "Use parentheses around the arguments of method invocations" but also [recommends](https://rubystyle.guide/#no-dsl-decorating) to omit them for methods are part of an internal Domain Specific Language (Rails, Rake, RSpec etc.), that is, that serve declarative purposes. However, when parentheses do not inhibit reading, code reads more like natural language. So we omit them when there is only a single method call in an expression (means, no chaining or nesting).
+
+https://rubystyle.guide/#namespace-definition
+
+
+### 5.3. Documentation Style Guide
+
+For in-code documentation, we follow The Ruby Style Guide's section "[Comments](https://rubystyle.guide/#comments)". However, while it [is against comments](https://rubystyle.guide/#no-comments) and for self-documenting code, we are for self-documenting code and *also* for comments where they make the code even better. Better means more readable, navigable and understandable. The idea is to write for a developer *starting* to dive into your code, and perhaps even into the language. See below for details.
+
+* **Use Markdown where possible.** To limit the confusion around the plaintext markup languages, this project uses Markdown widely because it is the least common denominator of multiple tools it relies on:
+
+    * Code documentor [YARD](https://yardoc.org/), when run with `--markup markdown`.
+    * Code repository Github, by using [Github flavored Markdown](https://github.github.com/gfm/) for the repo's `README.md` etc..
+    * Content source format AsciiDoc, by using the [Markdown Compatibility syntax](https://asciidoctor.org/docs/asciidoc-syntax-quick-reference/#markdown-compatibility) in the Asciidoctor implementation.
+    * Project documentation and task list system [Dynalist](https://dynalist.io/).
+
+    So where possible, use Markdown. For example, use YARD-style links only to link to code elements, but not to normal URLs. So instead of `{http://example.com/ Example}`, write `[Example](http://example.com/)`. There is no real alternative to Markdown – Github understands AsciiDoc markup, but YARD does not understand AsciiDoc without custom coding, and Dynalist only understands Markdown.
+
+* **Use code comments to make code read like text.** As with the code style guide, the guiding idea is here to write code that reads almost like natural language. The redundancy introduced by comments is a minor drawback compared to that benefit. Comments are employed to assist that. Specifically: 
+
+    * Use comments to spare the reader from jumping back and forth between many parts of the code in order to understand one section. When code can be read sequentially like an article or book, it's a good thing.
+
+    * Use comments to document the interface of each and every method, using YARD syntax from which documentation can be generated. This is esp. necessary in dynamically typed languages like Ruby, where the code does not tell about the accepted data types. Otherwise the reader has to search for and jump to calling code to see how a method is used, or try to infer data types (which the reader should know when starting to read a method) from the method's implementation. Both goes against sequential readability of code.
+
+    * Use comments as sub-section headers. Like books, software has sections (modules), chapters (classes) and sub-chapters (methods). But a heading level for one or more paragraphs of text is missing. Use a blank like followed by a single-line comment for that, which summarizes the 3-10 lines of code up to the next such comment. But it helps navigate code faster because reading one sentence is faster than understanding 3-10 lines of code. And aiding fast navigation is the whole point of headings. This comment is redundant to the code, but so is a heading redundant to the text.
+
+* **Annotations keyword format.** Instead of the "`TODO: …`" format [proposed](https://rubystyle.guide/#annotate-keywords) in The Ruby Style Guide, a "`@todo …`" format is used. This is the tag format of YARD, with the intention to eventually extend YARD for collecting, listing and managing these code annotations.
+
+* **Hash key documentation with YARD.** YARD will render the `@option` tags in a section titled "Options Hash (varname):". This is not applicable if multiple method parameters are structured hashes or if the hash is nested or if the return value is a structured hash. We use (nested) itemized lists in a way that emulates the rendered output of YARD, as follows. This is actually preferable over `@options` in all cases for consistency, and because the output is indented below the right parameter and not a separate "options hash" section. This corresponds to the fact that an options hash has always been just a normal method parameter an is falling mostly out of use due to keywork arguments now anyway. The format we use is:
+
+    ```
+    * **:keyname** (Datatype of value) *(defaults to: value)* — Option description as a full sentence.
+    ```
 
 
 ## 6. License and Credits

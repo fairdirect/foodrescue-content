@@ -63,48 +63,43 @@ DOCOPT
 
 # ## Table structure of the FoodKeeper App database
 #
-# * **FOOD_CATEGORY, FOOD_CATEGORY_ES, FOOD_CATEGORY_PT.** The 25 main and sub categories 
-#   of food found on the app's start screen. Not all categories have sub-categories, but if 
-#   one has them, then products can not be in the main category.
-# * **PRODUCTS, PRODUCTS_ES, PRODUCTS_PT.** The main table with all storage durations 
-#   and instructions for 396 products. Products are rather types of products. There is one 
-#   table per language, where all tips and other texts are translated and all numbers appear 
-#   redundantly. Translation is complete.
-# * **COOKING_METHODS, COOKING_METHODS_ES, COOKING_METHODS_PT.** Cooking instructions for 
-#   89 products. Could be part of PRODUCTS since it's a 1:1 relation. One table per language, 
-#   but only the "Cooking_Method" column is really a free-text field that needs translation.
-# * **COOKING_TIPS, COOKING_TIPS_ES, COOKING_TIPS_PT.** 93 cooking tips including a free-text 
-#   column, a safe minimum temperature (in Fahrenheit), and a rest time. Some tips are 
-#   identical because this table is not normalized.
+# * **FOOD_CATEGORY, FOOD_CATEGORY_ES, FOOD_CATEGORY_PT.** The 25 main and sub categories of food found on the app's start 
+#   screen. Not all categories have sub-categories, but if one has them, then products can not be in the main category.
+# * **PRODUCTS, PRODUCTS_ES, PRODUCTS_PT.** The main table with all storage durations and instructions for 396 products. 
+#   Products are rather types of products. There is one table per language, where all tips and other texts are translated and 
+#   all numbers appear redundantly. Translation is complete.
+# * **COOKING_METHODS, COOKING_METHODS_ES, COOKING_METHODS_PT.** Cooking instructions for 89 products. Could be part of 
+#   PRODUCTS since it's a 1:1 relation. One table per language, but only the "Cooking_Method" column is really a free-text 
+#   field that needs translation.
+# * **COOKING_TIPS, COOKING_TIPS_ES, COOKING_TIPS_PT.** 93 cooking tips including a free-text column, a safe minimum 
+#   temperature (in Fahrenheit), and a rest time. Some tips are identical because this table is not normalized.
 # * **FAVORITE_PRODUCTS.** The user's heart-marked products in the app. Not relevant.
 # * **SEARCH_HISTORY.** The user's search history in the app. Not relevant.
-# * **RECALLS.** Product recalls. Not relevant here.
+# * **RECALLS.** Product recalls. Not relevant.
 # 
 #
 # ## Column structure of the PRODUCTS table in the FoodKeeper App database
 # 
 # * **Name.** Defines the general type of product.
-# * **Name_subtitle.** An optional, more detailed definition of the type of product, used esp. 
-#   where "Name" is identical for several products.
-# * **\*_Min, \*_Max, \*_Metric.** The storage duration range for a specific storage type. 
-#   The `_Metric` column contains the unit ("Days", "Weeks" etc.).
-# * **Pantry_(Min|Max|Metric).** The "general" pantry storage, independent of whether the package is already 
-#   opened or not. Only 6 products have this. A value here is mutually exclusive with a value 
-#   in any of the other two pantry storage types.
-# * **DOP_Pantry_(Min|Max|Metric).** Storage in the pantry from the date of purchase. Without opening 
-#   the package, as otherwise also having the "pantry after opening" storage type would make no sense. 
-#   Products can have values heere and in the "pantry after opening" columns at the same time.
+# * **Name_subtitle.** An optional, more detailed definition of the type of product, used esp. where "Name" is identical for 
+#   several products.
+# * **\*_Min, \*_Max, \*_Metric.** The storage duration range for a specific storage type. The `_Metric` column contains the 
+#   unit ("Days", "Weeks" etc.).
+# * **Pantry_(Min|Max|Metric).** The "general" pantry storage, independent of whether the package is already opened or not. 
+#   Only 6 products have this. A value here is mutually exclusive with a value in any of the other two pantry storage types.
+# * **DOP_Pantry_(Min|Max|Metric).** Storage in the pantry from the date of purchase. Without opening the package, as otherwise 
+#   also having the "pantry after opening" storage type would make no sense. Products can have values heere and in the "pantry 
+#   after opening" columns at the same time.
 # * **Pantry_After_Opening_(Min|Max|Metric).** Values can appear here in addition to `DOP_Pantry_(Min|Max|Metric)`.
 # 
-# For the refrigeration and freezing related columns, the same relationship between columns applies as 
-# for the pantry storage related columns.
+# For the refrigeration and freezing related columns, the same relationship between columns applies as for the pantry storage 
+# related columns.
 # 
-# * **Pantry_tips, Refrigerate_tips, Freeze_Tips.** These are the only relevant columns with tips. 
-#   The columns `DOP_*_tips` are all empty, and other tips columns do not even exist. Logically, some 
-#   tips here refer storage types stored in other columns than `Pantry_*`, `Refrigerate_*` or 
-#   `Freeze_*`, for example the tip "After opening time applies to prepared product.". So these tips 
-#   should be rendered once for the whole list of pantry, refrigerator or freezer storage instructions, 
-#   as they seem to apply to the whole list.
+# * **Pantry_tips, Refrigerate_tips, Freeze_Tips.** These are the only relevant columns with tips. The columns `DOP_*_tips` are 
+#   all empty, and other tips columns do not even exist. Logically, some tips here refer storage types stored in other columns 
+#   than `Pantry_*`, `Refrigerate_*` or `Freeze_*`, for example the tip "After opening time applies to prepared product.". So 
+#   these tips should be rendered once for the whole list of pantry, refrigerator or freezer storage instructions, as they seem 
+#   to apply to the whole list.
 # * **DOP_Pantry_tips, DOP_Refrigerate_tips, DOP_Freeze_Tips.** These columns are completely empty, see:
 #   `SELECT ID, DOP_Pantry_tips FROM PRODUCTS WHERE DOP_Pantry_tips != '';`
 # 
@@ -113,43 +108,34 @@ DOCOPT
 #
 # ## Other observations about the FoodKeeper App
 # 
-# * The app is 94 MiB in size and basically all of that is consumed by high-dpi stock images 
-#   in PNG format (!), used in the app in the background.
-# * The database is only 280 kiB, and even that contains redundancy due to the way how 
-#   translations, cooking methods and cooking tips are saved. And because each column has a 
-#   SQLite3 ROWID column. 120 kiB would be achievable easily.
+# * The app is 94 MiB in size and basically all of that is consumed by high-dpi stock images in PNG format (!), used in the app 
+#   in the background.
+# * The database is only 280 kiB, and even that contains redundancy due to the way how translations, cooking methods and 
+#   cooking tips are saved. And because each column has a SQLite3 ROWID column. 120 kiB would be achievable easily.
 # 
 #
 # ## Remaining work for future extensions
 # 
-# @todo (later) Refactor code in this script into a class FoodKeeperDatabase, stored in the 
-# same file in this script (because it is not re-usable).
-# 
-# @todo (later) Normalize the column names in the FoodKeeper database: suffix `_tips` should become 
-# `_Tips` everywhere in table `PRODUCTS`.
-# 
-# @todo (later) Also include downloading the FoodKeeper .apk file from Google Play, using 
-# a command line interface to Raccoon or similar.
-#
-# @todo (later) Also include extracting the FoodKeeper database from the .apk file. 
-# Probably, a simple unzip command (of only the SQLite database) will be sufficient, with no 
-# need for apktool.
-#
-# @todo (later) As an alternative to the above, include a SQL command dump of the 
-# FoodKeeper database into the Git repository, and enable this script to read it as an 
-# alternative to being provided a binary SQLite database file. The SQL dump format is 
-# better manageable for Git.
+# @todo (later) Refactor code in this script into a class FoodKeeperDatabase, stored in the same file in this script (because 
+#   it is not re-usable).
+# @todo (later) Normalize the FoodKeeper database column names: `_tips` should be `_Tips` everywhere.
+# @todo (later) Make this script downloading the FoodKeeper .apk file from Google Play, using a command like Raccoon.
+# @todo (later) Also include extracting the FoodKeeper database from the .apk file. Probably, a simple unzip command (of only 
+#   the SQLite database) will be sufficient, with no need for apktool.
+# @todo (later) As an alternative to the above, include a SQL command dump of the FoodKeeper database into the Git repository, 
+#   and enable this script to read it as an alternative to being provided a binary SQLite database file. The SQL dump format is 
+#   better manageable for Git.
 
 
-# Create and populate a database table with a mapping between FoodKeeper products and 
-# Open Food Facts categories.
+# Create and populate a database table with a mapping between FoodKeeper products and Open Food Facts categories.
 # 
 # @param db [SQLite3::Database]  The database connection to the FoodKeeper database.
 def create_categories_mapping(db)
     # Let the OS sync write operations to the database file when it wants rather than after each command.
-    # Because "commits can be orders of magnitude faster with synchronous OFF" as per 
-    # https://sqlite.org/pragma.html#pragma_synchronous and we don't care that the database might become 
-    # corrupted on power outage. Because it can be simply generated anew by running the import scripts again.
+    # 
+    # Reason: "Commits can be orders of magnitude faster with synchronous OFF" as per 
+    # https://sqlite.org/pragma.html#pragma_synchronous and we don't care here about database corruption on power outage. 
+    # Because it can be simply generated anew by running the import scripts again.
     db.execute "PRAGMA synchronous = OFF"
 
     db.execute("
@@ -174,15 +160,14 @@ end
 
 # Determine the Open Food Facts categories for this FoodKeeper product.
 # 
-# The mapping conveniently relies on a table `OFF_CATEGORY` that has to be added to the FoodKeeper 
-# database and populated before calling. See #categories_data().
+# The mapping conveniently relies on a table `OFF_CATEGORY` that has to be added to the FoodKeeper database and populated before
+# calling. See #categories_data().
 # 
-# @param product_id [Integer]  The FoodKeeper database's PRODUCTS.ID value of the product for which 
-#   to determine the OFF categories.
+# @param product_id [Integer]  The FoodKeeper database's PRODUCTS.ID value of the product for which to determine the OFF 
+#   categories.
 # @param db [SQLite3::Database]  The database connection to the FoodKeeper database.
-# @return [Array<String>]  The OFF categories, using their full English names. Only when no English 
-#   name is available, a name in a different language would be used, with a two-letter language 
-#   prefix such as "fr:French Category Name Here".
+# @return [Array<String>]  The OFF categories, using their full English names. Only when no English name is available, a name in
+#   a different language would be used, with a two-letter language prefix such as "fr:French Category Name Here".
 def categories(product_id, db)
     db
         .execute('SELECT Name FROM OFF_CATEGORY WHERE Product_ID = ?', [ product_id ])
@@ -192,8 +177,7 @@ end
 
 # Create a basic topic and fill in the values common for all FoodKeeper topics.
 # 
-# @param product_id [Integer]  The FoodKeeper database's PRODUCTS.ID value of the product about which 
-#   the topic will be about.
+# @param product_id [Integer]  The FoodKeeper database's PRODUCTS.ID value of the product about which the topic will be about.
 # @param db [SQLite3::Database]  The database connection to the FoodKeeper database.
 # @return [FoodRescue::Topic]  The basic topic that has been created.
 def basic_topic(product_id, db)
@@ -201,18 +185,19 @@ def basic_topic(product_id, db)
 
     # Author information about the FoodKeeper app.
     # 
-    # Since the original FoodKeeper content appears both on a website and mobile apps 
-    # and it was not clear who its original author is, both the app author and website 
-    # author are credite. The author of the food-rescue-content software is included as 
-    # in role "conversion", as the final form of the reused FoodKeeper content is defined 
-    # by the foodrescue-content software.
+    # Since the original FoodKeeper content appears both on a website and mobile apps and it was not clear who its original 
+    # author is, both the app author and website author are credite. The author of the food-rescue-content software is included 
+    # as in role "conversion", as the final form of the reused FoodKeeper content is defined by the foodrescue-content software.
     # 
-    # Author information about the FoodKeeper app as per: 
-    #     https://play.google.com/store/apps/details?id=gov.usda.fsis.foodkeeper2
-    #     https://www.fsis.usda.gov/wps/portal/informational/contactus
+    # Author information about the FoodKeeper app as per:
+    # 
+    # * https://play.google.com/store/apps/details?id=gov.usda.fsis.foodkeeper2
+    # * https://www.fsis.usda.gov/wps/portal/informational/contactus
+    # 
     # Author information about the (identical) FoodKeeper web content as per:
-    #     https://www.foodsafety.gov/keep-food-safe/foodkeeper-app
-    #     https://www.foodsafety.gov/about 
+    # 
+    # * https://www.foodsafety.gov/keep-food-safe/foodkeeper-app
+    # * https://www.foodsafety.gov/about
     topic.authors = [
         {
             role:       'author',
@@ -234,9 +219,9 @@ def basic_topic(product_id, db)
         }
     ]
 
-    # As of 2020-05-02, the topic's version date is the "Updated" date of the FoodKeeper app on Google Play.
-    # The website notes however " Date Last Reviewed: April 26, 2019", so might contain more recent 
-    # updates. See https://www.foodsafety.gov/keep-food-safe/foodkeeper-app
+    # As of 2020-05-02, the topic's version date is the "Updated" date of the FoodKeeper app on Google Play. The website notes 
+    # however "Date Last Reviewed: April 26, 2019", so might contain more recent updates.
+    # See: https://www.foodsafety.gov/keep-food-safe/foodkeeper-app
     topic.edition = '2017-11-14'
 
     # Fill the topic's Open Food Facts categories.
@@ -255,13 +240,12 @@ end
 
 # Render the specified product's shelf life into a string like "6-9 Months".
 # 
-# @param product_id [Integer]  The FoodKeeper database's PRODUCTS.ID value of the product about which 
-#   the topic will be about.
+# @param product_id [Integer]  The FoodKeeper database's PRODUCTS.ID value of the product about which the topic will be about.
 # @param db [SQLite3::Database]  The database connection to the FoodKeeper database.
-# @param field_prefix [String]  The prefix of the FoodKeeper database columns (in table PRODUCTS) to 
-#   use when rendering the shelf life string. For example, `Pantry`.
-# @return [String]  The shelf life string. It may contain XML, so must be added as raw content to 
-#   an XML file. It may be the empty string if no information is present.
+# @param field_prefix [String]  The prefix of the FoodKeeper database columns (in table PRODUCTS) to use when rendering the 
+#   shelf life string. For example, `Pantry`.
+# @return [String]  The shelf life string. It may contain XML, so must be added as raw content to an XML file. It may be the 
+#   empty string if no information is present.
 def shelf_life(product_id, db, field_prefix)
     product = db.get_first_row('SELECT * FROM PRODUCTS WHERE ID = ?', [ product_id ])
 
@@ -297,18 +281,16 @@ end
 
 # Render the specified product's storage tips into a string.
 # 
-# @param product_id [Integer]  The FoodKeeper database's PRODUCTS.ID value of the product about which 
-#   the topic will be about.
+# @param product_id [Integer]  The FoodKeeper database's PRODUCTS.ID value of the product about which the topic will be about.
 # @param db [SQLite3::Database]  The database connection to the FoodKeeper database.
-# @param storage_type [Symbol]  The storage type to generate instructions for. Any of `:pantry`, 
-#   `:refrigerate`, `:freeze`. If omitted, instructions for all storage types are included.
+# @param storage_type [Symbol]  The storage type to generate instructions for. Any of `:pantry`, `:refrigerate`, `:freeze`. 
+#   If omitted, instructions for all storage types are included.
 # @return [String]  The storage tips string, which can be the empty string.
 def storage_tips(product_id, db, storage_type: nil)
     product = db.get_first_row('SELECT * FROM PRODUCTS WHERE ID = ?', [ product_id ])
 
-    # Note that tips fields are either named `*_Tips` or `*_tips`. It should be `*_Tips` everywhere, 
-    # as SQLite3 column names are case-independent, this sloppyness is tolerated in the database. 
-    # But not for the hash keys here.
+    # Note that tips fields are either named `*_Tips` or `*_tips`. It should be `*_Tips` everywhere, as SQLite3 column names 
+    # are case-independent, this sloppyness is tolerated in the database. But not for the hash keys here.
     case storage_type
     when :pantry
         product['Pantry_tips']
@@ -324,13 +306,11 @@ end
 
 # Generate a list of storage instructions in XML for the specified product.
 # 
-# @param product_id [Integer]  The FoodKeeper database's PRODUCTS.ID value of the product about which 
-#   the topic will be about.
+# @param product_id [Integer]  The FoodKeeper database's PRODUCTS.ID value of the product about which the topic will be about.
 # @param db [SQLite3::Database]  The database connection to the FoodKeeper database.
 # @param storage_type [Symbol]  The storage type to generate instructions for. Any of `:pantry`, `:refrigerate`, `:freeze`.
 #   If omitted, instructions for all storage types are included.
-# @param include_tips [Boolean]  Whether to also include more detailed storage tips, or just show 
-#   storage durations.
+# @param include_tips [Boolean]  Whether to also include more detailed storage tips, or just show storage durations.
 # @return [Ox::Element]
 def storage_durations(product_id, db, storage_type: nil, include_tips: true)
     # Field / column prefixes by storage type. 
@@ -357,8 +337,7 @@ end
 
 # Generate an introductory sentence for the list of estimated storage durations.
 # 
-# @param product_id [Integer]  The FoodKeeper database's PRODUCTS.ID value of the product about which 
-#   the topic will be about.
+# @param product_id [Integer]  The FoodKeeper database's PRODUCTS.ID value of the product about which the topic will be about.
 # @param db [SQLite3::Database]  The database connection to the FoodKeeper database.
 def storage_intro_text(product_id, db)
     product = db.get_first_row('SELECT * FROM PRODUCTS WHERE ID = ?', [ product_id ])
@@ -375,8 +354,7 @@ end
 # Create a topic from given FoodKeeper product data for the "Storage Overview" section.
 # in the "Storage Overview" section.
 # 
-# @param product_id [Integer]  The FoodKeeper database's PRODUCTS.ID value of the product about which 
-#   the topic will be about.
+# @param product_id [Integer]  The FoodKeeper database's PRODUCTS.ID value of the product about which the topic will be about.
 # @param db [SQLite3::Database]  The database connection to the FoodKeeper database.
 # @return [FoodRescue::Topic]  The created topic.
 def storage_overview_topic(product_id, db)
@@ -396,8 +374,7 @@ end
 
 # Create a topic from given FoodKeeper product about pantry storage.
 # 
-# @param product_id [Integer]  The FoodKeeper database's PRODUCTS.ID value of the product about which 
-#   the topic will be about.
+# @param product_id [Integer]  The FoodKeeper database's PRODUCTS.ID value of the product about which the topic will be about.
 # @param db [SQLite3::Database]  The database connection to the FoodKeeper database.
 # @return [FoodRescue::Topic]  The created topic.
 def pantry_storage_topic(product_id, db)
@@ -417,8 +394,7 @@ end
 
 # Create a topic from given FoodKeeper product about refrigerated storage.
 # 
-# @param product_id [Integer]  The FoodKeeper database's PRODUCTS.ID value of the product about which 
-#   the topic will be about.
+# @param product_id [Integer]  The FoodKeeper database's `PRODUCTS.ID` value of the product about which the topic will be about.
 # @param db [SQLite3::Database]  The database connection to the FoodKeeper database.
 # @return [FoodRescue::Topic]  The created topic.
 def fridge_storage_topic(product_id, db)
@@ -438,8 +414,7 @@ end
 
 # Create a topic from given FoodKeeper product about freezer storage.
 # 
-# @param product_id [Integer]  The FoodKeeper database's PRODUCTS.ID value of the product about which 
-#   the topic will be about.
+# @param product_id [Integer]  The FoodKeeper database's `PRODUCTS.ID` value of the product about which the topic will be about.
 # @param db [SQLite3::Database]  The database connection to the FoodKeeper database.
 # @return [FoodRescue::Topic]  The created topic.
 def freezer_storage_topic(product_id, db)
@@ -460,8 +435,7 @@ end
 
 # Import a single FoodKeeper product to the SQLite3 database.
 # 
-# @param product_id [Integer]  The FoodKeeper database's PRODUCTS.ID value of the product about which 
-#   the topic will be about.
+# @param product_id [Integer]  The FoodKeeper database's `PRODUCTS.ID` value of the product about which the topic will be about.
 # @param fk_db [SQLite3::Database]  The database connection to the FoodKeeper database.
 # @param frc_db [FoodRescue::Database]  The database connection to the database with food rescue content.
 def import_product(product_id, fk_db, frc_db)
@@ -498,15 +472,15 @@ end
 
 # Convert FoodKeeper products to food rescue content in a SQLite3 database.
 begin
-    # Create an in-memory database to avoid changing the on-disk database. This connection must be 
-    # kept open, because when the last connection to an in-memory database closes, its data is gone. 
-    # It uses shared cache mode to allow other database connections to see the same data.
+    # Create an in-memory database to avoid changing the on-disk database.
+    # 
+    # This connection must be kept open, because when the last connection to an in-memory database closes, its data is gone. 
+    # It uses shared cache mode to allow other database connections to see the same data. 
     # See: https://www.sqlite.org/inmemorydb.html
     fk_mem_db = SQLite3::Database.new 'file::memory:?cache=shared', { results_as_hash: true }
 
-    # Fill the in-memory database from the on-disk database. See:
-    # https://www.sqlite.org/lang_vacuum.html#vacuuminto
-    # https://stackoverflow.com/a/58932207
+    # Fill the in-memory database from the on-disk database.
+    # See: https://www.sqlite.org/lang_vacuum.html#vacuuminto, https://stackoverflow.com/a/58932207
     fk_file_db = SQLite3::Database.new args['FK_DBFILE'], { results_as_hash: true }
     fk_file_db.execute("VACUUM INTO 'file::memory:?cache=shared'")
     fk_file_db.close
@@ -519,18 +493,19 @@ begin
 
     # Make sure that the USDA-1 literature source is inside the target database, otherwise add it from static content.
     # 
-    # @todo (later) The literature record should be inserted as a BibTeX record transformed with asciidoc-bibtex, to 
-    # make sure the right citation style is used.
-    # @todo The key "USDA-1" should be blocked (defined with empty values) in the project's global bibliography.bib 
-    # file so that the content of this literature reference can be managed in this script without key conflicts.
+    # @todo (later) The literature record should be inserted as a BibTeX record transformed with asciidoc-bibtex, to make sure 
+    #   the right citation style is used.
+    # @todo The key "USDA-1" should be blocked (defined with empty values) in the project's global bibliography.bib file so 
+    #   that the content of this literature reference can be managed in this script without key conflicts.
     usda1_record = frc_db.execute "SELECT * FROM literature WHERE id = 'USDA-1' LIMIT 1"
-    frc_db.execute "
-        INSERT INTO literature (id, abbrev, entry) 
-        VALUES (
+    if usda1_record.empty?
+        frc_db.execute 
+            "INSERT INTO literature (id, abbrev, entry) VALUES (?, ?, ?)", 
             'USDA-1', 
             'USDA-1', 
-            'Food Safety and Inspection Service of the United States Department of Agriculture: Foodkeeper. 2017. https://play.google.com/store/apps/details?id=gov.usda.fsis.foodkeeper2'
-        )" if usda1_record.empty?
+            'Food Safety and Inspection Service of the United States Department of Agriculture: '\
+                'Foodkeeper. 2017. https://play.google.com/store/apps/details?id=gov.usda.fsis.foodkeeper2' 
+    end
   
     # Load each (English) FoodKeeper product and import it into the database.
     fk_mem_db.execute('SELECT ID FROM PRODUCTS') do |product|
@@ -538,7 +513,7 @@ begin
     end
 
     # @todo (later) Also load the FoodKeeper products in Spanish and Portuguese and convert them to 
-    # translated DocBook XML files.
+    #   translated DocBook XML files.
 rescue ArgumentError => e
     $stderr.puts e.message
     $stderr.puts e.backtrace

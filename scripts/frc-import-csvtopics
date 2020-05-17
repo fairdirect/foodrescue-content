@@ -79,14 +79,12 @@ end
 begin
     db = FoodRescue::Database.new args['DBFILE']
 
-    # Debug function to see the database queries executed.
+    # Debug function, enable to see the database queries executed.
     # db.trace { |sql_query| puts "#{'DEBUG:'.in_orange} Going to execute: #{sql_query}" if sql_query.match? /SELECT.*FROM authors/ }
 
     db.prepare_topic_tables(allow_reuse: true)
 
-    # @todo Implement importing referenced entries of bibliography.bib before starting to 
-    # import topics.
-
+    # @todo Implement importing referenced entries of bibliography.bib before starting to import topics.
     # @todo (later) Make sure the expected columns exist in the CSV file, as indicated by the header.
 
     # To keep the memory footprint small, read one line at a time with CSV.foreach().
