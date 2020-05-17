@@ -47,13 +47,13 @@ will be silently ignored.
   column is optional)
 
 Usage:
-    #{__FILE__} [options] INFILE DBFILE
-    #{__FILE__} -h | --help
-    #{__FILE__} -v | --version
+  #{__FILE__} [options] INFILE DBFILE
+  #{__FILE__} -h | --help
+  #{__FILE__} -v | --version
 
 Options:
-    -h, --help          Show this screen.
-    -v, --version       Show version.
+  -h, --help          Show this screen.
+  -v, --version       Show version.
 
 DOCOPT
 
@@ -66,10 +66,10 @@ DOCOPT
 
 # Argument parsing.
 begin
-    args = Docopt::docopt(doc, {version: version, help: true})
+  args = Docopt::docopt(doc, {version: version, help: true})
 rescue Docopt::Exit => e
-    puts e.message
-    exit -1
+  puts e.message
+  exit -1
 end
 
 
@@ -77,74 +77,74 @@ end
 # ----------------------------------------------------------
 
 begin
-    db = FoodRescue::Database.new args['DBFILE']
+  db = FoodRescue::Database.new args['DBFILE']
 
-    # Debug function, enable to see the database queries executed.
-    # db.trace { |sql_query| puts "#{'DEBUG:'.in_orange} Going to execute: #{sql_query}" if sql_query.match? /SELECT.*FROM authors/ }
+  # Debug function, enable to see the database queries executed.
+  # db.trace { |sql_query| puts "#{'DEBUG:'.in_orange} Going to execute: #{sql_query}" if sql_query.match? /SELECT.*FROM authors/ }
 
-    db.prepare_topic_tables(allow_reuse: true)
+  db.prepare_topic_tables(allow_reuse: true)
 
-    # @todo Implement importing referenced entries of bibliography.bib before starting to import topics.
-    # @todo (later) Make sure the expected columns exist in the CSV file, as indicated by the header.
+  # @todo Implement importing referenced entries of bibliography.bib before starting to import topics.
+  # @todo (later) Make sure the expected columns exist in the CSV file, as indicated by the header.
 
-    # To keep the memory footprint small, read one line at a time with CSV.foreach().
-    # See: "Processing large CSV files with Ruby", https://dalibornasevic.com/posts/68
-    CSV.foreach(args['INFILE'], { headers: true }) do |record|
-      
-        topic = FoodRescue::Topic.new
+  # To keep the memory footprint small, read one line at a time with CSV.foreach().
+  # See: "Processing large CSV files with Ruby", https://dalibornasevic.com/posts/68
+  CSV.foreach(args['INFILE'], { headers: true }) do |record|
+    
+    topic = FoodRescue::Topic.new
 
-        topic.title = record['Title']
+    topic.title = record['Title']
 
-        names = record['Author'].split
-        topic.authors = case names.length
-            when 1
-                [{ role: 'author', surname: names[0] }]
-            when 2
-                [{ role: 'author', givenname: names[0], surname: names[1] }]
-            when (3...)
-                [{ role: 'author', givenname: names[0], middlenames: names[1..-2].join, surname: names[-1] }]
-        end
-
-        topic.edition = Date.parse(record['Version date']).iso8601 unless record['Version date'].empty?
-
-        topic.section = record['Topic type']
-
-        categories = if record['Categories'].nil? then [] else record['Categories'].split("\n") end
-        categories = categories.filter_map do |cat|
-            # Ignore categories given as a category tag (such as "fr:test-tag") rather than the full name.
-            # @todo (later) Also process tag-type categories. It requires adding the category tags to the database.
-            if /^[a-z][a-z]:[a-z-]+$/.match?(cat)
-                $stderr.puts 'WARNING: '.in_orange + "Ignoring unrecognized category #{cat}."
-                next
-            end
-
-            # Ignore categories given with a language prefix ("fr:") or language tag prefix ("fr-BE:").
-            # @todo (later) Also process categories given with a language (tag) prefix.
-            if /^[a-z][a-z]:.+$/.match?(cat) or /^[a-z][a-z]-[A-Z][A-Z]:.+$/.match?(cat)
-                $stderr.puts 'WARNING: '.in_orange + "Ignoring unrecognized category #{cat}."
-                next
-            end
-
-            cat
-        end
-        topic.categories = categories
-
-        topic.abstract = if record.key?('Topic type') then record['Topic type'] else nil end
-
-        topic.content_xbibrefs = if record.key?('Literature') then record['Literature'].split("\n") else nil end
-
-        # Not giving a bibliography list will make the database use its existing list to look up 
-        # literature references.
-        topic.bibliography = {}
-
-        topic.import_content_proper record['Text'], format: :asciidoc
-
-        db.add_topic(topic)
+    names = record['Author'].split
+    topic.authors = case names.length
+      when 1
+        [{ role: 'author', surname: names[0] }]
+      when 2
+        [{ role: 'author', givenname: names[0], surname: names[1] }]
+      when (3...)
+        [{ role: 'author', givenname: names[0], middlenames: names[1..-2].join, surname: names[-1] }]
     end
+
+    topic.edition = Date.parse(record['Version date']).iso8601 unless record['Version date'].empty?
+
+    topic.section = record['Topic type']
+
+    categories = if record['Categories'].nil? then [] else record['Categories'].split("\n") end
+    categories = categories.filter_map do |cat|
+      # Ignore categories given as a category tag (such as "fr:test-tag") rather than the full name.
+      # @todo (later) Also process tag-type categories. It requires adding the category tags to the database.
+      if /^[a-z][a-z]:[a-z-]+$/.match?(cat)
+        $stderr.puts 'WARNING: '.in_orange + "Ignoring unrecognized category #{cat}."
+        next
+      end
+
+      # Ignore categories given with a language prefix ("fr:") or language tag prefix ("fr-BE:").
+      # @todo (later) Also process categories given with a language (tag) prefix.
+      if /^[a-z][a-z]:.+$/.match?(cat) or /^[a-z][a-z]-[A-Z][A-Z]:.+$/.match?(cat)
+        $stderr.puts 'WARNING: '.in_orange + "Ignoring unrecognized category #{cat}."
+        next
+      end
+
+      cat
+    end
+    topic.categories = categories
+
+    topic.abstract = if record.key?('Topic type') then record['Topic type'] else nil end
+
+    topic.content_xbibrefs = if record.key?('Literature') then record['Literature'].split("\n") else nil end
+
+    # Not giving a bibliography list will make the database use its existing list to look up 
+    # literature references.
+    topic.bibliography = {}
+
+    topic.import_content_proper record['Text'], format: :asciidoc
+
+    db.add_topic(topic)
+  end
 rescue => e
-    $stderr.puts "ERROR: ".in_red + e.message
-    $stderr.puts e.backtrace
-    exit -1
+  $stderr.puts "ERROR: ".in_red + e.message
+  $stderr.puts e.backtrace
+  exit -1
 ensure
-    db.close if db
+  db.close if db
 end

@@ -15,5 +15,5 @@
  * (Solves it for any Markdown file and in Github issues.) */
 .markdown-body ol ol, 
 .markdown-body ul ol {
-    list-style-type: decimal;
+  list-style-type: decimal;
 }

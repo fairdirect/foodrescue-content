@@ -45,18 +45,18 @@ Full process to convert FoodKeeper data:
 
 Examples: For the foodrescue-content repo, the command to run is:
 
-    scripts/frc-import-foodkeeper.rb \
-        content-topics/FoodKeeper.sqlite3 \
-        content-topics/topics-foodkeeper-en/topic-foodkeeper-
+  scripts/frc-import-foodkeeper.rb \
+    content-topics/FoodKeeper.sqlite3 \
+    content-topics/topics-foodkeeper-en/topic-foodkeeper-
 
 Usage:
-    #{__FILE__} FK_DBFILE FRC_DBFILE
-    #{__FILE__} -h | --help
-    #{__FILE__} -v | --version
+  #{__FILE__} FK_DBFILE FRC_DBFILE
+  #{__FILE__} -h | --help
+  #{__FILE__} -v | --version
 
 Options:
-    -h, --help                     Show this screen.
-    -v, --version                  Show version.
+  -h, --help                     Show this screen.
+  -v, --version                  Show version.
 
 DOCOPT
 
@@ -131,30 +131,30 @@ DOCOPT
 # 
 # @param db [SQLite3::Database]  The database connection to the FoodKeeper database.
 def create_categories_mapping(db)
-    # Let the OS sync write operations to the database file when it wants rather than after each command.
-    # 
-    # Reason: "Commits can be orders of magnitude faster with synchronous OFF" as per 
-    # https://sqlite.org/pragma.html#pragma_synchronous and we don't care here about database corruption on power outage. 
-    # Because it can be simply generated anew by running the import scripts again.
-    db.execute "PRAGMA synchronous = OFF"
+  # Let the OS sync write operations to the database file when it wants rather than after each command.
+  # 
+  # Reason: "Commits can be orders of magnitude faster with synchronous OFF" as per 
+  # https://sqlite.org/pragma.html#pragma_synchronous and we don't care here about database corruption on power outage. 
+  # Because it can be simply generated anew by running the import scripts again.
+  db.execute "PRAGMA synchronous = OFF"
 
-    db.execute("
-        CREATE TABLE OFF_CATEGORY (
-            Product_ID    INTEGER,
-            Name          TEXT,
-            PRIMARY KEY   (Product_ID, Name)
-        );
-    ")
+  db.execute("
+    CREATE TABLE OFF_CATEGORY (
+      Product_ID    INTEGER,
+      Name          TEXT,
+      PRIMARY KEY   (Product_ID, Name)
+    );
+  ")
 
-    # Insert some dummy data for now.
-    # @todo Provide the real data.
-    db.execute('SELECT ID FROM PRODUCTS') do |row|
-        db.execute('INSERT INTO OFF_CATEGORY VALUES (?, ?)', [ row['ID'], 'Bee products' ])
-        db.execute('INSERT INTO OFF_CATEGORY VALUES (?, ?)', [ row['ID'], 'Beverages' ])
-    end
+  # Insert some dummy data for now.
+  # @todo Provide the real data.
+  db.execute('SELECT ID FROM PRODUCTS') do |row|
+    db.execute('INSERT INTO OFF_CATEGORY VALUES (?, ?)', [ row['ID'], 'Bee products' ])
+    db.execute('INSERT INTO OFF_CATEGORY VALUES (?, ?)', [ row['ID'], 'Beverages' ])
+  end
 
-    # Restore synchronous operation, which was disabled at the start of the method.
-    db.execute "PRAGMA synchronous = ON"
+  # Restore synchronous operation, which was disabled at the start of the method.
+  db.execute "PRAGMA synchronous = ON"
 end
 
 
@@ -169,9 +169,9 @@ end
 # @return [Array<String>]  The OFF categories, using their full English names. Only when no English name is available, a name in
 #   a different language would be used, with a two-letter language prefix such as "fr:French Category Name Here".
 def categories(product_id, db)
-    db
-        .execute('SELECT Name FROM OFF_CATEGORY WHERE Product_ID = ?', [ product_id ])
-        .collect { |row| row['Name'] }
+  db
+    .execute('SELECT Name FROM OFF_CATEGORY WHERE Product_ID = ?', [ product_id ])
+    .collect { |row| row['Name'] }
 end
 
 
@@ -181,60 +181,60 @@ end
 # @param db [SQLite3::Database]  The database connection to the FoodKeeper database.
 # @return [FoodRescue::Topic]  The basic topic that has been created.
 def basic_topic(product_id, db)
-    topic = FoodRescue::Topic.new
+  topic = FoodRescue::Topic.new
 
-    # Author information about the FoodKeeper app.
-    # 
-    # Since the original FoodKeeper content appears both on a website and mobile apps and it was not clear who its original 
-    # author is, both the app author and website author are credite. The author of the food-rescue-content software is included 
-    # as in role "conversion", as the final form of the reused FoodKeeper content is defined by the foodrescue-content software.
-    # 
-    # Author information about the FoodKeeper app as per:
-    # 
-    # * https://play.google.com/store/apps/details?id=gov.usda.fsis.foodkeeper2
-    # * https://www.fsis.usda.gov/wps/portal/informational/contactus
-    # 
-    # Author information about the (identical) FoodKeeper web content as per:
-    # 
-    # * https://www.foodsafety.gov/keep-food-safe/foodkeeper-app
-    # * https://www.foodsafety.gov/about
-    topic.authors = [
-        {
-            role:       'author',
-            orgname:    'United States Department of Agriculture',
-            orgdiv:     'Food Safety and Inspection Service',
-            uri:        'https://www.fsis.usda.gov/'
-        },
-        {
-            role:       'author',
-            orgname:    'United States Department of Health & Human Services',
-            orgdiv:     'Web Communications and New Media Division',
-            uri:        'https://www.hhs.gov/'
-        },
-        {
-            role:       'conversion',
-            givenname:  'Matthias',
-            surname:    'Ansorg',
-            orgname:    'Fairdirect e.V.'
-        }
-    ]
+  # Author information about the FoodKeeper app.
+  # 
+  # Since the original FoodKeeper content appears both on a website and mobile apps and it was not clear who its original 
+  # author is, both the app author and website author are credite. The author of the food-rescue-content software is included 
+  # as in role "conversion", as the final form of the reused FoodKeeper content is defined by the foodrescue-content software.
+  # 
+  # Author information about the FoodKeeper app as per:
+  # 
+  # * https://play.google.com/store/apps/details?id=gov.usda.fsis.foodkeeper2
+  # * https://www.fsis.usda.gov/wps/portal/informational/contactus
+  # 
+  # Author information about the (identical) FoodKeeper web content as per:
+  # 
+  # * https://www.foodsafety.gov/keep-food-safe/foodkeeper-app
+  # * https://www.foodsafety.gov/about
+  topic.authors = [
+    {
+      role:       'author',
+      orgname:    'United States Department of Agriculture',
+      orgdiv:     'Food Safety and Inspection Service',
+      uri:        'https://www.fsis.usda.gov/'
+    },
+    {
+      role:       'author',
+      orgname:    'United States Department of Health & Human Services',
+      orgdiv:     'Web Communications and New Media Division',
+      uri:        'https://www.hhs.gov/'
+    },
+    {
+      role:       'conversion',
+      givenname:  'Matthias',
+      surname:    'Ansorg',
+      orgname:    'Fairdirect e.V.'
+    }
+  ]
 
-    # As of 2020-05-02, the topic's version date is the "Updated" date of the FoodKeeper app on Google Play. The website notes 
-    # however "Date Last Reviewed: April 26, 2019", so might contain more recent updates.
-    # See: https://www.foodsafety.gov/keep-food-safe/foodkeeper-app
-    topic.edition = '2017-11-14'
+  # As of 2020-05-02, the topic's version date is the "Updated" date of the FoodKeeper app on Google Play. The website notes 
+  # however "Date Last Reviewed: April 26, 2019", so might contain more recent updates.
+  # See: https://www.foodsafety.gov/keep-food-safe/foodkeeper-app
+  topic.edition = '2017-11-14'
 
-    # Fill the topic's Open Food Facts categories.
-    topic.categories = categories(product_id, db)
+  # Fill the topic's Open Food Facts categories.
+  topic.categories = categories(product_id, db)
 
-    # No abstract by default because FoodKeeper topics are very short already.
-    # Of course the value can be overwritten as needed after this function returned.
-    topic.abstract = '' 
+  # No abstract by default because FoodKeeper topics are very short already.
+  # Of course the value can be overwritten as needed after this function returned.
+  topic.abstract = '' 
 
-    topic.content_xbibrefs = [ {id: 'USDA-1', ref_details: "PRODUCTS.ID=#{product_id}"} ]
-    topic.bibliography = ['USDA-1']
+  topic.content_xbibrefs = [ {id: 'USDA-1', ref_details: "PRODUCTS.ID=#{product_id}"} ]
+  topic.bibliography = ['USDA-1']
 
-    return topic
+  return topic
 end
 
 
@@ -247,35 +247,35 @@ end
 # @return [String]  The shelf life string. It may contain XML, so must be added as raw content to an XML file. It may be the 
 #   empty string if no information is present.
 def shelf_life(product_id, db, field_prefix)
-    product = db.get_first_row('SELECT * FROM PRODUCTS WHERE ID = ?', [ product_id ])
+  product = db.get_first_row('SELECT * FROM PRODUCTS WHERE ID = ?', [ product_id ])
 
-    fields = product.select { |k,v| k.match(/^#{field_prefix}_(Min|Max|Metric)$/) }
+  fields = product.select { |k,v| k.match(/^#{field_prefix}_(Min|Max|Metric)$/) }
 
-    min_duration = product["#{field_prefix}_Min"]
-    max_duration = product["#{field_prefix}_Max"]
-    duration_metric = product["#{field_prefix}_Metric"]
+  min_duration = product["#{field_prefix}_Min"]
+  max_duration = product["#{field_prefix}_Max"]
+  duration_metric = product["#{field_prefix}_Metric"]
 
-    text_after = case field_prefix
-        when 'Pantry';                      'in the pantry, whether sealed or not'
-        when 'DOP_Pantry';                  'in the pantry, if still sealed'
-        when 'Pantry_After_Opening';        'in the pantry, after opening the package'
-        when 'Refrigerate';                 'in the fridge, whether sealed or not'
-        when 'DOP_Refrigerate';             'in the fridge, if stored there immediately after purchase, whether sealed or not'
-        when 'Refrigerate_After_Opening';   'in the fridge, if stored there after opening the package'
-        when 'Refrigerate_After_Thawing';   'in the fridge, if stored there after thawing a frozen item, whether sealed or not'
-        when 'Freeze';                      'in the freezer, whether sealed or not'
-        when 'DOP_Freeze';                  'in the freezer, if stored there immediately after purchase, whether sealed or not'
-    end
+  text_after = case field_prefix
+    when 'Pantry';                      'in the pantry, whether sealed or not'
+    when 'DOP_Pantry';                  'in the pantry, if still sealed'
+    when 'Pantry_After_Opening';        'in the pantry, after opening the package'
+    when 'Refrigerate';                 'in the fridge, whether sealed or not'
+    when 'DOP_Refrigerate';             'in the fridge, if stored there immediately after purchase, whether sealed or not'
+    when 'Refrigerate_After_Opening';   'in the fridge, if stored there after opening the package'
+    when 'Refrigerate_After_Thawing';   'in the fridge, if stored there after thawing a frozen item, whether sealed or not'
+    when 'Freeze';                      'in the freezer, whether sealed or not'
+    when 'DOP_Freeze';                  'in the freezer, if stored there immediately after purchase, whether sealed or not'
+  end
 
-    if min_duration.empty?
-        ""
-    elsif min_duration == max_duration
-        "<emphasis>#{min_duration} #{duration_metric}</emphasis> #{text_after}"
-    else
-        # An en dash, like here, is the correct typography for a range. See:
-        # https://en.wikipedia.org/wiki/Dash#Ranges_of_values
-        "<emphasis>#{min_duration}–#{max_duration} #{duration_metric}</emphasis> #{text_after}"
-    end
+  if min_duration.empty?
+    ""
+  elsif min_duration == max_duration
+    "<emphasis>#{min_duration} #{duration_metric}</emphasis> #{text_after}"
+  else
+    # An en dash, like here, is the correct typography for a range. See:
+    # https://en.wikipedia.org/wiki/Dash#Ranges_of_values
+    "<emphasis>#{min_duration}–#{max_duration} #{duration_metric}</emphasis> #{text_after}"
+  end
 end
 
 
@@ -287,20 +287,20 @@ end
 #   If omitted, instructions for all storage types are included.
 # @return [String]  The storage tips string, which can be the empty string.
 def storage_tips(product_id, db, storage_type: nil)
-    product = db.get_first_row('SELECT * FROM PRODUCTS WHERE ID = ?', [ product_id ])
+  product = db.get_first_row('SELECT * FROM PRODUCTS WHERE ID = ?', [ product_id ])
 
-    # Note that tips fields are either named `*_Tips` or `*_tips`. It should be `*_Tips` everywhere, as SQLite3 column names 
-    # are case-independent, this sloppyness is tolerated in the database. But not for the hash keys here.
-    case storage_type
-    when :pantry
-        product['Pantry_tips']
-    when :refrigerate
-        product['Refrigerate_tips']
-    when :freeze
-        product['Freeze_Tips']
-    when nil
-        "#{product['Pantry_tips']} #{product['Refrigerate_tips']} #{product['Freeze_Tips']}"
-    end
+  # Note that tips fields are either named `*_Tips` or `*_tips`. It should be `*_Tips` everywhere, as SQLite3 column names 
+  # are case-independent, this sloppyness is tolerated in the database. But not for the hash keys here.
+  case storage_type
+  when :pantry
+    product['Pantry_tips']
+  when :refrigerate
+    product['Refrigerate_tips']
+  when :freeze
+    product['Freeze_Tips']
+  when nil
+    "#{product['Pantry_tips']} #{product['Refrigerate_tips']} #{product['Freeze_Tips']}"
+  end
 end
 
 
@@ -313,25 +313,25 @@ end
 # @param include_tips [Boolean]  Whether to also include more detailed storage tips, or just show storage durations.
 # @return [Ox::Element]
 def storage_durations(product_id, db, storage_type: nil, include_tips: true)
-    # Field / column prefixes by storage type. 
-    field_prefixes = {
-        pantry:      [ 'Pantry',      'DOP_Pantry',      'Pantry_After_Opening'                                   ],
-        refrigerate: [ 'Refrigerate', 'DOP_Refrigerate', 'Refrigerate_After_Opening', 'Refrigerate_After_Thawing' ],
-        freeze:      [ 'Freeze',      'DOP_Freeze'                                                                ]
-    }
-    field_prefixes[nil] = field_prefixes.values.flatten # All if storage type not given.
+  # Field / column prefixes by storage type. 
+  field_prefixes = {
+    pantry:      [ 'Pantry',      'DOP_Pantry',      'Pantry_After_Opening'                                   ],
+    refrigerate: [ 'Refrigerate', 'DOP_Refrigerate', 'Refrigerate_After_Opening', 'Refrigerate_After_Thawing' ],
+    freeze:      [ 'Freeze',      'DOP_Freeze'                                                                ]
+  }
+  field_prefixes[nil] = field_prefixes.values.flatten # All if storage type not given.
 
-    instructions = Ox::Element.new('itemizedlist')
-    selected_prefixes = field_prefixes[storage_type]
+  instructions = Ox::Element.new('itemizedlist')
+  selected_prefixes = field_prefixes[storage_type]
 
-    selected_prefixes.each do |prefix|
-        instruction = shelf_life(product_id, db, prefix) 
-        instructions << (
-            Ox::Element.new('listitem') << (Ox::Element.new('simpara') << Ox::Raw.new(instruction))
-        ) unless instruction.empty?
-    end
+  selected_prefixes.each do |prefix|
+    instruction = shelf_life(product_id, db, prefix) 
+    instructions << (
+      Ox::Element.new('listitem') << (Ox::Element.new('simpara') << Ox::Raw.new(instruction))
+    ) unless instruction.empty?
+  end
 
-    return instructions
+  return instructions
 end
 
 
@@ -340,14 +340,14 @@ end
 # @param product_id [Integer]  The FoodKeeper database's PRODUCTS.ID value of the product about which the topic will be about.
 # @param db [SQLite3::Database]  The database connection to the FoodKeeper database.
 def storage_intro_text(product_id, db)
-    product = db.get_first_row('SELECT * FROM PRODUCTS WHERE ID = ?', [ product_id ])
+  product = db.get_first_row('SELECT * FROM PRODUCTS WHERE ID = ?', [ product_id ])
 
-    name = if product['Name_subtitle'].empty? 
-        then product['Name'] 
-        else "#{product['Name']}, #{product['Name_subtitle']}" 
-    end
+  name = if product['Name_subtitle'].empty? 
+    then product['Name'] 
+    else "#{product['Name']}, #{product['Name_subtitle']}" 
+  end
 
-    return "The typical storage life of '#{name}' is:"
+  return "The typical storage life of '#{name}' is:"
 end
 
 
@@ -358,17 +358,17 @@ end
 # @param db [SQLite3::Database]  The database connection to the FoodKeeper database.
 # @return [FoodRescue::Topic]  The created topic.
 def storage_overview_topic(product_id, db)
-    product = db.get_first_row('SELECT * FROM PRODUCTS WHERE ID = ?', [ product_id ])
+  product = db.get_first_row('SELECT * FROM PRODUCTS WHERE ID = ?', [ product_id ])
 
-    topic = basic_topic(product_id, db)
-    topic.title= 'Storage Durations'
-    topic.section= 'storage_overview'
+  topic = basic_topic(product_id, db)
+  topic.title= 'Storage Durations'
+  topic.section= 'storage_overview'
 
-    intro = Ox::Element.new('simpara') << storage_intro_text(product_id, db)
-    list = storage_durations(product_id, db, include_tips: false)
-    topic.content_proper = Ox::Document.new << intro << list
+  intro = Ox::Element.new('simpara') << storage_intro_text(product_id, db)
+  list = storage_durations(product_id, db, include_tips: false)
+  topic.content_proper = Ox::Document.new << intro << list
 
-    return topic
+  return topic
 end
 
 
@@ -378,17 +378,17 @@ end
 # @param db [SQLite3::Database]  The database connection to the FoodKeeper database.
 # @return [FoodRescue::Topic]  The created topic.
 def pantry_storage_topic(product_id, db)
-    topic = basic_topic(product_id, db)
-    topic.title= 'Pantry storage'
-    topic.section= 'storage_instructions'
+  topic = basic_topic(product_id, db)
+  topic.title= 'Pantry storage'
+  topic.section= 'storage_instructions'
 
-    intro = Ox::Element.new('simpara') << storage_intro_text(product_id, db)
-    list = storage_durations(product_id, db, storage_type: :pantry)
-    tips = Ox::Element.new('simpara') << storage_tips(product_id, db, storage_type: :pantry)
-    outro = Ox::Element.new('simpara') << 'Storage life affects quality. This item may or may not be safe to eat afterwards. Details may be provided below.'
-    topic.content_proper = Ox::Document.new << intro << list << tips << outro
+  intro = Ox::Element.new('simpara') << storage_intro_text(product_id, db)
+  list = storage_durations(product_id, db, storage_type: :pantry)
+  tips = Ox::Element.new('simpara') << storage_tips(product_id, db, storage_type: :pantry)
+  outro = Ox::Element.new('simpara') << 'Storage life affects quality. This item may or may not be safe to eat afterwards. Details may be provided below.'
+  topic.content_proper = Ox::Document.new << intro << list << tips << outro
 
-    return topic
+  return topic
 end
 
 
@@ -398,17 +398,17 @@ end
 # @param db [SQLite3::Database]  The database connection to the FoodKeeper database.
 # @return [FoodRescue::Topic]  The created topic.
 def fridge_storage_topic(product_id, db)
-    topic = basic_topic(product_id, db)
-    topic.title= 'Fridge storage'
-    topic.section= 'storage_instructions'
+  topic = basic_topic(product_id, db)
+  topic.title= 'Fridge storage'
+  topic.section= 'storage_instructions'
 
-    intro = Ox::Element.new('simpara') << storage_intro_text(product_id, db)
-    list = storage_durations(product_id, db, storage_type: :refrigerate)
-    tips = Ox::Element.new('simpara') << storage_tips(product_id, db, storage_type: :refrigerate)
-    outro = Ox::Element.new('simpara') << 'Storage life affects quality. This item may or may not be safe to eat afterwards. Details may be provided below.'
-    topic.content_proper = Ox::Document.new << intro << list << tips << outro
+  intro = Ox::Element.new('simpara') << storage_intro_text(product_id, db)
+  list = storage_durations(product_id, db, storage_type: :refrigerate)
+  tips = Ox::Element.new('simpara') << storage_tips(product_id, db, storage_type: :refrigerate)
+  outro = Ox::Element.new('simpara') << 'Storage life affects quality. This item may or may not be safe to eat afterwards. Details may be provided below.'
+  topic.content_proper = Ox::Document.new << intro << list << tips << outro
 
-    return topic
+  return topic
 end
 
 
@@ -418,18 +418,18 @@ end
 # @param db [SQLite3::Database]  The database connection to the FoodKeeper database.
 # @return [FoodRescue::Topic]  The created topic.
 def freezer_storage_topic(product_id, db)
-    topic = basic_topic(product_id, db)
+  topic = basic_topic(product_id, db)
 
-    topic.title= 'Freezer storage'
-    topic.section= 'storage_instructions'
+  topic.title= 'Freezer storage'
+  topic.section= 'storage_instructions'
 
-    intro = Ox::Element.new('simpara') << storage_intro_text(product_id, db)
-    list = storage_durations(product_id, db, storage_type: :freeze)
-    tips = Ox::Element.new('simpara') << storage_tips(product_id, db, storage_type: :freeze)
-    outro = Ox::Element.new('simpara') << 'Storage life affects quality. This item may or may not be safe to eat afterwards. Details may be provided below.'
-    topic.content_proper = Ox::Document.new << intro << list << tips << outro
+  intro = Ox::Element.new('simpara') << storage_intro_text(product_id, db)
+  list = storage_durations(product_id, db, storage_type: :freeze)
+  tips = Ox::Element.new('simpara') << storage_tips(product_id, db, storage_type: :freeze)
+  outro = Ox::Element.new('simpara') << 'Storage life affects quality. This item may or may not be safe to eat afterwards. Details may be provided below.'
+  topic.content_proper = Ox::Document.new << intro << list << tips << outro
 
-    return topic
+  return topic
 end
 
 
@@ -439,22 +439,22 @@ end
 # @param fk_db [SQLite3::Database]  The database connection to the FoodKeeper database.
 # @param frc_db [FoodRescue::Database]  The database connection to the database with food rescue content.
 def import_product(product_id, fk_db, frc_db)
-    product = fk_db.get_first_row('SELECT * FROM PRODUCTS WHERE ID = ?', [ product_id ])
+  product = fk_db.get_first_row('SELECT * FROM PRODUCTS WHERE ID = ?', [ product_id ])
 
-    topics = []
-    topics << storage_overview_topic(product_id, fk_db)
-    topics << pantry_storage_topic(product_id, fk_db) \
-        unless product['Pantry_tips'].empty? and product['DOP_Pantry_tips'].empty?
-    topics << fridge_storage_topic(product_id, fk_db) \
-        unless product['Refrigerate_tips'].empty? and product['DOP_Refrigerate_tips'].empty?
-    topics << freezer_storage_topic(product_id, fk_db) \
-        unless product['Freeze_Tips'].empty? and product['DOP_Freeze_Tips'].empty?
+  topics = []
+  topics << storage_overview_topic(product_id, fk_db)
+  topics << pantry_storage_topic(product_id, fk_db) \
+    unless product['Pantry_tips'].empty? and product['DOP_Pantry_tips'].empty?
+  topics << fridge_storage_topic(product_id, fk_db) \
+    unless product['Refrigerate_tips'].empty? and product['DOP_Refrigerate_tips'].empty?
+  topics << freezer_storage_topic(product_id, fk_db) \
+    unless product['Freeze_Tips'].empty? and product['DOP_Freeze_Tips'].empty?
 
-    # @todo (later) Create and write a topic for the "Preparation Instructions" section.
-    # (Using the content from the COOKING_METHODS and COOKING_TIPS tables.)
+  # @todo (later) Create and write a topic for the "Preparation Instructions" section.
+  # (Using the content from the COOKING_METHODS and COOKING_TIPS tables.)
 
-    # Write all topics to the food rescue content database.
-    topics.each { |t| frc_db.add_topic(t) }
+  # Write all topics to the food rescue content database.
+  topics.each { |t| frc_db.add_topic(t) }
 end
 
 
@@ -463,63 +463,63 @@ end
 
 # Argument parsing.
 begin
-    args = Docopt::docopt(doc, {version: version, help: true})
+  args = Docopt::docopt(doc, {version: version, help: true})
 rescue Docopt::Exit => e
-    $stderr.puts e.message
-    exit -1
+  $stderr.puts e.message
+  exit -1
 end
 
 
 # Convert FoodKeeper products to food rescue content in a SQLite3 database.
 begin
-    # Create an in-memory database to avoid changing the on-disk database.
-    # 
-    # This connection must be kept open, because when the last connection to an in-memory database closes, its data is gone. 
-    # It uses shared cache mode to allow other database connections to see the same data. 
-    # See: https://www.sqlite.org/inmemorydb.html
-    fk_mem_db = SQLite3::Database.new 'file::memory:?cache=shared', { results_as_hash: true }
+  # Create an in-memory database to avoid changing the on-disk database.
+  # 
+  # This connection must be kept open, because when the last connection to an in-memory database closes, its data is gone. 
+  # It uses shared cache mode to allow other database connections to see the same data. 
+  # See: https://www.sqlite.org/inmemorydb.html
+  fk_mem_db = SQLite3::Database.new 'file::memory:?cache=shared', { results_as_hash: true }
 
-    # Fill the in-memory database from the on-disk database.
-    # See: https://www.sqlite.org/lang_vacuum.html#vacuuminto, https://stackoverflow.com/a/58932207
-    fk_file_db = SQLite3::Database.new args['FK_DBFILE'], { results_as_hash: true }
-    fk_file_db.execute("VACUUM INTO 'file::memory:?cache=shared'")
-    fk_file_db.close
+  # Fill the in-memory database from the on-disk database.
+  # See: https://www.sqlite.org/lang_vacuum.html#vacuuminto, https://stackoverflow.com/a/58932207
+  fk_file_db = SQLite3::Database.new args['FK_DBFILE'], { results_as_hash: true }
+  fk_file_db.execute("VACUUM INTO 'file::memory:?cache=shared'")
+  fk_file_db.close
 
-    create_categories_mapping(fk_mem_db)
+  create_categories_mapping(fk_mem_db)
 
-    # Database connection to the food rescue content database (the target).
-    frc_db = FoodRescue::Database.new args['FRC_DBFILE']
-    frc_db.prepare_topic_tables allow_reuse: true
+  # Database connection to the food rescue content database (the target).
+  frc_db = FoodRescue::Database.new args['FRC_DBFILE']
+  frc_db.prepare_topic_tables allow_reuse: true
 
-    # Make sure that the USDA-1 literature source is inside the target database, otherwise add it from static content.
-    # 
-    # @todo (later) The literature record should be inserted as a BibTeX record transformed with asciidoc-bibtex, to make sure 
-    #   the right citation style is used.
-    # @todo The key "USDA-1" should be blocked (defined with empty values) in the project's global bibliography.bib file so 
-    #   that the content of this literature reference can be managed in this script without key conflicts.
-    usda1_record = frc_db.execute "SELECT * FROM literature WHERE id = 'USDA-1' LIMIT 1"
-    if usda1_record.empty?
-        frc_db.execute 
-            "INSERT INTO literature (id, abbrev, entry) VALUES (?, ?, ?)", 
-            'USDA-1', 
-            'USDA-1', 
-            'Food Safety and Inspection Service of the United States Department of Agriculture: '\
-                'Foodkeeper. 2017. https://play.google.com/store/apps/details?id=gov.usda.fsis.foodkeeper2' 
-    end
+  # Make sure that the USDA-1 literature source is inside the target database, otherwise add it from static content.
+  # 
+  # @todo (later) The literature record should be inserted as a BibTeX record transformed with asciidoc-bibtex, to make sure 
+  #   the right citation style is used.
+  # @todo The key "USDA-1" should be blocked (defined with empty values) in the project's global bibliography.bib file so 
+  #   that the content of this literature reference can be managed in this script without key conflicts.
+  usda1_record = frc_db.execute "SELECT * FROM literature WHERE id = 'USDA-1' LIMIT 1"
+  if usda1_record.empty?
+    frc_db.execute 
+      "INSERT INTO literature (id, abbrev, entry) VALUES (?, ?, ?)", 
+      'USDA-1', 
+      'USDA-1', 
+      'Food Safety and Inspection Service of the United States Department of Agriculture: '\
+        'Foodkeeper. 2017. https://play.google.com/store/apps/details?id=gov.usda.fsis.foodkeeper2' 
+  end
   
-    # Load each (English) FoodKeeper product and import it into the database.
-    fk_mem_db.execute('SELECT ID FROM PRODUCTS') do |product|
-        import_product(product['ID'], fk_mem_db, frc_db)
-    end
+  # Load each (English) FoodKeeper product and import it into the database.
+  fk_mem_db.execute('SELECT ID FROM PRODUCTS') do |product|
+    import_product(product['ID'], fk_mem_db, frc_db)
+  end
 
-    # @todo (later) Also load the FoodKeeper products in Spanish and Portuguese and convert them to 
-    #   translated DocBook XML files.
+  # @todo (later) Also load the FoodKeeper products in Spanish and Portuguese and convert them to 
+  #   translated DocBook XML files.
 rescue ArgumentError => e
-    $stderr.puts e.message
-    $stderr.puts e.backtrace
-    exit -1
+  $stderr.puts e.message
+  $stderr.puts e.backtrace
+  exit -1
 ensure
-    fk_file_db.close if fk_file_db
-    fk_mem_db.close if fk_mem_db
-    frc_db.close if frc_db
+  fk_file_db.close if fk_file_db
+  fk_mem_db.close if fk_mem_db
+  frc_db.close if frc_db
 end

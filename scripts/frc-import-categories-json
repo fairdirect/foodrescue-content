@@ -36,24 +36,24 @@ Currently, only the following information is converted into SQLite3 format:
   * product counts per category
 
 Usage:
-    #{__FILE__} [options] INFILE DBFILE
-    #{__FILE__} -h | --help
-    #{__FILE__} -v | --version
+  #{__FILE__} [options] INFILE DBFILE
+  #{__FILE__} -h | --help
+  #{__FILE__} -v | --version
 
 Options:
-    -h, --help                      Show this screen.
-    -v, --version                   Show version.
+  -h, --help                      Show this screen.
+  -v, --version                   Show version.
 
 DOCOPT
 
 
 # Open the specified file if possible. Raise ValueError if not.
 def test_and_open(path)
-    unless File.exists?(path) && File.file?(path) && File.readable?(path) then
-        raise ValueError("%s is not a file or not accessible" % path)
-    end
+  unless File.exists?(path) && File.file?(path) && File.readable?(path) then
+    raise ValueError("%s is not a file or not accessible" % path)
+  end
   
-    File.open(path,'r')
+  File.open(path,'r')
 end
   
 
@@ -71,57 +71,57 @@ end
 # @see https://json-schema.org/draft/2019-09/json-schema-core.html JSON Schema specs
 # @see https://github.com/davishmcclurg/json_schemer Library docs
 schema = { 
-    '$schema' => 'http://json-schema.org/draft-07/schema#',
-    'type' => 'object', 
-    'required' => [ 'count', 'tags' ],
-    'properties' => {
-        'count' => {
-            '$id' => '#/properties/count', 
+  '$schema' => 'http://json-schema.org/draft-07/schema#',
+  'type' => 'object', 
+  'required' => [ 'count', 'tags' ],
+  'properties' => {
+    'count' => {
+      '$id' => '#/properties/count', 
+      'type' => 'integer'
+    },
+    'tags' => {
+      '$id' => '#/properties/tags', 
+      'type' => 'array', 
+      'items' => {
+        '$id' => '#/properties/tags/items', 
+        'type' => 'object', 
+        'additionalProperties' => true,
+        'required' => [ 'url', 'id', 'name', 'known', 'products' ],
+        'properties' => {
+          'url' => {
+            '$id' => '#/properties/tags/items/properties/url', 
+            'type' => 'string'
+          },
+          'id' => {
+            '$id' => '#/properties/tags/items/properties/id', 
+            'type' => 'string'
+          },
+          'name' => {
+            '$id' => '#/properties/tags/items/properties/name', 
+            'type' => 'string'
+          },
+          'known' => {
+            '$id' => '#/properties/tags/items/properties/known', 
             'type' => 'integer'
-        },
-        'tags' => {
-            '$id' => '#/properties/tags', 
-            'type' => 'array', 
-            'items' => {
-                '$id' => '#/properties/tags/items', 
-                'type' => 'object', 
-                'additionalProperties' => true,
-                'required' => [ 'url', 'id', 'name', 'known', 'products' ],
-                'properties' => {
-                    'url' => {
-                        '$id' => '#/properties/tags/items/properties/url', 
-                        'type' => 'string'
-                    },
-                    'id' => {
-                        '$id' => '#/properties/tags/items/properties/id', 
-                        'type' => 'string'
-                    },
-                    'name' => {
-                        '$id' => '#/properties/tags/items/properties/name', 
-                        'type' => 'string'
-                    },
-                    'known' => {
-                        '$id' => '#/properties/tags/items/properties/known', 
-                        'type' => 'integer'
-                    },
-                    'products': {
-                        '$id': '#/properties/tags/items/properties/products', 
-                        'type': 'integer'
-                    },
-                    'sameAs' => {
-                        '$id' => '#/properties/tags/items/properties/sameAs', 
-                        'type' => 'array',
-                        'items' => [{
-                            # In JSON Schema, a one-elememt array of hashes limits the number of allowed array elements to "1". 
-                            # See: https://json-schema.org/draft/2019-09/json-schema-core.html#rfc.section.9.3.1.1
-                            '$id' => '#/properties/tags/items/properties/sameAs/items', 
-                            'type' => 'string'
-                        }]
-                    }
-                }
-            }
+          },
+          'products': {
+            '$id': '#/properties/tags/items/properties/products', 
+            'type': 'integer'
+          },
+          'sameAs' => {
+            '$id' => '#/properties/tags/items/properties/sameAs', 
+            'type' => 'array',
+            'items' => [{
+              # In JSON Schema, a one-elememt array of hashes limits the number of allowed array elements to "1". 
+              # See: https://json-schema.org/draft/2019-09/json-schema-core.html#rfc.section.9.3.1.1
+              '$id' => '#/properties/tags/items/properties/sameAs/items', 
+              'type' => 'string'
+            }]
+          }
         }
+      }
     }
+  }
 }
   
 
@@ -133,10 +133,10 @@ schema = {
 
 # Argument parsing.
 begin
-    args = Docopt::docopt(doc, {version: version, help: true})
+  args = Docopt::docopt(doc, {version: version, help: true})
 rescue Docopt::Exit => e
-    puts e.message
-    exit -1
+  puts e.message
+  exit -1
 end
 
 
@@ -171,18 +171,18 @@ json_file.close
 
 begin
 
-    db = FoodRescue::Database.new args['DBFILE']
+  db = FoodRescue::Database.new args['DBFILE']
 
-    json['tags'].each do |cat|
-        # For now, we do not import non-taxonomy (known == 0) categories. 
-        # So for speed, no need to even consider them when importing product counts.
-        if cat['known']
-            db.add_product_count(cat['name'], cat['products']) 
-        end
+  json['tags'].each do |cat|
+    # For now, we do not import non-taxonomy (known == 0) categories. 
+    # So for speed, no need to even consider them when importing product counts.
+    if cat['known']
+      db.add_product_count(cat['name'], cat['products']) 
     end
+  end
 
 rescue ArgumentError => e
-    puts e.message
+  puts e.message
 ensure
-    db.close if db
+  db.close if db
 end

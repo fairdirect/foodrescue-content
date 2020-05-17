@@ -13,9 +13,9 @@
 
 **[5. Development Guide](#5-development-guide)**
 
-    * [5.1. Software Design](#51-software-design)
-    * [5.2. Code Style Guide](#52-code-style-guide)
-    * [5.3. Documentation Style Guide](#53-documentation-style-guide)
+  * [5.1. Software Design](#51-software-design)
+  * [5.2. Code Style Guide](#52-code-style-guide)
+  * [5.3. Documentation Style Guide](#53-documentation-style-guide)
 
 **[6. License and Credits](#6-license-and-credits)**
 
@@ -169,8 +169,6 @@ This project relies on [The Ruby Style Guide](https://rubystyle.guide/), but wit
 * **Short Methods.** The Ruby Style Guide [recommends](https://rubystyle.guide/#short-methods) to "avoid methods longer than 10 LOC". That is a good rule of thumb, but it depends on what type of software one is developing. The idea is that, for good code readability, the reader should always be able to "keep the control flow of a method in the mind". So the more algorithmically complex, the shorter the methods should be, down to 5 LOC. In low-complexity software with a linear control flow, such as for data format conversion, methods up to one screenful (40 LOC incl. comments) are fine, and for the top-level linear control flow of scripts even 2-3 screenfuls.
 
 * **Method invocation parentheses.** The Ruby Style Guide [says](https://rubystyle.guide/#method-invocation-parens) "Use parentheses around the arguments of method invocations" but also [recommends](https://rubystyle.guide/#no-dsl-decorating) to omit them for methods are part of an internal Domain Specific Language (Rails, Rake, RSpec etc.), that is, that serve declarative purposes. However, when parentheses do not inhibit reading, code reads more like natural language. So we omit them when there is only a single method call in an expression (means, no chaining or nesting).
-
-https://rubystyle.guide/#namespace-definition
 
 
 ### 5.3. Documentation Style Guide

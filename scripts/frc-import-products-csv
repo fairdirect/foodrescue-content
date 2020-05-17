@@ -38,14 +38,14 @@ Currently, only the following data is imported:
 Products without categories are not imported.
 
 Usage:
-    #{__FILE__} [options] INFILE DBFILE
-    #{__FILE__} -h | --help
-    #{__FILE__} -v | --version
+  #{__FILE__} [options] INFILE DBFILE
+  #{__FILE__} -h | --help
+  #{__FILE__} -v | --version
 
 Options:
-    -c, --continue      Import the data into existing database tables.
-    -h, --help          Show this screen.
-    -v, --version       Show version.
+  -c, --continue      Import the data into existing database tables.
+  -h, --help          Show this screen.
+  -v, --version       Show version.
 
 DOCOPT
 
@@ -58,10 +58,10 @@ DOCOPT
 
 # Argument parsing.
 begin
-    args = Docopt::docopt(doc, {version: version, help: true})
+  args = Docopt::docopt(doc, {version: version, help: true})
 rescue Docopt::Exit => e
-    puts e.message
-    exit -1
+  puts e.message
+  exit -1
 end
 
 
@@ -69,47 +69,47 @@ end
 # ----------------------------------------------------------
 
 begin
-    db = FoodRescue::Database.new args['DBFILE']
+  db = FoodRescue::Database.new args['DBFILE']
 
-    # @todo Make sure the category tables exist. If not, print a helpful error message telling the user to run the category 
-    #   import script first.
+  # @todo Make sure the category tables exist. If not, print a helpful error message telling the user to run the category 
+  #   import script first.
 
-    db.prepare_product_tables(args['--continue'])
+  db.prepare_product_tables(args['--continue'])
 
-    # To keep the memory footprint small, read one line at a time with CSV.foreach().
-    # See: "Processing large CSV files with Ruby", https://dalibornasevic.com/posts/68
-    CSV.foreach(args['INFILE'], { headers: true }) do |record|
-      
-        code = Integer(record['code'], 10) # Interpret as base-10 integer. Otherwise leading zeroes would be an octal literal.
-        countries = if record['countries_en'].nil?  then [] else record['countries_en'].split(',') end
-        categories = if record['categories_en'].nil? then [] else record['categories_en'].split(',') end
+  # To keep the memory footprint small, read one line at a time with CSV.foreach().
+  # See: "Processing large CSV files with Ruby", https://dalibornasevic.com/posts/68
+  CSV.foreach(args['INFILE'], { headers: true }) do |record|
+    
+    code = Integer(record['code'], 10) # Interpret as base-10 integer. Otherwise leading zeroes would be an octal literal.
+    countries = if record['countries_en'].nil?  then [] else record['countries_en'].split(',') end
+    categories = if record['categories_en'].nil? then [] else record['categories_en'].split(',') end
 
-        # Transform categories array to array of {lang: '…', name: '…'} elements. Default language is English.
-        categories = categories.filter_map do |cat|
-            # Ignore categories given as a category tag (such as "fr:test-tag") rather than the full name.
-            # 
-            # Category names in the Open Food Facts CSV export may have a language prefix ("fr:") but never 
-            # have a language tag prefix ("fr-BE:"). The latter only appears in the Open Food Facts category taxonomy.
-            #
-            # @todo (later) Also process tag-type categories. It requires adding the category tags to the database.
-            #   But, the cleaner option is to remove the (inconsistent) use of category tags from the OFF CSV file.
-            next if /^[a-z][a-z]:[a-z-]+$/.match?(cat)
+    # Transform categories array to array of {lang: '…', name: '…'} elements. Default language is English.
+    categories = categories.filter_map do |cat|
+      # Ignore categories given as a category tag (such as "fr:test-tag") rather than the full name.
+      # 
+      # Category names in the Open Food Facts CSV export may have a language prefix ("fr:") but never 
+      # have a language tag prefix ("fr-BE:"). The latter only appears in the Open Food Facts category taxonomy.
+      #
+      # @todo (later) Also process tag-type categories. It requires adding the category tags to the database.
+      #   But, the cleaner option is to remove the (inconsistent) use of category tags from the OFF CSV file.
+      next if /^[a-z][a-z]:[a-z-]+$/.match?(cat)
 
-            if match = /^([a-z][a-z]):(.+)$/.match(cat)
-                lang, name = match.captures
-            else 
-                lang = 'en'
-                name = cat
-            end
+      if match = /^([a-z][a-z]):(.+)$/.match(cat)
+        lang, name = match.captures
+      else 
+        lang = 'en'
+        name = cat
+      end
 
-            { lang: lang, name: name }
-        end
-
-        db.add_product code, categories, countries
+      {lang: lang, name: name}
     end
+
+    db.add_product code, categories, countries
+  end
 rescue => e
-    $stderr.puts "ERROR: ".in_red + e.message
-    exit -1
+  $stderr.puts "ERROR: ".in_red + e.message
+  exit -1
 ensure
-    db.close if db
+  db.close if db
 end
