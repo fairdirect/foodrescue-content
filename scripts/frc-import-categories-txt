@@ -166,7 +166,7 @@ def test_and_open(path)
 end
 
 
-# Transform a nested Object / Hash / Array structure to a nested Hash / Array structure.
+# Transform a mixed nested Object / Hash / Array structure to a mixed nested Hash / Array structure.
 # 
 # @param obj [Array<...>|Hash<...>|Object]  The data structure to transform.
 # @return  The transformed data structure, containing references to any unmodified object from the original data structure.
@@ -175,10 +175,10 @@ def to_hash_recursive(obj)
   # Array to Array.
   return obj.collect { |v| to_hash_recursive(v) } if obj.is_a? Array
 
-  # Object and Hash to Hash. (Hash#to_hash returns self. There is no Array#to_hash.)
+  # Object and Hash to Hash. (Hash#to_hash returns self.)
   return obj.to_hash.transform_values { |v| to_hash_recursive(v) } if obj.respond_to?(:to_hash)
 
-  # pp 'DEBUG: ', obj.to_s, ' is a ', obj.class
+  # puts 'DEBUG: ', obj.to_s, ' is a ', obj.class
 
   # Nil to Nil.
   return nil if obj.nil?
@@ -186,7 +186,7 @@ def to_hash_recursive(obj)
   # Certain objects to String.
   return obj.to_s if obj.is_a? Parslet::Slice
 
-  # Everything else verbatim.
+  # Everything else stays unchanged.
   return obj
 end
 
@@ -206,25 +206,29 @@ end
 
 
 # Perform global substitutions on the given text to fix known issues with the OFF categories.txt file.
+# 
+# @see FoodRescueDatabase#add_category second place with categories.txt fixes (capitalize the name)
 def fix_taxonomy_text(text)
   text
-  .gsub(/^nl_be:/, 'nl-BE:')
-  .gsub(/^stopwords:nl_be:/, 'stopwords:nl-BE:')
-  .gsub(/^el, el:/, 'el:')
-  .gsub("<it:Colli Tortonesi\n\n", "\n\n\n")
-  .gsub('<fr:Champagnes extra dry', 'fr:Champagnes extra dry')
-  .gsub('<fr:Champagnes secs', 'fr:Champagnes secs')
-  .gsub('<fr:Champagnes demi-secs', 'fr:Champagnes demi-secs')
-  .gsub('<fr:Champagnes doux', 'fr:Champagnes doux')
-  .gsub('<fr:Champagnes blancs de blancs, Blancs de blancs, Blanc de blancs', 
-    'fr:Champagnes blancs de blancs, Blancs de blancs, Blanc de blancs')
-  .gsub('<fr:Champagnes blancs de noirs, Blancs de noirs, Blanc de noirs', 
-    'fr:Champagnes blancs de noirs, Blancs de noirs, Blanc de noirs')
-  .gsub(/^"en:/, 'en:')
-  .gsub(/^Country:en:/, 'country:en:')
-  .gsub(/^<:Nuts/, '<en:Nuts')
-  .gsub(/^nl:Bosbestaart\nn:Bosbessentaarten/, 'nl:Bosbestaart, Bosbessentaarten')
-  .gsub('nl:Forelterinnes, Forelterrine,', 'nl:Forelterinnes, Forelterrine')
+    .gsub(/^nl_be:/, 'nl-BE:')
+    .gsub(/^stopwords:nl_be:/, 'stopwords:nl-BE:')
+    .gsub(/^el, el:/, 'el:')
+    .gsub("<it:Colli Tortonesi\n\n", "\n\n\n")
+    .gsub('<fr:Champagnes extra dry', 'fr:Champagnes extra dry')
+    .gsub('<fr:Champagnes secs', 'fr:Champagnes secs')
+    .gsub('<fr:Champagnes demi-secs', 'fr:Champagnes demi-secs')
+    .gsub('<fr:Champagnes doux', 'fr:Champagnes doux')
+    .gsub('<fr:Champagnes blancs de blancs, Blancs de blancs, Blanc de blancs', 
+      'fr:Champagnes blancs de blancs, Blancs de blancs, Blanc de blancs')
+    .gsub('<fr:Champagnes blancs de noirs, Blancs de noirs, Blanc de noirs', 
+      'fr:Champagnes blancs de noirs, Blancs de noirs, Blanc de noirs')
+    .gsub(/^"en:/, 'en:')
+    .gsub(/^Country:en:/, 'country:en:')
+    .gsub(/^<:Nuts/, '<en:Nuts')
+    .gsub(/^nl:Bosbestaart\nn:Bosbessentaarten/, 'nl:Bosbestaart, Bosbessentaarten')
+    .gsub('nl:Forelterinnes, Forelterrine,', 'nl:Forelterinnes, Forelterrine')
+    .gsub('en:Coconut milks, Coconut drinks, , Coconut creams', 'en:Coconut milks, Coconut drinks, Coconut creams')
+    .gsub(/^<en:Breadstick$/, '<en:Breadsticks')
 end
 
 
@@ -280,14 +284,15 @@ taxonomy = to_hash_recursive(taxonomy)
 # @see FoodRescue::Database#add_category  documentation of the resulting data structure for categories
 taxonomy.map! do |block|
 
-  if block.key?(:category_block) then
-  block[:category_block][:parents] = wrap_in_array(block[:category_block][:parents])
-  block[:category_block][:names]   = wrap_in_array(block[:category_block][:names])
-  block[:category_block][:names].map! do |elem| 
-    elem[:cat_names] = wrap_in_array(elem[:cat_names])
-    return elem
-  end
-  block[:category_block][:properties] = wrap_in_array(block[:category_block][:properties])
+  if block.key?(:category_block)
+    block[:category_block][:parents]    = wrap_in_array(block[:category_block][:parents])
+    block[:category_block][:properties] = wrap_in_array(block[:category_block][:properties])
+    block[:category_block][:names]      = wrap_in_array(block[:category_block][:names])
+
+    block[:category_block][:names].collect! do |elem|
+      new_cat_names = { cat_names: wrap_in_array(elem[:cat_names]) }
+      elem.merge(new_cat_names)
+    end
   end
 
   # @todo (later) Do the equivalent for synonym blocks and stopword blocks. With the current dataset, all of them have at least 
@@ -301,19 +306,19 @@ end
 # ---------------------------------------------------------
 
 begin
-  # Database connection.
+  # Database connection and preparation.
   db = FoodRescue::Database.new args['DBFILE']
   db.prepare_category_tables
 
   # Write categories to SQLite.
   taxonomy.each do |block| 
-  db.add_category(block[:category_block]) if block.key?(:category_block)
+    db.add_category(block[:category_block]) if block.key?(:category_block)
   end
 
   # Write category hierarchy to SQLite.
-  # (Referencing a parent category requires all categories exist, so we need this second phase.)
+  # (Referencing a parent category requires all categories to exist, so we need this second phase.)
   taxonomy.each do |block| 
-  db.add_category_parents(block[:category_block]) if block.key?(:category_block)
+    db.add_category_parents(block[:category_block]) if block.key?(:category_block)
   end
 
 rescue ArgumentError => e

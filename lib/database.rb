@@ -114,7 +114,7 @@ class FoodRescue::Database < SQLite3::Database
     execute "
       CREATE TABLE #{if_not_exists} categories (
         id              INTEGER PRIMARY KEY, -- alias of ROWID as per https://stackoverflow.com/a/8246737
-        name            TEXT,                -- the English name, otherwise the first available name
+        name            TEXT,                -- the English name, otherwise the first name
         lang            TEXT,                -- language tag such as 'en', 'en-GB'
         local_names     JSON,                -- array of name objects, each with 'name' and 'lang' properties
         product_count   INTEGER              -- number of products in this category
@@ -277,9 +277,8 @@ class FoodRescue::Database < SQLite3::Database
 
   # Record the names of a category definition to the database.
   # 
-  # @param [Hash] block  A nested Hash of the following structure. In this structure, there is always an array around the 
-  #   nested hashes, even when the array contains one or even zero elements. This is needed to be able to iterate over these 
-  #   arrays.
+  # @param [Hash<Array<…>>] category  A nested Hash of the following structure. In this structure, there is always an array around 
+  #   the nested hashes, even when that array contains zero or one elements. This allows to iterate over these arrays easily.
   # 
   #   ```
   #   {
@@ -438,7 +437,7 @@ class FoodRescue::Database < SQLite3::Database
     # Check if there is a record exactly corresponding to the "identifying" parts of an author. (More than one result would 
     # be an error. Not happening, as we check before adding records.)
     # 
-    # @todo Create a more compact and readable way to write this query.
+    # @todo Write this query in a more compact and readable way.
     author_record = get_first_row "
       SELECT * FROM authors 
       WHERE 
@@ -506,6 +505,7 @@ class FoodRescue::Database < SQLite3::Database
       cat_id = get_first_value "SELECT id FROM categories WHERE name = ? AND lang LIKE 'en%'", cat
       raise RuntimeError, "Referenced category #{cat} not found." if cat_id.nil?
       # @todo (later) Instead of raising an error, create the category while logging a notice.
+      # @todo (later) Also allow searching for non-English categories. Their names would start with a language tag.
 
       execute "INSERT INTO topic_categories (category_id, topic_id) VALUES (?, ?)", cat_id, topic_id
     end

@@ -115,24 +115,15 @@ However, for server environments and also to separate your various Ruby projects
 
 ## 4. Usage
 
-To generate the food rescue content in the format expected by the Food Rescue App, just run:
+To generate the food rescue content in all supported formats, run:
 
 ```
-make
+./scripts/frc make
 ```
 
-@todo The Makefile based build process still has to be implemented.
+See `frc --help` for other ways to use it, namely to generate only a part of the outputs.
 
-Each script in `scripts/` contains its own usage instructions, which you'll see when executing it with `--help`, such as `frc-import-products-csv --help`.
-
-The different import scripts need to run in a certain order because each will rely on SQLite3 tables created by a previous one:
-
-1. `frc-import-categories-txt`
-2. `frc-import-categories-json` (optional)
-3. `frc-import-products-csv`
-4. `frc-import-*topics`
-
-The easiest is to adapt your own build process based on the existing `Makefile`.
+`frc` relies on the other `./scripts/*` files to do its work. You normally do not need to call these other scripts directly, but you can. See the output of `scriptname --help` for usage instructions.
 
 
 ## 5. Development Guide
@@ -140,6 +131,8 @@ The easiest is to adapt your own build process based on the existing `Makefile`.
 ### 5.1. Software Design
 
 * **Database as authoritative data source.** The SQLite3 database is used as intended for a "data base", as the one-and-only authoritative source for food rescue content. So naturally, the tasks of scripts provided in this repository are to (1) first import all data from various source formats to the database, (2) then do anything else using the data in the database, such as export to a minified database, to a book in DocBook format and so on.
+
+* **Database to provide consistency during a script run.** Many challenges in programming are related to consistency and predictability of data modification. Solutions to this in object-oriented programming are quite verbose, such as side-effect free code by not modifying any global variables (and instead needing all variables via parameters) and capsuling all data into objects. A simpler way is to let the database ensure data consistency (as that is its job!) and only pass the database connection around as a parameter. There is nothing to be said against every part of the program being able to read and write every part of the database. There is no need for the complexity of a complete OOP layer to access that data as objects (see below for hashes and IDs to represent database objects). For example, instead of passing supplementary data of a CSV file around, import it to the database first, then only pass the database connection around.
 
 * **Object-relational mapping scheme.** The data of database records and application logic related to it is placed into classes created like in Rails ActiveRecord: one class per table, one object per database record, one attribute per column, and lazy loading of connected records from other tables via instance methods. Small tables can be exceptions from the "one class per table" rule. For example, topic author data is also handled by class `FoodRescue::Topic`. Objects delegate behavior related to storing to and loading from the database to a single class `FoodRescue::Database`, so that the storage backend can be exchanged easily. All SQLite3 queries are contained within class `FoodRescue::Database`.
 
@@ -169,6 +162,8 @@ This project relies on [The Ruby Style Guide](https://rubystyle.guide/), but wit
 * **Short Methods.** The Ruby Style Guide [recommends](https://rubystyle.guide/#short-methods) to "avoid methods longer than 10 LOC". That is a good rule of thumb, but it depends on what type of software one is developing. The idea is that, for good code readability, the reader should always be able to "keep the control flow of a method in the mind". So the more algorithmically complex, the shorter the methods should be, down to 5 LOC. In low-complexity software with a linear control flow, such as for data format conversion, methods up to one screenful (40 LOC incl. comments) are fine, and for the top-level linear control flow of scripts even 2-3 screenfuls.
 
 * **Method invocation parentheses.** The Ruby Style Guide [says](https://rubystyle.guide/#method-invocation-parens) "Use parentheses around the arguments of method invocations" but also [recommends](https://rubystyle.guide/#no-dsl-decorating) to omit them for methods are part of an internal Domain Specific Language (Rails, Rake, RSpec etc.), that is, that serve declarative purposes. However, when parentheses do not inhibit reading, code reads more like natural language. So we omit them when there is only a single method call in an expression (means, no chaining or nesting).
+
+* **The right shebang.** Executable Ruby scripts start with the shebang line `#!/usr/bin/env ruby`. That selects the first Ruby found in `$PATH` and is standard practice to make a shebang line work with multiple installed Ruby versions and Ruby version switchers like `chruby` ([see](https://stackoverflow.com/a/2792076)).
 
 
 ### 5.3. Documentation Style Guide

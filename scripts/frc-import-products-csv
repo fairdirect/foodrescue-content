@@ -4,8 +4,8 @@
 
 # Gem includes. See Gemfile.
 require 'docopt'
-require "csv"
-require "sqlite3"
+require 'csv'
+require 'sqlite3'
 
 # Local, non-gem includes.
 require_relative '../lib/database'
@@ -81,7 +81,7 @@ begin
   CSV.foreach(args['INFILE'], { headers: true }) do |record|
     
     code = Integer(record['code'], 10) # Interpret as base-10 integer. Otherwise leading zeroes would be an octal literal.
-    countries = if record['countries_en'].nil?  then [] else record['countries_en'].split(',') end
+    countries  = if record['countries_en'].nil?  then [] else record['countries_en'].split(',') end
     categories = if record['categories_en'].nil? then [] else record['categories_en'].split(',') end
 
     # Transform categories array to array of {lang: '…', name: '…'} elements. Default language is English.
