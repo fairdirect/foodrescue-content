@@ -168,7 +168,7 @@ This project relies on [The Ruby Style Guide](https://rubystyle.guide/), but wit
 
 ### 5.3. Documentation Style Guide
 
-For in-code documentation, we follow The Ruby Style Guide's section "[Comments](https://rubystyle.guide/#comments)". However, while it [is against comments](https://rubystyle.guide/#no-comments) and for self-documenting code, we are for self-documenting code and *also* for comments where they make the code even better. Better means more readable, navigable and understandable. The idea is to write for a developer *starting* to dive into your code, and perhaps even into the language. See below for details.
+For in-code documentation, we follow The Ruby Style Guide's section "[Comments](https://rubystyle.guide/#comments)". However, while The Ruby Style Guide [is against comments](https://rubystyle.guide/#no-comments) and for self-documenting code, we are for self-documenting code *and* for comments where comments improve the code. That means, where the code becomes more readable, navigable and understandable. The idea is to write for a developer *starting* to dive into your code, and perhaps even into the language. See below for details.
 
 * **Use Markdown where possible.** To limit the confusion around the plaintext markup languages, this project uses Markdown widely because it is the least common denominator of multiple tools it relies on:
 
@@ -189,7 +189,7 @@ For in-code documentation, we follow The Ruby Style Guide's section "[Comments](
 
 * **Annotations keyword format.** Instead of the "`TODO: …`" format [proposed](https://rubystyle.guide/#annotate-keywords) in The Ruby Style Guide, a "`@todo …`" format is used. This is the tag format of YARD, with the intention to eventually extend YARD for collecting, listing and managing these code annotations.
 
-* **Hash key documentation with YARD.** YARD will render the `@option` tags in a section titled "Options Hash (varname):". This is not applicable if multiple method parameters are structured hashes or if the hash is nested or if the return value is a structured hash. We use (nested) itemized lists in a way that emulates the rendered output of YARD, as follows. This is actually preferable over `@options` in all cases for consistency, and because the output is indented below the right parameter and not a separate "options hash" section. This corresponds to the fact that an options hash has always been just a normal method parameter an is falling mostly out of use due to keywork arguments now anyway. The format we use is:
+* **Hash key documentation with YARD.** YARD will render the `@option` tags in a section titled "Options Hash (varname):". This is not applicable if multiple method parameters are structured hashes or if the hash is nested or if the return value is a structured hash. We use (nested) itemized lists in a way that emulates the rendered output of YARD, as follows. This is actually preferable over `@options` in all cases for consistency, and because the output is indented below the right parameter and not a separate "options hash" section. This corresponds to the fact that an options hash has always been just a normal method parameter and is falling mostly out of use due to keywork arguments now anyway. The format we use is:
 
     ```
     * **:keyname** (Datatype of value) *(defaults to: value)* — Option description as a full sentence.

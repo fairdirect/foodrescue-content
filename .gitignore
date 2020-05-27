@@ -21,8 +21,7 @@
 /content-topics-foodkeeper/foodkeeper_android_app.apk
 
 # Ignore the derived versions of import_mapping_data.fods.
-/content-topics-foodkeeper/import_mapping_data.csv
-/content-topics-foodkeeper/import_mapping_data.ods
+/content-topics-foodkeeper/foodkeeper_extra_data.csv
 
 # Ignore experiments with no re-usable results.
 /experiments/ruby-syntax.rb

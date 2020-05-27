@@ -285,6 +285,37 @@ def basic_topic(product_id, db)
   return topic
 end
 
+# Determine what storage types are defined for a given FoodKeeper product.
+# 
+# @param product_id [Integer]  The FoodKeeper database's PRODUCTS.ID value of the given product.
+# @param db [SQLite3::Database]  The database connection to the FoodKeeper database.
+# @return [Array<Symbol>]  The storage types defined for this product. Contained values can be or or more of `:pantry`, 
+#   `:refrigerator`, `:freezer`. 
+def storage_types(product_id, db)
+
+  # Database column name prefixes and the three storage types they belong to.
+  storage_type_prefixes = {
+    pantry:       [ 'Pantry',      'DOP_Pantry',      'Pantry_After_Opening'                                   ],
+    refrigerator: [ 'Refrigerate', 'DOP_Refrigerate', 'Refrigerate_After_Opening', 'Refrigerate_After_Thawing' ],
+    freezer:      [ 'Freeze',      'DOP_Freeze'                                                                ]
+  }
+
+  product = db.get_first_row('SELECT * FROM PRODUCTS WHERE ID = ?', [ product_id ])
+
+  storage_types = []
+  storage_type_prefixes.each do |storage_type, field_prefixes|
+    field_prefixes.each do |prefix|
+      # If a storage duration is defined in the #{prefix} database column, the corresponding 
+      # storage type is defined for this product.
+      unless shelf_life(product_id, db, prefix).empty?
+        storage_types << storage_type
+        next
+      end
+    end
+  end
+
+  return storage_types
+end
 
 # Render the specified product's shelf life into a string like "6-9 Months".
 # 
@@ -294,6 +325,8 @@ end
 #   shelf life string. For example, `Pantry`.
 # @return [String]  The shelf life string. It may contain XML, so must be added as raw content to an XML file. It may be the 
 #   empty string if no information is present.
+# 
+# @todo Rename to better differentiate from #storage_durations.
 def shelf_life(product_id, db, field_prefix)
   product = db.get_first_row('SELECT * FROM PRODUCTS WHERE ID = ?', [ product_id ])
 
@@ -331,7 +364,7 @@ end
 # 
 # @param product_id [Integer]  The FoodKeeper database's PRODUCTS.ID value of the product about which the topic will be about.
 # @param db [SQLite3::Database]  The database connection to the FoodKeeper database.
-# @param storage_type [Symbol]  The storage type to generate instructions for. Any of `:pantry`, `:refrigerate`, `:freeze`. 
+# @param storage_type [Symbol]  The storage type to generate instructions for. Any of `:pantry`, `:refrigerator`, `:freezer`. 
 #   If omitted, instructions for all storage types are included.
 # @return [String]  The storage tips string, which can be the empty string.
 def storage_tips(product_id, db, storage_type: nil)
@@ -342,9 +375,9 @@ def storage_tips(product_id, db, storage_type: nil)
   case storage_type
   when :pantry
     product['Pantry_tips']
-  when :refrigerate
+  when :refrigerator
     product['Refrigerate_tips']
-  when :freeze
+  when :freezer
     product['Freeze_Tips']
   when nil
     "#{product['Pantry_tips']} #{product['Refrigerate_tips']} #{product['Freeze_Tips']}"
@@ -356,16 +389,16 @@ end
 # 
 # @param product_id [Integer]  The FoodKeeper database's PRODUCTS.ID value of the product about which the topic will be about.
 # @param db [SQLite3::Database]  The database connection to the FoodKeeper database.
-# @param storage_type [Symbol]  The storage type to generate instructions for. Any of `:pantry`, `:refrigerate`, `:freeze`.
+# @param storage_type [Symbol]  The storage type to generate instructions for. Any of `:pantry`, `:refrigerator`, `:freezer`.
 #   If omitted, instructions for all storage types are included.
 # @param include_tips [Boolean]  Whether to also include more detailed storage tips, or just show storage durations.
 # @return [Ox::Element]
 def storage_durations(product_id, db, storage_type: nil, include_tips: true)
   # Field / column prefixes by storage type. 
   field_prefixes = {
-    pantry:      [ 'Pantry',      'DOP_Pantry',      'Pantry_After_Opening'                                   ],
-    refrigerate: [ 'Refrigerate', 'DOP_Refrigerate', 'Refrigerate_After_Opening', 'Refrigerate_After_Thawing' ],
-    freeze:      [ 'Freeze',      'DOP_Freeze'                                                                ]
+    pantry:       [ 'Pantry',      'DOP_Pantry',      'Pantry_After_Opening'                                   ],
+    refrigerator: [ 'Refrigerate', 'DOP_Refrigerate', 'Refrigerate_After_Opening', 'Refrigerate_After_Thawing' ],
+    freezer:      [ 'Freeze',      'DOP_Freeze'                                                                ]
   }
   field_prefixes[nil] = field_prefixes.values.flatten # All if storage type not given.
 
@@ -393,6 +426,8 @@ end
 # @param db [SQLite3::Database]  The database connection to the FoodKeeper database.
 # @return [String]
 # @see #import_food_rescue_categories Where the data is imported that this method needs.
+# 
+# @todo Rename to #content_intro, in analogy to the naming in class Topic.
 def topic_intro_text(product_id, db)
   product = db.get_first_row('SELECT * FROM PRODUCTS WHERE ID = ?', [ product_id ])
 
@@ -410,6 +445,8 @@ end
 # @param db [SQLite3::Database]  The database connection to the FoodKeeper database.
 # @return [String]
 # @see #import_food_rescue_categories Where the data is imported that this method needs.
+# 
+# @todo Rename to #content_outro, in analogy to the naming in class Topic.
 def topic_outro_text(product_id, db)
   product  = db.get_first_row 'SELECT * FROM PRODUCTS WHERE ID = ?', [ product_id ]
   category = db.get_first_row 'SELECT * FROM FOOD_CATEGORY WHERE ID = ?', [ product['Category_ID'] ]
@@ -421,8 +458,9 @@ def topic_outro_text(product_id, db)
 end
 
 
-# Create a topic from given FoodKeeper product data for the "Storage Overview" section.
-# in the "Storage Overview" section.
+# Create a topic from given FoodKeeper product data with an overview of shelf life information.
+# 
+# This is currently unused. It was for a now-defunct content section "Storage Overview".
 # 
 # @param product_id [Integer]  The FoodKeeper database's PRODUCTS.ID value of the product about which the topic will be about.
 # @param db [SQLite3::Database]  The database connection to the FoodKeeper database.
@@ -451,14 +489,15 @@ end
 def pantry_storage_topic(product_id, db)
   topic = basic_topic(product_id, db)
   topic.title = 'Pantry storage'
-  topic.section = 'storage_instructions'
+  topic.section = 'pantry_storage'
 
   intro = Ox::Element.new('simpara') << topic_intro_text(product_id, db)
   list = storage_durations(product_id, db, storage_type: :pantry)
-  tips = Ox::Element.new('simpara') << storage_tips(product_id, db, storage_type: :pantry)
+  tips = storage_tips(product_id, db, storage_type: :pantry)
+  tips = Ox::Element.new('simpara') << tips unless tips.empty?
   outro = Ox::Element.new('simpara') << topic_outro_text(product_id, db)
-  topic.content_proper = Ox::Document.new << intro << list << tips << outro
 
+  topic.content_proper = Ox::Document.new << intro << list << tips << outro
   return topic
 end
 
@@ -468,17 +507,18 @@ end
 # @param product_id [Integer]  The FoodKeeper database's `PRODUCTS.ID` value of the product about which the topic will be about.
 # @param db [SQLite3::Database]  The database connection to the FoodKeeper database.
 # @return [FoodRescue::Topic]  The created topic.
-def fridge_storage_topic(product_id, db)
+def refrigerator_storage_topic(product_id, db)
   topic = basic_topic(product_id, db)
   topic.title = 'Fridge storage'
-  topic.section = 'storage_instructions'
+  topic.section = 'refrigerator_storage'
 
   intro = Ox::Element.new('simpara') << topic_intro_text(product_id, db)
-  list = storage_durations(product_id, db, storage_type: :refrigerate)
-  tips = Ox::Element.new('simpara') << storage_tips(product_id, db, storage_type: :refrigerate)
+  list = storage_durations(product_id, db, storage_type: :refrigerator)
+  tips = storage_tips(product_id, db, storage_type: :refrigerator)
+  tips = Ox::Element.new('simpara') << tips unless tips.empty?
   outro = Ox::Element.new('simpara') << topic_outro_text(product_id, db)
-  topic.content_proper = Ox::Document.new << intro << list << tips << outro
 
+  topic.content_proper = Ox::Document.new << intro << list << tips << outro
   return topic
 end
 
@@ -492,14 +532,15 @@ def freezer_storage_topic(product_id, db)
   topic = basic_topic(product_id, db)
 
   topic.title = 'Freezer storage'
-  topic.section = 'storage_instructions'
+  topic.section = 'freezer_storage'
 
   intro = Ox::Element.new('simpara') << topic_intro_text(product_id, db)
-  list = storage_durations(product_id, db, storage_type: :freeze)
-  tips = Ox::Element.new('simpara') << storage_tips(product_id, db, storage_type: :freeze)
+  list = storage_durations(product_id, db, storage_type: :freezer)
+  tips = storage_tips(product_id, db, storage_type: :freezer)
+  tips = Ox::Element.new('simpara') << tips unless tips.empty?
   outro = Ox::Element.new('simpara') << topic_outro_text(product_id, db)
-  topic.content_proper = Ox::Document.new << intro << list << tips << outro
 
+  topic.content_proper = Ox::Document.new << intro << list << tips << outro
   return topic
 end
 
@@ -511,15 +552,12 @@ end
 # @param frc_db [FoodRescue::Database]  The database connection to the database with food rescue content.
 def import_product(product_id, fk_db, frc_db)
   product = fk_db.get_first_row('SELECT * FROM PRODUCTS WHERE ID = ?', [ product_id ])
+  storage_types = storage_types(product_id, fk_db)
 
   topics = []
-  topics << storage_overview_topic(product_id, fk_db)
-  topics << pantry_storage_topic(product_id, fk_db) \
-    unless product['Pantry_tips'].empty? and product['DOP_Pantry_tips'].empty?
-  topics << fridge_storage_topic(product_id, fk_db) \
-    unless product['Refrigerate_tips'].empty? and product['DOP_Refrigerate_tips'].empty?
-  topics << freezer_storage_topic(product_id, fk_db) \
-    unless product['Freeze_Tips'].empty? and product['DOP_Freeze_Tips'].empty?
+  topics << pantry_storage_topic(product_id, fk_db)       if storage_types.include? :pantry
+  topics << refrigerator_storage_topic(product_id, fk_db) if storage_types.include? :refrigerator
+  topics << freezer_storage_topic(product_id, fk_db)      if storage_types.include? :freezer
 
   # @todo (later) Create and write a topic for the "Preparation Instructions" section.
   # (Using the content from the COOKING_METHODS and COOKING_TIPS tables.)
