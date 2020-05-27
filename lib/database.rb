@@ -299,13 +299,24 @@ class FoodRescue::Database < SQLite3::Database
   #     ]
   #   }
   #   ```
-  # 
-  # @todo Require to be passed a FoodRescueCategory object.
-  def add_category(block)
-    name, lang = self.class.cat_main_name(block)
+  def add_category(category)
+    name, lang = self.class.cat_main_name(category)
+
+    # Fix that the categories.txt definition file is inconsistent about case.
+    # 
+    # Mostly categories.txt contains categories in "Capital case" but sometimes in "all lowercase". All categories are shown 
+    # in capital case on the Open Food Facts website, so that is the intention and it shoul be that way in the database 
+    # to avoid errors when importing food rescue topics and their category associations. Note that the "COLLATE NOCASE" 
+    # option would allow case-insensitive comparion in SQLite3, but this has incomplete Unicode support so we better do it here.
+    # 
+    # Also note, `"Hello World".capitalize => "Hellow world". As city and person names should not be accidentally lowercased, 
+    # `#capitalize` is only applied here if the category names startes with a lowercase letter.
+    # 
+    # @todo Remove this hack once categories.txt has been fixed upstream.
+    name.capitalize! if name.match?(/^[[:lower:]]/)
 
     # @todo Create a JSON structure for the remaining names and put it into column local_names.
-    # @todo Switch to the INSERT statement with column references.
+
     begin
       execute "INSERT INTO categories (name, lang) VALUES (?, ?)", [name, lang]
     rescue SQLite3::ConstraintException => e

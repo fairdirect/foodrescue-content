@@ -4,18 +4,25 @@
 /doc/
 /.yardoc/
 
+# General: LibreOffice lockfiles while editing a file.
+.~lock.*
+
 # Only keep the processed versions of downloaded category definition files.
 /content-categories/categories-*
 !/content-categories/categories-json.2-pretty.json
 !/content-categories/categories-txt.1-downloaded.txt
 
 # Only keep the processed versions of downloaded products files.
-content-products/products-*
+/content-products/products-*
 !/content-products/products-csv.2-filtered.csv
 !/content-products/products-delta.*.2-filtered.json
 
 # Ignore the Android app package from which the FoodKeeper database was extracted.
-content-topics-foodkeeper/FoodKeeper.AndroidApp.apk
+/content-topics-foodkeeper/foodkeeper_android_app.apk
+
+# Ignore the derived versions of import_mapping_data.fods.
+/content-topics-foodkeeper/import_mapping_data.csv
+/content-topics-foodkeeper/import_mapping_data.ods
 
 # Ignore experiments with no re-usable results.
-experiments/ruby-syntax.rb
+/experiments/ruby-syntax.rb
