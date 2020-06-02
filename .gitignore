@@ -7,6 +7,13 @@
 # General: LibreOffice lockfiles while editing a file.
 .~lock.*
 
+# General: Qt Creator project configuration files.
+/foodrescue-content.cflags
+/foodrescue-content.creator
+/foodrescue-content.creator.user
+/foodrescue-content.cxxflags
+/foodrescue-content.files
+
 # Only keep the processed versions of downloaded category definition files.
 /content-categories/categories-*
 !/content-categories/categories-json.2-pretty.json
