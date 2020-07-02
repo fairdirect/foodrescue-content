@@ -13,9 +13,10 @@
 
 **[5. Development Guide](#5-development-guide)**
 
-  * [5.1. Software Design](#51-software-design)
-  * [5.2. Code Style Guide](#52-code-style-guide)
-  * [5.3. Documentation Style Guide](#53-documentation-style-guide)
+  * [5.1. Content Authoring](#51-content-authoring)
+  * [5.2. Software Design](#52-software-design)
+  * [5.3. Code Style Guide](#53-code-style-guide)
+  * [5.4. Documentation Style Guide](#54-documentation-style-guide)
 
 **[6. License and Credits](#6-license-and-credits)**
 
@@ -98,8 +99,8 @@ However, for server environments and also to separate your various Ruby projects
 
 5. **Install `bundler`.** Notes:
 
-    * This will install `bundler` to `~/.gem/ruby/2.3.7/`. This is probably needed, as installing gems into a gem bundle is only possible with bundler. However, it might be better to install bundler system-wide.
-    * This only works when `chruby` shows that a Ruby is active. Otherwise you get "ERROR: Could not find a valid gem 'bundler' (>= 0) in any repository".
+    * This will install `bundler` to `~/.gem/ruby/2.3.7/`. This is probably needed, as installing gems into a gem bundle is only possible with bundler. However, it might be better to install bundler system-wide.
+    * This only works when `chruby` shows that a Ruby is active. Otherwise you get "ERROR: Could not find a valid gem 'bundler' (>= 0) in any repository".
 
     ```
     gem install bundler
@@ -128,7 +129,76 @@ See `frc --help` for other ways to use it, namely to generate only a part of the
 
 ## 5. Development Guide
 
-### 5.1. Software Design
+### 5.1. Content Authoring
+
+To contribute new food rescue content to this repository, you can choose between two formats:
+
+* Put many short articles together into one LibreOffice `.fods` spreadsheet in directory `content-topics-csv`.
+* Put longer articles into individual files into directory `content-topics-asciidoc`.
+
+In both cases, you write the actual content using AsciiDoctor syntax ([reference](https://asciidoctor.org/docs/asciidoc-syntax-quick-reference), [cheatsheet](https://powerman.name/doc/asciidoc)). Note that some [Markdown can be used](https://asciidoctor.org/docs/asciidoc-syntax-quick-reference/#markdown-compatibility) via an extension of AsciiDoctor syntax, and we prefer that over the "normal" AsciiDoctor syntax wherever it can be utilized.
+
+To create and edit the content in spreadsheets, collaborators are free to use whatever tool they like, as long as the content is finally in a CSV or LibreOffice `.fods` format with the columns mentioned below and included into this "authoritative" repository [fairdirect/foodrescue-content](https://github.com/fairdirect/foodrescue-content).
+
+**The columns to use in a spreadsheet file:** You can use file `content-topics-csv/template.ods` to start a new spreadsheet file with food rescue content. It already contains the necessary columns as documented below.
+
+* **ID.** A continuous number, unique inside your spreadsheet file. Used for tracing back content errors from the database to their source documents.
+
+* **Text.** The actual content of your food rescue topics, using AsciiDoctor syntax. Note that only this column allows to use the AsciiDoctor markup language, all other columns have to be plain text.
+
+* **Text type.** Possible values are mentioned in the documentation of [content sections](https://dynalist.io/d/To5BNup9nYdPq7QQ3KlYa-mA#z=ZYsoIiZKiCqqvdw_JZC4f7fV). As of 2020-06-29, the possible values are:
+    * `risks`
+    * `assessment`
+    * `symptoms`
+    * `post_spoilage`
+    * `donation_options`
+    * `edible_parts`
+    * `residual_food`
+    * `unliked_food`
+    * `pantry_storage`
+    * `refrigerator_storage`
+    * `freezer_storage`
+    * `other_storage`
+    * `commercial_storage`
+    * `preservation`
+    * `preparation`
+    * `reuse_and_recycling`
+    * `production_waste`
+    * `packaging_waste`
+
+* **Categories.** The Open Food Facts categories to show this topic for, as a multiline field with one category name per line. Use the full category names, not the Open Food Facts tag version of the category names.
+
+* **Author.** Firstname and lastname of who wrote this topic.
+
+* **Date added.** An ISO 8601 date.
+
+* **Version date.** An ISO 8601 date.
+
+**AsciiDoctor format restrictions:** Due to the conversion step from DocBook to HTML done just before rendering with own XQuery transformations, at this time not the full syntax of AsciiDoctor is supported. Any unsupported syntax simply results in DocBook tags that will be ignored (not ignoring their content, though). At the current time, the DocBook conversion can handle the following elememts, so all AsciiDoctor syntax equivalent to these is evaluated, and all other AsciiDoctor syntax is effectively ignored:
+
+* `title`
+* `simpara`
+* `itemizedlist`
+* `listitem`
+* TODO: Complete this list. It should eventually contain all DocBook elements generated from AsciiDoc by the typical conversion process.
+
+
+**Content authoring tips:**
+
+* Alle Angaben sollten auf Literatur-Referenzen beruhen, damit die Informationen nachprüfbar sind und vertrauenswürdig wirken (und wir nicht irgendwelche Probleme mit Haftungsdingen haben wenn sich jemand mal eine Lebensmittelvergiftung holt …).
+
+* To enter a forced linebreak in a LibreOffice spreadsheet, press Ctrl + Return.
+
+* Obviously, do not copy from copyrighted material, and when copying from open content material provide proper attribution (via literature references).
+
+* Place references to web resources as ordinary hyperlinks. Except if the web resource is a source reference for your content, in which case use a proper literature reference.
+
+* To create a literature reference in your text, use a shortname for the literature item and a page reference like this: `cite:[Shortname(123)]`. This is [asciidoctor-bibtex syntax](https://github.com/asciidoctor/asciidoctor-bibtex#usage), see there for details.
+
+* Define the shortnames used in your literature references in a proper bibliography in [BibTeX format](https://ctan.org/pkg/biblatex-cheatsheet).
+
+
+### 5.2. Software Design
 
 * **Database as authoritative data source.** The SQLite3 database is used as intended for a "data base", as the one-and-only authoritative source for food rescue content. So naturally, the tasks of scripts provided in this repository are to (1) first import all data from various source formats to the database, (2) then do anything else using the data in the database, such as export to a minified database, to a book in DocBook format and so on.
 
@@ -145,7 +215,7 @@ See `frc --help` for other ways to use it, namely to generate only a part of the
 * **Data type for DocBook XML content.** `Ox::Document` is meant to store collections of XML elements (inside its `#nodes` array), without being an element itself or rendering to visible XML output. See: `Ox.dump(Ox::Document.new) => "\n"`. So this is used to hand over collections of XML elements, even if this does not represent a fully features XML element. It's cleaner than using the data structure of the `#nodes` arrays directly, which would be `Array<Ox::Element|String>`).
 
 
-### 5.2. Code Style Guide
+### 5.3. Code Style Guide
 
 The guiding idea is to write code that reads almost like natural language. That affects variable and method naming, source code layout and also choice of the logical flow and distributing algorithmic complexity so that one can understand everything while reading through once.
 
@@ -166,7 +236,7 @@ This project relies on [The Ruby Style Guide](https://rubystyle.guide/), but wit
 * **The right shebang.** Executable Ruby scripts start with the shebang line `#!/usr/bin/env ruby`. That selects the first Ruby found in `$PATH` and is standard practice to make a shebang line work with multiple installed Ruby versions and Ruby version switchers like `chruby` ([see](https://stackoverflow.com/a/2792076)).
 
 
-### 5.3. Documentation Style Guide
+### 5.4. Documentation Style Guide
 
 For in-code documentation, we follow The Ruby Style Guide's section "[Comments](https://rubystyle.guide/#comments)". However, while The Ruby Style Guide [is against comments](https://rubystyle.guide/#no-comments) and for self-documenting code, we are for self-documenting code *and* for comments where comments improve the code. That means, where the code becomes more readable, navigable and understandable. The idea is to write for a developer *starting* to dive into your code, and perhaps even into the language. See below for details.
 

@@ -17,7 +17,7 @@
     <edition><date>2020-05-01</date> <!-- See: https://tdg.docbook.org/tdg/5.1/edition.html --></edition>
 
     <abstract>
-      <para>When crisp bread is still crunchy, it is still good to eat.</para>
+      <simpara>When crisp bread is still crunchy, it is still good to eat.</simpara>
     </abstract>
 
     <subjectset scheme="off-categories-subset-frc">
@@ -34,10 +34,12 @@
     target file per language is created, and a translation management system helps to keep both in sync. -->
   </info>
 
-  <para>When crisp bread is still crunchy, it is still good to eat. This is
-  described in more detail here, including literature references.</para>
+  <simpara>When crisp bread is still crunchy, it is still good to eat. This is
+  described in more detail here, including literature references.</simpara>
 
-  <para>Allowed values for title@type:<itemizedlist>
+  <simpara>Allowed values for topic@type:
+
+    <itemizedlist>
       <listitem>
         <para>risks</para>
       </listitem>
@@ -73,10 +75,13 @@
       <listitem>
         <para>reuse_and_recycling</para>
       </listitem>
-    </itemizedlist></para>
+    </itemizedlist>
+  </simpara>
 
-  <para>Allowed values for subjectset with @scheme =
-  off-categories-subset-frc<itemizedlist>
+  <simpara>Allowed values for subjectset with @scheme =
+  off-categories-subset-frc
+
+    <itemizedlist>
       <listitem>
         <para>A documented subset of the Open Food Facts field "categories".
         That field has been defined for the purposes of food rescue content.
@@ -85,7 +90,9 @@
         necessary, as the subset only contains categories that have an English
         name.</para>
       </listitem>
-    </itemizedlist></para>
+    </itemizedlist>
+
+  </simpara>
 
   <xi:include href="bibliography.xml"/>
 </topic>

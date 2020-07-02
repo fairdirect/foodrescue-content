@@ -13,6 +13,7 @@
 /foodrescue-content.creator.user
 /foodrescue-content.cxxflags
 /foodrescue-content.files
+/foodrescue-content.includes
 
 # Only keep the processed versions of downloaded category definition files.
 /content-categories/categories-*
