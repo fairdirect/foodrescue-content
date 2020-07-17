@@ -282,13 +282,13 @@ class FoodRescue::Database < SQLite3::Database
   #   ```
   #   {
   #     :names => [
-  #       { :lang => "en", :cat_names => [ {:value => "…" }, {:value => "…" }, ... ] },
-  #       { :lang => "fr", :cat_names => [ {:value => "…" }, {:value => "…" }, ... ] },
+  #       { :lang => "en",  :cat_names => [ {:value => "…" }, {:value => "…" }, ... ] },
+  #       { :lang => "fr",  :cat_names => [ {:value => "…" }, {:value => "…" }, ... ] },
   #       ...
   #     ],
   #     :parents => [
-  #       { :lang=>"en", :cat_name => "…" },
-  #       { :lang=>"fr", :cat_name => "…" },
+  #       { :lang => "en",  :cat_name => "…" },
+  #       { :lang => "fr",  :cat_name => "…" },
   #       ...
   #     ],
   #     :properties => [ ... not evaluated here ... ]
@@ -378,7 +378,7 @@ class FoodRescue::Database < SQLite3::Database
   #   * **`:name`** (String) — The full name of the category in the specified language.
   # 
   # @param countries [Array]  English-language names of countries in which the product is on sale. If a country is not yet 
-  #   known, a record will be created for it.
+  #   known in the database, a record will be created for it in table `countries`.
   # 
   # @see https://en.wikipedia.org/wiki/Language_localisation#Language_tags_and_codes Wikipedia: Language tags and codes
   def add_product(product_code, categories, countries)
@@ -386,27 +386,67 @@ class FoodRescue::Database < SQLite3::Database
     # Since products is a WITHOUT ROWID table, we have to supply our own primary key value.
     # See: https://stackoverflow.com/a/61448442
     product_id = get_first_value "SELECT IFNULL(MAX(id),0) + 1 FROM products"
-
     execute "INSERT INTO products (id, code) VALUES (?, ?)", [product_id, product_code]
 
-    # Associate the product with each category. If necessary, create a category record first.
+    # Add database IDs to the category records. If necessary, create category records on the fly.
     categories.each do |cat|
-      category_id = get_first_value "SELECT id FROM categories WHERE name = ? and lang = ? LIMIT 1", 
+      category_id = get_first_value "SELECT id FROM categories WHERE name = ? and lang = ? LIMIT 1",
         [cat[:name], cat[:lang]]
 
       if category_id.nil? then
         execute "INSERT INTO categories (name, lang) VALUES (?, ?)", [cat[:name], cat[:lang]]
         category_id = get_first_value "SELECT last_insert_rowid()"
       end
+      cat[:id] = category_id
+    end
+
+    # Collect ancestor information for all product categories.
+    # The query determines all ancestors of the specified product categories. This is done efficiently in a single database
+    # query using a SQLite Common Table Expression; see https://www.sqlite.org/lang_with.html .
+    category_ids = categories.collect { |cat| cat[:id] }
+    ancestor_ids = execute "
+      WITH RECURSIVE ancestor_categories (child_id, ancestor_id) AS (
+        SELECT category_id, parent_id
+          FROM categories_structure
+          WHERE category_id IN (#{category_ids.join(',')})
+        UNION ALL
+        SELECT ancestor_categories.child_id, categories_structure.parent_id
+          FROM ancestor_categories
+            INNER JOIN categories_structure ON ancestor_categories.ancestor_id = categories_structure.category_id
+      )
+      SELECT DISTINCT ancestor_id FROM ancestor_categories"
+    ancestor_ids.collect! { |id| id['ancestor_id'] } # Remove the column names added by SQLite.
+
+#    if ancestor_ids.count != 0
+#      puts "DEBUG: processing product #{product_code}"
+#      puts "DEBUG:   directly assigned categories: #{category_ids.count} total"
+#      ap category_ids
+#      puts "DEBUG:   ancestor categories: #{ancestor_ids.count} total"
+#      ap ancestor_ids
+#    end
+
+    # Associate the product with its product categories.
+    categories.each do |cat|
+      # puts "DEBUG: processing product category '#{cat[:name]}'" if ancestor_ids.count != 0
+      # ap cat if ancestor_ids.count != 0
+
+      # Ignore product categories that are ancestors of other product categories. In the Open Food Facts CSV products export,
+      # products are assigned explicitly also to categories that are ancestors of other assigned categories. This is
+      # not normalized, so we fix this before storing to the database. That step reduces the total database size by about
+      # 40-50% as of 2020-07.
+      if ancestor_ids.include?(cat[:id])
+        # puts "DEBUG: ignoring implicitly assigned ancestor category ##{cat[:id]}"
+        next
+      end
 
       begin
-        execute "INSERT INTO product_categories VALUES (?, ?)", [product_id, category_id]
+        execute "INSERT INTO product_categories VALUES (?, ?)", [product_id, cat[:id]]
       rescue SQLite3::ConstraintException => e
         puts "WARNING:".in_orange + " Category '#{cat[:name]}' assigned twice to product #{product_code}. Ignoring."
       end
     end
 
-    # Associate the product with each country. If necessary, create a country record first.
+    # Associate the product with each of its countries. If necessary, create a country record first.
     countries.each do |country|
       country_id = get_first_value "SELECT id FROM countries WHERE name = ?", [country]
       if country_id.nil? then
