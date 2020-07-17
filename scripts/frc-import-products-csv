@@ -27,13 +27,14 @@ doc = <<DOCOPT
 Import Open Food Facts products from CSV into a SQLite3 database.
 
 The script reads all CSV entries from INFILE and writes the converted data to the SQLite3 database 
-DBFILE. It expects table categories to exist (with columns name and lang) and will add some more 
-tables.
+DBFILE. It expects the table "categories" to exist (with columns "name" and "lang") and will add
+some more tables.
 
 Currently, only the following data is imported:
 
 1. barcode number (formally GTIN, a superset of EAN, ISBN and various UPCs)
 2. category memberships
+3. countries of sale
 
 Products without categories are not imported.
 

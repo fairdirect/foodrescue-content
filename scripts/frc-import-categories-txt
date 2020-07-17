@@ -5,7 +5,7 @@
 # Gem includes. See Gemfile.
 require 'docopt'
 require 'parslet'
-require "sqlite3"
+require 'sqlite3'
 require 'awesome_print'
 
 # Local, non-gem includes.
@@ -207,7 +207,7 @@ end
 
 # Perform global substitutions on the given text to fix known issues with the OFF categories.txt file.
 # 
-# @see FoodRescueDatabase#add_category second place with categories.txt fixes (capitalize the name)
+# @see FoodRescueDatabase#add_category The second place with categories.txt fixes, to capitalize the name.
 def fix_taxonomy_text(text)
   text
     .gsub(/^nl_be:/, 'nl-BE:')
@@ -229,6 +229,8 @@ def fix_taxonomy_text(text)
     .gsub('nl:Forelterinnes, Forelterrine,', 'nl:Forelterinnes, Forelterrine')
     .gsub('en:Coconut milks, Coconut drinks, , Coconut creams', 'en:Coconut milks, Coconut drinks, Coconut creams')
     .gsub(/^<en:Breadstick$/, '<en:Breadsticks')
+    .gsub('<en:Portuguese rum', '<en:Portuguese rums')
+    .gsub('<en:French rum', '<en:French rums')
 end
 
 
@@ -275,23 +277,26 @@ end
 # (Parslet objects are structured like Hashes, but do not support all its methods which we'll need later.)
 taxonomy = to_hash_recursive(taxonomy)
 
-# @todo The name is not great, as wrapping is not done always but conditionally. Simplify the taxonomy data structure. Namely: 
-#   taxonomy[i][:category_block][:parents] and taxonomy[i][:category_block][:names] should have a structure of 
-#   [ {lang: …, name: …}, … ]. This cannot be directly done in the parser as everything it should recognize has to have a name 
-#   there. That's why the parser output is called "intermediate tree", needing further adjustments.
-
 # Normalize the hash structure so that all repeatable hashes are enclosed in arrays to be iterable.
+#
+# Namely: taxonomy[i][:category_block][:parents] and taxonomy[i][:category_block][:names] should have a structure of
+# [ {lang: …, name: …}, … ]. This cannot be directly done in the parser as everything it should recognize has to
+# have a name there. That's why the parser output is called "intermediate tree", needing further adjustments.
+#
 # @see FoodRescue::Database#add_category  documentation of the resulting data structure for categories
+# @todo The name wrap_in_array is not great, as the wrapping is not done always but conditionally.
+# @todo Simplify the taxonomy data structure.
 taxonomy.map! do |block|
 
   if block.key?(:category_block)
     block[:category_block][:parents]    = wrap_in_array(block[:category_block][:parents])
-    block[:category_block][:properties] = wrap_in_array(block[:category_block][:properties])
     block[:category_block][:names]      = wrap_in_array(block[:category_block][:names])
+    block[:category_block][:properties] = wrap_in_array(block[:category_block][:properties])
 
+    # Every category name contains multiple "cat_names" synonyms for one language that also need to be wrapped.
     block[:category_block][:names].collect! do |elem|
       new_cat_names = { cat_names: wrap_in_array(elem[:cat_names]) }
-      elem.merge(new_cat_names)
+      elem.merge(new_cat_names) # Overwrites the "cat_names" value in elem, keeping the "lang" key and value.
     end
   end
 
@@ -310,14 +315,16 @@ begin
   db = FoodRescue::Database.new args['DBFILE']
   db.prepare_category_tables
 
-  # Write categories to SQLite.
+  # Write categories to the database.
   taxonomy.each do |block| 
     db.add_category(block[:category_block]) if block.key?(:category_block)
   end
 
-  # Write category hierarchy to SQLite.
+  # Write category hierarchy to the database.
   # (Referencing a parent category requires all categories to exist, so we need this second phase.)
-  taxonomy.each do |block| 
+  puts "DEBUG: Found #{taxonomy.count} blocks of any type."
+  puts "DEBUG: Found #{taxonomy.count {|block| block.key?(:category_block)}} category blocks."
+  taxonomy.each do |block|
     db.add_category_parents(block[:category_block]) if block.key?(:category_block)
   end
 

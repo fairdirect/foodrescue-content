@@ -89,7 +89,7 @@ class FoodRescue::Database < SQLite3::Database
   
   # Helper method to determine the main name of a category
   # 
-  # @param [Hash] block  A description of the category with the same structure as used in method write_cat_names.
+  # @param [Hash] block  A description of the category with the same structure as used in method add_category.
   # @return [Array<String>]  Name and language code of the category's main name.
   # @see #add_category
   def self.cat_main_name(block)
@@ -228,8 +228,7 @@ class FoodRescue::Database < SQLite3::Database
 
   # Create or re-create the SQLite tables for products. Requires category tables to exist.
   # 
-  # @param allow_reuse [Boolean]  If true, no error will occur in case tables of the 
-  # same structure already exist.
+  # @param allow_reuse [Boolean]  If true, no error will occur in case tables of the same structure already exist.
   # @see FoodRescue::Database  Gives the reasoning for the table structure.
   def prepare_product_tables(allow_reuse=false)
     if_not_exists = if allow_reuse then "IF NOT EXISTS" else "" end
@@ -282,23 +281,21 @@ class FoodRescue::Database < SQLite3::Database
   # 
   #   ```
   #   {
-  #     :parents => [
-  #       {:lang=>"en", :cat_name => "…" },
-  #       {:lang=>"fr", :cat_name => "…" },
-  #       ...
-  #     ]
   #     :names => [
-  #       {
-  #         :lang => "en", 
-  #         :cat_names => [ {:value => "…" }, {:value => "…" }, ... ]
-  #       },
+  #       { :lang => "en", :cat_names => [ {:value => "…" }, {:value => "…" }, ... ] },
+  #       { :lang => "fr", :cat_names => [ {:value => "…" }, {:value => "…" }, ... ] },
   #       ...
   #     ],
-  #     :properties => [
-  #        ... not evaluated here ... 
-  #     ]
+  #     :parents => [
+  #       { :lang=>"en", :cat_name => "…" },
+  #       { :lang=>"fr", :cat_name => "…" },
+  #       ...
+  #     ],
+  #     :properties => [ ... not evaluated here ... ]
   #   }
   #   ```
+  #
+  # @todo Simplify the value of the `:cat_names` key to an array of strings.
   def add_category(category)
     name, lang = self.class.cat_main_name(category)
 
@@ -309,8 +306,9 @@ class FoodRescue::Database < SQLite3::Database
     # to avoid errors when importing food rescue topics and their category associations. Note that the "COLLATE NOCASE" 
     # option would allow case-insensitive comparion in SQLite3, but this has incomplete Unicode support so we better do it here.
     # 
-    # Also note, `"Hello World".capitalize => "Hellow world". As city and person names should not be accidentally lowercased, 
-    # `#capitalize` is only applied here if the category names startes with a lowercase letter.
+    # Also note, `"Hello World".capitalize => "Hello world". Yes, it lowercases the second and following words. Because city
+    # and person names should not be accidentally lowercased this way, `#capitalize` is only applied here if the category names
+    # start with a lowercase letter. (That still might lead to accidental lowercasing in a few cases, of course.)
     # 
     # @todo Remove this hack once categories.txt has been fixed upstream.
     name.capitalize! if name.match?(/^[[:lower:]]/)
@@ -327,25 +325,29 @@ class FoodRescue::Database < SQLite3::Database
 
   # Record the parent categories of a category into the database.
   # 
-  # Will result in a warning when the referenced parent categories do not exist in the database.
+  # Will result in a warning when a referenced parent category does not exist in the database.
   # 
-  # @param [Hash] block  A description of the category with the same structure as used in method write_cat_names.
+  # @param [Hash] block  A description of the category with the same structure as used in method `add_category()`.
   def add_category_parents(block)
     cat_name, cat_lang = self.class.cat_main_name(block)
     cat_id = get_first_value "SELECT id FROM categories WHERE name = ? AND lang = ?", [ cat_name, cat_lang ]
+    # puts "DEBUG: Going to assign category '#{cat_lang}:#{cat_name}' to #{block[:parents].count} parent categories"
     if cat_id.nil? then raise ArgumentError, "Category '#{cat_lang}:#{cat_name}' not found in database. Ignoring." end
 
     block[:parents].each do |parent| 
       parent_name, parent_lang = [ parent[:cat_name], parent[:lang] ]
       parent_id = get_first_value "SELECT id FROM categories WHERE name = ? AND lang = ?", [ parent_name, parent_lang ]
+
       if parent_id.nil? 
-        then raise ArgumentError, "Parent category '#{parent_lang}:#{parent_name}' not found in database. Ignoring." 
+        then puts "WARNING: ".in_orange + "Parent category not found in database. Ignoring. Relevant source snippet:\n" +
+        "    <#{parent_lang}:#{parent_name}\n" +
+        "    #{cat_lang}:#{cat_name}"
       end
       
       begin
         execute "INSERT INTO categories_structure VALUES (?, ?)", [cat_id, parent_id]
       rescue SQLite3::ConstraintException => e
-        puts "WARNING:".in_orange + " Parent category definition already exists in database. Ignoring.\n" +
+        puts "WARNING: ".in_orange + "Parent category assignment already exists in database. Ignoring.\n" +
            "    <#{parent_lang}:#{parent_name}\n" +
            "    #{cat_lang}:#{cat_name}"
       end
