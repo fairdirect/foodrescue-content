@@ -98,7 +98,7 @@ class CatHierarchyParser < Parslet::Parser
   rule(:comment_line) { hash >> space.maybe >> singlevalue >> newline }
   rule(:comment_lines) { comment_line.repeat(1) }
   rule(:synonym_line) { 
-  str('synonyms') >> colon >> lang_tag.as(:lang) >> colon >> values.as(:synonyms) >> newline 
+    str('synonyms') >> colon >> lang_tag.as(:lang) >> colon >> values.as(:synonyms) >> newline
   }
   rule(:synonym_lines) { 
     comment_lines.maybe >> synonym_line >> (synonym_line | comment_line).repeat(0) 
@@ -143,10 +143,10 @@ class CatHierarchyParser < Parslet::Parser
   # afterwards. So instead, the simplest possibility has to come last. This way, a comment line at the start of the block is 
   # first interpreted as a non-comment block, and only if not possible, as a comment block.
   rule(:block) { 
-    synonym_lines.as(:synonym_block) | 
-    stopword_lines.as(:stopword_block) | 
-    category_lines.as(:category_block) | 
-    comment_lines 
+    synonym_lines.as(:synonym_block) |   # Block with "synonyms:" lines defining individual-word synonyms.
+    stopword_lines.as(:stopword_block) | # Block with "stopwords:" lines defining words to ignore in OFF category name normalizing.
+    category_lines.as(:category_block) | # The most common block type by far, defining one category.
+    comment_lines                        # A block consisting solely of comments.
   }
   rule(:file) { 
     block >> (blank_lines >> block).repeat(0) >> blank_lines.maybe 
@@ -207,7 +207,8 @@ end
 
 # Perform global substitutions on the given text to fix known issues with the OFF categories.txt file.
 # 
-# @see FoodRescueDatabase#add_category The second place with categories.txt fixes, to capitalize the name.
+# @see FoodRescueDatabase#add_category The second place containing fixes for categories.txt, namely
+#   to capitalize the name.
 def fix_taxonomy_text(text)
   text
     .gsub(/^nl_be:/, 'nl-BE:')
@@ -306,6 +307,9 @@ taxonomy.map! do |block|
   block
 end
 
+puts "DEBUG: Found #{taxonomy.count} blocks of any type."
+puts "DEBUG: Found #{taxonomy.count {|block| block.key?(:category_block)}} category blocks."
+
 
 # (4) Save category names and parents to a SQLite database.
 # ---------------------------------------------------------
@@ -321,9 +325,7 @@ begin
   end
 
   # Write category hierarchy to the database.
-  # (Referencing a parent category requires all categories to exist, so we need this second phase.)
-  puts "DEBUG: Found #{taxonomy.count} blocks of any type."
-  puts "DEBUG: Found #{taxonomy.count {|block| block.key?(:category_block)}} category blocks."
+  # (Referencing a parent category requires all categories to exist, so we need this second pass.)
   taxonomy.each do |block|
     db.add_category_parents(block[:category_block]) if block.key?(:category_block)
   end

@@ -23,7 +23,7 @@ require_relative '../lib/utils'
 # **Table `categories`.** Nothing to optimize. Column id is an alias for ROWID, using 64 bit per value. But at <5000 records in 
 # this table for distributed SQLite files, the wasted storage is only 5000 × (8 B - 2 B) = 30 kB.
 # 
-# **Tables `categories_structure`, `product_categories`, `product_countries`, `topic_categories`.** No additional ROWID column 
+# **Tables `category_structure`, `product_categories`, `product_countries`, `topic_categories`.** No additional ROWID column
 # is needed as the table includes two columns that are useful together as a primary key. So the table uses `WITHOUT ROWID`. A 
 # ROWID column would take additional space, as only one-column `INTEGER PRIMARY KEY` columns become an alias of ROWID 
 # ([see](https://www.sqlite.org/lang_createtable.html#rowid)). The two columns of the primary key refer to ROWID columns in 
@@ -74,13 +74,13 @@ class FoodRescue::Database < SQLite3::Database
 
     super(dbfile, options)
 
-    execute "PRAGMA foreign_keys = ON;"
+    execute "PRAGMA foreign_keys = ON"
 
     # Let the OS sync write operations to the database file when it wants rather than after each command. Because "commits 
     # can be orders of magnitude faster with synchronous OFF" as per https://sqlite.org/pragma.html#pragma_synchronous and 
     # we don't care that the database might become corrupted on power outage. Because it can be simply generated anew by 
     # running the import scripts again.
-    execute "PRAGMA synchronous = OFF;"
+    execute "PRAGMA synchronous = OFF"
 
     # @todo (later) Run all prepare_*_tables methods here. This guarantees that any FoodRescue::Database object can take 
     #   any kind of record without further checks and preparations.
@@ -106,7 +106,7 @@ class FoodRescue::Database < SQLite3::Database
   # @param allow_reuse [Boolean]  If true, no error will occur in case tables of the 
   #   same structure already exist.
   # @see FoodRescue::Database  FoodRescue::Database documentation (explains the database design)
-  def prepare_category_tables(allow_reuse = false)
+  def prepare_category_tables(allow_reuse = true)
     if_not_exists = if allow_reuse then "IF NOT EXISTS" else "" end
 
     # Multiple execute statements are preferable over execute_batch as backtraces then indicate the erroneous statement.
@@ -114,14 +114,22 @@ class FoodRescue::Database < SQLite3::Database
     execute "
       CREATE TABLE #{if_not_exists} categories (
         id              INTEGER PRIMARY KEY, -- alias of ROWID as per https://stackoverflow.com/a/8246737
-        name            TEXT,                -- the English name, otherwise the first name
-        lang            TEXT,                -- language tag such as 'en', 'en-GB'
-        local_names     JSON,                -- array of name objects, each with 'name' and 'lang' properties
         product_count   INTEGER              -- number of products in this category
       )"
 
     execute "
-      CREATE TABLE #{if_not_exists} categories_structure (
+      CREATE TABLE #{if_not_exists} category_names (
+        category_id     INTEGER,
+        name            TEXT,
+        lang            TEXT,                -- language tag such as 'en', 'en-GB'
+        ----
+        PRIMARY KEY     (name, lang),        -- Not including category_id to prevent inserting any duplicate names.
+                                             -- Otherwise names would not necessarily identify categories.
+        FOREIGN KEY     (category_id) REFERENCES categories(id)
+      ) WITHOUT ROWID"
+
+    execute "
+      CREATE TABLE #{if_not_exists} category_structure (
         category_id     INTEGER,
         parent_id       INTEGER,
         ----
@@ -276,7 +284,7 @@ class FoodRescue::Database < SQLite3::Database
 
   # Record the names of a category definition to the database.
   # 
-  # @param [Hash<Array<…>>] category  A nested Hash of the following structure. In this structure, there is always an array around 
+  # @param [Hash<Array<…>>] category_properties  A nested Hash of the following structure. In this structure, there is always an array around
   #   the nested hashes, even when that array contains zero or one elements. This allows to iterate over these arrays easily.
   # 
   #   ```
@@ -295,48 +303,67 @@ class FoodRescue::Database < SQLite3::Database
   #   }
   #   ```
   #
-  # @todo Simplify the value of the `:cat_names` key to an array of strings.
-  def add_category(category)
-    name, lang = self.class.cat_main_name(category)
+  # @todo Simplify the value of the `:cat_names` key to an array of strings before handing this stuff as a parameter to this method.
+  def add_category(category_properties)
 
-    # Fix that the categories.txt definition file is inconsistent about case.
-    # 
-    # Mostly categories.txt contains categories in "Capital case" but sometimes in "all lowercase". All categories are shown 
-    # in capital case on the Open Food Facts website, so that is the intention and it shoul be that way in the database 
-    # to avoid errors when importing food rescue topics and their category associations. Note that the "COLLATE NOCASE" 
-    # option would allow case-insensitive comparion in SQLite3, but this has incomplete Unicode support so we better do it here.
-    # 
-    # Also note, `"Hello World".capitalize => "Hello world". Yes, it lowercases the second and following words. Because city
-    # and person names should not be accidentally lowercased this way, `#capitalize` is only applied here if the category names
-    # start with a lowercase letter. (That still might lead to accidental lowercasing in a few cases, of course.)
-    # 
-    # @todo Remove this hack once categories.txt has been fixed upstream.
-    name.capitalize! if name.match?(/^[[:lower:]]/)
+    # Get the id of a new category record, needed to associate the names with lateron.
+    execute "INSERT INTO categories (product_count) VALUES (NULL)"
+    category_id = get_first_value "SELECT last_insert_rowid()"
 
-    # @todo Create a JSON structure for the remaining names and put it into column local_names.
+    category_properties[:names].each do |name|
+      lang = name[:lang]
 
-    begin
-      execute "INSERT INTO categories (name, lang) VALUES (?, ?)", [name, lang]
-    rescue SQLite3::ConstraintException => e
-      puts "WARNING:".in_orange + " Category '#{lang}:#{name}' already exists in the database. Ignoring."
+      name[:cat_names].each do |cat_name|
+        synonym = cat_name[:value]
+
+        # Fix that the categories.txt definition file is inconsistent about case.
+        #
+        # Mostly categories.txt contains categories in "Capital case" but sometimes in "all lowercase". All categories are shown
+        # in capital case on the Open Food Facts website, so that is the intention and it shoul be that way in the database
+        # to avoid errors when importing food rescue topics and their category associations. Note that the "COLLATE NOCASE"
+        # option would allow case-insensitive comparion in SQLite3, but this has incomplete Unicode support so we better do it here.
+        #
+        # Also note, `"Hello World".capitalize => "Hello world". Yes, it lowercases the second and following words. Because city
+        # and person names should not be accidentally lowercased this way, `#capitalize` is only applied here if the category names
+        # start with a lowercase letter. (That still might lead to accidental lowercasing in a few cases, of course.)
+        #
+        # @todo Remove this hack once categories.txt has been fixed upstream.
+        synonym.capitalize! if synonym.match?(/^[[:lower:]]/)
+
+        begin
+          execute "INSERT INTO category_names (category_id, name, lang) VALUES (?, ?, ?)", [category_id, synonym, lang]
+        rescue SQLite3::ConstraintException => e
+          puts "WARNING:".in_orange + " Category '#{lang}:#{name}' already exists in the database. Ignoring."
+        end
+
+      end
+
     end
+
+
+#    begin
+#      execute "INSERT INTO categories (name, lang) VALUES (?, ?)", [name, lang]
+#    rescue SQLite3::ConstraintException => e
+#      puts "WARNING:".in_orange + " Category '#{lang}:#{name}' already exists in the database. Ignoring."
+#    end
   end
 
 
-  # Record the parent categories of a category into the database.
+  # Record in the database which categories are parent categories of the given category.
   # 
-  # Will result in a warning when a referenced parent category does not exist in the database.
+  # Will result in a warning when a referenced parent category does not exist in the database. Such a parent category
+  # reference is then ignored.
   # 
   # @param [Hash] block  A description of the category with the same structure as used in method `add_category()`.
   def add_category_parents(block)
     cat_name, cat_lang = self.class.cat_main_name(block)
-    cat_id = get_first_value "SELECT id FROM categories WHERE name = ? AND lang = ?", [ cat_name, cat_lang ]
+    cat_id = get_first_value "SELECT category_id FROM category_names WHERE name = ? AND lang = ?", [ cat_name, cat_lang ]
     # puts "DEBUG: Going to assign category '#{cat_lang}:#{cat_name}' to #{block[:parents].count} parent categories"
     if cat_id.nil? then raise ArgumentError, "Category '#{cat_lang}:#{cat_name}' not found in database. Ignoring." end
 
-    block[:parents].each do |parent| 
+    block[:parents].each do |parent|
       parent_name, parent_lang = [ parent[:cat_name], parent[:lang] ]
-      parent_id = get_first_value "SELECT id FROM categories WHERE name = ? AND lang = ?", [ parent_name, parent_lang ]
+      parent_id = get_first_value "SELECT category_id FROM category_names WHERE name = ? AND lang = ?", [ parent_name, parent_lang ]
 
       if parent_id.nil? 
         then puts "WARNING: ".in_orange + "Parent category not found in database. Ignoring. Relevant source snippet:\n" +
@@ -345,7 +372,7 @@ class FoodRescue::Database < SQLite3::Database
       end
       
       begin
-        execute "INSERT INTO categories_structure VALUES (?, ?)", [cat_id, parent_id]
+        execute "INSERT INTO category_structure VALUES (?, ?)", [cat_id, parent_id]
       rescue SQLite3::ConstraintException => e
         puts "WARNING: ".in_orange + "Parent category assignment already exists in database. Ignoring.\n" +
            "    <#{parent_lang}:#{parent_name}\n" +
@@ -360,6 +387,8 @@ class FoodRescue::Database < SQLite3::Database
   # @param cat_name [String]  Identifying name of the category to save the product count for. Use the English name, and if 
   #   not available the first name given. Use the full name, not the tokenized form. Do not include a language prefix.
   # @param product_count [Integer]  Number of products in this category.
+  #
+  # @todo Also consider the language when identifying a category in the database.
   def add_product_count(cat_name, product_count)
     execute "UPDATE categories SET product_count = ? WHERE name = ? LIMIT 1", [product_count, cat_name]
 
@@ -381,6 +410,8 @@ class FoodRescue::Database < SQLite3::Database
   #   known in the database, a record will be created for it in table `countries`.
   # 
   # @see https://en.wikipedia.org/wiki/Language_localisation#Language_tags_and_codes Wikipedia: Language tags and codes
+  # @todo Find out if language tags are indeed in the form `ab_CD` resp. `abc_DE`, and not `ab-CD` resp. `abc-DE`. Not very
+  #   relevant right now, as the current database only contains two-letter language codes right now.
   def add_product(product_code, categories, countries)
 
     # Since products is a WITHOUT ROWID table, we have to supply our own primary key value.
@@ -388,14 +419,19 @@ class FoodRescue::Database < SQLite3::Database
     product_id = get_first_value "SELECT IFNULL(MAX(id),0) + 1 FROM products"
     execute "INSERT INTO products (id, code) VALUES (?, ?)", [product_id, product_code]
 
-    # Add database IDs to the category records. If necessary, create category records on the fly.
+    # Add database IDs to the records in "categories". If necessary, create category records on the fly.
     categories.each do |cat|
-      category_id = get_first_value "SELECT id FROM categories WHERE name = ? and lang = ? LIMIT 1",
+      category_id = get_first_value "SELECT category_id FROM category_names WHERE name = ? and lang = ? LIMIT 1",
         [cat[:name], cat[:lang]]
 
       if category_id.nil? then
-        execute "INSERT INTO categories (name, lang) VALUES (?, ?)", [cat[:name], cat[:lang]]
+        # TODO: Categories that do not yet exist in the database are those not in the OpenFoodFacts categories.txt taxonomy.
+        # They are probably in the normalized form (all-lowercase, dashes for spaces), which should not be recorded into the
+        # database. Either de-normalize it, or get the original form from another source.
+
+        execute "INSERT INTO categories (product_count) VALUES (NULL)"
         category_id = get_first_value "SELECT last_insert_rowid()"
+        execute "INSERT INTO category_names (category_id, name, lang) VALUES (?, ?, ?)", [category_id, cat[:name], cat[:lang]]
       end
       cat[:id] = category_id
     end
@@ -407,12 +443,12 @@ class FoodRescue::Database < SQLite3::Database
     ancestor_ids = execute "
       WITH RECURSIVE ancestor_categories (child_id, ancestor_id) AS (
         SELECT category_id, parent_id
-          FROM categories_structure
+          FROM category_structure
           WHERE category_id IN (#{category_ids.join(',')})
         UNION ALL
-        SELECT ancestor_categories.child_id, categories_structure.parent_id
+        SELECT ancestor_categories.child_id, category_structure.parent_id
           FROM ancestor_categories
-            INNER JOIN categories_structure ON ancestor_categories.ancestor_id = categories_structure.category_id
+            INNER JOIN category_structure ON ancestor_categories.ancestor_id = category_structure.category_id
       )
       SELECT DISTINCT ancestor_id FROM ancestor_categories"
     ancestor_ids.collect! { |id| id['ancestor_id'] } # Remove the column names added by SQLite.
@@ -425,7 +461,7 @@ class FoodRescue::Database < SQLite3::Database
 #      ap ancestor_ids
 #    end
 
-    # Associate the product with its product categories.
+    # Associate the product with each of its categories, either directly or via the hierarchy.
     categories.each do |cat|
       # puts "DEBUG: processing product category '#{cat[:name]}'" if ancestor_ids.count != 0
       # ap cat if ancestor_ids.count != 0
@@ -555,10 +591,12 @@ class FoodRescue::Database < SQLite3::Database
 
     # Write the topic_categories table entry.
     topic.categories.each do |cat|
-      cat_id = get_first_value "SELECT id FROM categories WHERE name = ? AND lang LIKE 'en%'", cat
+      cat_id = get_first_value "SELECT id FROM category_names WHERE name = ? AND lang LIKE 'en%'", cat
       raise RuntimeError, "Referenced category #{cat} not found." if cat_id.nil?
       # @todo (later) Instead of raising an error, create the category while logging a notice.
-      # @todo (later) Also allow searching for non-English categories. Their names would start with a language tag.
+      # @todo (later) So far, a topic refers to its categories always in English, regardless of the topic language.
+      #   That is limiting, as not all category names have been translated. So, allow topics to reference non-English
+      #   categories as well. Their names would start with a language tag.
 
       execute "INSERT INTO topic_categories (category_id, topic_id) VALUES (?, ?)", cat_id, topic_id
     end

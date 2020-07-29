@@ -85,15 +85,20 @@ begin
     countries  = if record['countries_en'].nil?  then [] else record['countries_en'].split(',') end
     categories = if record['categories_en'].nil? then [] else record['categories_en'].split(',') end
 
-    # Transform categories array to array of {lang: '…', name: '…'} elements. Default language is English.
+    # Transform the values in the categories array from e.g. "en:Cat Name" to {lang: 'en', name: 'Cat Name'}.
+    #
+    # All category names in the Open Food Facts products CSV export may have an optional language prefix ("fr:") but never
+    # have a language tag prefix ("fr-BE:"). The latter only appears in the Open Food Facts category taxonomy.
+    # If no language prefix is present, the default language is English.
     categories = categories.filter_map do |cat|
-      # Ignore categories given as a category tag (such as "fr:test-tag") rather than the full name.
-      # 
-      # Category names in the Open Food Facts CSV export may have a language prefix ("fr:") but never 
-      # have a language tag prefix ("fr-BE:"). The latter only appears in the Open Food Facts category taxonomy.
+      # Ignore categories given with a normalized, tag-style name rather than the full name.
       #
-      # @todo (later) Also process tag-type categories. It requires adding the category tags to the database.
-      #   But, the cleaner option is to remove the (inconsistent) use of category tags from the OFF CSV file.
+      # Such a normalized name is for example "test-name", and prefixed with language tag for example "en:test-name" in full.
+      #
+      # @todo (later) Also process categories with the normalized, tag-style names. It requires adding the
+      #   category tags to the database on the fly (which database.rb already is capable of). But the cleaner
+      #   option is to remove the all normalized, tag-style category names from the OFF products CSV file
+      #   upstream, because this usage is inconsistent and without any good reason.
       next if /^[a-z][a-z]:[a-z-]+$/.match?(cat)
 
       if match = /^([a-z][a-z]):(.+)$/.match(cat)
