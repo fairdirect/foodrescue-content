@@ -74,6 +74,7 @@ class FoodRescue::Database < SQLite3::Database
 
     super(dbfile, options)
 
+    # Enforce foreign key relations, including cascading deletes.
     execute "PRAGMA foreign_keys = ON"
 
     # Let the OS sync write operations to the database file when it wants rather than after each command. Because "commits 
@@ -125,7 +126,7 @@ class FoodRescue::Database < SQLite3::Database
         ----
         PRIMARY KEY     (name, lang),        -- Not including category_id to prevent inserting any duplicate names.
                                              -- Otherwise names would not necessarily identify categories.
-        FOREIGN KEY     (category_id) REFERENCES categories(id)
+        FOREIGN KEY     (category_id) REFERENCES categories(id) ON DELETE CASCADE
       ) WITHOUT ROWID"
 
     execute "
@@ -134,7 +135,7 @@ class FoodRescue::Database < SQLite3::Database
         parent_id       INTEGER,
         ----
         PRIMARY KEY     (category_id, parent_id),
-        FOREIGN KEY     (category_id) REFERENCES categories(id),
+        FOREIGN KEY     (category_id) REFERENCES categories(id) ON DELETE CASCADE,
         FOREIGN KEY     (parent_id) REFERENCES categories(id)
       ) WITHOUT ROWID"
 
@@ -187,7 +188,7 @@ class FoodRescue::Database < SQLite3::Database
         role            TEXT,                 -- author's role in producing the topic
         ----
         PRIMARY KEY     (topic_id, author_id),
-        FOREIGN KEY     (topic_id) REFERENCES topics(id),
+        FOREIGN KEY     (topic_id) REFERENCES topics(id) ON DELETE CASCADE,
         FOREIGN KEY     (author_id) REFERENCES authors(id)
       ) WITHOUT ROWID"
 
@@ -207,7 +208,7 @@ class FoodRescue::Database < SQLite3::Database
         category_id     INTEGER,
         ----
         PRIMARY KEY     (topic_id, category_id),
-        FOREIGN KEY     (topic_id) REFERENCES topics(id),
+        FOREIGN KEY     (topic_id) REFERENCES topics(id) ON DELETE CASCADE,
         FOREIGN KEY     (category_id) REFERENCES categories(id)
       ) WITHOUT ROWID"
 
@@ -217,7 +218,7 @@ class FoodRescue::Database < SQLite3::Database
         literature_id   TEXT,
         ----
         PRIMARY KEY     (topic_id, literature_id),
-        FOREIGN KEY     (topic_id) REFERENCES topics(id),
+        FOREIGN KEY     (topic_id) REFERENCES topics(id) ON DELETE CASCADE,
         FOREIGN KEY     (literature_id) REFERENCES literature(id)
       ) WITHOUT ROWID"
 
