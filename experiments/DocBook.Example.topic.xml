@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <topic type="storage_instructions" version="5.1"
        xmlns="http://docbook.org/ns/docbook"
-       xmlns:xlink="http://www.w3.org/1999/xlink"
+       xmlns:xl="http://www.w3.org/1999/xlink"
        xmlns:xila="http://www.w3.org/2001/XInclude/local-attributes"
        xmlns:xi="http://www.w3.org/2001/XInclude"
        xmlns:trans="http://docbook.org/ns/transclusion"
@@ -9,6 +9,7 @@
        xmlns:m="http://www.w3.org/1998/Math/MathML"
        xmlns:html="http://www.w3.org/1999/xhtml"
        xmlns:db="http://docbook.org/ns/docbook">
+
   <info>
     <title>Crisp bread is ok when still crunchy</title>
 
@@ -34,46 +35,51 @@
     target file per language is created, and a translation management system helps to keep both in sync. -->
   </info>
 
-  <simpara>When crisp bread is still crunchy, it is still good to eat. This is
-  described in more detail here, including literature references.</simpara>
+  <section xml:id="_crunchy">
+    <title>When it's crunchy</title>
+
+    <simpara>When crisp bread is still crunchy, it is still good to eat. This is
+      described in more detail here, including literature references.</simpara>
+  </section>
+
 
   <simpara>Allowed values for topic@type:
 
     <itemizedlist>
       <listitem>
-        <para>risks</para>
+        <simpara>risks</simpara>
       </listitem>
 
       <listitem>
-        <para>edibility_assessment</para>
+        <simpara>edibility_assessment</simpara>
       </listitem>
 
       <listitem>
-        <para>symptoms</para>
+        <simpara>symptoms</simpara>
       </listitem>
 
       <listitem>
-        <para>edible_parts</para>
+        <simpara>edible_parts</simpara>
       </listitem>
 
       <listitem>
-        <para>storage_overview</para>
+        <simpara>storage_overview</simpara>
       </listitem>
 
       <listitem>
-        <para>storage_instructions</para>
+        <simpara>storage_instructions</simpara>
       </listitem>
 
       <listitem>
-        <para>preservation</para>
+        <simpara>preservation</simpara>
       </listitem>
 
       <listitem>
-        <para>preparation</para>
+        <simpara>preparation</simpara>
       </listitem>
 
       <listitem>
-        <para>reuse_and_recycling</para>
+        <simpara>reuse_and_recycling</simpara>
       </listitem>
     </itemizedlist>
   </simpara>
@@ -83,16 +89,22 @@
 
     <itemizedlist>
       <listitem>
-        <para>A documented subset of the Open Food Facts field "categories".
+        <simpara>A documented subset of the Open Food Facts field "categories".
         That field has been defined for the purposes of food rescue content.
         Category names must be given in their English, original form, not the
         tagged form. No language prefix must be included – this is also not
         necessary, as the subset only contains categories that have an English
-        name.</para>
+        name.</simpara>
       </listitem>
     </itemizedlist>
 
   </simpara>
+
+  <simpara><emphasis role="strong">strong emphasis</emphasis></simpara>
+
+  <simpara><emphasis>normal emphasis</emphasis></simpara>
+
+  <simpara><link xl:href="https://example.com/">Example link</link></simpara>
 
   <xi:include href="bibliography.xml"/>
 </topic>
