@@ -129,7 +129,7 @@ begin
     end
     topic.categories = categories
 
-    topic.abstract = if record.key?('Topic type') then record['Topic type'] else nil end
+    topic.abstract = if record.key?('Abstract') then record['Abstract'] else nil end
 
     topic.content_xbibrefs = if record.key?('Literature') then record['Literature'].split("\n") else nil end
 
