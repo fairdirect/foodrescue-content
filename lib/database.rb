@@ -592,14 +592,18 @@ class FoodRescue::Database < SQLite3::Database
 
     # Write the topic_categories table entry.
     topic.categories.each do |cat|
-      cat_id = get_first_value "SELECT id FROM category_names WHERE name = ? AND lang LIKE 'en%'", cat
+      cat_id = get_first_value "SELECT category_id FROM category_names WHERE name = ? AND lang LIKE 'en%'", cat
       raise RuntimeError, "Referenced category #{cat} not found." if cat_id.nil?
       # @todo (later) Instead of raising an error, create the category while logging a notice.
       # @todo (later) So far, a topic refers to its categories always in English, regardless of the topic language.
       #   That is limiting, as not all category names have been translated. So, allow topics to reference non-English
       #   categories as well. Their names would start with a language tag.
 
+      # puts "DEBUG: Going to insert into topic_categories: category_id = '#{cat_id}, topic id = #{topic_id}'"
+
       execute "INSERT INTO topic_categories (category_id, topic_id) VALUES (?, ?)", cat_id, topic_id
+
+      # @todo If the same category was assigned twice, ignore that and print a notice. Currently this leads to a crash.
     end
 
     # Ensure that referenced literature works exist in the literature table. Raise an error if not.
