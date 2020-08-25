@@ -1,0 +1,2823 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<office:document xmlns:presentation="urn:oasis:names:tc:opendocument:xmlns:presentation:1.0" xmlns:grddl="http://www.w3.org/2003/g/data-view#" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xforms="http://www.w3.org/2002/xforms" xmlns:dom="http://www.w3.org/2001/xml-events" xmlns:script="urn:oasis:names:tc:opendocument:xmlns:script:1.0" xmlns:form="urn:oasis:names:tc:opendocument:xmlns:form:1.0" xmlns:math="http://www.w3.org/1998/Math/MathML" xmlns:draw="urn:oasis:names:tc:opendocument:xmlns:drawing:1.0" xmlns:dr3d="urn:oasis:names:tc:opendocument:xmlns:dr3d:1.0" xmlns:text="urn:oasis:names:tc:opendocument:xmlns:text:1.0" xmlns:style="urn:oasis:names:tc:opendocument:xmlns:style:1.0" xmlns:formx="urn:openoffice:names:experimental:ooxml-odf-interop:xmlns:form:1.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:ooo="http://openoffice.org/2004/office" xmlns:loext="urn:org:documentfoundation:names:experimental:office:xmlns:loext:1.0" xmlns:office="urn:oasis:names:tc:opendocument:xmlns:office:1.0" xmlns:fo="urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0" xmlns:field="urn:openoffice:names:experimental:ooo-ms-interop:xmlns:field:1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:meta="urn:oasis:names:tc:opendocument:xmlns:meta:1.0" xmlns:config="urn:oasis:names:tc:opendocument:xmlns:config:1.0" xmlns:calcext="urn:org:documentfoundation:names:experimental:calc:xmlns:calcext:1.0" xmlns:svg="urn:oasis:names:tc:opendocument:xmlns:svg-compatible:1.0" xmlns:of="urn:oasis:names:tc:opendocument:xmlns:of:1.2" xmlns:chart="urn:oasis:names:tc:opendocument:xmlns:chart:1.0" xmlns:rpt="http://openoffice.org/2005/report" xmlns:table="urn:oasis:names:tc:opendocument:xmlns:table:1.0" xmlns:css3t="http://www.w3.org/TR/css3-text/" xmlns:number="urn:oasis:names:tc:opendocument:xmlns:datastyle:1.0" xmlns:ooow="http://openoffice.org/2004/writer" xmlns:oooc="http://openoffice.org/2004/calc" xmlns:tableooo="http://openoffice.org/2009/table" xmlns:drawooo="http://openoffice.org/2010/draw" office:version="1.2" office:mimetype="application/vnd.oasis.opendocument.spreadsheet">
+ <office:meta><dc:date>2020-08-25T15:42:51.853327966</dc:date><dc:creator>Matthias Ansorg</dc:creator><meta:editing-duration>P1DT8H43M40S</meta:editing-duration><meta:editing-cycles>143</meta:editing-cycles><meta:generator>LibreOffice/6.3.5.2$Linux_X86_64 LibreOffice_project/30$Build-2</meta:generator><meta:document-statistic meta:table-count="1" meta:cell-count="720" meta:object-count="0"/></office:meta>
+ <office:settings>
+  <config:config-item-set config:name="ooo:view-settings">
+   <config:config-item config:name="VisibleAreaTop" config:type="int">0</config:config-item>
+   <config:config-item config:name="VisibleAreaLeft" config:type="int">0</config:config-item>
+   <config:config-item config:name="VisibleAreaWidth" config:type="int">56910</config:config-item>
+   <config:config-item config:name="VisibleAreaHeight" config:type="int">205373</config:config-item>
+   <config:config-item-map-indexed config:name="Views">
+    <config:config-item-map-entry>
+     <config:config-item config:name="ViewId" config:type="string">view1</config:config-item>
+     <config:config-item-map-named config:name="Tables">
+      <config:config-item-map-entry config:name="foodrescue-content.Example">
+       <config:config-item config:name="CursorPositionX" config:type="int">0</config:config-item>
+       <config:config-item config:name="CursorPositionY" config:type="int">82</config:config-item>
+       <config:config-item config:name="HorizontalSplitMode" config:type="short">0</config:config-item>
+       <config:config-item config:name="VerticalSplitMode" config:type="short">2</config:config-item>
+       <config:config-item config:name="HorizontalSplitPosition" config:type="int">0</config:config-item>
+       <config:config-item config:name="VerticalSplitPosition" config:type="int">1</config:config-item>
+       <config:config-item config:name="ActiveSplitRange" config:type="short">2</config:config-item>
+       <config:config-item config:name="PositionLeft" config:type="int">0</config:config-item>
+       <config:config-item config:name="PositionRight" config:type="int">0</config:config-item>
+       <config:config-item config:name="PositionTop" config:type="int">0</config:config-item>
+       <config:config-item config:name="PositionBottom" config:type="int">80</config:config-item>
+       <config:config-item config:name="ZoomType" config:type="short">0</config:config-item>
+       <config:config-item config:name="ZoomValue" config:type="int">100</config:config-item>
+       <config:config-item config:name="PageViewZoomValue" config:type="int">60</config:config-item>
+       <config:config-item config:name="ShowGrid" config:type="boolean">true</config:config-item>
+       <config:config-item config:name="AnchoredTextOverflowLegacy" config:type="boolean">false</config:config-item>
+      </config:config-item-map-entry>
+     </config:config-item-map-named>
+     <config:config-item config:name="ActiveTable" config:type="string">foodrescue-content.Example</config:config-item>
+     <config:config-item config:name="HorizontalScrollbarWidth" config:type="int">1265</config:config-item>
+     <config:config-item config:name="ZoomType" config:type="short">0</config:config-item>
+     <config:config-item config:name="ZoomValue" config:type="int">100</config:config-item>
+     <config:config-item config:name="PageViewZoomValue" config:type="int">60</config:config-item>
+     <config:config-item config:name="ShowPageBreakPreview" config:type="boolean">false</config:config-item>
+     <config:config-item config:name="ShowZeroValues" config:type="boolean">true</config:config-item>
+     <config:config-item config:name="ShowNotes" config:type="boolean">true</config:config-item>
+     <config:config-item config:name="ShowGrid" config:type="boolean">true</config:config-item>
+     <config:config-item config:name="GridColor" config:type="int">12632256</config:config-item>
+     <config:config-item config:name="ShowPageBreaks" config:type="boolean">true</config:config-item>
+     <config:config-item config:name="HasColumnRowHeaders" config:type="boolean">true</config:config-item>
+     <config:config-item config:name="HasSheetTabs" config:type="boolean">true</config:config-item>
+     <config:config-item config:name="IsOutlineSymbolsSet" config:type="boolean">true</config:config-item>
+     <config:config-item config:name="IsValueHighlightingEnabled" config:type="boolean">false</config:config-item>
+     <config:config-item config:name="IsSnapToRaster" config:type="boolean">false</config:config-item>
+     <config:config-item config:name="RasterIsVisible" config:type="boolean">false</config:config-item>
+     <config:config-item config:name="RasterResolutionX" config:type="int">1000</config:config-item>
+     <config:config-item config:name="RasterResolutionY" config:type="int">1000</config:config-item>
+     <config:config-item config:name="RasterSubdivisionX" config:type="int">1</config:config-item>
+     <config:config-item config:name="RasterSubdivisionY" config:type="int">1</config:config-item>
+     <config:config-item config:name="IsRasterAxisSynchronized" config:type="boolean">true</config:config-item>
+     <config:config-item config:name="AnchoredTextOverflowLegacy" config:type="boolean">false</config:config-item>
+    </config:config-item-map-entry>
+   </config:config-item-map-indexed>
+  </config:config-item-set>
+  <config:config-item-set config:name="ooo:configuration-settings">
+   <config:config-item config:name="SyntaxStringRef" config:type="short">7</config:config-item>
+   <config:config-item config:name="EmbedComplexScriptFonts" config:type="boolean">true</config:config-item>
+   <config:config-item config:name="EmbedAsianScriptFonts" config:type="boolean">true</config:config-item>
+   <config:config-item config:name="EmbedLatinScriptFonts" config:type="boolean">true</config:config-item>
+   <config:config-item config:name="IsDocumentShared" config:type="boolean">false</config:config-item>
+   <config:config-item config:name="LoadReadonly" config:type="boolean">false</config:config-item>
+   <config:config-item config:name="EmbedOnlyUsedFonts" config:type="boolean">false</config:config-item>
+   <config:config-item config:name="AllowPrintJobCancel" config:type="boolean">true</config:config-item>
+   <config:config-item config:name="UpdateFromTemplate" config:type="boolean">true</config:config-item>
+   <config:config-item config:name="IsKernAsianPunctuation" config:type="boolean">false</config:config-item>
+   <config:config-item config:name="CharacterCompressionType" config:type="short">0</config:config-item>
+   <config:config-item config:name="RasterIsVisible" config:type="boolean">false</config:config-item>
+   <config:config-item config:name="SaveVersionOnClose" config:type="boolean">false</config:config-item>
+   <config:config-item config:name="GridColor" config:type="int">12632256</config:config-item>
+   <config:config-item config:name="PrinterName" config:type="string">laserjet-2200-pxlmono</config:config-item>
+   <config:config-item-map-indexed config:name="ForbiddenCharacters">
+    <config:config-item-map-entry>
+     <config:config-item config:name="Language" config:type="string">de</config:config-item>
+     <config:config-item config:name="Country" config:type="string">DE</config:config-item>
+     <config:config-item config:name="Variant" config:type="string"/>
+     <config:config-item config:name="BeginLine" config:type="string"/>
+     <config:config-item config:name="EndLine" config:type="string"/>
+    </config:config-item-map-entry>
+    <config:config-item-map-entry>
+     <config:config-item config:name="Language" config:type="string">en</config:config-item>
+     <config:config-item config:name="Country" config:type="string">US</config:config-item>
+     <config:config-item config:name="Variant" config:type="string"/>
+     <config:config-item config:name="BeginLine" config:type="string"/>
+     <config:config-item config:name="EndLine" config:type="string"/>
+    </config:config-item-map-entry>
+    <config:config-item-map-entry>
+     <config:config-item config:name="Language" config:type="string">en</config:config-item>
+     <config:config-item config:name="Country" config:type="string">GB</config:config-item>
+     <config:config-item config:name="Variant" config:type="string"/>
+     <config:config-item config:name="BeginLine" config:type="string"/>
+     <config:config-item config:name="EndLine" config:type="string"/>
+    </config:config-item-map-entry>
+   </config:config-item-map-indexed>
+   <config:config-item config:name="EmbedFonts" config:type="boolean">false</config:config-item>
+   <config:config-item config:name="IsSnapToRaster" config:type="boolean">false</config:config-item>
+   <config:config-item config:name="RasterResolutionX" config:type="int">1000</config:config-item>
+   <config:config-item config:name="RasterResolutionY" config:type="int">1000</config:config-item>
+   <config:config-item config:name="ShowZeroValues" config:type="boolean">true</config:config-item>
+   <config:config-item config:name="ShowNotes" config:type="boolean">true</config:config-item>
+   <config:config-item config:name="ShowGrid" config:type="boolean">true</config:config-item>
+   <config:config-item config:name="ShowPageBreaks" config:type="boolean">true</config:config-item>
+   <config:config-item config:name="HasSheetTabs" config:type="boolean">true</config:config-item>
+   <config:config-item config:name="IsRasterAxisSynchronized" config:type="boolean">true</config:config-item>
+   <config:config-item config:name="LinkUpdateMode" config:type="short">3</config:config-item>
+   <config:config-item config:name="RasterSubdivisionX" config:type="int">1</config:config-item>
+   <config:config-item config:name="HasColumnRowHeaders" config:type="boolean">true</config:config-item>
+   <config:config-item config:name="RasterSubdivisionY" config:type="int">1</config:config-item>
+   <config:config-item config:name="AutoCalculate" config:type="boolean">true</config:config-item>
+   <config:config-item config:name="PrinterSetup" config:type="base64Binary">twH+/2xhc2VyamV0LTIyMDAtcHhsbW9ubwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQ1VQUzpsYXNlcmpldC0yMjAwLXB4bG1vbm8AAAAAAAAWAAMA2AAAAAAAAAAEAAhSAAAEdAAASm9iRGF0YSAxCnByaW50ZXI9bGFzZXJqZXQtMjIwMC1weGxtb25vCm9yaWVudGF0aW9uPVBvcnRyYWl0CmNvcGllcz0xCmNvbGxhdGU9ZmFsc2UKbWFyZ2luZGFqdXN0bWVudD0wLDAsMCwwCmNvbG9yZGVwdGg9MjQKcHNsZXZlbD0wCnBkZmRldmljZT0xCmNvbG9yZGV2aWNlPTAKUFBEQ29udGV4RGF0YQpQYWdlU2l6ZTpBNABEdXBsZXg6Tm9uZQBJbnB1dFNsb3Q6RGVmYXVsdAAAEgBDT01QQVRfRFVQTEVYX01PREUPAER1cGxleE1vZGU6Ok9mZg==</config:config-item>
+   <config:config-item config:name="IsOutlineSymbolsSet" config:type="boolean">true</config:config-item>
+   <config:config-item config:name="PrinterPaperFromSetup" config:type="boolean">false</config:config-item>
+   <config:config-item config:name="ApplyUserData" config:type="boolean">true</config:config-item>
+   <config:config-item config:name="SaveThumbnail" config:type="boolean">true</config:config-item>
+  </config:config-item-set>
+ </office:settings>
+ <office:scripts>
+  <office:script script:language="ooo:Basic">
+   <ooo:libraries xmlns:ooo="http://openoffice.org/2004/office" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <ooo:library-embedded ooo:name="Standard"/>
+   </ooo:libraries>
+  </office:script>
+ </office:scripts>
+ <office:font-face-decls>
+  <style:font-face style:name="Liberation Sans" svg:font-family="&apos;Liberation Sans&apos;" style:font-family-generic="swiss" style:font-pitch="variable"/>
+  <style:font-face style:name="DejaVu Sans" svg:font-family="&apos;DejaVu Sans&apos;" style:font-family-generic="system" style:font-pitch="variable"/>
+  <style:font-face style:name="Mangal" svg:font-family="Mangal" style:font-family-generic="system" style:font-pitch="variable"/>
+  <style:font-face style:name="Noto Sans CJK SC" svg:font-family="&apos;Noto Sans CJK SC&apos;" style:font-family-generic="system" style:font-pitch="variable"/>
+ </office:font-face-decls>
+ <office:styles>
+  <style:default-style style:family="table-cell">
+   <style:paragraph-properties style:tab-stop-distance="1.25cm"/>
+   <style:text-properties style:font-name="Liberation Sans" fo:language="en" fo:country="GB" style:font-name-asian="DejaVu Sans" style:language-asian="zh" style:country-asian="CN" style:font-name-complex="Mangal" style:language-complex="hi" style:country-complex="IN"/>
+  </style:default-style>
+  <number:number-style style:name="N0">
+   <number:number number:min-integer-digits="1"/>
+  </number:number-style>
+  <style:style style:name="Default" style:family="table-cell"/>
+  <style:style style:name="Heading_20__28_user_29_" style:display-name="Heading (user)" style:family="table-cell" style:parent-style-name="Default">
+   <style:text-properties fo:color="#000000" fo:font-size="24pt" fo:font-style="normal" fo:font-weight="bold"/>
+  </style:style>
+  <style:style style:name="Heading_20_1" style:display-name="Heading 1" style:family="table-cell" style:parent-style-name="Heading">
+   <style:text-properties fo:color="#000000" fo:font-size="18pt" fo:font-style="normal" fo:font-weight="normal"/>
+  </style:style>
+  <style:style style:name="Heading_20_2" style:display-name="Heading 2" style:family="table-cell" style:parent-style-name="Heading">
+   <style:text-properties fo:color="#000000" fo:font-size="12pt" fo:font-style="normal" fo:font-weight="normal"/>
+  </style:style>
+  <style:style style:name="Text" style:family="table-cell" style:parent-style-name="Default"/>
+  <style:style style:name="Note" style:family="table-cell" style:parent-style-name="Text">
+   <style:table-cell-properties fo:background-color="#ffffcc" style:diagonal-bl-tr="none" style:diagonal-tl-br="none" fo:border="0.74pt solid #808080"/>
+   <style:text-properties fo:color="#333333" fo:font-size="10pt" fo:font-style="normal" fo:font-weight="normal"/>
+  </style:style>
+  <style:style style:name="Footnote" style:family="table-cell" style:parent-style-name="Text">
+   <style:text-properties fo:color="#808080" fo:font-size="10pt" fo:font-style="italic" fo:font-weight="normal"/>
+  </style:style>
+  <style:style style:name="Hyperlink" style:family="table-cell" style:parent-style-name="Text">
+   <style:text-properties fo:color="#0000ee" fo:font-size="10pt" fo:font-style="normal" style:text-underline-style="solid" style:text-underline-width="auto" style:text-underline-color="#0000ee" fo:font-weight="normal"/>
+  </style:style>
+  <style:style style:name="Status" style:family="table-cell" style:parent-style-name="Default"/>
+  <style:style style:name="Good" style:family="table-cell" style:parent-style-name="Status">
+   <style:table-cell-properties fo:background-color="#ccffcc"/>
+   <style:text-properties fo:color="#006600" fo:font-size="10pt" fo:font-style="normal" fo:font-weight="normal"/>
+  </style:style>
+  <style:style style:name="Neutral" style:family="table-cell" style:parent-style-name="Status">
+   <style:table-cell-properties fo:background-color="#ffffcc"/>
+   <style:text-properties fo:color="#996600" fo:font-size="10pt" fo:font-style="normal" fo:font-weight="normal"/>
+  </style:style>
+  <style:style style:name="Bad" style:family="table-cell" style:parent-style-name="Status">
+   <style:table-cell-properties fo:background-color="#ffcccc"/>
+   <style:text-properties fo:color="#cc0000" fo:font-size="10pt" fo:font-style="normal" fo:font-weight="normal"/>
+  </style:style>
+  <style:style style:name="Warning" style:family="table-cell" style:parent-style-name="Status">
+   <style:text-properties fo:color="#cc0000" fo:font-size="10pt" fo:font-style="normal" fo:font-weight="normal"/>
+  </style:style>
+  <style:style style:name="Error" style:family="table-cell" style:parent-style-name="Status">
+   <style:table-cell-properties fo:background-color="#cc0000"/>
+   <style:text-properties fo:color="#ffffff" fo:font-size="10pt" fo:font-style="normal" fo:font-weight="bold"/>
+  </style:style>
+  <style:style style:name="Accent" style:family="table-cell" style:parent-style-name="Default">
+   <style:text-properties fo:color="#000000" fo:font-size="10pt" fo:font-style="normal" fo:font-weight="bold"/>
+  </style:style>
+  <style:style style:name="Accent_20_1" style:display-name="Accent 1" style:family="table-cell" style:parent-style-name="Accent">
+   <style:table-cell-properties fo:background-color="#000000"/>
+   <style:text-properties fo:color="#ffffff" fo:font-size="10pt" fo:font-style="normal" fo:font-weight="normal"/>
+  </style:style>
+  <style:style style:name="Accent_20_2" style:display-name="Accent 2" style:family="table-cell" style:parent-style-name="Accent">
+   <style:table-cell-properties fo:background-color="#808080"/>
+   <style:text-properties fo:color="#ffffff" fo:font-size="10pt" fo:font-style="normal" fo:font-weight="normal"/>
+  </style:style>
+  <style:style style:name="Accent_20_3" style:display-name="Accent 3" style:family="table-cell" style:parent-style-name="Accent">
+   <style:table-cell-properties fo:background-color="#dddddd"/>
+  </style:style>
+  <style:style style:name="Heading" style:family="table-cell" style:parent-style-name="Default">
+   <style:text-properties fo:color="#000000" fo:font-size="24pt" fo:font-style="normal" fo:font-weight="bold"/>
+  </style:style>
+ </office:styles>
+ <office:automatic-styles>
+  <style:style style:name="co1" style:family="table-column">
+   <style:table-column-properties fo:break-before="auto" style:column-width="1.198cm"/>
+  </style:style>
+  <style:style style:name="co2" style:family="table-column">
+   <style:table-column-properties fo:break-before="auto" style:column-width="6.181cm"/>
+  </style:style>
+  <style:style style:name="co3" style:family="table-column">
+   <style:table-column-properties fo:break-before="auto" style:column-width="2.014cm"/>
+  </style:style>
+  <style:style style:name="co4" style:family="table-column">
+   <style:table-column-properties fo:break-before="auto" style:column-width="16.584cm"/>
+  </style:style>
+  <style:style style:name="co5" style:family="table-column">
+   <style:table-column-properties fo:break-before="auto" style:column-width="3.63cm"/>
+  </style:style>
+  <style:style style:name="co6" style:family="table-column">
+   <style:table-column-properties fo:break-before="auto" style:column-width="5.673cm"/>
+  </style:style>
+  <style:style style:name="co7" style:family="table-column">
+   <style:table-column-properties fo:break-before="auto" style:column-width="2.868cm"/>
+  </style:style>
+  <style:style style:name="co8" style:family="table-column">
+   <style:table-column-properties fo:break-before="auto" style:column-width="2.886cm"/>
+  </style:style>
+  <style:style style:name="co9" style:family="table-column">
+   <style:table-column-properties fo:break-before="auto" style:column-width="2.914cm"/>
+  </style:style>
+  <style:style style:name="co10" style:family="table-column">
+   <style:table-column-properties fo:break-before="auto" style:column-width="12.963cm"/>
+  </style:style>
+  <style:style style:name="co11" style:family="table-column">
+   <style:table-column-properties fo:break-before="auto" style:column-width="2.258cm"/>
+  </style:style>
+  <style:style style:name="ro1" style:family="table-row">
+   <style:table-row-properties style:row-height="0.529cm" fo:break-before="auto" style:use-optimal-row-height="true"/>
+  </style:style>
+  <style:style style:name="ro2" style:family="table-row">
+   <style:table-row-properties style:row-height="0.921cm" fo:break-before="auto" style:use-optimal-row-height="false"/>
+  </style:style>
+  <style:style style:name="ro3" style:family="table-row">
+   <style:table-row-properties style:row-height="10.714cm" fo:break-before="auto" style:use-optimal-row-height="true"/>
+  </style:style>
+  <style:style style:name="ro4" style:family="table-row">
+   <style:table-row-properties style:row-height="7.555cm" fo:break-before="auto" style:use-optimal-row-height="true"/>
+  </style:style>
+  <style:style style:name="ro5" style:family="table-row">
+   <style:table-row-properties style:row-height="7.95cm" fo:break-before="auto" style:use-optimal-row-height="true"/>
+  </style:style>
+  <style:style style:name="ro6" style:family="table-row">
+   <style:table-row-properties style:row-height="2.027cm" fo:break-before="auto" style:use-optimal-row-height="true"/>
+  </style:style>
+  <style:style style:name="ro7" style:family="table-row">
+   <style:table-row-properties style:row-height="0.841cm" fo:break-before="auto" style:use-optimal-row-height="true"/>
+  </style:style>
+  <style:style style:name="ro8" style:family="table-row">
+   <style:table-row-properties style:row-height="2.817cm" fo:break-before="auto" style:use-optimal-row-height="true"/>
+  </style:style>
+  <style:style style:name="ro9" style:family="table-row">
+   <style:table-row-properties style:row-height="1.236cm" fo:break-before="auto" style:use-optimal-row-height="true"/>
+  </style:style>
+  <style:style style:name="ro10" style:family="table-row">
+   <style:table-row-properties style:row-height="1.632cm" fo:break-before="auto" style:use-optimal-row-height="true"/>
+  </style:style>
+  <style:style style:name="ro11" style:family="table-row">
+   <style:table-row-properties style:row-height="0.452cm" fo:break-before="auto" style:use-optimal-row-height="true"/>
+  </style:style>
+  <style:style style:name="ro12" style:family="table-row">
+   <style:table-row-properties style:row-height="5.976cm" fo:break-before="auto" style:use-optimal-row-height="true"/>
+  </style:style>
+  <style:style style:name="ro13" style:family="table-row">
+   <style:table-row-properties style:row-height="3.21cm" fo:break-before="auto" style:use-optimal-row-height="true"/>
+  </style:style>
+  <style:style style:name="ro14" style:family="table-row">
+   <style:table-row-properties style:row-height="2.422cm" fo:break-before="auto" style:use-optimal-row-height="true"/>
+  </style:style>
+  <style:style style:name="ro15" style:family="table-row">
+   <style:table-row-properties style:row-height="4.396cm" fo:break-before="auto" style:use-optimal-row-height="true"/>
+  </style:style>
+  <style:style style:name="ro16" style:family="table-row">
+   <style:table-row-properties style:row-height="5.186cm" fo:break-before="auto" style:use-optimal-row-height="true"/>
+  </style:style>
+  <style:style style:name="ro17" style:family="table-row">
+   <style:table-row-properties style:row-height="4.001cm" fo:break-before="auto" style:use-optimal-row-height="true"/>
+  </style:style>
+  <style:style style:name="ro18" style:family="table-row">
+   <style:table-row-properties style:row-height="3.605cm" fo:break-before="auto" style:use-optimal-row-height="true"/>
+  </style:style>
+  <style:style style:name="ta1" style:family="table" style:master-page-name="Default">
+   <style:table-properties table:display="true" style:writing-mode="lr-tb"/>
+  </style:style>
+  <number:number-style style:name="N2">
+   <number:number number:decimal-places="2" loext:min-decimal-places="2" number:min-integer-digits="1"/>
+  </number:number-style>
+  <number:text-style style:name="N100">
+   <number:text-content/>
+  </number:text-style>
+  <style:style style:name="ce1" style:family="table-cell" style:parent-style-name="Default">
+   <style:table-cell-properties style:vertical-align="top"/>
+   <style:text-properties fo:font-size="12pt" fo:font-weight="bold" style:font-size-asian="12pt" style:font-weight-asian="bold" style:font-size-complex="12pt" style:font-weight-complex="bold"/>
+  </style:style>
+  <style:style style:name="ce2" style:family="table-cell" style:parent-style-name="Default">
+   <style:table-cell-properties style:vertical-align="top"/>
+  </style:style>
+  <style:style style:name="ce3" style:family="table-cell" style:parent-style-name="Default">
+   <style:table-cell-properties fo:wrap-option="wrap" style:vertical-align="top"/>
+   <style:text-properties fo:font-size="12pt" fo:font-weight="bold" style:font-size-asian="12pt" style:font-weight-asian="bold" style:font-size-complex="12pt" style:font-weight-complex="bold"/>
+  </style:style>
+  <style:style style:name="ce4" style:family="table-cell" style:parent-style-name="Default">
+   <style:table-cell-properties fo:wrap-option="wrap" style:vertical-align="top"/>
+  </style:style>
+  <style:style style:name="ce5" style:family="table-cell" style:parent-style-name="Default" style:data-style-name="N100">
+   <style:table-cell-properties style:vertical-align="top"/>
+  </style:style>
+  <style:page-layout style:name="pm1">
+   <style:page-layout-properties style:writing-mode="lr-tb"/>
+   <style:header-style>
+    <style:header-footer-properties fo:min-height="0.75cm" fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-bottom="0.25cm"/>
+   </style:header-style>
+   <style:footer-style>
+    <style:header-footer-properties fo:min-height="0.75cm" fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-top="0.25cm"/>
+   </style:footer-style>
+  </style:page-layout>
+  <style:page-layout style:name="pm2">
+   <style:page-layout-properties style:writing-mode="lr-tb"/>
+   <style:header-style>
+    <style:header-footer-properties fo:min-height="0.75cm" fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-bottom="0.25cm" fo:border="2.49pt solid #000000" fo:padding="0.018cm" fo:background-color="#c0c0c0">
+     <style:background-image/>
+    </style:header-footer-properties>
+   </style:header-style>
+   <style:footer-style>
+    <style:header-footer-properties fo:min-height="0.75cm" fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-top="0.25cm" fo:border="2.49pt solid #000000" fo:padding="0.018cm" fo:background-color="#c0c0c0">
+     <style:background-image/>
+    </style:header-footer-properties>
+   </style:footer-style>
+  </style:page-layout>
+  <style:style style:name="T1" style:family="text">
+   <style:text-properties style:font-name="Liberation Sans" fo:font-size="10pt" fo:font-weight="normal" style:text-underline-style="none" style:text-underline-color="font-color" style:text-line-through-type="none" fo:font-style="normal" style:text-outline="false" fo:text-shadow="none" style:text-line-through-mode="continuous" fo:language="en" fo:country="GB" style:language-asian="zh" style:country-asian="CN" style:language-complex="hi" style:country-complex="IN" style:font-name-asian="DejaVu Sans" style:font-name-complex="Mangal" style:font-size-asian="10pt" style:font-size-complex="10pt" style:font-weight-asian="normal" style:font-weight-complex="normal" style:font-style-asian="normal" style:font-style-complex="normal" style:text-emphasize="none" style:font-relief="none" style:text-overline-style="none" style:text-overline-color="font-color"/>
+  </style:style>
+  <style:style style:name="T2" style:family="text">
+   <style:text-properties style:font-name-asian="DejaVu Sans" fo:font-size="10pt" fo:font-weight="normal" style:text-underline-style="none" style:text-underline-color="font-color" style:text-line-through-type="none" fo:font-style="normal" style:text-outline="false" fo:text-shadow="none" style:text-line-through-mode="continuous" fo:language="en" fo:country="GB" style:language-asian="zh" style:country-asian="CN" style:font-name="Liberation Sans" style:language-complex="hi" style:country-complex="IN" style:font-name-complex="Mangal" style:font-size-asian="10pt" style:font-size-complex="10pt" style:font-weight-asian="normal" style:font-weight-complex="normal" style:font-style-asian="normal" style:font-style-complex="normal" style:text-emphasize="none" style:font-relief="none" style:text-overline-style="none" style:text-overline-color="font-color"/>
+  </style:style>
+ </office:automatic-styles>
+ <office:master-styles>
+  <style:master-page style:name="Default" style:page-layout-name="pm1">
+   <style:header>
+    <text:p><text:sheet-name>???</text:sheet-name></text:p>
+   </style:header>
+   <style:header-left style:display="false"/>
+   <style:footer>
+    <text:p>Page <text:page-number>1</text:page-number></text:p>
+   </style:footer>
+   <style:footer-left style:display="false"/>
+  </style:master-page>
+  <style:master-page style:name="Report" style:page-layout-name="pm2">
+   <style:header>
+    <style:region-left>
+     <text:p><text:sheet-name>???</text:sheet-name><text:s/>(<text:title>???</text:title>)</text:p>
+    </style:region-left>
+    <style:region-right>
+     <text:p><text:date style:data-style-name="N2" text:date-value="2020-08-25">00/00/0000</text:date>, <text:time style:data-style-name="N2" text:time-value="11:56:32.524139821">00:00:00</text:time></text:p>
+    </style:region-right>
+   </style:header>
+   <style:header-left style:display="false"/>
+   <style:footer>
+    <text:p>Page <text:page-number>1</text:page-number><text:s/>/ <text:page-count>99</text:page-count></text:p>
+   </style:footer>
+   <style:footer-left style:display="false"/>
+  </style:master-page>
+ </office:master-styles>
+ <office:body>
+  <office:spreadsheet>
+   <table:calculation-settings table:automatic-find-labels="false" table:use-regular-expressions="false" table:use-wildcards="true"/>
+   <table:content-validations>
+    <table:content-validation table:name="val1" table:condition="of:cell-content-is-in-list(&quot;risks&quot;;&quot;assessment&quot;;&quot;symptoms&quot;;&quot;post_spoilage&quot;;&quot;foraging&quot;;&quot;donation_options&quot;;&quot;edible_parts&quot;;&quot;residual_food&quot;;&quot;unliked_food&quot;;&quot;pantry_storage&quot;;&quot;refrigerator_storage&quot;;&quot;freezer_storage&quot;;&quot;other_storage&quot;;&quot;commercial_storage&quot;;&quot;preservation&quot;;&quot;preparation&quot;;&quot;reuse_and_recycling&quot;;&quot;production_waste&quot;;&quot;other_impacts&quot;;&quot;packaging_waste&quot;;&quot;preparation_waste&quot;;&quot;harvest_rescue&quot;;&quot;taste&quot;;&quot;nutrients&quot;)" table:allow-empty-cell="true" table:display-list="unsorted" table:base-cell-address="&apos;foodrescue-content.Example&apos;.E5">
+     <table:error-message table:message-type="stop" table:display="true"/>
+    </table:content-validation>
+   </table:content-validations>
+   <table:table table:name="foodrescue-content.Example" table:style-name="ta1">
+    <office:forms form:automatic-focus="false" form:apply-design-mode="false"/>
+    <table:table-column table:style-name="co1" table:default-cell-style-name="ce2"/>
+    <table:table-column table:style-name="co2" table:default-cell-style-name="ce4"/>
+    <table:table-column table:style-name="co3" table:default-cell-style-name="ce4"/>
+    <table:table-column table:style-name="co4" table:default-cell-style-name="ce4"/>
+    <table:table-column table:style-name="co5" table:default-cell-style-name="ce2"/>
+    <table:table-column table:style-name="co6" table:default-cell-style-name="ce2"/>
+    <table:table-column table:style-name="co7" table:default-cell-style-name="ce2"/>
+    <table:table-column table:style-name="co8" table:default-cell-style-name="ce2"/>
+    <table:table-column table:style-name="co9" table:default-cell-style-name="ce2"/>
+    <table:table-column table:style-name="co10" table:default-cell-style-name="ce2"/>
+    <table:table-column table:style-name="co11" table:number-columns-repeated="55" table:default-cell-style-name="ce2"/>
+    <table:table-row table:style-name="ro1">
+     <table:table-cell table:style-name="ce1" office:value-type="string" calcext:value-type="string">
+      <text:p>ID</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce3" office:value-type="string" calcext:value-type="string">
+      <text:p>Title</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce3" office:value-type="string" calcext:value-type="string">
+      <text:p>Abstract</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce3" office:value-type="string" calcext:value-type="string">
+      <text:p>Text</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce1" table:content-validation-name="val1" office:value-type="string" calcext:value-type="string">
+      <text:p>Topic type</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce1" office:value-type="string" calcext:value-type="string">
+      <text:p>Categories</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce1" office:value-type="string" calcext:value-type="string">
+      <text:p>Author</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce1" office:value-type="string" calcext:value-type="string">
+      <text:p>Date added</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce1" office:value-type="string" calcext:value-type="string">
+      <text:p>Version date</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce1" office:value-type="string" calcext:value-type="string">
+      <text:p>Note</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell office:value-type="float" office:value="1" calcext:value-type="float">
+      <text:p>1</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Verbrauchsdatum einhalten</text:p>
+     </table:table-cell>
+     <table:table-cell/>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Frisches Fleisch ist immer mit einem Verbrauchsdatum versehen. Anders als ein Mindesthaltbarkeitsdatum müssen diese Produkte bis zu diesem Verbrauchsdatum verarbeitet sein.</text:p>
+     </table:table-cell>
+     <table:table-cell table:content-validation-name="val1" office:value-type="string" calcext:value-type="string">
+      <text:p>refrigerator_storage</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Fresh meats</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Micha Gattinger</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
+      <text:p>2020-08-05</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
+      <text:p>2020-08-22</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="56"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro3">
+     <table:table-cell office:value-type="float" office:value="2" calcext:value-type="float">
+      <text:p>2</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Verdorbenes Fleisch erkennen</text:p>
+     </table:table-cell>
+     <table:table-cell/>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p>##  Farbe</text:p><text:p/><text:p>Der Farbton von frischem Fleisch ist rötlich. Verfärbt sich frisches Fleisch gräulich, kann eine chemische Reaktion stattgefunden haben, welche sich nicht auf Geschmack oder Frische der Ware auswirkt. Das Protein Myoblobin ist ein in der Muskulatur vorhandener, als Sauerstoffspeicher dienender roter Farbstoff. Fehlt Sauerstoff, oxidiert dieser zu Metmyoglobin, das im Fleisch enthaltene Eisen verfärbt sich. Kommen diese Stellen mit Sauerstoff in Verbindung, geht diese Verfärbung innerhalb von einigen Minuten merklich zurück (1,3).</text:p><text:p/><text:p>Bei vielen Fleischprodukten wird durch Zusatzstoffe oder mit durch Spezialgas gefüllte Schutzverpackungen (High O2-MAP) die natürliche Rötung erhöht und verlängert. Hier ist die Färbung künstlich und sagt nichts über die Frische aus. Färbt sich Fleisch grau, ist das ein Zeichen dafür, dass keine Zusatzstoffe verwendet worden sind (2). </text:p><text:p/><text:p>Bei tiefgefrorenem, rohem Fleisch kann es zu weißen Stellen am Fleisch kommen (Gefrierbrand). Die Textur ähnelt einem trockenem Schwamm und wird durch die Verdunstung von Wasser im Gewebe verursacht. Gefrierbrand ist unbedenklich für die Gesundheit.</text:p><text:p/><text:p>## Austretende Flüssigkeit</text:p><text:p/><text:p>Um das Verkaufsgewicht zu erhöhen wird oft Wasser in das Fleisch gespritzt. Tritt roter Saft aus dem Fleisch aus, ist das kein Blut sondern Wasser vermischt mit dem Protein Myoglobin. </text:p><text:p/><text:p>## Geruch</text:p><text:p/><text:p>Frisches Fleisch ist geruchslos. Muffiger, süßlicher oder derb säuerlicher Geruch sind sichere Anzeichen von verdorbenem rohen Fleisch.</text:p>
+     </table:table-cell>
+     <table:table-cell table:content-validation-name="val1" office:value-type="string" calcext:value-type="string">
+      <text:p>assessment</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Fresh meats</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Micha Gattinger</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
+      <text:p>2020-08-05</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
+      <text:p>2020-08-22</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="56"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro4">
+     <table:table-cell office:value-type="float" office:value="3" calcext:value-type="float">
+      <text:p>3</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Verdorbenen Fisch erkennen</text:p>
+     </table:table-cell>
+     <table:table-cell/>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p>## Optische Merkmale</text:p><text:p/><text:p>* *Augen.* Frischer Fisch hat helle, klare, leicht vorgewölbte Augen mit dunklen Pupillen. Verfärbte, eingesunkene Augen sind klare Anzeichen für schlechten Fisch. </text:p><text:p/><text:p>* *Fleisch.* In der Regel hat das Fleisch eine hellrosa oder weiße Farbe mit einem klaren Flüssigkeitsfilm. Fängt der Fisch an zu verderben bekommt das Fleisch eine milchige Farbe mit zum Teil grau-blauen Verfärbungen</text:p><text:p/><text:p>* *Haut.* Frische Fischhaut ist mit einer klaren Schleimschicht überzogen. Milchiger Schleim ist ein Indiz für schlechten Fisch.</text:p><text:p/><text:p>* *Kiemen.* Diese glänzen, sind innen hellrot und liegen bei einem frischen Fisch fest an. Schleim in den Kiemenblättchen und  gelb- braune Verfärbungen sind Anzeichen von Verfall.</text:p><text:p/><text:p>## Geruch</text:p><text:p/><text:p>Frischer Fisch riecht je nach Art nach See, Meer oder Bach, nie fischig. Je mehr der Fisch fischig riecht, umso älter und ungenießbarer ist er.</text:p>
+     </table:table-cell>
+     <table:table-cell table:content-validation-name="val1" office:value-type="string" calcext:value-type="string">
+      <text:p>assessment</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Raw fishes</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Micha Gattinger</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
+      <text:p>2020-08-05</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
+      <text:p>2020-08-22</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="56"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro5">
+     <table:table-cell office:value-type="float" office:value="4" calcext:value-type="float">
+      <text:p>4</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Das Alter beurteilen</text:p>
+     </table:table-cell>
+     <table:table-cell/>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p>Legefrische Eier erlangen nach drei Tagen für 14 Tage ihr volles Aroma. Danach verändert sich langsam die Kosistenz. Ein unsichtbarer Mantel auf der Schale und Enzyme im Eiklar sorgt für einen natürlichen Selbstschutz gegen die Vermehrung von Keimen. Dieser Schutz mag keine extremen Temperaturschwankungen, Sonne und Feuchtigkeit. </text:p><text:p/><text:p>Hier gibt es drei einfache Tests um die Frische von Eier zu bestimmen:</text:p><text:p/><text:p>. *Schwimmtest.* Mit der Zeit sammelt sich Luft im Inneren eines Eies. In einem frischen Ei ist noch keine Luft eingedrungen. So sinkt es im kalten Wasser immer auf den Boden. 2-3 Wochen alte Eier stellen sich teilweise auf oder schwimmen schon im Wasser. Schwimmen Eier unter der Wasseroberfläche, ist das MHD von 28 Tagen erreicht. </text:p><text:p/><text:p>. *Schütteltest.* Mit der Zeit wird das Eiklar dünnflüssiger. Dies verursacht dem Schütteln glucksende Geräusche.</text:p><text:p/><text:p>. *Aufschlagtest.* Frische Eier haben ein hochgewölbtes Dotter. Das Eiklar ist am Dotter geleeartig mit dünnerem herum, Dotter und Eiklar sind klar getrennt. Mit dem Alter flacht das Dotter ab und verliert an Farbe. Das Eiklar wird dünnflüssiger und vermischt sich mit dem Dotter.</text:p><text:p/><text:p>https://rp.baden-wuerttemberg.de/Themen/Lebensmittel/Seiten/Eiertest.aspx[Quelle]</text:p>
+     </table:table-cell>
+     <table:table-cell table:content-validation-name="val1" office:value-type="string" calcext:value-type="string">
+      <text:p>assessment</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Raw egg</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Micha Gattinger</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
+      <text:p>2020-08-05</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
+      <text:p>2020-08-22</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="56"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro6">
+     <table:table-cell office:value-type="float" office:value="5" calcext:value-type="float">
+      <text:p>5</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Überalterte Eier verwenden</text:p>
+     </table:table-cell>
+     <table:table-cell/>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p>Das MHD von rohen Eiern beträgt 28 Tage. Sofern überalterte Eier geruchsfrei und optisch noch in Ordnung sind, können diese noch zum Backen genommen werden. Die hohe Backtemperatur und Backdauer tötet Keime und Salmonellen sicher ab. (S. 1.3)</text:p><text:p/><text:p>https://rp.baden-wuerttemberg.de/Themen/Lebensmittel/Seiten/Eiertest.aspx[Quelle]</text:p>
+     </table:table-cell>
+     <table:table-cell table:content-validation-name="val1" office:value-type="string" calcext:value-type="string">
+      <text:p>post_spoilage</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Raw egg</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Micha Gattinger</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
+      <text:p>2020-08-05</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
+      <text:p>2020-08-22</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="56"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro7">
+     <table:table-cell office:value-type="float" office:value="6" calcext:value-type="float">
+      <text:p>6</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Einfrieren</text:p>
+     </table:table-cell>
+     <table:table-cell/>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Rohe Eier lassen sich ohne Schale einfrieren. Ein rohes Ei enthält viel Wasser. Beim Einfrieren dehnt sich dieses aus und sorgt sonst für ein Aufplatzen der Schale.</text:p>
+     </table:table-cell>
+     <table:table-cell table:content-validation-name="val1" office:value-type="string" calcext:value-type="string">
+      <text:p>preservation</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Raw egg</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Micha Gattinger</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
+      <text:p>2020-08-05</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
+      <text:p>2020-08-22</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="56"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro8">
+     <table:table-cell office:value-type="float" office:value="7" calcext:value-type="float">
+      <text:p>7</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Kochen</text:p>
+     </table:table-cell>
+     <table:table-cell/>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p>Für eine lange Haltbarkeit müssen Eier in kochendem Wasser 10-12 Minuten hart gekocht werden. Die Eierschale nicht beschädigen, nur unbeschädigte Schalen gewährleisten einen Schutz vor Keime von Außen. Die gekochten Eier nicht abschrecken, denn hierbei bilden sich kleinste Spannungsrisse in der Schale welche das Eindringen von Keimen und Salmonellen begünstigen. So gekochte Eier können bis zu einem Monat bei Zimmertemperatur gelagert werden.</text:p><text:p/><text:p>https://www.fitforfun.de/wissen/wie-lange-sind-gekochte-eier-haltbar-254273.html[Quelle]</text:p>
+     </table:table-cell>
+     <table:table-cell table:content-validation-name="val1" office:value-type="string" calcext:value-type="string">
+      <text:p>preservation</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Boiled eggs</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Micha Gattinger</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
+      <text:p>2020-08-05</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
+      <text:p>2020-08-22</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="56"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro9">
+     <table:table-cell office:value-type="float" office:value="8" calcext:value-type="float">
+      <text:p>8</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Schwefelgeruch</text:p>
+     </table:table-cell>
+     <table:table-cell/>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p>Verdorbene gekochte Eier entwickeln einen unangenehmen Schwefelgeruch.</text:p><text:p/><text:p>https://www.fitforfun.de/wissen/wie-lange-sind-gekochte-eier-haltbar-254273.html[Quelle]</text:p>
+     </table:table-cell>
+     <table:table-cell table:content-validation-name="val1" office:value-type="string" calcext:value-type="string">
+      <text:p>assessment</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Boiled eggs</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Micha Gattinger</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
+      <text:p>2020-08-05</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
+      <text:p>2020-08-22</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="56"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro10">
+     <table:table-cell office:value-type="float" office:value="9" calcext:value-type="float">
+      <text:p>9</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Verfärbung des Dotters</text:p>
+     </table:table-cell>
+     <table:table-cell/>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p>Durchgekochte Eier bilden einen ungefährlichen blau-grünen Ring um das Dotter. Hier reagiert Eisen aus dem Dotter mit Schwefelwasserstoff aus dem Eiklar zu Schwefelsulfid.</text:p><text:p/><text:p>https://www.fitforfun.de/wissen/wie-lange-sind-gekochte-eier-haltbar-254273.html[Quelle]</text:p>
+     </table:table-cell>
+     <table:table-cell table:content-validation-name="val1" office:value-type="string" calcext:value-type="string">
+      <text:p>symptoms</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Boiled eggs</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Micha Gattinger</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
+      <text:p>2020-08-05</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
+      <text:p>2020-08-22</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="56"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro7">
+     <table:table-cell office:value-type="float" office:value="10" calcext:value-type="float">
+      <text:p>10</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Nicht zum Einfrieren geeignet</text:p>
+     </table:table-cell>
+     <table:table-cell/>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Ganze gekochte Eier sind zum Einfrieren nicht geeignet da sich das Eiweiß verändert. Hartgekochte Eidotter lassen sich in einer luftdichten Verpackung gut einfrieren</text:p>
+     </table:table-cell>
+     <table:table-cell table:content-validation-name="val1" office:value-type="string" calcext:value-type="string">
+      <text:p>freezer_storage</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Boiled eggs</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Micha Gattinger</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
+      <text:p>2020-08-05</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
+      <text:p>2020-08-22</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="56"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro10">
+     <table:table-cell office:value-type="float" office:value="11" calcext:value-type="float">
+      <text:p>11</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Frischen Kaviar erkennen</text:p>
+     </table:table-cell>
+     <table:table-cell/>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p>Frischer Kaviar klebt beim Öffnen nicht am Deckel und perlt locker. Er riecht nach Salzwasser und hat keinen Eigengeruch.</text:p><text:p/><text:p>https://www.kaviar.de/faq[Quelle]</text:p>
+     </table:table-cell>
+     <table:table-cell table:content-validation-name="val1" office:value-type="string" calcext:value-type="string">
+      <text:p>assessment</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Caviars</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Micha Gattinger</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
+      <text:p>2020-08-05</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
+      <text:p>2020-08-22</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="56"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro10">
+     <table:table-cell office:value-type="float" office:value="12" calcext:value-type="float">
+      <text:p>12</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="2"/>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p>Der erhöhte Salzgehalt ermöglicht eine Lagertemperatur um + 2 Grad. Nach dem Öffnen der vakuumierten Verpackung ist die Haltbarkeit max. 3 Tage (gekühlt)</text:p><text:p/><text:p>https://www.kaviar.de/faq[Quelle]</text:p>
+     </table:table-cell>
+     <table:table-cell table:content-validation-name="val1" office:value-type="string" calcext:value-type="string">
+      <text:p>refrigerator_storage</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Caviars</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Micha Gattinger</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
+      <text:p>2020-08-05</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
+      <text:p>2020-08-22</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="56"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro11">
+     <table:table-cell office:value-type="float" office:value="13" calcext:value-type="float">
+      <text:p>13</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Nicht zum Einfrieren geeignet</text:p>
+     </table:table-cell>
+     <table:table-cell/>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Kaviar kann nicht eingefroren werden da der Rogen beim Auftauen platzt.</text:p>
+     </table:table-cell>
+     <table:table-cell table:content-validation-name="val1" office:value-type="string" calcext:value-type="string">
+      <text:p>freezer_storage</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Caviars</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Micha Gattinger</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
+      <text:p>2020-08-05</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
+      <text:p>2020-08-22</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="56"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro12">
+     <table:table-cell office:value-type="float" office:value="14" calcext:value-type="float">
+      <text:p>14</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Auch bei langer Lagerdauer unproblematisch</text:p>
+     </table:table-cell>
+     <table:table-cell/>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p>Dieses Lebensmittel gehört zur Gruppe der Lebensmittel, für die seit Dezember 2014 EU-weit keine Mindesthaltbarkeitsdaten mehr angegeben werden müssen, da sie auch bei langer Lagerungsdauer nicht verderben. Insgesamt gilt dies für folgende Lebensmittel:</text:p><text:p/><text:p>* Wein, Likörwein, Schaumwein, aromatisiertem Wein und ähnlichen Erzeugnissen aus anderen Früchten als Weintrauben sowie aus Weintrauben oder Traubenmost gewonnenen Getränken des KN-Codes 2206 00</text:p><text:p>* Getränke mit einem Alkoholgehalt von 10 oder mehr Volumenprozent</text:p><text:p>* Essig</text:p><text:p>* Speisesalz</text:p><text:p>* Zucker in fester Form</text:p><text:p>* Zuckerwaren, die fast nur aus Zuckerarten mit Aromastoffen und/oder Farbstoffen bestehen</text:p><text:p>* Kaugummi und ähnlichen Erzeugnissen zum Kauen</text:p><text:p/><text:p>https://www.sueddeutsche.de/wirtschaft/a-1.1967988[Quelle]</text:p>
+     </table:table-cell>
+     <table:table-cell table:content-validation-name="val1" office:value-type="string" calcext:value-type="string">
+      <text:p>pantry_storage</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p>Wines</text:p><text:p>Fortified wines</text:p><text:p>Sparkling wines</text:p><text:p>Distilled beverages</text:p><text:p>Vinegars</text:p><text:p>Table salts</text:p><text:p>Granulated sugars</text:p><text:p>Powdered sugars</text:p><text:p>Chewing gum</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Micha Gattinger</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
+      <text:p>2020-08-05</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
+      <text:p>2020-08-22</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="56"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro13">
+     <table:table-cell office:value-type="float" office:value="15" calcext:value-type="float">
+      <text:p>15</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Auch bei langer Lagerdauer meist unproblematisch</text:p>
+     </table:table-cell>
+     <table:table-cell/>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p>Dieses Lebensmittel gehört zu denjenigen, für die die Europäische Union überlegt hat, das Mindesthaltbarkeitsdatum abzuschaffen, sich dann aber doch dagegen entschieden hat. Trotzdem sind diese Lebensmittel auch bei langer Lagerdauer meist unproblematisch.</text:p><text:p/><text:p>Insgesamt gehörten zu dieser Gruppe von Lebensmitteln: Nudeln aus Hartweizengries ohne Ei; Tee; Reis; Kaffee; Hartkäse.</text:p><text:p/><text:p>https://www.sueddeutsche.de/wirtschaft/a-1.1967988[Quelle]</text:p>
+     </table:table-cell>
+     <table:table-cell table:content-validation-name="val1" office:value-type="string" calcext:value-type="string">
+      <text:p>pantry_storage</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p>Durum wheat pasta</text:p><text:p>Teas</text:p><text:p>Rices</text:p><text:p>Coffees</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Micha Gattinger</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
+      <text:p>2020-08-05</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
+      <text:p>2020-08-22</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Category “hard cheeses” missing. There is no such category in the OFF taxonomy, but we might enumerate the different hard cheeses.</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro11">
+     <table:table-cell office:value-type="float" office:value="16" calcext:value-type="float">
+      <text:p>16</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Zwiebeln werden weich und faulig</text:p>
+     </table:table-cell>
+     <table:table-cell/>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Wenn Zwiebeln verderben, so fangen sie von innen an, weich zu werden und zu verfaulen.</text:p>
+     </table:table-cell>
+     <table:table-cell table:content-validation-name="val1" office:value-type="string" calcext:value-type="string">
+      <text:p>assessment</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Onions</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Micha Gattinger</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
+      <text:p>2020-08-05</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
+      <text:p>2020-08-22</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="56"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro9">
+     <table:table-cell office:value-type="float" office:value="17" calcext:value-type="float">
+      <text:p>17</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Dunkel und trocken lagern</text:p>
+     </table:table-cell>
+     <table:table-cell/>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Zwiebeln können lange gelagert werden und sind recht anspruchslos. Die optimalen Lagerbedingungen für Zwiebeln sind ein dunkler und trockener Ort. Denn Helligkeit und Feuchtigkeit beschleunigen den Keimprozess; das heißt, aus der Zwiebel wachsen dann Triebe.</text:p>
+     </table:table-cell>
+     <table:table-cell table:content-validation-name="val1" office:value-type="string" calcext:value-type="string">
+      <text:p>pantry_storage</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Onions</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Micha Gattinger</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
+      <text:p>2020-08-05</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
+      <text:p>2020-08-22</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="56"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro7">
+     <table:table-cell office:value-type="float" office:value="18" calcext:value-type="float">
+      <text:p>18</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Verfault, gekeimt oder grün</text:p>
+     </table:table-cell>
+     <table:table-cell/>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Wenn Kartoffeln verderben, zeigen sie eine oder mehrere der folgenden optischen Veränderungen: ausgeprägtes Keimen; Grünverfärbung; oder Verfaulen.</text:p>
+     </table:table-cell>
+     <table:table-cell table:content-validation-name="val1" office:value-type="string" calcext:value-type="string">
+      <text:p>assessment</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Potatoes</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Micha Gattinger</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
+      <text:p>2020-08-05</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
+      <text:p>2020-08-22</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="56"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro13">
+     <table:table-cell office:value-type="float" office:value="19" calcext:value-type="float">
+      <text:p>19</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Kühl, trocken und dunkel lagern</text:p>
+     </table:table-cell>
+     <table:table-cell/>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p>Optimale Lagerung:</text:p><text:p/><text:p>* optimale Lagertemperatur 4-6 Grad, jedoch nicht im Kühlschrank</text:p><text:p>* trocken und dunkel</text:p><text:p>* mit z.B. Papier luftdicht abdecken</text:p><text:p>* nicht mit Äpfel und Birnen zusammen lagern, denn diese geben das Reifungsgas Ethylen ab</text:p><text:p/><text:p>Lagerfähigkeit: lange und anspruchslos</text:p>
+     </table:table-cell>
+     <table:table-cell table:content-validation-name="val1" office:value-type="string" calcext:value-type="string">
+      <text:p>other_storage</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Potatoes</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Micha Gattinger</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
+      <text:p>2020-08-05</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
+      <text:p>2020-08-22</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="56"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro10">
+     <table:table-cell office:value-type="float" office:value="20" calcext:value-type="float">
+      <text:p>20</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Solaninvergiftung</text:p>
+     </table:table-cell>
+     <table:table-cell/>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Grüne Stellen enthalten viel Solanin. Die Gefahr einer Solaninvergiftung ist heute durch die modernen Zuchtarten praktisch verschwunden, kann aber einige unangenehme Erscheinungen auslösen. Solanin ist hitzebeständig und fettunlöslich. Durch abschneiden der grün verfärbten Stellen und der Keime verringert sich der Solaninanteil (23).</text:p>
+     </table:table-cell>
+     <table:table-cell table:content-validation-name="val1" office:value-type="string" calcext:value-type="string">
+      <text:p>risks</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Potatoes</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Micha Gattinger</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
+      <text:p>2020-08-05</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
+      <text:p>2020-08-22</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="56"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro6">
+     <table:table-cell office:value-type="float" office:value="21" calcext:value-type="float">
+      <text:p>21</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Kartoffelsaft</text:p>
+     </table:table-cell>
+     <table:table-cell/>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p>Frisch aus rohen Kartoffeln gepresster Saft enthält viele Nährstoffe wie Kalium, ist ein sehr gutes Hausmittel gegen Sodbrennen (21) und ein gutes Mittel für die Hautpflege. Gepresster Kartoffelsaft in einer gut gefüllten,  luftdicht verschlossener Flasche hält sich im Kühlschrank ein paar Monate.</text:p><text:p/><text:p>https://de.wikihow.com/Eine-Kartoffel-entsaften[Quelle]</text:p>
+     </table:table-cell>
+     <table:table-cell table:content-validation-name="val1" office:value-type="string" calcext:value-type="string">
+      <text:p>preservation</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Potatoes</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Micha Gattinger</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
+      <text:p>2020-08-05</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
+      <text:p>2020-08-22</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="56"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro11">
+     <table:table-cell office:value-type="float" office:value="22" calcext:value-type="float">
+      <text:p>22</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Optische Veränderungen</text:p>
+     </table:table-cell>
+     <table:table-cell/>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Wenn eine Ananas verdirbt, wird sie weich und verfault.</text:p>
+     </table:table-cell>
+     <table:table-cell table:content-validation-name="val1" office:value-type="string" calcext:value-type="string">
+      <text:p>assessment</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Fresh pineapple</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Micha Gattinger</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
+      <text:p>2020-08-05</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
+      <text:p>2020-08-22</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="56"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro11">
+     <table:table-cell office:value-type="float" office:value="23" calcext:value-type="float">
+      <text:p>23</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="2"/>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Ananas ist zur Aufbewahrung im Kühlschrank nicht geeignet.</text:p>
+     </table:table-cell>
+     <table:table-cell table:content-validation-name="val1" office:value-type="string" calcext:value-type="string">
+      <text:p>refrigerator_storage</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Fresh pineapple</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Micha Gattinger</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
+      <text:p>2020-08-05</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
+      <text:p>2020-08-22</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="56"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro6">
+     <table:table-cell office:value-type="float" office:value="24" calcext:value-type="float">
+      <text:p>24</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Optimale Lagerbedingungen</text:p>
+     </table:table-cell>
+     <table:table-cell/>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p>Ananas ist nur kurz lagerfähig. Die optimalen Lagerbedingungen sind:</text:p><text:p/><text:p>* auf Papierschnippseln oder Sägespänen</text:p><text:p>* bei Raumtemperatur</text:p><text:p>* Eine Prise Salz auf der Ananas verteilt senkt den Säureanteil und verlängert die Haltbarkeit.</text:p>
+     </table:table-cell>
+     <table:table-cell table:content-validation-name="val1" office:value-type="string" calcext:value-type="string">
+      <text:p>pantry_storage</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Fresh pineapple</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Micha Gattinger</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
+      <text:p>2020-08-05</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
+      <text:p>2020-08-22</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="56"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro14">
+     <table:table-cell office:value-type="float" office:value="25" calcext:value-type="float">
+      <text:p>25</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Optische Veränderungen</text:p>
+     </table:table-cell>
+     <table:table-cell/>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p>Wenn ein Apfel altert, zeigen sich folgende optischen Veränderungen:</text:p><text:p/><text:p>* Druckstellen</text:p><text:p>* braune Stellen</text:p><text:p>* schrumpelig</text:p><text:p>* faulige Stellen</text:p>
+     </table:table-cell>
+     <table:table-cell table:content-validation-name="val1" office:value-type="string" calcext:value-type="string">
+      <text:p>assessment</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Fresh apples</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Micha Gattinger</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
+      <text:p>2020-08-05</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
+      <text:p>2020-08-22</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="56"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro14">
+     <table:table-cell office:value-type="float" office:value="26" calcext:value-type="float">
+      <text:p>26</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Optimale Lagerbedingungen</text:p>
+     </table:table-cell>
+     <table:table-cell/>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p>Äpfel sind lange und anspruchslos lagerfähig. Die optimalen Lagerbedingungen im Kühlschrank sind:</text:p><text:p/><text:p>* im Gemüsefach</text:p><text:p>* dunkel und trocken ohne direkten Kontakt zueinander</text:p><text:p>* in mehrlagiges Zeitungspapier einwickeln</text:p><text:p>* mit dem Stiel nach unten</text:p>
+     </table:table-cell>
+     <table:table-cell table:content-validation-name="val1" office:value-type="string" calcext:value-type="string">
+      <text:p>refrigerator_storage</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Fresh apples</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Micha Gattinger</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
+      <text:p>2020-08-05</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
+      <text:p>2020-08-22</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="56"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro14">
+     <table:table-cell office:value-type="float" office:value="27" calcext:value-type="float">
+      <text:p>27</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Optische Veränderungen</text:p>
+     </table:table-cell>
+     <table:table-cell/>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p>Wenn Steinobst oder Beeren verderben, zeigen sich folgende optischen Veränderungen:</text:p><text:p/><text:p>* Druckstellen</text:p><text:p>* weich / matschig</text:p><text:p>* verfault</text:p>
+     </table:table-cell>
+     <table:table-cell table:content-validation-name="val1" office:value-type="string" calcext:value-type="string">
+      <text:p>assessment</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p><text:span text:style-name="T1">Fresh apricots</text:span></text:p><text:p><text:span text:style-name="T1">Fresh cherries</text:span></text:p><text:p><text:span text:style-name="T1">Fresh plums</text:span></text:p><text:p><text:span text:style-name="T1">Fresh peaches</text:span></text:p><text:p><text:span text:style-name="T1">Fresh nectarines</text:span></text:p><text:p><text:span text:style-name="T2">Berries</text:span></text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Micha Gattinger</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
+      <text:p>2020-08-05</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
+      <text:p>2020-08-22</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="56"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro15">
+     <table:table-cell office:value-type="float" office:value="28" calcext:value-type="float">
+      <text:p>28</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Optimale Lagerbedingungen</text:p>
+     </table:table-cell>
+     <table:table-cell/>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p>Unter optimalen Bedingungen und je nach Reifegrad können Steinobst und Beeren bis zu einer Woche gelagert werden. Optimale Bedingungen sind:</text:p><text:p/><text:p>* die Verkaufsverpackung entfernen</text:p><text:p>* nebeneinander auf weichem Untergrund lagern</text:p><text:p>* schattig und luftig lagern</text:p><text:p>* nach dem Ausreifen bei 2-8 °C im Kühlschrank lagern</text:p><text:p>* mit Stiel lagern (ohne entweicht Feuchtigkeit und Keime gelangen in die Frucht)</text:p><text:p>* erst unmittelbar vor dem Verzehr waschen (sonst dringt die Feuchtigkeit in die Frucht)</text:p><text:p>* Pflaumen, Pfirsiche und Aprikosen nicht mit anderem Obst oder Gemüse lagern da diese das natürliche Reifegas Ethylen absondern</text:p>
+     </table:table-cell>
+     <table:table-cell table:content-validation-name="val1" office:value-type="string" calcext:value-type="string">
+      <text:p>refrigerator_storage</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p>Fresh apricots</text:p><text:p>Fresh cherries</text:p><text:p>Fresh plums</text:p><text:p>Fresh peaches</text:p><text:p>Fresh nectarines</text:p><text:p><text:span text:style-name="T1">Berries</text:span></text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Micha Gattinger</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
+      <text:p>2020-08-05</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
+      <text:p>2020-08-22</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="56"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro6">
+     <table:table-cell office:value-type="float" office:value="29" calcext:value-type="float">
+      <text:p>29</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Optische Veränderungen</text:p>
+     </table:table-cell>
+     <table:table-cell/>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p>Wenn Steinobst oder Beeren verderben, zeigen sich folgende optischen Veränderungen:</text:p><text:p/><text:p>* Druckstellen</text:p><text:p>* matschig</text:p><text:p>* verfault</text:p>
+     </table:table-cell>
+     <table:table-cell table:content-validation-name="val1" office:value-type="string" calcext:value-type="string">
+      <text:p>assessment</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Fresh mushrooms</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Micha Gattinger</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
+      <text:p>2020-08-05</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
+      <text:p>2020-08-22</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="56"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro15">
+     <table:table-cell office:value-type="float" office:value="30" calcext:value-type="float">
+      <text:p>30</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Optimale Lagerbedingungen</text:p>
+     </table:table-cell>
+     <table:table-cell/>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p>Unter optimalen Bedingungen können Pilze bis 3 Tage gelagert werden. Optimale Bedingungen sind:</text:p><text:p/><text:p>* aus der Verkaufsverpackung nehmen</text:p><text:p>* bei 2-8 Grad dunkel lagern</text:p><text:p>* nicht quetschen</text:p><text:p>* luftig in einer Papiertüte lagern</text:p><text:p/><text:p>Hinweis: Pilze reifen nicht nach.</text:p><text:p/><text:p>https://www.topagrar.com/landleben/kochen-und-backen/familie-kochen-backen-kuechentipps-wie-man-pilze-richtig-lagert-9385212.html[Quelle]</text:p>
+     </table:table-cell>
+     <table:table-cell table:content-validation-name="val1" office:value-type="string" calcext:value-type="string">
+      <text:p>refrigerator_storage</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Fresh mushrooms</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Micha Gattinger</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
+      <text:p>2020-08-05</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
+      <text:p>2020-08-22</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="56"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro11">
+     <table:table-cell office:value-type="float" office:value="31" calcext:value-type="float">
+      <text:p>31</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Optische Veränderungen</text:p>
+     </table:table-cell>
+     <table:table-cell/>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Wenn Bananen altern, werden sie matschig und schließlich faulig.</text:p>
+     </table:table-cell>
+     <table:table-cell table:content-validation-name="val1" office:value-type="string" calcext:value-type="string">
+      <text:p>assessment</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Bananas</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Micha Gattinger</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
+      <text:p>2020-08-05</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
+      <text:p>2020-08-22</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="56"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro16">
+     <table:table-cell office:value-type="float" office:value="32" calcext:value-type="float">
+      <text:p>32</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Optimale Lagerbedingungen</text:p>
+     </table:table-cell>
+     <table:table-cell/>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p>Unter optimalen Bedingungen können Bananen je nach Reifegrad bis 10 Tage gelagert werden. Optimale Bedingungen sind:</text:p><text:p/><text:p>* Verkaufsverpackung entfernen</text:p><text:p>* Schatten</text:p><text:p>* Zimmertemperatur</text:p><text:p>* braune Farbe ist o.k.</text:p><text:p>* unreife Banane nicht in den Kühlschrank</text:p><text:p>* Stiel/ Strunk mit z.B Frischhaltefolie umwickeln</text:p><text:p>* am Stiel / Strunk aufhängen</text:p><text:p>* nicht mit anderem Obst / Gemüse lagern da starke Absonderung des natürlichen Reifegases Ethylen</text:p><text:p/><text:p>https://www.fritzganz.de/blog/2017/5/30/frischhalte-tricks-fr-bananen[Quelle]</text:p>
+     </table:table-cell>
+     <table:table-cell table:content-validation-name="val1" office:value-type="string" calcext:value-type="string">
+      <text:p>pantry_storage</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Bananas</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Micha Gattinger</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
+      <text:p>2020-08-05</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
+      <text:p>2020-08-22</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="56"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro11">
+     <table:table-cell office:value-type="float" office:value="33" calcext:value-type="float">
+      <text:p>33</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Optische Veränderungen</text:p>
+     </table:table-cell>
+     <table:table-cell/>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Wenn Bananen altern, werden sie matschig oder faulig.</text:p>
+     </table:table-cell>
+     <table:table-cell table:content-validation-name="val1" office:value-type="string" calcext:value-type="string">
+      <text:p>assessment</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Fresh pears</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Micha Gattinger</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
+      <text:p>2020-08-05</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
+      <text:p>2020-08-22</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="56"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro17">
+     <table:table-cell office:value-type="float" office:value="34" calcext:value-type="float">
+      <text:p>34</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Optimale Lagerbedingungen</text:p>
+     </table:table-cell>
+     <table:table-cell/>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p>Unter optimalen Bedingungen können Birnen je nach Sorte bis zu 2 Monaten gelagert werden. Kommerziell werden Birnen bei um 0 °C und 95% Luftfeuchte gelagert; im Haushalt sind zumindest ähnliche Bedingungen möglich. Gute Tipps dazu sind:</text:p><text:p/><text:p>* abgepackt in Plastiktüten ermöglicht eine sauerstoffarme, kohlendioxidreiche Lagerung</text:p><text:p>* Löcher/ Schlitze in der Tüte ermöglicht den Wasseraustritt ( es darf sich kein Wasser innen an den Tüten bilden)</text:p><text:p>* nicht mit anderem Obst/ Gemüse lagern da starke Absonderung des natürlichen Reifegases Ethylen</text:p><text:p/><text:p>https://www.gartenjournal.net/birnen-lagern[Quelle]</text:p>
+     </table:table-cell>
+     <table:table-cell table:content-validation-name="val1" office:value-type="string" calcext:value-type="string">
+      <text:p>other_storage</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Fresh pears</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Micha Gattinger</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
+      <text:p>2020-08-05</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
+      <text:p>2020-08-22</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="56"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro7">
+     <table:table-cell office:value-type="float" office:value="35" calcext:value-type="float">
+      <text:p>35</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Optische Veränderungen</text:p>
+     </table:table-cell>
+     <table:table-cell/>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Wenn frischer Spinat oder Salat verdirbt, so welkt oder verfault er.</text:p>
+     </table:table-cell>
+     <table:table-cell table:content-validation-name="val1" office:value-type="string" calcext:value-type="string">
+      <text:p>assessment</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p>Fresh spinachs</text:p><text:p>Lettuces</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Micha Gattinger</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
+      <text:p>2020-08-05</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
+      <text:p>2020-08-22</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="56"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro7">
+     <table:table-cell office:value-type="float" office:value="36" calcext:value-type="float">
+      <text:p>36</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Nur wenige Tage</text:p>
+     </table:table-cell>
+     <table:table-cell/>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Kann im Kühlschrank gelagert werden, allerdings nur wenige Tage.</text:p>
+     </table:table-cell>
+     <table:table-cell table:content-validation-name="val1" office:value-type="string" calcext:value-type="string">
+      <text:p>refrigerator_storage</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p>Fresh spinachs</text:p><text:p>Lettuces</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Micha Gattinger</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
+      <text:p>2020-08-05</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
+      <text:p>2020-08-22</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="56"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro7">
+     <table:table-cell office:value-type="float" office:value="37" calcext:value-type="float">
+      <text:p>37</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Blanchieren</text:p>
+     </table:table-cell>
+     <table:table-cell/>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Frischer Spinat und auch Blattsalate können blanchiert und dann eingefroren werden.</text:p>
+     </table:table-cell>
+     <table:table-cell table:content-validation-name="val1" office:value-type="string" calcext:value-type="string">
+      <text:p>preservation</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p>Fresh spinachs</text:p><text:p>Lettuces</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Micha Gattinger</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
+      <text:p>2020-08-05</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
+      <text:p>2020-08-22</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="56"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro7">
+     <table:table-cell office:value-type="float" office:value="38" calcext:value-type="float">
+      <text:p>38</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Optische Veränderungen</text:p>
+     </table:table-cell>
+     <table:table-cell/>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Wenn frische Bohnen oder Erbsen altern und verderben, so verfaulen sie.</text:p>
+     </table:table-cell>
+     <table:table-cell table:content-validation-name="val1" office:value-type="string" calcext:value-type="string">
+      <text:p>assessment</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p>Fresh green beans</text:p><text:p>Peas</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Micha Gattinger</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
+      <text:p>2020-08-05</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
+      <text:p>2020-08-22</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Add category “Fresh peas”, once available in Open Food Facts.</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro17">
+     <table:table-cell office:value-type="float" office:value="39" calcext:value-type="float">
+      <text:p>39</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Optimale Lagerbedingungen</text:p>
+     </table:table-cell>
+     <table:table-cell/>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p>Selbst unter optimalen Bedingungen sind frische Erbsen und Bohnen nur wenige Tage lagerfähig. Optimale Bedingungen sind:</text:p><text:p/><text:p>* aus Verkaufsverpackung entfernen</text:p><text:p>* roh lagern, nicht kochen</text:p><text:p>* in ein feuchtes Tuch einschlagen</text:p><text:p>* grob säubern aber nicht waschen</text:p><text:p>* 8 °C Lagertemeratur im Kühlschrank</text:p><text:p/><text:p>https://www.gartenjournal.net/gruene-bohnen-lagern[Quelle]</text:p>
+     </table:table-cell>
+     <table:table-cell table:content-validation-name="val1" office:value-type="string" calcext:value-type="string">
+      <text:p>refrigerator_storage</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p>Fresh green beans</text:p><text:p>Peas</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Micha Gattinger</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
+      <text:p>2020-08-05</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
+      <text:p>2020-08-22</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Add category “Fresh peas”, once available in Open Food Facts.</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro11">
+     <table:table-cell office:value-type="float" office:value="40" calcext:value-type="float">
+      <text:p>40</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Optische Veränderungen</text:p>
+     </table:table-cell>
+     <table:table-cell/>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Wenn Erdbeeren verderben, so werden sie matschig und verfaulen. Auch Schimmelbefall ist möglich.</text:p>
+     </table:table-cell>
+     <table:table-cell table:content-validation-name="val1" office:value-type="string" calcext:value-type="string">
+      <text:p>assessment</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Fresh strawberries</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Micha Gattinger</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
+      <text:p>2020-08-05</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
+      <text:p>2020-08-22</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="56"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro8">
+     <table:table-cell office:value-type="float" office:value="41" calcext:value-type="float">
+      <text:p>41</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>2-7 Tage im Kühlschrank</text:p>
+     </table:table-cell>
+     <table:table-cell/>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p>Unter optimalen Bedingungen sind Erdbeeren 2-7 Tage lagerfähig. Optimale Bedingungen sind:</text:p><text:p/><text:p>* atmungsaktive Verpackung aus z.B. Pappe / Holzspan</text:p><text:p>* erst unmittelbar vor dem Verzehr waschen</text:p><text:p>* dunkel bei 8 Grad</text:p><text:p>* mit Teller oder Schüssel abdecken</text:p><text:p>* nicht quetschen</text:p>
+     </table:table-cell>
+     <table:table-cell table:content-validation-name="val1" office:value-type="string" calcext:value-type="string">
+      <text:p>refrigerator_storage</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Fresh strawberries</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Micha Gattinger</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
+      <text:p>2020-08-05</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
+      <text:p>2020-08-22</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="56"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro7">
+     <table:table-cell office:value-type="float" office:value="42" calcext:value-type="float">
+      <text:p>42</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Nicht zum Einfrieren geeignet</text:p>
+     </table:table-cell>
+     <table:table-cell/>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Erdbeeren eignen sich nicht zum Einfrieren aufgrund ihres hohen Wassergehalts. Sie werden beim Auftauen matschig.</text:p>
+     </table:table-cell>
+     <table:table-cell table:content-validation-name="val1" office:value-type="string" calcext:value-type="string">
+      <text:p>freezer_storage</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Fresh strawberries</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Micha Gattinger</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
+      <text:p>2020-08-05</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
+      <text:p>2020-08-22</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="56"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro7">
+     <table:table-cell office:value-type="float" office:value="43" calcext:value-type="float">
+      <text:p>43</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Optische Veränderungen</text:p>
+     </table:table-cell>
+     <table:table-cell/>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Wenn frischer Fenchel und frischer Kohlrabi altern und verderben, so werden sie runzelig und verfaulen.</text:p>
+     </table:table-cell>
+     <table:table-cell table:content-validation-name="val1" office:value-type="string" calcext:value-type="string">
+      <text:p>assessment</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p>Fennel bulbs</text:p><text:p><text:span text:style-name="T1">Raw cabbage turnips</text:span></text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Micha Gattinger</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
+      <text:p>2020-08-05</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
+      <text:p>2020-08-22</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce4" office:value-type="string" calcext:value-type="string">
+      <text:p>Add category “Raw Kohlrabi”, once available in Open Food Facts. Currently only “Boiled kohlrabi” is available.</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro14">
+     <table:table-cell office:value-type="float" office:value="44" calcext:value-type="float">
+      <text:p>44</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Optimale Lagerbedingungen</text:p>
+     </table:table-cell>
+     <table:table-cell/>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p>Unter optimalen Bedingungen kann Kohlrabi bis zu 2 Wochen gelagert werden. Optimale Bedingungen sind:</text:p><text:p/><text:p>* in feuchtes Tuch einwickeln</text:p><text:p>* dunkel und trocken</text:p><text:p>* 8 °C Lagertemperatur</text:p>
+     </table:table-cell>
+     <table:table-cell table:content-validation-name="val1" office:value-type="string" calcext:value-type="string">
+      <text:p>other_storage</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p>Fennel bulbs</text:p><text:p><text:span text:style-name="T1">Raw cabbage turnips</text:span></text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Micha Gattinger</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
+      <text:p>2020-08-05</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
+      <text:p>2020-08-22</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce4" office:value-type="string" calcext:value-type="string">
+      <text:p>Add category “Raw Kohlrabi”, once available in Open Food Facts. Currently only “Boiled kohlrabi” is available.</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro6">
+     <table:table-cell office:value-type="float" office:value="45" calcext:value-type="float">
+      <text:p>45</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Optische Veränderungen</text:p>
+     </table:table-cell>
+     <table:table-cell/>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p>Bei Alterung und Verderb zeigen sich folgende Veränderungen:</text:p><text:p/><text:p>* wird weich, welk und runzelig</text:p><text:p>* fleckig und gelb (z.B. durch Kälte)</text:p><text:p>* verfault</text:p>
+     </table:table-cell>
+     <table:table-cell table:content-validation-name="val1" office:value-type="string" calcext:value-type="string">
+      <text:p>assessment</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p>Fresh cucumbers</text:p><text:p>Sweet peppers</text:p><text:p>Fresh zucchini</text:p><text:p>Fresh aubergines</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Micha Gattinger</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
+      <text:p>2020-08-05</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
+      <text:p>2020-08-22</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="56"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro14">
+     <table:table-cell office:value-type="float" office:value="46" calcext:value-type="float">
+      <text:p>46</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Optimale Lagerbedingungen</text:p>
+     </table:table-cell>
+     <table:table-cell/>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p>Können unter optimalen Bedingungen bis zu 2 Wochen gelagert werden, je nach Reifegrad:</text:p><text:p/><text:p>* Temperatur 8 - 15 °C</text:p><text:p>* schattig und luftig</text:p><text:p>* auf weichem, trockenem Untergrund</text:p><text:p>* nebeneinander in z.B. einem geflochtenem Korb</text:p>
+     </table:table-cell>
+     <table:table-cell table:content-validation-name="val1" office:value-type="string" calcext:value-type="string">
+      <text:p>pantry_storage</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p>Fresh cucumbers</text:p><text:p>Sweet peppers</text:p><text:p>Fresh zucchini</text:p><text:p>Fresh aubergines</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Micha Gattinger</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
+      <text:p>2020-08-05</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
+      <text:p>2020-08-22</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="56"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro10">
+     <table:table-cell office:value-type="float" office:value="47" calcext:value-type="float">
+      <text:p>47</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Nicht zum Einfrieren geeignet</text:p>
+     </table:table-cell>
+     <table:table-cell/>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Eignen sich aufgrund des hohen Wasseranteils nicht zum Einfrieren (werden beim Auftauen matschig).</text:p>
+     </table:table-cell>
+     <table:table-cell table:content-validation-name="val1" office:value-type="string" calcext:value-type="string">
+      <text:p>freezer_storage</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p>Fresh cucumbers</text:p><text:p>Sweet peppers</text:p><text:p>Fresh zucchini</text:p><text:p>Fresh aubergines</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Micha Gattinger</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
+      <text:p>2020-08-05</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
+      <text:p>2020-08-22</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="56"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro6">
+     <table:table-cell office:value-type="float" office:value="48" calcext:value-type="float">
+      <text:p>48</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Optische Veränderungen</text:p>
+     </table:table-cell>
+     <table:table-cell/>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p>Bei Alterung und Verderb zeigen sich folgende Veränderungen:</text:p><text:p/><text:p>* wird weich</text:p><text:p>* wird runzelig</text:p><text:p>* verfault</text:p>
+     </table:table-cell>
+     <table:table-cell table:content-validation-name="val1" office:value-type="string" calcext:value-type="string">
+      <text:p>assessment</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Fresh kiwifruits</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Micha Gattinger</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
+      <text:p>2020-08-05</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
+      <text:p>2020-08-22</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="56"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro13">
+     <table:table-cell office:value-type="float" office:value="49" calcext:value-type="float">
+      <text:p>49</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Optimale Lagerung</text:p>
+     </table:table-cell>
+     <table:table-cell/>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p>Kiwis können bei opimalen Bedingungen ca. 10 Wochen gelagert werden:</text:p><text:p/><text:p>* 8-10 °C</text:p><text:p>* dunkel</text:p><text:p>* einschichtig in z.B. Holzkisten</text:p><text:p>* regelmäßig schlechte Kiwis aussortieren</text:p><text:p/><text:p>https://www.gartentipps.com/kiwis-lagern-so-machen-sie-es-richtig.html[Quelle]</text:p>
+     </table:table-cell>
+     <table:table-cell table:content-validation-name="val1" office:value-type="string" calcext:value-type="string">
+      <text:p>pantry_storage</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Fresh kiwifruits</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Micha Gattinger</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
+      <text:p>2020-08-05</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
+      <text:p>2020-08-22</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="56"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro6">
+     <table:table-cell office:value-type="float" office:value="50" calcext:value-type="float">
+      <text:p>50</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Veränderungen bei Alterung</text:p>
+     </table:table-cell>
+     <table:table-cell/>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p>Wenn frische Knoblauchzehen altern und verderben, zeigen sich folgende Veränderungen:</text:p><text:p/><text:p>* Sprossenbildung</text:p><text:p>* werden weich</text:p><text:p>* verfaulen</text:p>
+     </table:table-cell>
+     <table:table-cell table:content-validation-name="val1" office:value-type="string" calcext:value-type="string">
+      <text:p>assessment</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Garlic</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Micha Gattinger</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
+      <text:p>2020-08-05</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
+      <text:p>2020-08-22</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="56"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro18">
+     <table:table-cell office:value-type="float" office:value="51" calcext:value-type="float">
+      <text:p>51</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Optimale Lagerbedingungen</text:p>
+     </table:table-cell>
+     <table:table-cell/>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p>Knoblauchzehen sind anspruchslos. Unter optimalen Bedingungen können sie bis zu 12 Monaten gelagert werden:</text:p><text:p/><text:p>* trocken und lichtgeschützt</text:p><text:p>* 15 - 20 °C</text:p><text:p>* in einem Netz</text:p><text:p>* nicht zusammen mit Obst lagern</text:p><text:p/><text:p>https://de.wikihow.com/Frischen-Knoblauch-lagern[Quelle]</text:p>
+     </table:table-cell>
+     <table:table-cell table:content-validation-name="val1" office:value-type="string" calcext:value-type="string">
+      <text:p>pantry_storage</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Garlic</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Micha Gattinger</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
+      <text:p>2020-08-05</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
+      <text:p>2020-08-22</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="56"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro14">
+     <table:table-cell office:value-type="float" office:value="52" calcext:value-type="float">
+      <text:p>52</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Optische Veränderungen</text:p>
+     </table:table-cell>
+     <table:table-cell/>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p>Wenn Kohl altert und verdirbt, zeigen sich folgende Veränderungen:</text:p><text:p/><text:p>* Verfärbungen an den Rosen und Blättern</text:p><text:p>* wird weich</text:p><text:p>* Blätter werden locker</text:p><text:p>* verfault</text:p>
+     </table:table-cell>
+     <table:table-cell table:content-validation-name="val1" office:value-type="string" calcext:value-type="string">
+      <text:p>assessment</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Fresh cabbages</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Micha Gattinger</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
+      <text:p>2020-08-05</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
+      <text:p>2020-08-22</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="56"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro13">
+     <table:table-cell office:value-type="float" office:value="53" calcext:value-type="float">
+      <text:p>53</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Optimale Lagerung</text:p>
+     </table:table-cell>
+     <table:table-cell/>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p>Kohl ist anspruchslos und kann lange gelagert werden. Optimale Bedingungen sind:</text:p><text:p/><text:p>* möglichst natürlich kühl und dunkel, z.B. Keller / Schuppen etc.</text:p><text:p>* äußere Blätter dienen als Schutz vor Austrocknung</text:p><text:p>* kopfüber hängend lagern (so kann sich kein Wasser sammeln, Schimmel wird unterbunden)</text:p><text:p>* alternativ auf trockenem Laub lagern</text:p><text:p/><text:p>https://www.emsa.com/blog/wanted-der-ideale-ort-zum-kohl-lagern-so-bleibt-er-laenger-frisch/[Quelle]</text:p>
+     </table:table-cell>
+     <table:table-cell table:content-validation-name="val1" office:value-type="string" calcext:value-type="string">
+      <text:p>pantry_storage</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Fresh cabbages</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Micha Gattinger</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
+      <text:p>2020-08-05</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
+      <text:p>2020-08-22</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="56"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro10">
+     <table:table-cell office:value-type="float" office:value="54" calcext:value-type="float">
+      <text:p>54</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Veränderungen bei Alterung</text:p>
+     </table:table-cell>
+     <table:table-cell/>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p>Wenn Kürbis altert und verdirbt, zeigen sich folgende Veränderungen:</text:p><text:p/><text:p>* wird weich / matschig</text:p><text:p>* verfault</text:p>
+     </table:table-cell>
+     <table:table-cell table:content-validation-name="val1" office:value-type="string" calcext:value-type="string">
+      <text:p>assessment</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Fresh pumpkins</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Micha Gattinger</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
+      <text:p>2020-08-05</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
+      <text:p>2020-08-22</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="56"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro12">
+     <table:table-cell office:value-type="float" office:value="55" calcext:value-type="float">
+      <text:p>55</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Optimale Lagerung</text:p>
+     </table:table-cell>
+     <table:table-cell/>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p>Kürbis kann unter optimalen Bedingungen bis zu 12 Monaten gelagert werden.</text:p><text:p/><text:p>. Nachreifen bei ca. 20 Grad auf einer trockenen Unterlage, dabei regelmäßig wenden, bis:</text:p><text:p>** eine intensive orange-rote Farbe vorhanden ist</text:p><text:p>** der Stiel verholzt/ eingetrocknet ist</text:p><text:p>** kein Einritzen der Schale durch z.B. den Fingernagel möglich ist</text:p><text:p>** hohler Klang beim Klopfen entsteht</text:p><text:p/><text:p>. Einlagern:</text:p><text:p>** bei 12-15 Grad</text:p><text:p>** luftiger, dunkler und trockener Ort</text:p><text:p>** Druckstellen vermeiden (Netz); bei Lagerung in einer Holzkiste regelmäßig wenden</text:p><text:p/><text:p>https://www.plantura.garden/leserfragen-2/gemuese/kuerbis-ernten-und-lagern-tipps-zu-erntezeit-haltbarmachen[Quelle]</text:p>
+     </table:table-cell>
+     <table:table-cell table:content-validation-name="val1" office:value-type="string" calcext:value-type="string">
+      <text:p>pantry_storage</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Fresh pumpkins</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Micha Gattinger</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
+      <text:p>2020-08-05</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
+      <text:p>2020-08-22</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="56"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro6">
+     <table:table-cell office:value-type="float" office:value="56" calcext:value-type="float">
+      <text:p>56</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Veränderungen bei Alterung</text:p>
+     </table:table-cell>
+     <table:table-cell/>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p>Wenn frischer Lauch altert und verdirbt, zeigen sich folgende Veränderungen:</text:p><text:p/><text:p>* wird weich</text:p><text:p>* bekommt Flecken</text:p><text:p>* verfault</text:p>
+     </table:table-cell>
+     <table:table-cell table:content-validation-name="val1" office:value-type="string" calcext:value-type="string">
+      <text:p>assessment</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Leeks</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Micha Gattinger</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
+      <text:p>2020-08-05</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
+      <text:p>2020-08-22</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce4" office:value-type="string" calcext:value-type="string">
+      <text:p>Add category “Fresh leeks”, once available in Open Food Facts.</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro6">
+     <table:table-cell office:value-type="float" office:value="57" calcext:value-type="float">
+      <text:p>57</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Optimale Lagerung</text:p>
+     </table:table-cell>
+     <table:table-cell/>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p>Unter optimalen Bedingungen ist frischer Lauch ca. 4 Wochen lagerfähig:</text:p><text:p/><text:p>* kühl, dunkel und trocken bei 8-10 °C</text:p><text:p>* aufhängen</text:p><text:p>* nicht zusammen mit aromaempfindlichen Nahrungsmittel lagern</text:p>
+     </table:table-cell>
+     <table:table-cell table:content-validation-name="val1" office:value-type="string" calcext:value-type="string">
+      <text:p>pantry_storage</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Leeks</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Micha Gattinger</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
+      <text:p>2020-08-05</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
+      <text:p>2020-08-22</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce4" office:value-type="string" calcext:value-type="string">
+      <text:p>Add category “Fresh leeks”, once available in Open Food Facts.</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro7">
+     <table:table-cell office:value-type="float" office:value="58" calcext:value-type="float">
+      <text:p>58</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Veränderungen bei Alterung</text:p>
+     </table:table-cell>
+     <table:table-cell/>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p>* werden weich</text:p><text:p>* verfaulen</text:p>
+     </table:table-cell>
+     <table:table-cell table:content-validation-name="val1" office:value-type="string" calcext:value-type="string">
+      <text:p>assessment</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p>Fresh mangoes</text:p><text:p>Avocados</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Micha Gattinger</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
+      <text:p>2020-08-05</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
+      <text:p>2020-08-22</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce4" office:value-type="string" calcext:value-type="string">
+      <text:p>Add category “Fresh avocados”, once available in Open Food Facts.</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro10">
+     <table:table-cell office:value-type="float" office:value="59" calcext:value-type="float">
+      <text:p>59</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Optimale Lagerung</text:p>
+     </table:table-cell>
+     <table:table-cell/>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p>Unter optimalen Bedingungen ca. 7-10 Tage lagerfähig:</text:p><text:p/><text:p>* bei Zimmertemperatur</text:p><text:p>* direkte Sonnenstrahlung vermeiden</text:p>
+     </table:table-cell>
+     <table:table-cell table:content-validation-name="val1" office:value-type="string" calcext:value-type="string">
+      <text:p>pantry_storage</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p>Fresh mangoes</text:p><text:p>Avocados</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Micha Gattinger</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
+      <text:p>2020-08-05</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
+      <text:p>2020-08-22</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce4" office:value-type="string" calcext:value-type="string">
+      <text:p>Add category “Fresh avocados”, once available in Open Food Facts.</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro6">
+     <table:table-cell office:value-type="float" office:value="60" calcext:value-type="float">
+      <text:p>60</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Veränderungen bei Alterung</text:p>
+     </table:table-cell>
+     <table:table-cell/>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p>* verfaulen</text:p><text:p>* beschädigte Rübe verliert schnell ihren Saft</text:p><text:p>* verfault</text:p><text:p>* bei Temperaturen über 5 Grad beginnt die Rübe auszutreiben</text:p><text:p>* durch Frost bekommt die Rübe schwarze Flecken</text:p>
+     </table:table-cell>
+     <table:table-cell table:content-validation-name="val1" office:value-type="string" calcext:value-type="string">
+      <text:p>assessment</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p>Fresh beet</text:p><text:p>Raw parsnip</text:p><text:p>Raw black salsify</text:p><text:p>Raw celeriac</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Micha Gattinger</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
+      <text:p>2020-08-05</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
+      <text:p>2020-08-22</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="56"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro6">
+     <table:table-cell office:value-type="float" office:value="61" calcext:value-type="float">
+      <text:p>61</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Bis 2 Wochen im Kühlschrank</text:p>
+     </table:table-cell>
+     <table:table-cell/>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p>Im Kühlschrank oder einem anderen Ort mit 8-10 °C ist dieses Nahrungsmittel bis zu 2 Wochen lagerfähig. Dazu die Rübe nicht waschen und in einem feuchten Tuch einschlagen.</text:p><text:p/><text:p>https://www.mein-schoener-garten.de/gartenpraxis/nutzgaerten/rote-bete-ernten-und-haltbar-machen-38478[Quelle]</text:p>
+     </table:table-cell>
+     <table:table-cell table:content-validation-name="val1" office:value-type="string" calcext:value-type="string">
+      <text:p>refrigerator_storage</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p>Fresh beet</text:p><text:p>Raw parsnip</text:p><text:p>Raw black salsify</text:p><text:p>Raw celeriac</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Micha Gattinger</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
+      <text:p>2020-08-05</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
+      <text:p>2020-08-22</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="56"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro13">
+     <table:table-cell office:value-type="float" office:value="62" calcext:value-type="float">
+      <text:p>62</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Mehrere Monate im Rübenkeller</text:p>
+     </table:table-cell>
+     <table:table-cell/>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p>Unter optimalen Bedingungen können Rüben mehrere Monate gelagert werden:</text:p><text:p/><text:p>* nicht waschen</text:p><text:p>* auf Sand in einer Kiste lagern</text:p><text:p>* 3-4 °C und relativ hohe Luftfeuchtigkeit</text:p><text:p/><text:p>https://www.mein-schoener-garten.de/gartenpraxis/nutzgaerten/rote-bete-ernten-und-haltbar-machen-38478</text:p>
+     </table:table-cell>
+     <table:table-cell table:content-validation-name="val1" office:value-type="string" calcext:value-type="string">
+      <text:p>other_storage</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p>Fresh beet</text:p><text:p>Raw parsnip</text:p><text:p>Raw black salsify</text:p><text:p>Raw celeriac</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Micha Gattinger</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
+      <text:p>2020-08-05</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
+      <text:p>2020-08-22</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="56"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro7">
+     <table:table-cell office:value-type="float" office:value="63" calcext:value-type="float">
+      <text:p>63</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Veränderungen bei Alterung</text:p>
+     </table:table-cell>
+     <table:table-cell/>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p>* wird weich</text:p><text:p>* verfault</text:p>
+     </table:table-cell>
+     <table:table-cell table:content-validation-name="val1" office:value-type="string" calcext:value-type="string">
+      <text:p>assessment</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p>Fresh muskmelons</text:p><text:p>Watermelons</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Micha Gattinger</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
+      <text:p>2020-08-05</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
+      <text:p>2020-08-22</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce4" office:value-type="string" calcext:value-type="string">
+      <text:p>Replace category “Watermelons” with “Fresh watermelons”, once available in Open Food Facts.</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro6">
+     <table:table-cell office:value-type="float" office:value="64" calcext:value-type="float">
+      <text:p>64</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Optimale Lagerbedingungen</text:p>
+     </table:table-cell>
+     <table:table-cell/>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p>Unter optimalen Bedingungen können Melonen 2-3 Wochen gelagert werden:</text:p><text:p/><text:p>* 8 - 10 °C</text:p><text:p>* direkte Sonneneinstrahlung vermeiden</text:p><text:p>* angeschnittene Stellen mit z.B. einer Frischhaltefolie abdecken</text:p>
+     </table:table-cell>
+     <table:table-cell table:content-validation-name="val1" office:value-type="string" calcext:value-type="string">
+      <text:p>refrigerator_storage</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p>Fresh muskmelons</text:p><text:p>Watermelons</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Micha Gattinger</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
+      <text:p>2020-08-05</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
+      <text:p>2020-08-22</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce4" office:value-type="string" calcext:value-type="string">
+      <text:p>Replace category “Watermelons” with “Fresh watermelons”, once available in Open Food Facts.</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro7">
+     <table:table-cell office:value-type="float" office:value="65" calcext:value-type="float">
+      <text:p>65</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Melonensaft einfrieren</text:p>
+     </table:table-cell>
+     <table:table-cell/>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Melonen können zu Saft verarbeitet werden, der gut eingefroren werden kann. Rezepte für Melonensaft gibt es zum Bespiel https://de.wikihow.com/Wassermelonensaft-pressen[hier].</text:p>
+     </table:table-cell>
+     <table:table-cell table:content-validation-name="val1" office:value-type="string" calcext:value-type="string">
+      <text:p>preservation</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p>Fresh muskmelons</text:p><text:p>Watermelons</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Micha Gattinger</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
+      <text:p>2020-08-05</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
+      <text:p>2020-08-22</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce4" office:value-type="string" calcext:value-type="string">
+      <text:p>Replace category “Watermelons” with “Fresh watermelons”, once available in Open Food Facts.</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro6">
+     <table:table-cell office:value-type="float" office:value="66" calcext:value-type="float">
+      <text:p>66</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Veränderungen bei Alterung</text:p>
+     </table:table-cell>
+     <table:table-cell/>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p>Bei Alterung und Verderb zeigen sich folgende Veränderungen:</text:p><text:p/><text:p>* werden weich</text:p><text:p>* werden schrumpelig</text:p><text:p>* verfaulen</text:p>
+     </table:table-cell>
+     <table:table-cell table:content-validation-name="val1" office:value-type="string" calcext:value-type="string">
+      <text:p>assessment</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p>Fresh carrots</text:p><text:p>Fresh Asparagus</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Micha Gattinger</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
+      <text:p>2020-08-05</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
+      <text:p>2020-08-22</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="56"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro14">
+     <table:table-cell office:value-type="float" office:value="67" calcext:value-type="float">
+      <text:p>67</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Optimale Lagerbedingungen</text:p>
+     </table:table-cell>
+     <table:table-cell/>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p>Können unter optimalen Bedingungen 10 - 14 Tage gelagert werden:</text:p><text:p/><text:p>* Kaufverpackung vollständig entfernen</text:p><text:p>* das Grün entfernen</text:p><text:p>* in ein feuchtes Tuch einwickeln</text:p><text:p>* bei 8 - 10 °C dunkel lagern, zu, Beispiel im Kühlschrank</text:p>
+     </table:table-cell>
+     <table:table-cell table:content-validation-name="val1" office:value-type="string" calcext:value-type="string">
+      <text:p>refrigerator_storage</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p>Fresh carrots</text:p><text:p>Fresh Asparagus</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Micha Gattinger</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
+      <text:p>2020-08-05</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
+      <text:p>2020-08-22</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="56"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro9">
+     <table:table-cell office:value-type="float" office:value="68" calcext:value-type="float">
+      <text:p>68</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Veränderungen bei Alterung</text:p>
+     </table:table-cell>
+     <table:table-cell/>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p>* wird runzelig</text:p><text:p>* verfault</text:p><text:p>* wird weich</text:p>
+     </table:table-cell>
+     <table:table-cell table:content-validation-name="val1" office:value-type="string" calcext:value-type="string">
+      <text:p>assessment</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p>Fresh mandarin oranges</text:p><text:p>Grapefruits</text:p><text:p>Fresh oranges</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Micha Gattinger</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
+      <text:p>2020-08-05</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
+      <text:p>2020-08-22</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce4" office:value-type="string" calcext:value-type="string">
+      <text:p>Replace category “Grapefruits” with “Fresh grapefruits”, once available in Open Food Facts.</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro8">
+     <table:table-cell office:value-type="float" office:value="69" calcext:value-type="float">
+      <text:p>69</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Optimale Lagerbedingungen</text:p>
+     </table:table-cell>
+     <table:table-cell/>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p>Können unter optimalen Bedingungen 2 - 4 Wochen gelagert werden:</text:p><text:p/><text:p>* Lagertemeratur bei ca 10 - 18 °C</text:p><text:p>* direktes Sonnenlicht vermeiden</text:p><text:p>* trockener, luftiger Ort</text:p><text:p>* einzeln nebeneinander in z.B. einem geflochtenem Korb lagern</text:p><text:p>* nicht mit anderem Obst/ Gemüse lagern da starke Absonderung des natürlichen Reifegases Ethylen</text:p>
+     </table:table-cell>
+     <table:table-cell table:content-validation-name="val1" office:value-type="string" calcext:value-type="string">
+      <text:p>pantry_storage</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p>Fresh mandarin oranges</text:p><text:p>Grapefruits</text:p><text:p>Fresh oranges</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Micha Gattinger</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
+      <text:p>2020-08-05</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
+      <text:p>2020-08-22</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="56"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro7">
+     <table:table-cell office:value-type="float" office:value="70" calcext:value-type="float">
+      <text:p>70</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Veränderungen bei Alterung</text:p>
+     </table:table-cell>
+     <table:table-cell/>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p>* wird weich / matschig</text:p><text:p>* verfault</text:p>
+     </table:table-cell>
+     <table:table-cell table:content-validation-name="val1" office:value-type="string" calcext:value-type="string">
+      <text:p>assessment</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Fresh tomatoes</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Micha Gattinger</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
+      <text:p>2020-08-05</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
+      <text:p>2020-08-22</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="56"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro15">
+     <table:table-cell office:value-type="float" office:value="71" calcext:value-type="float">
+      <text:p>71</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Optimale Lagerbedingungen</text:p>
+     </table:table-cell>
+     <table:table-cell/>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p>Unter optimalen Bedingungen können Tomaten je nach Reifegrad bis zu 2 Wochen gelagert werden:</text:p><text:p/><text:p>* Tomaten mit Grün reifen nach, ohne nicht.</text:p><text:p>* nicht mit anderem Obst/ Gemüse lagern da starke Absonderung des natürlichen Reifegases Ethylen</text:p><text:p>* unmittelbar vor dem Verzehr waschen</text:p><text:p>* Temperatur 12-16 °C</text:p><text:p>* schattig</text:p><text:p>* luftig und hohe Luftfeuchtigkeit</text:p><text:p>* einzeln nebeneinander auf weichem Untergrund lagern</text:p><text:p/><text:p>https://www.tomaten.de/tomaten-richtig-lagern/[Quelle]</text:p>
+     </table:table-cell>
+     <table:table-cell table:content-validation-name="val1" office:value-type="string" calcext:value-type="string">
+      <text:p>pantry_storage</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Fresh tomatoes</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Micha Gattinger</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
+      <text:p>2020-08-05</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
+      <text:p>2020-08-22</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="56"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro7">
+     <table:table-cell office:value-type="float" office:value="72" calcext:value-type="float">
+      <text:p>72</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Bröckeliges Brot</text:p>
+     </table:table-cell>
+     <table:table-cell/>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Wenn frisches Brot oder Brötchen anfangen, bröckelig zu werden, so ist das ein Zeichen Zeichen für harmlose Umwandlungsprozesse (Wasser / Stärke / Protein).</text:p>
+     </table:table-cell>
+     <table:table-cell table:content-validation-name="val1" office:value-type="string" calcext:value-type="string">
+      <text:p>symptoms</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Breads</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Micha Gattinger</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
+      <text:p>2020-08-05</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
+      <text:p>2020-08-22</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="56"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro17">
+     <table:table-cell office:value-type="float" office:value="73" calcext:value-type="float">
+      <text:p>73</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Riechen und Sehen</text:p>
+     </table:table-cell>
+     <table:table-cell/>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p>. *An der Milch riechen.* Frische Milch hat keinen Eigengeruch. Verdorbene Milch riecht säuerlich bis streng.</text:p><text:p/><text:p>. *Auf optische Veränderung untersuchen.*</text:p><text:p/><text:p>** Wenn Milch schlecht wird entstehen Gase welche die Verpackung aufblähen.</text:p><text:p>** Bilden sich in der Milch Klumpen oder Wasser, hat der Zersetzungsprozess begonnen</text:p><text:p>** Milch ist immer gleichmäßig weiß. Schimmert die Milch gelblich ist sie verdorben</text:p><text:p/><text:p>https://de.wikihow.com/Erkennen-ob-Milch-schlecht-ist[Quelle]</text:p>
+     </table:table-cell>
+     <table:table-cell table:content-validation-name="val1" office:value-type="string" calcext:value-type="string">
+      <text:p>assessment</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p>UHT Milks</text:p><text:p>Condensed milks</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Micha Gattinger</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
+      <text:p>2020-08-05</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
+      <text:p>2020-08-22</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="56"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro7">
+     <table:table-cell office:value-type="float" office:value="74" calcext:value-type="float">
+      <text:p>74</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Haltbarkeit von Pflanzenmilch</text:p>
+     </table:table-cell>
+     <table:table-cell/>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Vor allem Hafer-, Mandel- oder Reismilch sind relativ wässrig was die Haltbarkeit unterstützt. Sojamilch hält sich aufgrund des erhöhten Eiweißanteiles weniger lange.</text:p>
+     </table:table-cell>
+     <table:table-cell table:content-validation-name="val1" office:value-type="string" calcext:value-type="string">
+      <text:p>refrigerator_storage</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Plant milks</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Micha Gattinger</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
+      <text:p>2020-08-05</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
+      <text:p>2020-08-22</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="56"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro17">
+     <table:table-cell office:value-type="float" office:value="75" calcext:value-type="float">
+      <text:p>75</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Riechen und Sehen</text:p>
+     </table:table-cell>
+     <table:table-cell/>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p>. *Riechen.* Frische Pflanzenmilch hat keinen Eigengeruch. Verdorbene Pflanzenmilch riecht muffig bis säuerlich.</text:p><text:p/><text:p>. *Beobachten.*</text:p><text:p/><text:p>** Wenn die Konsistenz nicht mehr wässrig sondern schmierig ist, ist die Pflanzenmilch verdorben.</text:p><text:p>** Bilden sich erste Klümpchen in der Pflanzenmilch, ist diese schlecht.</text:p><text:p>** Hat sich Schimmel gebildet, wegschütten.</text:p><text:p/><text:p>https://www.vital.de/news/artikel/verdorbene-pflanzenmilch-erkennen[Quelle]</text:p>
+     </table:table-cell>
+     <table:table-cell table:content-validation-name="val1" office:value-type="string" calcext:value-type="string">
+      <text:p>assessment</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Plant milks</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Micha Gattinger</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
+      <text:p>2020-08-05</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
+      <text:p>2020-08-22</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="56"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro6">
+     <table:table-cell office:value-type="float" office:value="76" calcext:value-type="float">
+      <text:p>76</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Lagerdauer</text:p>
+     </table:table-cell>
+     <table:table-cell/>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Reine (“dunkle”) Schokolade ohne Füllungen bleibt sehr lange verzehrfähig, auch über das Mindesthaltbarkeitsdatum typischer Supermarktprodukte hinaus. Deshalb wird Schokolade auch z.B. in den sogenannten Einmannpackungen vieler Streitkräfte verwendet, dann mit einer angegebenen Haltbarkeit von 3 bis 10 Jahren (https://de.wikipedia.org/wiki/Einmannpackung#Die_einzelnen_Pakete[Beispiel]).</text:p>
+     </table:table-cell>
+     <table:table-cell table:content-validation-name="val1" office:value-type="string" calcext:value-type="string">
+      <text:p>pantry_storage</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Dark chocolates</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Micha Gattinger</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
+      <text:p>2020-08-05</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
+      <text:p>2020-08-22</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="56"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro6">
+     <table:table-cell office:value-type="float" office:value="77" calcext:value-type="float">
+      <text:p>77</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Fett- und Zuckerreif</text:p>
+     </table:table-cell>
+     <table:table-cell/>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p>Bildet sich auf der Schokolade ein weißlich bis hellgrauer Belag, so hat sich Fett oder Zucker kristallisiert und bildet den Fett- bzw. Zuckerreif. Dieser ist gesundheitlich absolut unbedenklich und mindert auch nicht den Geschmack.</text:p><text:p/><text:p>https://de.wikipedia.org/wiki/Reif_(Schokolade)[Quelle]</text:p>
+     </table:table-cell>
+     <table:table-cell table:content-validation-name="val1" office:value-type="string" calcext:value-type="string">
+      <text:p>symptoms</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Chocolates</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Micha Gattinger</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
+      <text:p>2020-08-05</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
+      <text:p>2020-08-22</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="56"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro9">
+     <table:table-cell office:value-type="float" office:value="78" calcext:value-type="float">
+      <text:p>78</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Nicht für Kleinkinder</text:p>
+     </table:table-cell>
+     <table:table-cell/>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Honig nicht Kleinkindern unter einem Jahr geben (https://www.laves.niedersachsen.de/startseite/lebensmittel/lebensmittelgruppen/honig/bienenhonig-nicht-fuer-kleinkinder-unter-einem-jahr-74002.html[Details]).</text:p>
+     </table:table-cell>
+     <table:table-cell table:content-validation-name="val1" office:value-type="string" calcext:value-type="string">
+      <text:p>risks</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Honeys</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Micha Gattinger</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
+      <text:p>2020-08-05</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
+      <text:p>2020-08-22</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="56"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro12">
+     <table:table-cell office:value-type="float" office:value="79" calcext:value-type="float">
+      <text:p>79</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Typen und Lagerdauer</text:p>
+     </table:table-cell>
+     <table:table-cell/>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p>Die Lagerdauer einer Konserve hängt von ihrem Typ ab:</text:p><text:p/><text:p>. *Halbkonserven (Kesselkonserven)* werden durch Pasteurisieren (siehe 4.2.1) auf 65-95 °C (F-Wert 0,4-0,7) Kerntemperatur erhitzt. Hierdurch werden die meisten pathogenen, nicht aber sämtliche lebende Keime abgetötet. Daher sind diese bei 4 - 5 °C rund 6 Monate haltbar. </text:p><text:p/><text:p>. *Dreiviertelkonserven* werden durch Pasteurisieren (siehe 4.2.1) auf rund 100 °C (F-Wert 0.8-1,5) Kerntemperatur erhitzt. Lagerdauer 6-12 Monate bei 7-10 Grad (27, 28).</text:p><text:p/><text:p>. *Vollkonserven* werden durch Dampfsterilisation (siehe 4.2.2) mit mind. 117 °C und max. 131 °C (F- Wert 5,0-6,0) Kerntemperatur erhitzt (27, 28). Diese Konservierung ist bei max. 25 °C Lagertemperatur theoretisch nahezu unbegrenzt haltbar (26).</text:p><text:p/><text:p>. *Tropenkonserven* werden durch Dampfsterilisation (siehe 4.2.2) auf 132 - 135 °C ( F-Wert 16,0-20,0) erhitzt. Sie sind bei max. 40 °C theoretisch nahezu unbegrenzt haltbar.</text:p>
+     </table:table-cell>
+     <table:table-cell table:content-validation-name="val1" office:value-type="string" calcext:value-type="string">
+      <text:p>pantry_storage</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Canned foods</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Micha Gattinger</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
+      <text:p>2020-08-05</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
+      <text:p>2020-08-22</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="56"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro10">
+     <table:table-cell office:value-type="float" office:value="80" calcext:value-type="float">
+      <text:p>80</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Lagerung nur im Kühlschrank</text:p>
+     </table:table-cell>
+     <table:table-cell/>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p>Dies ist ein kalt gepresstes Öl mit einem hohen Anteil an mehrfach ungesättigten Fettsäuren. Solche Öle müssen im Kühlschrank gelagert werden.</text:p><text:p/><text:p>https://de.wikipedia.org/wiki/Speisefette_und_Speise%C3%B6le[Quelle]</text:p>
+     </table:table-cell>
+     <table:table-cell table:content-validation-name="val1" office:value-type="string" calcext:value-type="string">
+      <text:p>refrigerator_storage</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p>Linseed oils</text:p><text:p>Walnut oils</text:p><text:p>Safflower oils</text:p><text:p>Soybean oils</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Micha Gattinger</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
+      <text:p>2020-08-05</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
+      <text:p>2020-08-22</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Add category “Cotton seed oils” once available in Open Food Facts.</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro10">
+     <table:table-cell office:value-type="float" office:value="81" calcext:value-type="float">
+      <text:p>81</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Richtige Lagerung</text:p>
+     </table:table-cell>
+     <table:table-cell/>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p>Für dieses Öl und andere Öle mit einem mittleren Anteil an mehrfach ungesättigten Fettsäuren wird eine Lagerung bei 20 °C empfohlen. Lagerung im Kühlschrank ist nicht notwendig.</text:p><text:p/><text:p>https://de.wikipedia.org/wiki/Speisefette_und_Speise%C3%B6le[Quelle]</text:p>
+     </table:table-cell>
+     <table:table-cell table:content-validation-name="val1" office:value-type="string" calcext:value-type="string">
+      <text:p>pantry_storage</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p>Rapeseed oils</text:p><text:p>Olive oils</text:p><text:p>Peanut oils</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Micha Gattinger</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
+      <text:p>2020-08-05</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
+      <text:p>2020-08-22</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="56"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro17">
+     <table:table-cell office:value-type="float" office:value="82" calcext:value-type="float">
+      <text:p>82</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Nicht zum Braten verwenden</text:p>
+     </table:table-cell>
+     <table:table-cell/>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p>Dieses Öl hat einen mittleren oder hohen Anteil an mehrfach ungesättigten Fettsäuren. Solche Öle haben einen geringen Rauchpunkt und bilden daher bei hohen Temperaturen krebserregende Stoffe. Sie sollten daher nicht zum Braten oder Backen verwendet werden, wo sie solchen Temperaturen ausgesetzt sein könnten.</text:p><text:p/><text:p>Anders liegt der Fall, wenn dieses Öl bei der Herstellung raffiniert wurde. Raffinierte Öle werden bei fast immer weit über 100 Grad gepresst und verlieren dabei fast alle mehrfach gesättigten Fettsäuen. Dafür erhöht sich der Rauchpunkt (wichtig für das Braten und Backen). Außerdem erhöht sich die Haltbarkeit.</text:p><text:p/><text:p>https://de.wikipedia.org/wiki/Speisefette_und_Speise%C3%B6le[Quelle]</text:p>
+     </table:table-cell>
+     <table:table-cell table:content-validation-name="val1" office:value-type="string" calcext:value-type="string">
+      <text:p>risks</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p>Linseed oils</text:p><text:p>Walnut oils</text:p><text:p>Safflower oils</text:p><text:p>Soybean oils</text:p><text:p>Rapeseed oils</text:p><text:p>Olive oils</text:p><text:p>Peanut oils</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Micha Gattinger</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
+      <text:p>2020-08-05</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
+      <text:p>2020-08-22</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Add category “Cotton seed oils” once available in Open Food Facts.</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro6">
+     <table:table-cell office:value-type="float" office:value="83" calcext:value-type="float">
+      <text:p>83</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Richtige Lagerung</text:p>
+     </table:table-cell>
+     <table:table-cell/>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p>Dies gehört zu der Gruppe der Öle, Schmalze, Talge und Fette mit wenig oder sehr wenig mehrfach ungesättigten Fettsäuren. Das sollte bedeuten, dass eine Lagerung bei ca. 20 °C möglich ist und kein Kühlschrank benötigt wird, wenn auf der Packung nicht anders angegeben.</text:p><text:p/><text:p>https://de.wikipedia.org/wiki/Speisefette_und_Speise%C3%B6le[Quelle]</text:p>
+     </table:table-cell>
+     <table:table-cell table:content-validation-name="val1" office:value-type="string" calcext:value-type="string">
+      <text:p>pantry_storage</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p>Lards</text:p><text:p>Palm oils</text:p><text:p>Butter oil or concentrated butter</text:p><text:p>Coconut oils</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Micha Gattinger</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
+      <text:p>2020-08-05</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
+      <text:p>2020-08-22</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="56"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro14">
+     <table:table-cell office:value-type="float" office:value="84" calcext:value-type="float">
+      <text:p>84</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Unbedenklich</text:p>
+     </table:table-cell>
+     <table:table-cell/>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p>Dieses Lebensmittel ist unbedenklich für einige Jahre haltbar.</text:p><text:p/><text:p>https://www.br.de/radio/bayern1/mindesthaltbarkeitsdatum-verbrauchsdatum-unterschied-102.html[Quelle]</text:p>
+     </table:table-cell>
+     <table:table-cell table:content-validation-name="val1" office:value-type="string" calcext:value-type="string">
+      <text:p>pantry_storage</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="Default" office:value-type="string" calcext:value-type="string"><text:p>Ground dried aromatic plants</text:p><text:p>Lyophilized aromatic plants</text:p><text:p>Cocoa powders</text:p><text:p>Baking powder or raising agent</text:p><text:p>Vanilla powder</text:p><text:p>Vanilla sugars</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Micha Gattinger</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
+      <text:p>2020-08-05</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
+      <text:p>2020-08-22</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce4" office:value-type="string" calcext:value-type="string">
+      <text:p>Add the English categories corresponding to German “Orangeat” and “Zitronat” once available in Open Food Facts.</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro6">
+     <table:table-cell office:value-type="float" office:value="85" calcext:value-type="float">
+      <text:p>85</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Vor Gebrauch überprüfen</text:p>
+     </table:table-cell>
+     <table:table-cell/>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p>Nach dem Ablauf des Mindesthaltbarkeitsdatums sollten ganze Vanilleschoten vor dem Gebrauch überprüft werden. Es besteht die Gefahr von Schimmelbefall.</text:p><text:p/><text:p>https://www.br.de/radio/bayern1/mindesthaltbarkeitsdatum-verbrauchsdatum-unterschied-102.html[Quelle]</text:p>
+     </table:table-cell>
+     <table:table-cell table:content-validation-name="val1" office:value-type="string" calcext:value-type="string">
+      <text:p>pantry_storage</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Vanilla pods</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Micha Gattinger</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
+      <text:p>2020-08-05</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
+      <text:p>2020-08-22</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="56"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro6">
+     <table:table-cell office:value-type="float" office:value="86" calcext:value-type="float">
+      <text:p>86</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Vor Gebrauch überprüfen</text:p>
+     </table:table-cell>
+     <table:table-cell/>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p>Nach dem Ablauf des Mindesthaltbarkeitsdatums sollten Nüsse vor dem Gebrauch überprüft werden. Es besteht die Gefahr von Ranzigwerden und Schimmelbefall.</text:p><text:p/><text:p>https://www.br.de/radio/bayern1/mindesthaltbarkeitsdatum-verbrauchsdatum-unterschied-102.html[Quelle]</text:p>
+     </table:table-cell>
+     <table:table-cell table:content-validation-name="val1" office:value-type="string" calcext:value-type="string">
+      <text:p>pantry_storage</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Nuts</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Micha Gattinger</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
+      <text:p>2020-08-05</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
+      <text:p>2020-08-22</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="56"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro6">
+     <table:table-cell office:value-type="float" office:value="87" calcext:value-type="float">
+      <text:p>87</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Vor Gebrauch überprüfen</text:p>
+     </table:table-cell>
+     <table:table-cell/>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p>Nach dem Ablauf des Mindesthaltbarkeitsdatums sollten Trockenfrüchte vor dem Gebrauch überprüft werden. Es besteht die Gefahr von Schimmelbefall.</text:p><text:p/><text:p>https://www.br.de/radio/bayern1/mindesthaltbarkeitsdatum-verbrauchsdatum-unterschied-102.html[Quelle]</text:p>
+     </table:table-cell>
+     <table:table-cell table:content-validation-name="val1" office:value-type="string" calcext:value-type="string">
+      <text:p>pantry_storage</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Dried fruits</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Micha Gattinger</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
+      <text:p>2020-08-05</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
+      <text:p>2020-08-22</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="56"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro11" table:number-rows-repeated="1048487">
+     <table:table-cell table:number-columns-repeated="4"/>
+     <table:table-cell table:content-validation-name="val1"/>
+     <table:table-cell table:number-columns-repeated="60"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro11">
+     <table:table-cell table:number-columns-repeated="4"/>
+     <table:table-cell table:content-validation-name="val1"/>
+     <table:table-cell table:number-columns-repeated="60"/>
+    </table:table-row>
+   </table:table>
+   <table:named-expressions/>
+  </office:spreadsheet>
+ </office:body>
+</office:document>
