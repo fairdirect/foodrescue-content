@@ -35,15 +35,9 @@
     target file per language is created, and a translation management system helps to keep both in sync. -->
   </info>
 
-  <section xml:id="_crunchy">
-    <title>When it's crunchy</title>
 
-    <simpara>When crisp bread is still crunchy, it is still good to eat. This is
-      described in more detail here, including literature references.</simpara>
-  </section>
-
-
-  <simpara>Allowed values for topic@type:
+  <section xml:id="_allowed_values_1">
+    <title>Allowed values for topic@type</title>
 
     <itemizedlist>
       <listitem>
@@ -82,10 +76,11 @@
         <simpara>reuse_and_recycling</simpara>
       </listitem>
     </itemizedlist>
-  </simpara>
+  </section>
 
-  <simpara>Allowed values for subjectset with @scheme =
-  off-categories-subset-frc
+
+  <section xml:id="_allowed_values_2">
+    <title>Allowed values for subjectset with @scheme = off-categories-subset-frc</title>
 
     <itemizedlist>
       <listitem>
@@ -96,15 +91,30 @@
         necessary, as the subset only contains categories that have an English
         name.</simpara>
       </listitem>
-    </itemizedlist>
+    </itemizedlist>    
+  </section>
 
-  </simpara>
 
-  <simpara><emphasis role="strong">strong emphasis</emphasis></simpara>
+  <section xml:id="_syntax_tests">
+    <title>Syntax tests</title>
 
-  <simpara><emphasis>normal emphasis</emphasis></simpara>
+    <simpara><emphasis role="strong">strong emphasis</emphasis></simpara>
+    <simpara><emphasis>normal emphasis</emphasis></simpara>
+    <simpara><link xl:href="https://example.com/">Example link</link></simpara>
 
-  <simpara><link xl:href="https://example.com/">Example link</link></simpara>
+    <orderedlist numeration="arabic">
+      <listitem><simpara><emphasis role="strong">Line title 1.</emphasis> Line text 1.</simpara></listitem>
+      <listitem>
+        <simpara><emphasis role="strong">Line title 2.</emphasis> Line text 2.</simpara>
+        <itemizedlist>
+          <listitem><simpara>Nested list item 1.</simpara></listitem>
+          <listitem><simpara>Nested list item 2.</simpara></listitem>
+          <listitem><simpara>Nested list item 3.</simpara></listitem>
+        </itemizedlist>
+      </listitem>
+    </orderedlist>
+  </section>
+
 
   <xi:include href="bibliography.xml"/>
 </topic>
