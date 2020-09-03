@@ -1,0 +1,129 @@
+#!/usr/bin/env ruby
+
+# Gem includes. See Gemfile.
+require 'docopt'
+require 'rake'
+require 'rake/tasklib'
+
+# Local, non-gem includes.
+require_relative '../lib/food_rescue'
+
+version = '0.1'
+
+# [Docopt](http://docopt.org/) command line documentation and argument parser spec.
+# @todo (later) Generate the list of available targets and their descriptions automatically from 
+#   the available Rake tasks, using the API equivalent of `rake -T`.
+doc = <<DOCOPT
+Build system for the food rescue content project.
+
+This is the only script you need to build the Food Rescue Content. Just call "#{__FILE__} make" to 
+build all targets. You can specify one or more TARGET to only build these parts of the output (and 
+the parts needed as prerequisites). Available TARGET values:
+
+* database: Complete SQLite3 database with the food rescue content.
+* database_categories: SQLite3 database with the Open Food Facts categories.
+* database_products: SQLite3 database with the Open Food Facts products information.
+* database_topics: SQLite3 database with the topics / articles about food rescue.
+* pdf: A PDF file with the food rescue content. (NOT YET IMPLEMENTED)
+* epub: An EPUB file with the food rescue content. (NOT YET IMPLEMENTED)
+* html: A set of static HTML files with the food rescue content. (NOT YET IMPLEMENTED)
+* doc: All class and method documentation for the food rescue content scripts.
+* doc_essentials: Faster build of only the essential class and method documentation.
+* clean: Remove all previously generated outputs.
+
+All output will appear in the `build/` and `doc/` directories.
+
+Usage:
+  #{__FILE__} make
+  #{__FILE__} make TARGET..
+  #{__FILE__} -h | --help
+  #{__FILE__} -v | --version
+
+Options:
+  -h, --help                     Show this screen.
+  -v, --version                  Show version.
+
+DOCOPT
+
+
+##########################################################################
+# Task library
+
+# A library / toolkit of the code needed in tasks that build Food Rescue Content outputs.
+# 
+# While this class provides the toolkit, each instance then is a specific Rake task that uses this toolkit and does one thing, 
+# such as "import the products into the database".
+# 
+# **How to avoid Rakefile syntax.** The food rescue content build system is based on Rake, but without the typical `Rakefile` 
+# syntax. Instead, we use the rather nice object-oriented interface to Rake. See, for the inspiration: [How A .NET Developer 
+# Hacked Out A Rake Task](https://lostechies.com/derickbailey/2009/09/17/how-a-net-developer-hacked-out-a-rake-task/).
+# The reasons for avoiding Rakefile syntax:
+# 
+# * Rakefile syntax relies on the Ruby feature that "you are allowed to leave out the parentheses if you pass a 
+# Hash literal as the very last argument" of a method call ([see](https://stackoverflow.com/a/53955936/1270008)). This 
+# feature has been deprecated in Ruby 2.7 and will be removed in Ruby 3.0 altogether; see 
+# ([The Ruby Style Guide](https://rubystyle.guide/#no-braces-opts-hash)) and [this blog 
+# post](https://bloggie.io/@kinopyo/how-to-fix-ruby-2-7-warning-using-the-last-argument-as-keyword-parameters-is-deprecated).
+#
+# * Rakefile syntax is an internal domain-specific language. That's fine, but not the way it is implemented. Rakefile syntax 
+# does not map to native Ruby syntax in an intuitive way (the way you're used to understand Ruby programs), which is bad.
+# For example, see the way how parameter handling is done, changing which element gets the "`=>`". By defining the class 
+# initializer, we can get to a "better" DSL for defining tasks, as seen below.
+# 
+# * Rakefile syntax usually needs a `Rakefile` or `file.rake` file, but we'd like to keep everything in one executable script.
+class FoodRescue::Task < Rake::TaskLib 
+  # @todo Implementation.
+
+  def initialize(name, depends_on: nil)
+    # @todo Implementation. Use the way of passing dependencies via a separate parameter as shown in 
+    # https://lostechies.com/derickbailey/2009/09/17/how-a-net-developer-hacked-out-a-rake-task/ but also map this internally 
+    # to the Rake way of automatic dependency handling shown in 
+    # https://lostechies.com/derickbailey/2009/09/18/an-alternate-way-to-handle-task-dependencies-in-custom-rake-tasks/ .
+  end
+
+end
+
+
+##########################################################################
+# Rake task definitions
+
+# One task corresponds to one command-line "make target".
+
+FoodRescue::Task.new 'database', depends_on: ['database_categories', 'database_products', 'database_topics'] do |t| 
+  # @todo Implementation.
+end
+
+FoodRescue::Task.new 'database_categories' do |t|
+  # @todo Implementation.
+end
+
+FoodRescue::Task.new 'database_products', depends_on: 'database_categories' do |t|
+  # @todo Implementation.
+end
+
+FoodRescue::Task.new 'database_topics', depends_on: 'database_categories' do |t|
+  # @todo Implementation.
+end
+
+FoodRescue::Task.new 'doc' do |t|
+  # @todo Implementation.
+end
+
+FoodRescue::Task.new 'doc_essentials' do |t|
+  # @todo Implementation.
+end
+
+FoodRescue::Task.new 'clean' do |t|
+  # @todo Implementation. See the notes about out-of-the-box cleaning abilities of Rake:
+  # https://martinfowler.com/articles/rake.html#BuiltInCleaning
+end
+
+
+##########################################################################
+# Main program
+
+# Execute the Rake tasks for the targets to build.
+#
+# No need for any Rakefile, as the tasks are defined in the code above; see https://stackoverflow.com/q/3530. And it does not 
+# matter in what order the tasks are invoked, as each task will only run once and dependency tasks are automatically run before.
+args['TARGET'].each { |t| Rake.application[t].invoke }

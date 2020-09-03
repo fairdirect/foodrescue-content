@@ -68,7 +68,7 @@ csv_read_options = { headers: true, col_sep: "\t", quote_char: "\u{2723}" }
 # https://dalibornasevic.com/posts/68
 CSV.foreach(args['INFILE'], csv_read_options) do |record|
   
-  # Work with Hash as CSV::Row objects do not support #slice etc..
+  # Work with a hash, because CSV::Row objects do not support #slice etc..
   record = record.to_hash
 
   # Do not process this record if any value in required columns is empty.

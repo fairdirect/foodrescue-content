@@ -26,10 +26,12 @@
 !/content-products/products-delta.*.2-filtered.json
 
 # Ignore the Android app package from which the FoodKeeper database was extracted.
-/content-topics-foodkeeper/foodkeeper_android_app.apk
+/content-topics/topics-foodkeeper-*-1_app.apk
 
-# Ignore the derived versions of import_mapping_data.fods.
-/content-topics-foodkeeper/foodkeeper_extra_data.csv
+# Ignore derived and obsolete file formats for food rescue topics.
+/content-topics/topics-foodkeeper-en-source-*-extras.fods.csv
+/content-topics/topics-native-en.fods.csv
+/content-topics/topics-native-en.odt
 
 # Ignore experiments with no re-usable results.
 /experiments/ruby-syntax.rb
