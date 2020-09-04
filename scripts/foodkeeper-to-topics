@@ -164,13 +164,16 @@ def import_food_rescue_categories(catmap_path, db)
 end
 
 
-# Import additional hints to specify the FoodKeeper product more precisely than by category, where needed.
+# Import names for FoodKeeper products that can be used in ordinary sentences.
+#
+# Because the hierarchical names consisting of product category, subcategory, name and name subtitle cannot reasonably be
+# used when formulating full sentences.
 # 
 # @param csv_path [String]  Path to the CSV file with the category mapping. Expected columns: "FoodKeeper Product ID" and 
 #   "Food Rescue Topic Intro".
 # @param db [SQLite3::Database]  The database connection to the FoodKeeper database. The category mapping refers to product 
 #   records in this database by ID.
-def import_food_rescue_topic_intro(csv_path, db)
+def import_food_rescue_food_names(csv_path, db)
 
   # Let the OS sync write operations to the database file when it wants rather than after each command.
   # 
@@ -180,16 +183,18 @@ def import_food_rescue_topic_intro(csv_path, db)
   db.execute 'PRAGMA synchronous = OFF'
 
   # Create the database table for the category mapping.
-  db.execute 'ALTER TABLE PRODUCTS ADD COLUMN Topic_Intro TEXT'
+  db.execute 'ALTER TABLE PRODUCTS ADD COLUMN Food_Rescue_Food_Name_en TEXT'
+  db.execute 'ALTER TABLE PRODUCTS ADD COLUMN Food_Rescue_Food_Name_de TEXT'
 
   # Import the topic intro texts from the CSV file.
   CSV.foreach(csv_path, { headers: true }) do |row|
     foodkeeper_id = Integer(row['FoodKeeper Product ID'])
-    topic_intro = row['Food Rescue Topic Intro']
 
-    next if topic_intro.nil? or topic_intro.empty?
-    
-    db.execute 'UPDATE PRODUCTS SET Topic_Intro = ? WHERE ID = ?', [topic_intro, foodkeeper_id]
+    name_en = row['Food Rescue Food Name en']
+    db.execute 'UPDATE PRODUCTS SET Food_Rescue_Food_Name_en = ? WHERE ID = ?', [name_en, foodkeeper_id] unless name_en.nil? or name_en.empty?
+
+    name_de = row['Food Rescue Food Name de']
+    db.execute 'UPDATE PRODUCTS SET Food_Rescue_Food_Name_de = ? WHERE ID = ?', [name_de, foodkeeper_id] unless name_en.nil? or name_en.empty?
   end
 
   # Restore synchronous operation, which was disabled at the start of the method.
@@ -246,6 +251,7 @@ def storage_types(product_id, db)
   return storage_types
 end
 
+
 # Render the specified product's shelf life into a string like "6-9 Months".
 # 
 # @param product_id [Integer]  The FoodKeeper database's PRODUCTS.ID value of the product about which the topic will be about.
@@ -267,14 +273,14 @@ def shelf_life(product_id, db, field_prefix)
 
   text_after = case field_prefix
     when 'Pantry';                      'in the pantry, whether sealed or not'
-    when 'DOP_Pantry';                  'in the pantry, if still sealed'
-    when 'Pantry_After_Opening';        'in the pantry, after opening the package'
+    when 'DOP_Pantry';                  'in the pantry if still sealed'
+    when 'Pantry_After_Opening';        'in the pantry after opening the package'
     when 'Refrigerate';                 'in the fridge, whether sealed or not'
-    when 'DOP_Refrigerate';             'in the fridge, if stored there immediately after purchase, whether sealed or not'
-    when 'Refrigerate_After_Opening';   'in the fridge, if stored there after opening the package'
-    when 'Refrigerate_After_Thawing';   'in the fridge, if stored there after thawing a frozen item, whether sealed or not'
+    when 'DOP_Refrigerate';             'in the fridge if stored there immediately after purchase, whether sealed or not'
+    when 'Refrigerate_After_Opening';   'in the fridge if stored there after opening the package'
+    when 'Refrigerate_After_Thawing';   'in the fridge if stored there after thawing a frozen item, whether sealed or not'
     when 'Freeze';                      'in the freezer, whether sealed or not'
-    when 'DOP_Freeze';                  'in the freezer, if stored there immediately after purchase, whether sealed or not'
+    when 'DOP_Freeze';                  'in the freezer if stored there immediately after purchase, whether sealed or not'
   end
 
   if min_duration.empty?
@@ -290,94 +296,51 @@ def shelf_life(product_id, db, field_prefix)
 end
 
 
-# Render the specified product's storage tips into a string.
-# 
+# Generate the main text for a topic about estimated storage durations.
+#
+# The topic intro text is "For …, the typical storage life is: …", followed by optional storage tips. The first ellipsis is
+# filled with the full name of the FoodKeeper product, or if `PRODUCTS.Topic_Intro` provides a text to specify the food
+# items precisely, with that text. This sentence is meant to help the user spot categorization errors.
+#
 # @param product_id [Integer]  The FoodKeeper database's PRODUCTS.ID value of the product about which the topic will be about.
 # @param db [SQLite3::Database]  The database connection to the FoodKeeper database.
 # @param storage_type [Symbol]  The storage type to generate instructions for. Any of `:pantry`, `:refrigerator`, `:freezer`.
-# @return [String]  The storage tips string, which can be the empty string.
-def storage_tips(product_id, db, storage_type: nil)
+# @return [String]  The topic text, in AsciiDoctor format.
+# @see #import_food_rescue_categories Where the data is imported that this method needs.
+def topic_text(product_id, db, storage_type: nil)
   product = db.get_first_row('SELECT * FROM PRODUCTS WHERE ID = ?', [ product_id ])
+  category = db.get_first_row 'SELECT * FROM FOOD_CATEGORY WHERE ID = ?', [ product['Category_ID'] ]
 
-  # Note that tips fields are either named `*_Tips` or `*_tips`. It should be `*_Tips` everywhere, as SQLite3 column names 
-  # are case-independent, this sloppyness is tolerated in the database. But not for the hash keys here.
-  case storage_type
-  when :pantry
-    product['Pantry_tips']
-  when :refrigerator
-    product['Refrigerate_tips']
-  when :freezer
-    product['Freeze_Tips']
-  end
-end
-
-
-# Generate a list of storage instructions in DocBook XML for the specified product.
-# 
-# @param product_id [Integer]  The FoodKeeper database's PRODUCTS.ID value of the product about which the topic will be about.
-# @param db [SQLite3::Database]  The database connection to the FoodKeeper database.
-# @param storage_type [Symbol]  The storage type to generate instructions for. Any of `:pantry`,
-#   `:refrigerator`, `:freezer`.
-# @param include_tips [Boolean]  Whether to also include more detailed storage tips, or just show storage durations.
-# @return [String]
-def storage_durations(product_id, db, storage_type: nil, include_tips: true)
-  # Field / column prefixes by storage type. 
-  field_prefixes = {
+  # Database column prefixes by storage type.
+  column_prefixes = {
     pantry:       [ 'Pantry',      'DOP_Pantry',      'Pantry_After_Opening'                                   ],
     refrigerator: [ 'Refrigerate', 'DOP_Refrigerate', 'Refrigerate_After_Opening', 'Refrigerate_After_Thawing' ],
     freezer:      [ 'Freeze',      'DOP_Freeze'                                                                ]
   }
 
-  instructions = ''
-  selected_prefixes = field_prefixes[storage_type]
-
-  selected_prefixes.each do |prefix|
-    instruction = shelf_life(product_id, db, prefix) 
-    instructions += " and " unless (instructions.empty? or instruction.empty?)
-    instructions =+ instruction unless instruction.empty?
+  # Shelf life durations as one sentence.
+  shelf_life_text = ''
+  column_prefixes[storage_type].each do |prefix|
+    shelf_life = shelf_life(product_id, db, prefix)
+    shelf_life_text += ", and " unless (shelf_life_text.empty? or shelf_life.empty?)
+    shelf_life_text += shelf_life unless shelf_life.empty?
   end
 
-  return instructions
-end
-
-
-# Generate an introductory sentence for the list of estimated storage durations.
-# 
-# The topic intro text is "For …, the typical storage life is:". The ellipsis is filled with the full name of the FoodKeeper
-# product, or if `PRODUCTS.Topic_Intro` provides a text to specify the food items precisely, with that text. This sentence
-# is meant to help the user spot categorization errors.
-# 
-# @param product_id [Integer]  The FoodKeeper database's PRODUCTS.ID value of the product about which the topic will be about.
-# @param db [SQLite3::Database]  The database connection to the FoodKeeper database.
-# @return [String]
-# @see #import_food_rescue_categories Where the data is imported that this method needs.
-# 
-# @todo Rename to #content_intro, in analogy to the naming in class Topic.
-def topic_intro_text(product_id, db)
-  product = db.get_first_row('SELECT * FROM PRODUCTS WHERE ID = ?', [ product_id ])
-  category = db.get_first_row 'SELECT * FROM FOOD_CATEGORY WHERE ID = ?', [ product['Category_ID'] ]
-
-  full_name = [category['Category_Name'], category['Subcategory_Name'], product['Name']].join(': ')
-  full_name = "#{full_name} (#{product['Name_subtitle']})" unless product['Name_subtitle'].empty?
-
-  if product['Topic_Intro'].nil? or product['Topic_Intro'].empty?
-    return "For #{full_name}, the typical storage life is "
+  # Name to use for the product in the topic text.
+  if product['Food_Rescue_Food_Name_en'].nil? or product['Food_Rescue_Food_Name_en'].empty?
+    name = [category['Category_Name'], category['Subcategory_Name'], product['Name']].join(': ')
+    name = "#{name} (#{product['Name_subtitle']})" unless product['Name_subtitle'].empty?
   else
-    return "#{product['Topic_Intro']}, the typical storage life is "
+    name = product['Food_Rescue_Food_Name_en']
   end
-end
 
+  # Storage tips.
+  #   Note that tips fields are either named `*_Tips` or `*_tips`. It should be `*_Tips` everywhere. SQLite3 column names
+  #   are case-independent, so this sloppyness is tolerated in the database. But not for the hash keys here.
+  tips_field = { pantry: 'Pantry_tips', refrigerator: 'Refrigerate_tips', freezer: 'Freeze_Tips' }[storage_type]
+  tips = if product[tips_field].empty? then '' else "\n\n(Hints: #{product[tips_field]})" end
 
-# Generate a closing sentence for the list of estimated storage durations.
-#
-# @param product_id [Integer]  The FoodKeeper database's PRODUCTS.ID value of the product about which the topic will be about.
-# @param db [SQLite3::Database]  The database connection to the FoodKeeper database.
-# @return [String]
-# @see #import_food_rescue_categories Where the data is imported that this method needs.
-# 
-# @todo Rename to #content_outro, in analogy to the naming in class Topic.
-def topic_outro_text(product_id, db)
-  return ''
+  return "For #{name}, the typical storage life is #{shelf_life_text}.#{tips}"
 end
 
 
@@ -392,26 +355,11 @@ end
 #   "ID", "Title", "Abstract", "Text", "Topic type", "Categories", "Author", "Date added", "Version date", "Note".
 def storage_topic(product_id, topic_id, db, storage_type)
   topic = { }
-
   topic[:id] = topic_id
-
-  titles = { pantry: 'Storage duration', refrigerator: 'Storage duration', freezer: 'Storage duration'}
-  topic[:title] = titles[storage_type]
-
-  # No abstract by default because FoodKeeper topics are very short already.
-  topic[:abstract] = ''
-
-  topic[:text] = ''
-  topic[:text] += topic_intro_text(product_id, db)
-  topic[:text] += storage_durations(product_id, db, storage_type: storage_type) + "."
-  tips = storage_tips(product_id, db, storage_type: storage_type)
-  topic[:text] += "\n\n" + tips unless tips.empty?
-  outro = topic_outro_text(product_id, db)
-  topic[:text] += "\n\n" + outro unless outro.empty?
-
-  types = { pantry: 'pantry_storage', refrigerator: 'refrigerator_storage', freezer: 'freezer_storage'}
-  topic[:type] = types[storage_type]
-
+  topic[:title] = 'Storage duration'
+  topic[:abstract] = '' # No abstract by default because FoodKeeper topics are very short already.
+  topic[:text] = topic_text(product_id, db, storage_type: storage_type)
+  topic[:type] = "#{storage_type}_storage"
   topic[:categories] = categories(product_id, db).join("\n")
 
   # Author information about the FoodKeeper app.
@@ -492,7 +440,7 @@ begin
   fk_file_db.close
 
   import_food_rescue_categories args['CSV_IN'], fk_mem_db
-  import_food_rescue_topic_intro args['CSV_IN'], fk_mem_db
+  import_food_rescue_food_names args['CSV_IN'], fk_mem_db
   
   # Load each (English) FoodKeeper product and import it into the database.
   num = 1
