@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <office:document xmlns:presentation="urn:oasis:names:tc:opendocument:xmlns:presentation:1.0" xmlns:grddl="http://www.w3.org/2003/g/data-view#" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xforms="http://www.w3.org/2002/xforms" xmlns:dom="http://www.w3.org/2001/xml-events" xmlns:script="urn:oasis:names:tc:opendocument:xmlns:script:1.0" xmlns:form="urn:oasis:names:tc:opendocument:xmlns:form:1.0" xmlns:math="http://www.w3.org/1998/Math/MathML" xmlns:draw="urn:oasis:names:tc:opendocument:xmlns:drawing:1.0" xmlns:dr3d="urn:oasis:names:tc:opendocument:xmlns:dr3d:1.0" xmlns:text="urn:oasis:names:tc:opendocument:xmlns:text:1.0" xmlns:style="urn:oasis:names:tc:opendocument:xmlns:style:1.0" xmlns:formx="urn:openoffice:names:experimental:ooxml-odf-interop:xmlns:form:1.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:ooo="http://openoffice.org/2004/office" xmlns:loext="urn:org:documentfoundation:names:experimental:office:xmlns:loext:1.0" xmlns:office="urn:oasis:names:tc:opendocument:xmlns:office:1.0" xmlns:fo="urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0" xmlns:field="urn:openoffice:names:experimental:ooo-ms-interop:xmlns:field:1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:meta="urn:oasis:names:tc:opendocument:xmlns:meta:1.0" xmlns:config="urn:oasis:names:tc:opendocument:xmlns:config:1.0" xmlns:calcext="urn:org:documentfoundation:names:experimental:calc:xmlns:calcext:1.0" xmlns:svg="urn:oasis:names:tc:opendocument:xmlns:svg-compatible:1.0" xmlns:of="urn:oasis:names:tc:opendocument:xmlns:of:1.2" xmlns:chart="urn:oasis:names:tc:opendocument:xmlns:chart:1.0" xmlns:rpt="http://openoffice.org/2005/report" xmlns:table="urn:oasis:names:tc:opendocument:xmlns:table:1.0" xmlns:css3t="http://www.w3.org/TR/css3-text/" xmlns:number="urn:oasis:names:tc:opendocument:xmlns:datastyle:1.0" xmlns:ooow="http://openoffice.org/2004/writer" xmlns:oooc="http://openoffice.org/2004/calc" xmlns:tableooo="http://openoffice.org/2009/table" xmlns:drawooo="http://openoffice.org/2010/draw" office:version="1.2" office:mimetype="application/vnd.oasis.opendocument.spreadsheet">
- <office:meta><dc:date>2020-08-28T19:02:48.397424485</dc:date><dc:creator>Matthias Ansorg</dc:creator><meta:editing-duration>PT24M16S</meta:editing-duration><meta:editing-cycles>5</meta:editing-cycles><meta:generator>LibreOffice/6.3.5.2$Linux_X86_64 LibreOffice_project/30$Build-2</meta:generator><meta:document-statistic meta:table-count="1" meta:cell-count="1018" meta:object-count="0"/></office:meta>
+ <office:meta><dc:date>2020-09-05T14:03:23.623873594</dc:date><dc:creator>Matthias Ansorg</dc:creator><meta:editing-duration>PT31M41S</meta:editing-duration><meta:editing-cycles>8</meta:editing-cycles><meta:generator>LibreOffice/6.3.5.2$Linux_X86_64 LibreOffice_project/30$Build-2</meta:generator><meta:document-statistic meta:table-count="1" meta:cell-count="1141" meta:object-count="0"/></office:meta>
  <office:settings>
   <config:config-item-set config:name="ooo:view-settings">
    <config:config-item config:name="VisibleAreaTop" config:type="int">0</config:config-item>
    <config:config-item config:name="VisibleAreaLeft" config:type="int">0</config:config-item>
-   <config:config-item config:name="VisibleAreaWidth" config:type="int">49341</config:config-item>
+   <config:config-item config:name="VisibleAreaWidth" config:type="int">52572</config:config-item>
    <config:config-item config:name="VisibleAreaHeight" config:type="int">451620</config:config-item>
    <config:config-item-map-indexed config:name="Views">
     <config:config-item-map-entry>
      <config:config-item config:name="ViewId" config:type="string">view1</config:config-item>
      <config:config-item-map-named config:name="Tables">
-      <config:config-item-map-entry config:name="topics">
-       <config:config-item config:name="CursorPositionX" config:type="int">5</config:config-item>
-       <config:config-item config:name="CursorPositionY" config:type="int">96</config:config-item>
+      <config:config-item-map-entry config:name="topics-native-en">
+       <config:config-item config:name="CursorPositionX" config:type="int">1</config:config-item>
+       <config:config-item config:name="CursorPositionY" config:type="int">123</config:config-item>
        <config:config-item config:name="HorizontalSplitMode" config:type="short">0</config:config-item>
        <config:config-item config:name="VerticalSplitMode" config:type="short">2</config:config-item>
        <config:config-item config:name="HorizontalSplitPosition" config:type="int">0</config:config-item>
@@ -23,7 +23,7 @@
        <config:config-item config:name="PositionLeft" config:type="int">0</config:config-item>
        <config:config-item config:name="PositionRight" config:type="int">0</config:config-item>
        <config:config-item config:name="PositionTop" config:type="int">0</config:config-item>
-       <config:config-item config:name="PositionBottom" config:type="int">94</config:config-item>
+       <config:config-item config:name="PositionBottom" config:type="int">120</config:config-item>
        <config:config-item config:name="ZoomType" config:type="short">0</config:config-item>
        <config:config-item config:name="ZoomValue" config:type="int">100</config:config-item>
        <config:config-item config:name="PageViewZoomValue" config:type="int">60</config:config-item>
@@ -31,7 +31,7 @@
        <config:config-item config:name="AnchoredTextOverflowLegacy" config:type="boolean">false</config:config-item>
       </config:config-item-map-entry>
      </config:config-item-map-named>
-     <config:config-item config:name="ActiveTable" config:type="string">topics</config:config-item>
+     <config:config-item config:name="ActiveTable" config:type="string">topics-native-en</config:config-item>
      <config:config-item config:name="HorizontalScrollbarWidth" config:type="int">1265</config:config-item>
      <config:config-item config:name="ZoomType" config:type="short">0</config:config-item>
      <config:config-item config:name="ZoomValue" config:type="int">100</config:config-item>
@@ -58,6 +58,7 @@
    </config:config-item-map-indexed>
   </config:config-item-set>
   <config:config-item-set config:name="ooo:configuration-settings">
+   <config:config-item config:name="SyntaxStringRef" config:type="short">7</config:config-item>
    <config:config-item config:name="EmbedComplexScriptFonts" config:type="boolean">true</config:config-item>
    <config:config-item config:name="EmbedAsianScriptFonts" config:type="boolean">true</config:config-item>
    <config:config-item config:name="EmbedLatinScriptFonts" config:type="boolean">true</config:config-item>
@@ -71,7 +72,7 @@
    <config:config-item config:name="RasterIsVisible" config:type="boolean">false</config:config-item>
    <config:config-item config:name="SaveVersionOnClose" config:type="boolean">false</config:config-item>
    <config:config-item config:name="GridColor" config:type="int">12632256</config:config-item>
-   <config:config-item config:name="PrinterName" config:type="string"/>
+   <config:config-item config:name="PrinterName" config:type="string">laserjet-2200-pxlmono</config:config-item>
    <config:config-item-map-indexed config:name="ForbiddenCharacters">
     <config:config-item-map-entry>
      <config:config-item config:name="Language" config:type="string">en</config:config-item>
@@ -96,7 +97,7 @@
    <config:config-item config:name="HasColumnRowHeaders" config:type="boolean">true</config:config-item>
    <config:config-item config:name="RasterSubdivisionY" config:type="int">1</config:config-item>
    <config:config-item config:name="AutoCalculate" config:type="boolean">true</config:config-item>
-   <config:config-item config:name="PrinterSetup" config:type="base64Binary"/>
+   <config:config-item config:name="PrinterSetup" config:type="base64Binary">mQH+/2xhc2VyamV0LTIyMDAtcHhsbW9ubwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQ1VQUzpsYXNlcmpldC0yMjAwLXB4bG1vbm8AAAAAAAAWAAMAugAAAAAAAAAEAAhSAAAEdAAASm9iRGF0YSAxCnByaW50ZXI9bGFzZXJqZXQtMjIwMC1weGxtb25vCm9yaWVudGF0aW9uPVBvcnRyYWl0CmNvcGllcz0xCmNvbGxhdGU9ZmFsc2UKbWFyZ2luZGFqdXN0bWVudD0wLDAsMCwwCmNvbG9yZGVwdGg9MjQKcHNsZXZlbD0wCnBkZmRldmljZT0xCmNvbG9yZGV2aWNlPTAKUFBEQ29udGV4RGF0YQpQYWdlU2l6ZTpBNAAAEgBDT01QQVRfRFVQTEVYX01PREUPAER1cGxleE1vZGU6Ok9mZg==</config:config-item>
    <config:config-item config:name="IsOutlineSymbolsSet" config:type="boolean">true</config:config-item>
    <config:config-item config:name="PrinterPaperFromSetup" config:type="boolean">false</config:config-item>
    <config:config-item config:name="ApplyUserData" config:type="boolean">true</config:config-item>
@@ -179,36 +180,39 @@
  </office:styles>
  <office:automatic-styles>
   <style:style style:name="co1" style:family="table-column">
-   <style:table-column-properties fo:break-before="auto" style:column-width="0.878cm"/>
+   <style:table-column-properties fo:break-before="auto" style:column-width="1.96cm"/>
   </style:style>
   <style:style style:name="co2" style:family="table-column">
-   <style:table-column-properties fo:break-before="auto" style:column-width="5.364cm"/>
+   <style:table-column-properties fo:break-before="auto" style:column-width="2.15cm"/>
   </style:style>
   <style:style style:name="co3" style:family="table-column">
-   <style:table-column-properties fo:break-before="auto" style:column-width="2.559cm"/>
+   <style:table-column-properties fo:break-before="auto" style:column-width="5.364cm"/>
   </style:style>
   <style:style style:name="co4" style:family="table-column">
-   <style:table-column-properties fo:break-before="auto" style:column-width="13.37cm"/>
+   <style:table-column-properties fo:break-before="auto" style:column-width="2.559cm"/>
   </style:style>
   <style:style style:name="co5" style:family="table-column">
-   <style:table-column-properties fo:break-before="auto" style:column-width="3.357cm"/>
+   <style:table-column-properties fo:break-before="auto" style:column-width="13.37cm"/>
   </style:style>
   <style:style style:name="co6" style:family="table-column">
-   <style:table-column-properties fo:break-before="auto" style:column-width="4.083cm"/>
+   <style:table-column-properties fo:break-before="auto" style:column-width="3.357cm"/>
   </style:style>
   <style:style style:name="co7" style:family="table-column">
-   <style:table-column-properties fo:break-before="auto" style:column-width="2.813cm"/>
+   <style:table-column-properties fo:break-before="auto" style:column-width="4.083cm"/>
   </style:style>
   <style:style style:name="co8" style:family="table-column">
-   <style:table-column-properties fo:break-before="auto" style:column-width="3.24cm"/>
+   <style:table-column-properties fo:break-before="auto" style:column-width="2.813cm"/>
   </style:style>
   <style:style style:name="co9" style:family="table-column">
-   <style:table-column-properties fo:break-before="auto" style:column-width="3.676cm"/>
+   <style:table-column-properties fo:break-before="auto" style:column-width="3.24cm"/>
   </style:style>
   <style:style style:name="co10" style:family="table-column">
-   <style:table-column-properties fo:break-before="auto" style:column-width="9.999cm"/>
+   <style:table-column-properties fo:break-before="auto" style:column-width="3.676cm"/>
   </style:style>
   <style:style style:name="co11" style:family="table-column">
+   <style:table-column-properties fo:break-before="auto" style:column-width="9.999cm"/>
+  </style:style>
+  <style:style style:name="co12" style:family="table-column">
    <style:table-column-properties fo:break-before="auto" style:column-width="2.258cm"/>
   </style:style>
   <style:style style:name="ro1" style:family="table-row">
@@ -340,6 +344,12 @@
     </style:header-footer-properties>
    </style:footer-style>
   </style:page-layout>
+  <style:style style:name="T1" style:family="text">
+   <style:text-properties style:font-name="Liberation Sans" fo:font-size="10pt" fo:font-weight="normal" style:text-underline-style="none" style:text-underline-color="font-color" style:text-line-through-type="none" fo:font-style="normal" style:text-outline="false" fo:text-shadow="none" style:text-line-through-mode="continuous" fo:language="en" fo:country="GB" style:language-asian="zh" style:country-asian="CN" style:language-complex="hi" style:country-complex="IN" style:font-name-asian="Noto Sans CJK SC" style:font-name-complex="Mangal" style:font-size-asian="10pt" style:font-size-complex="10pt" style:font-weight-asian="normal" style:font-weight-complex="normal" style:font-style-asian="normal" style:font-style-complex="normal" style:text-emphasize="none" style:font-relief="none" style:text-overline-style="none" style:text-overline-color="font-color"/>
+  </style:style>
+  <style:style style:name="T2" style:family="text">
+   <style:text-properties style:font-size-complex="10pt" style:font-relief="none" style:font-style-complex="normal" style:font-weight-complex="normal" style:font-name-complex="Mangal" style:language-complex="hi" style:country-complex="IN" fo:language="en" fo:country="GB" fo:text-shadow="none" fo:font-style="normal" style:text-underline-style="none" style:text-underline-color="font-color" fo:font-size="10pt" style:font-name="Liberation Sans" fo:font-weight="normal" style:text-line-through-type="none" style:text-outline="false" style:text-line-through-mode="continuous" style:language-asian="zh" style:country-asian="CN" style:font-name-asian="Noto Sans CJK SC" style:font-size-asian="10pt" style:font-weight-asian="normal" style:font-style-asian="normal" style:text-emphasize="none" style:text-overline-style="none" style:text-overline-color="font-color"/>
+  </style:style>
  </office:automatic-styles>
  <office:master-styles>
   <style:master-page style:name="Default" style:page-layout-name="pm1">
@@ -358,7 +368,7 @@
      <text:p><text:sheet-name>???</text:sheet-name><text:s/>(<text:title>???</text:title>)</text:p>
     </style:region-left>
     <style:region-right>
-     <text:p><text:date style:data-style-name="N2" text:date-value="2020-08-28">00/00/0000</text:date>, <text:time>00:00:00</text:time></text:p>
+     <text:p><text:date style:data-style-name="N2" text:date-value="2020-09-05">00/00/0000</text:date>, <text:time style:data-style-name="N2" text:time-value="13:55:57.123173414">00:00:00</text:time></text:p>
     </style:region-right>
    </style:header>
    <style:header-left style:display="false"/>
@@ -371,22 +381,26 @@
  <office:body>
   <office:spreadsheet>
    <table:calculation-settings table:automatic-find-labels="false" table:use-regular-expressions="false" table:use-wildcards="true"/>
-   <table:table table:name="topics" table:style-name="ta1">
+   <table:table table:name="topics-native-en" table:style-name="ta1">
     <office:forms form:automatic-focus="false" form:apply-design-mode="false"/>
     <table:table-column table:style-name="co1" table:default-cell-style-name="ce2"/>
     <table:table-column table:style-name="co2" table:default-cell-style-name="ce2"/>
     <table:table-column table:style-name="co3" table:default-cell-style-name="ce2"/>
-    <table:table-column table:style-name="co4" table:default-cell-style-name="ce4"/>
-    <table:table-column table:style-name="co5" table:default-cell-style-name="ce2"/>
+    <table:table-column table:style-name="co4" table:default-cell-style-name="ce2"/>
+    <table:table-column table:style-name="co5" table:default-cell-style-name="ce4"/>
     <table:table-column table:style-name="co6" table:default-cell-style-name="ce2"/>
     <table:table-column table:style-name="co7" table:default-cell-style-name="ce2"/>
     <table:table-column table:style-name="co8" table:default-cell-style-name="ce2"/>
     <table:table-column table:style-name="co9" table:default-cell-style-name="ce2"/>
-    <table:table-column table:style-name="co10" table:default-cell-style-name="ce4"/>
-    <table:table-column table:style-name="co11" table:number-columns-repeated="1014" table:default-cell-style-name="ce2"/>
+    <table:table-column table:style-name="co10" table:default-cell-style-name="ce2"/>
+    <table:table-column table:style-name="co11" table:default-cell-style-name="ce4"/>
+    <table:table-column table:style-name="co12" table:number-columns-repeated="54" table:default-cell-style-name="ce2"/>
     <table:table-row table:style-name="ro1">
      <table:table-cell table:style-name="ce1" office:value-type="string" calcext:value-type="string">
       <text:p>ID</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce1" office:value-type="string" calcext:value-type="string">
+      <text:p>Locale</text:p>
      </table:table-cell>
      <table:table-cell table:style-name="ce1" office:value-type="string" calcext:value-type="string">
       <text:p>Title</text:p>
@@ -415,11 +429,14 @@
      <table:table-cell table:style-name="ce3" office:value-type="string" calcext:value-type="string">
       <text:p>Note</text:p>
      </table:table-cell>
-     <table:table-cell table:style-name="ce1" table:number-columns-repeated="1014"/>
+     <table:table-cell table:style-name="ce1" table:number-columns-repeated="54"/>
     </table:table-row>
     <table:table-row table:style-name="ro2">
-     <table:table-cell office:value-type="float" office:value="1" calcext:value-type="float">
-      <text:p>1</text:p>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>native-1</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>de</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>Verbrauchsdatum einhalten</text:p>
@@ -443,11 +460,13 @@
      <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
       <text:p>2020-08-22</text:p>
      </table:table-cell>
-     <table:table-cell table:number-columns-repeated="1015"/>
+     <table:table-cell table:number-columns-repeated="55"/>
     </table:table-row>
     <table:table-row table:style-name="ro3">
-     <table:table-cell office:value-type="float" office:value="2" calcext:value-type="float">
-      <text:p>2</text:p>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p><text:span text:style-name="T1">native-</text:span>2</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>de</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>Verdorbenes Fleisch erkennen</text:p>
@@ -470,11 +489,13 @@
      <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
       <text:p>2020-08-22</text:p>
      </table:table-cell>
-     <table:table-cell table:number-columns-repeated="1015"/>
+     <table:table-cell table:number-columns-repeated="55"/>
     </table:table-row>
     <table:table-row table:style-name="ro4">
-     <table:table-cell office:value-type="float" office:value="3" calcext:value-type="float">
-      <text:p>3</text:p>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p><text:span text:style-name="T1">native-</text:span>3</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>de</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>Verdorbenen Fisch erkennen</text:p>
@@ -497,11 +518,13 @@
      <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
       <text:p>2020-08-22</text:p>
      </table:table-cell>
-     <table:table-cell table:number-columns-repeated="1015"/>
+     <table:table-cell table:number-columns-repeated="55"/>
     </table:table-row>
     <table:table-row table:style-name="ro5">
-     <table:table-cell office:value-type="float" office:value="4" calcext:value-type="float">
-      <text:p>4</text:p>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p><text:span text:style-name="T1">native-</text:span>4</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>de</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>Das Alter beurteilen</text:p>
@@ -524,11 +547,13 @@
      <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
       <text:p>2020-08-25</text:p>
      </table:table-cell>
-     <table:table-cell table:number-columns-repeated="1015"/>
+     <table:table-cell table:number-columns-repeated="55"/>
     </table:table-row>
     <table:table-row table:style-name="ro6">
-     <table:table-cell office:value-type="float" office:value="5" calcext:value-type="float">
-      <text:p>5</text:p>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p><text:span text:style-name="T1">native-</text:span>5</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>de</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>Überalterte Eier verwenden</text:p>
@@ -551,11 +576,13 @@
      <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
       <text:p>2020-08-22</text:p>
      </table:table-cell>
-     <table:table-cell table:number-columns-repeated="1015"/>
+     <table:table-cell table:number-columns-repeated="55"/>
     </table:table-row>
     <table:table-row table:style-name="ro7">
-     <table:table-cell office:value-type="float" office:value="6" calcext:value-type="float">
-      <text:p>6</text:p>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p><text:span text:style-name="T1">native-</text:span>6</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>de</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>Einfrieren</text:p>
@@ -578,11 +605,13 @@
      <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
       <text:p>2020-08-22</text:p>
      </table:table-cell>
-     <table:table-cell table:number-columns-repeated="1015"/>
+     <table:table-cell table:number-columns-repeated="55"/>
     </table:table-row>
     <table:table-row table:style-name="ro8">
-     <table:table-cell office:value-type="float" office:value="7" calcext:value-type="float">
-      <text:p>7</text:p>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p><text:span text:style-name="T1">native-</text:span>7</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>de</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>Kochen</text:p>
@@ -605,11 +634,13 @@
      <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
       <text:p>2020-08-22</text:p>
      </table:table-cell>
-     <table:table-cell table:number-columns-repeated="1015"/>
+     <table:table-cell table:number-columns-repeated="55"/>
     </table:table-row>
     <table:table-row table:style-name="ro9">
-     <table:table-cell office:value-type="float" office:value="8" calcext:value-type="float">
-      <text:p>8</text:p>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p><text:span text:style-name="T1">native-</text:span>8</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>de</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>Schwefelgeruch</text:p>
@@ -632,11 +663,13 @@
      <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
       <text:p>2020-08-22</text:p>
      </table:table-cell>
-     <table:table-cell table:number-columns-repeated="1015"/>
+     <table:table-cell table:number-columns-repeated="55"/>
     </table:table-row>
     <table:table-row table:style-name="ro10">
-     <table:table-cell office:value-type="float" office:value="9" calcext:value-type="float">
-      <text:p>9</text:p>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p><text:span text:style-name="T1">native-</text:span>9</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>de</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>Verfärbung des Dotters</text:p>
@@ -659,11 +692,13 @@
      <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
       <text:p>2020-08-22</text:p>
      </table:table-cell>
-     <table:table-cell table:number-columns-repeated="1015"/>
+     <table:table-cell table:number-columns-repeated="55"/>
     </table:table-row>
     <table:table-row table:style-name="ro2">
-     <table:table-cell office:value-type="float" office:value="10" calcext:value-type="float">
-      <text:p>10</text:p>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p><text:span text:style-name="T2">native-1</text:span>0</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>de</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>Nicht zum Einfrieren geeignet</text:p>
@@ -687,11 +722,13 @@
      <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
       <text:p>2020-08-22</text:p>
      </table:table-cell>
-     <table:table-cell table:number-columns-repeated="1015"/>
+     <table:table-cell table:number-columns-repeated="55"/>
     </table:table-row>
     <table:table-row table:style-name="ro9">
-     <table:table-cell office:value-type="float" office:value="11" calcext:value-type="float">
-      <text:p>11</text:p>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p><text:span text:style-name="T1">native-</text:span>11</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>de</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>Frischen Kaviar erkennen</text:p>
@@ -714,11 +751,13 @@
      <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
       <text:p>2020-08-22</text:p>
      </table:table-cell>
-     <table:table-cell table:number-columns-repeated="1015"/>
+     <table:table-cell table:number-columns-repeated="55"/>
     </table:table-row>
     <table:table-row table:style-name="ro9">
-     <table:table-cell office:value-type="float" office:value="12" calcext:value-type="float">
-      <text:p>12</text:p>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p><text:span text:style-name="T2">native-1</text:span>2</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>de</text:p>
      </table:table-cell>
      <table:table-cell table:number-columns-repeated="2"/>
      <table:table-cell office:value-type="string" calcext:value-type="string"><text:p>Der erhöhte Salzgehalt ermöglicht eine Lagertemperatur um + 2 Grad. Nach dem Öffnen der vakuumierten Verpackung ist die Haltbarkeit max. 3 Tage (gekühlt)</text:p><text:p/><text:p>https://www.kaviar.de/faq[Quelle]</text:p>
@@ -738,11 +777,13 @@
      <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
       <text:p>2020-08-22</text:p>
      </table:table-cell>
-     <table:table-cell table:number-columns-repeated="1015"/>
+     <table:table-cell table:number-columns-repeated="55"/>
     </table:table-row>
     <table:table-row table:style-name="ro11">
-     <table:table-cell office:value-type="float" office:value="13" calcext:value-type="float">
-      <text:p>13</text:p>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p><text:span text:style-name="T1">native-</text:span>13</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>de</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>Nicht zum Einfrieren geeignet</text:p>
@@ -766,11 +807,13 @@
      <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
       <text:p>2020-08-22</text:p>
      </table:table-cell>
-     <table:table-cell table:number-columns-repeated="1015"/>
+     <table:table-cell table:number-columns-repeated="55"/>
     </table:table-row>
     <table:table-row table:style-name="ro12">
-     <table:table-cell office:value-type="float" office:value="14" calcext:value-type="float">
-      <text:p>14</text:p>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p><text:span text:style-name="T1">native-</text:span>14</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>de</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>Auch bei langer Lagerdauer unproblematisch</text:p>
@@ -792,11 +835,13 @@
      <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
       <text:p>2020-08-22</text:p>
      </table:table-cell>
-     <table:table-cell table:number-columns-repeated="1015"/>
+     <table:table-cell table:number-columns-repeated="55"/>
     </table:table-row>
     <table:table-row table:style-name="ro8">
-     <table:table-cell office:value-type="float" office:value="15" calcext:value-type="float">
-      <text:p>15</text:p>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p><text:span text:style-name="T1">native-</text:span>15</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>de</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>Auch bei langer Lagerdauer meist unproblematisch</text:p>
@@ -821,11 +866,13 @@
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>Category “hard cheeses” missing. There is no such category in the OFF taxonomy, but we might enumerate the different hard cheeses.</text:p>
      </table:table-cell>
-     <table:table-cell table:number-columns-repeated="1014"/>
+     <table:table-cell table:number-columns-repeated="54"/>
     </table:table-row>
     <table:table-row table:style-name="ro13">
-     <table:table-cell office:value-type="float" office:value="16" calcext:value-type="float">
-      <text:p>16</text:p>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p><text:span text:style-name="T1">native-</text:span>16</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>de</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>Zwiebeln werden weich und faulig</text:p>
@@ -849,11 +896,13 @@
      <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
       <text:p>2020-08-22</text:p>
      </table:table-cell>
-     <table:table-cell table:number-columns-repeated="1015"/>
+     <table:table-cell table:number-columns-repeated="55"/>
     </table:table-row>
     <table:table-row table:style-name="ro9">
-     <table:table-cell office:value-type="float" office:value="17" calcext:value-type="float">
-      <text:p>17</text:p>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p><text:span text:style-name="T1">native-</text:span>17</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>de</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>Dunkel und trocken lagern</text:p>
@@ -877,11 +926,13 @@
      <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
       <text:p>2020-08-22</text:p>
      </table:table-cell>
-     <table:table-cell table:number-columns-repeated="1015"/>
+     <table:table-cell table:number-columns-repeated="55"/>
     </table:table-row>
     <table:table-row table:style-name="ro13">
-     <table:table-cell office:value-type="float" office:value="18" calcext:value-type="float">
-      <text:p>18</text:p>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p><text:span text:style-name="T1">native-</text:span>18</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>de</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>Verfault, gekeimt oder grün</text:p>
@@ -905,11 +956,13 @@
      <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
       <text:p>2020-08-22</text:p>
      </table:table-cell>
-     <table:table-cell table:number-columns-repeated="1015"/>
+     <table:table-cell table:number-columns-repeated="55"/>
     </table:table-row>
     <table:table-row table:style-name="ro8">
-     <table:table-cell office:value-type="float" office:value="19" calcext:value-type="float">
-      <text:p>19</text:p>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p><text:span text:style-name="T1">native-</text:span>19</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>de</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>Kühl, trocken und dunkel lagern</text:p>
@@ -932,11 +985,13 @@
      <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
       <text:p>2020-08-22</text:p>
      </table:table-cell>
-     <table:table-cell table:number-columns-repeated="1015"/>
+     <table:table-cell table:number-columns-repeated="55"/>
     </table:table-row>
     <table:table-row table:style-name="ro7">
-     <table:table-cell office:value-type="float" office:value="20" calcext:value-type="float">
-      <text:p>20</text:p>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p><text:span text:style-name="T1">native-</text:span>20</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>de</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>Solaninvergiftung</text:p>
@@ -960,11 +1015,13 @@
      <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
       <text:p>2020-08-22</text:p>
      </table:table-cell>
-     <table:table-cell table:number-columns-repeated="1015"/>
+     <table:table-cell table:number-columns-repeated="55"/>
     </table:table-row>
     <table:table-row table:style-name="ro10">
-     <table:table-cell office:value-type="float" office:value="21" calcext:value-type="float">
-      <text:p>21</text:p>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p><text:span text:style-name="T1">native-</text:span>21</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>de</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>Kartoffelsaft</text:p>
@@ -987,11 +1044,13 @@
      <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
       <text:p>2020-08-22</text:p>
      </table:table-cell>
-     <table:table-cell table:number-columns-repeated="1015"/>
+     <table:table-cell table:number-columns-repeated="55"/>
     </table:table-row>
     <table:table-row table:style-name="ro11">
-     <table:table-cell office:value-type="float" office:value="22" calcext:value-type="float">
-      <text:p>22</text:p>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p><text:span text:style-name="T1">native-</text:span>22</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>de</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>Optische Veränderungen</text:p>
@@ -1015,11 +1074,13 @@
      <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
       <text:p>2020-08-22</text:p>
      </table:table-cell>
-     <table:table-cell table:number-columns-repeated="1015"/>
+     <table:table-cell table:number-columns-repeated="55"/>
     </table:table-row>
     <table:table-row table:style-name="ro11">
-     <table:table-cell office:value-type="float" office:value="23" calcext:value-type="float">
-      <text:p>23</text:p>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p><text:span text:style-name="T1">native-</text:span>23</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>de</text:p>
      </table:table-cell>
      <table:table-cell table:number-columns-repeated="2"/>
      <table:table-cell office:value-type="string" calcext:value-type="string">
@@ -1040,11 +1101,13 @@
      <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
       <text:p>2020-08-22</text:p>
      </table:table-cell>
-     <table:table-cell table:number-columns-repeated="1015"/>
+     <table:table-cell table:number-columns-repeated="55"/>
     </table:table-row>
     <table:table-row table:style-name="ro10">
-     <table:table-cell office:value-type="float" office:value="24" calcext:value-type="float">
-      <text:p>24</text:p>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p><text:span text:style-name="T1">native-</text:span>24</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>de</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>Optimale Lagerbedingungen</text:p>
@@ -1067,11 +1130,13 @@
      <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
       <text:p>2020-08-22</text:p>
      </table:table-cell>
-     <table:table-cell table:number-columns-repeated="1015"/>
+     <table:table-cell table:number-columns-repeated="55"/>
     </table:table-row>
     <table:table-row table:style-name="ro10">
-     <table:table-cell office:value-type="float" office:value="25" calcext:value-type="float">
-      <text:p>25</text:p>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p><text:span text:style-name="T1">native-</text:span>25</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>de</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>Optische Veränderungen</text:p>
@@ -1094,11 +1159,13 @@
      <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
       <text:p>2020-08-22</text:p>
      </table:table-cell>
-     <table:table-cell table:number-columns-repeated="1015"/>
+     <table:table-cell table:number-columns-repeated="55"/>
     </table:table-row>
     <table:table-row table:style-name="ro14">
-     <table:table-cell office:value-type="float" office:value="26" calcext:value-type="float">
-      <text:p>26</text:p>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p><text:span text:style-name="T1">native-</text:span>26</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>de</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>Optimale Lagerbedingungen</text:p>
@@ -1121,11 +1188,13 @@
      <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
       <text:p>2020-08-22</text:p>
      </table:table-cell>
-     <table:table-cell table:number-columns-repeated="1015"/>
+     <table:table-cell table:number-columns-repeated="55"/>
     </table:table-row>
     <table:table-row table:style-name="ro10">
-     <table:table-cell office:value-type="float" office:value="27" calcext:value-type="float">
-      <text:p>27</text:p>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p><text:span text:style-name="T1">native-</text:span>27</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>de</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>Optische Veränderungen</text:p>
@@ -1147,11 +1216,13 @@
      <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
       <text:p>2020-08-22</text:p>
      </table:table-cell>
-     <table:table-cell table:number-columns-repeated="1015"/>
+     <table:table-cell table:number-columns-repeated="55"/>
     </table:table-row>
     <table:table-row table:style-name="ro15">
-     <table:table-cell office:value-type="float" office:value="28" calcext:value-type="float">
-      <text:p>28</text:p>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p><text:span text:style-name="T1">native-</text:span>28</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>de</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>Optimale Lagerbedingungen</text:p>
@@ -1173,11 +1244,13 @@
      <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
       <text:p>2020-08-22</text:p>
      </table:table-cell>
-     <table:table-cell table:number-columns-repeated="1015"/>
+     <table:table-cell table:number-columns-repeated="55"/>
     </table:table-row>
     <table:table-row table:style-name="ro10">
-     <table:table-cell office:value-type="float" office:value="29" calcext:value-type="float">
-      <text:p>29</text:p>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p><text:span text:style-name="T1">native-</text:span>29</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>de</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>Optische Veränderungen</text:p>
@@ -1200,11 +1273,13 @@
      <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
       <text:p>2020-08-22</text:p>
      </table:table-cell>
-     <table:table-cell table:number-columns-repeated="1015"/>
+     <table:table-cell table:number-columns-repeated="55"/>
     </table:table-row>
     <table:table-row table:style-name="ro15">
-     <table:table-cell office:value-type="float" office:value="30" calcext:value-type="float">
-      <text:p>30</text:p>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p><text:span text:style-name="T1">native-</text:span>30</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>de</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>Optimale Lagerbedingungen</text:p>
@@ -1227,11 +1302,13 @@
      <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
       <text:p>2020-08-22</text:p>
      </table:table-cell>
-     <table:table-cell table:number-columns-repeated="1015"/>
+     <table:table-cell table:number-columns-repeated="55"/>
     </table:table-row>
     <table:table-row table:style-name="ro11">
-     <table:table-cell office:value-type="float" office:value="31" calcext:value-type="float">
-      <text:p>31</text:p>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p><text:span text:style-name="T1">native-</text:span>31</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>de</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>Optische Veränderungen</text:p>
@@ -1255,11 +1332,13 @@
      <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
       <text:p>2020-08-22</text:p>
      </table:table-cell>
-     <table:table-cell table:number-columns-repeated="1015"/>
+     <table:table-cell table:number-columns-repeated="55"/>
     </table:table-row>
     <table:table-row table:style-name="ro16">
-     <table:table-cell office:value-type="float" office:value="32" calcext:value-type="float">
-      <text:p>32</text:p>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p><text:span text:style-name="T1">native-</text:span>32</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>de</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>Optimale Lagerbedingungen</text:p>
@@ -1282,11 +1361,13 @@
      <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
       <text:p>2020-08-22</text:p>
      </table:table-cell>
-     <table:table-cell table:number-columns-repeated="1015"/>
+     <table:table-cell table:number-columns-repeated="55"/>
     </table:table-row>
     <table:table-row table:style-name="ro11">
-     <table:table-cell office:value-type="float" office:value="33" calcext:value-type="float">
-      <text:p>33</text:p>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p><text:span text:style-name="T1">native-</text:span>33</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>de</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>Optische Veränderungen</text:p>
@@ -1310,11 +1391,13 @@
      <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
       <text:p>2020-08-22</text:p>
      </table:table-cell>
-     <table:table-cell table:number-columns-repeated="1015"/>
+     <table:table-cell table:number-columns-repeated="55"/>
     </table:table-row>
     <table:table-row table:style-name="ro17">
-     <table:table-cell office:value-type="float" office:value="34" calcext:value-type="float">
-      <text:p>34</text:p>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p><text:span text:style-name="T1">native-</text:span>34</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>de</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>Optimale Lagerbedingungen</text:p>
@@ -1337,11 +1420,13 @@
      <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
       <text:p>2020-08-22</text:p>
      </table:table-cell>
-     <table:table-cell table:number-columns-repeated="1015"/>
+     <table:table-cell table:number-columns-repeated="55"/>
     </table:table-row>
     <table:table-row table:style-name="ro13">
-     <table:table-cell office:value-type="float" office:value="35" calcext:value-type="float">
-      <text:p>35</text:p>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p><text:span text:style-name="T1">native-</text:span>35</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>de</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>Optische Veränderungen</text:p>
@@ -1364,11 +1449,13 @@
      <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
       <text:p>2020-08-22</text:p>
      </table:table-cell>
-     <table:table-cell table:number-columns-repeated="1015"/>
+     <table:table-cell table:number-columns-repeated="55"/>
     </table:table-row>
     <table:table-row table:style-name="ro13">
-     <table:table-cell office:value-type="float" office:value="36" calcext:value-type="float">
-      <text:p>36</text:p>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p><text:span text:style-name="T1">native-</text:span>36</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>de</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>Nur wenige Tage</text:p>
@@ -1391,11 +1478,13 @@
      <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
       <text:p>2020-08-22</text:p>
      </table:table-cell>
-     <table:table-cell table:number-columns-repeated="1015"/>
+     <table:table-cell table:number-columns-repeated="55"/>
     </table:table-row>
     <table:table-row table:style-name="ro13">
-     <table:table-cell office:value-type="float" office:value="37" calcext:value-type="float">
-      <text:p>37</text:p>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p><text:span text:style-name="T1">native-</text:span>37</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>de</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>Blanchieren</text:p>
@@ -1418,11 +1507,13 @@
      <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
       <text:p>2020-08-22</text:p>
      </table:table-cell>
-     <table:table-cell table:number-columns-repeated="1015"/>
+     <table:table-cell table:number-columns-repeated="55"/>
     </table:table-row>
     <table:table-row table:style-name="ro13">
-     <table:table-cell office:value-type="float" office:value="38" calcext:value-type="float">
-      <text:p>38</text:p>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p><text:span text:style-name="T1">native-</text:span>38</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>de</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>Optische Veränderungen</text:p>
@@ -1448,11 +1539,13 @@
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>Add category “Fresh peas”, once available in Open Food Facts.</text:p>
      </table:table-cell>
-     <table:table-cell table:number-columns-repeated="1014"/>
+     <table:table-cell table:number-columns-repeated="54"/>
     </table:table-row>
     <table:table-row table:style-name="ro18">
-     <table:table-cell office:value-type="float" office:value="39" calcext:value-type="float">
-      <text:p>39</text:p>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p><text:span text:style-name="T1">native-</text:span>39</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>de</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>Optimale Lagerbedingungen</text:p>
@@ -1477,11 +1570,13 @@
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>Add category “Fresh peas”, once available in Open Food Facts.</text:p>
      </table:table-cell>
-     <table:table-cell table:number-columns-repeated="1014"/>
+     <table:table-cell table:number-columns-repeated="54"/>
     </table:table-row>
     <table:table-row table:style-name="ro13">
-     <table:table-cell office:value-type="float" office:value="40" calcext:value-type="float">
-      <text:p>40</text:p>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p><text:span text:style-name="T1">native-</text:span>40</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>de</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>Optische Veränderungen</text:p>
@@ -1505,11 +1600,13 @@
      <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
       <text:p>2020-08-22</text:p>
      </table:table-cell>
-     <table:table-cell table:number-columns-repeated="1015"/>
+     <table:table-cell table:number-columns-repeated="55"/>
     </table:table-row>
     <table:table-row table:style-name="ro6">
-     <table:table-cell office:value-type="float" office:value="41" calcext:value-type="float">
-      <text:p>41</text:p>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p><text:span text:style-name="T1">native-</text:span>41</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>de</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>2-7 Tage im Kühlschrank</text:p>
@@ -1532,11 +1629,13 @@
      <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
       <text:p>2020-08-22</text:p>
      </table:table-cell>
-     <table:table-cell table:number-columns-repeated="1015"/>
+     <table:table-cell table:number-columns-repeated="55"/>
     </table:table-row>
     <table:table-row table:style-name="ro13">
-     <table:table-cell office:value-type="float" office:value="42" calcext:value-type="float">
-      <text:p>42</text:p>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p><text:span text:style-name="T1">native-</text:span>42</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>de</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>Nicht zum Einfrieren geeignet</text:p>
@@ -1560,11 +1659,13 @@
      <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
       <text:p>2020-08-22</text:p>
      </table:table-cell>
-     <table:table-cell table:number-columns-repeated="1015"/>
+     <table:table-cell table:number-columns-repeated="55"/>
     </table:table-row>
     <table:table-row table:style-name="ro13">
-     <table:table-cell office:value-type="float" office:value="43" calcext:value-type="float">
-      <text:p>43</text:p>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p><text:span text:style-name="T1">native-</text:span>43</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>de</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>Optische Veränderungen</text:p>
@@ -1590,11 +1691,13 @@
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>Add category “Raw Kohlrabi”, once available in Open Food Facts. Currently only “Boiled kohlrabi” is available.</text:p>
      </table:table-cell>
-     <table:table-cell table:number-columns-repeated="1014"/>
+     <table:table-cell table:number-columns-repeated="54"/>
     </table:table-row>
     <table:table-row table:style-name="ro10">
-     <table:table-cell office:value-type="float" office:value="44" calcext:value-type="float">
-      <text:p>44</text:p>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p><text:span text:style-name="T1">native-</text:span>44</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>de</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>Optimale Lagerbedingungen</text:p>
@@ -1619,11 +1722,13 @@
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>Add category “Raw Kohlrabi”, once available in Open Food Facts. Currently only “Boiled kohlrabi” is available.</text:p>
      </table:table-cell>
-     <table:table-cell table:number-columns-repeated="1014"/>
+     <table:table-cell table:number-columns-repeated="54"/>
     </table:table-row>
     <table:table-row table:style-name="ro7">
-     <table:table-cell office:value-type="float" office:value="45" calcext:value-type="float">
-      <text:p>45</text:p>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p><text:span text:style-name="T1">native-</text:span>45</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>de</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>Optische Veränderungen</text:p>
@@ -1645,11 +1750,13 @@
      <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
       <text:p>2020-08-22</text:p>
      </table:table-cell>
-     <table:table-cell table:number-columns-repeated="1015"/>
+     <table:table-cell table:number-columns-repeated="55"/>
     </table:table-row>
     <table:table-row table:style-name="ro14">
-     <table:table-cell office:value-type="float" office:value="46" calcext:value-type="float">
-      <text:p>46</text:p>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p><text:span text:style-name="T1">native-</text:span>46</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>de</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>Optimale Lagerbedingungen</text:p>
@@ -1671,11 +1778,13 @@
      <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
       <text:p>2020-08-22</text:p>
      </table:table-cell>
-     <table:table-cell table:number-columns-repeated="1015"/>
+     <table:table-cell table:number-columns-repeated="55"/>
     </table:table-row>
     <table:table-row table:style-name="ro9">
-     <table:table-cell office:value-type="float" office:value="47" calcext:value-type="float">
-      <text:p>47</text:p>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p><text:span text:style-name="T1">native-</text:span>47</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>de</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>Nicht zum Einfrieren geeignet</text:p>
@@ -1698,11 +1807,13 @@
      <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
       <text:p>2020-08-22</text:p>
      </table:table-cell>
-     <table:table-cell table:number-columns-repeated="1015"/>
+     <table:table-cell table:number-columns-repeated="55"/>
     </table:table-row>
     <table:table-row table:style-name="ro7">
-     <table:table-cell office:value-type="float" office:value="48" calcext:value-type="float">
-      <text:p>48</text:p>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p><text:span text:style-name="T1">native-</text:span>48</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>de</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>Optische Veränderungen</text:p>
@@ -1725,11 +1836,13 @@
      <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
       <text:p>2020-08-22</text:p>
      </table:table-cell>
-     <table:table-cell table:number-columns-repeated="1015"/>
+     <table:table-cell table:number-columns-repeated="55"/>
     </table:table-row>
     <table:table-row table:style-name="ro6">
-     <table:table-cell office:value-type="float" office:value="49" calcext:value-type="float">
-      <text:p>49</text:p>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p><text:span text:style-name="T1">native-</text:span>49</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>de</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>Optimale Lagerung</text:p>
@@ -1752,11 +1865,13 @@
      <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
       <text:p>2020-08-22</text:p>
      </table:table-cell>
-     <table:table-cell table:number-columns-repeated="1015"/>
+     <table:table-cell table:number-columns-repeated="55"/>
     </table:table-row>
     <table:table-row table:style-name="ro10">
-     <table:table-cell office:value-type="float" office:value="50" calcext:value-type="float">
-      <text:p>50</text:p>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p><text:span text:style-name="T1">native-</text:span>50</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>de</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>Veränderungen bei Alterung</text:p>
@@ -1779,11 +1894,13 @@
      <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
       <text:p>2020-08-22</text:p>
      </table:table-cell>
-     <table:table-cell table:number-columns-repeated="1015"/>
+     <table:table-cell table:number-columns-repeated="55"/>
     </table:table-row>
     <table:table-row table:style-name="ro8">
-     <table:table-cell office:value-type="float" office:value="51" calcext:value-type="float">
-      <text:p>51</text:p>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p><text:span text:style-name="T1">native-</text:span>51</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>de</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>Optimale Lagerbedingungen</text:p>
@@ -1806,11 +1923,13 @@
      <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
       <text:p>2020-08-22</text:p>
      </table:table-cell>
-     <table:table-cell table:number-columns-repeated="1015"/>
+     <table:table-cell table:number-columns-repeated="55"/>
     </table:table-row>
     <table:table-row table:style-name="ro10">
-     <table:table-cell office:value-type="float" office:value="52" calcext:value-type="float">
-      <text:p>52</text:p>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p><text:span text:style-name="T1">native-</text:span>52</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>de</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>Optische Veränderungen</text:p>
@@ -1833,11 +1952,13 @@
      <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
       <text:p>2020-08-22</text:p>
      </table:table-cell>
-     <table:table-cell table:number-columns-repeated="1015"/>
+     <table:table-cell table:number-columns-repeated="55"/>
     </table:table-row>
     <table:table-row table:style-name="ro18">
-     <table:table-cell office:value-type="float" office:value="53" calcext:value-type="float">
-      <text:p>53</text:p>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p><text:span text:style-name="T1">native-</text:span>53</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>de</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>Optimale Lagerung</text:p>
@@ -1860,11 +1981,13 @@
      <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
       <text:p>2020-08-22</text:p>
      </table:table-cell>
-     <table:table-cell table:number-columns-repeated="1015"/>
+     <table:table-cell table:number-columns-repeated="55"/>
     </table:table-row>
     <table:table-row table:style-name="ro9">
-     <table:table-cell office:value-type="float" office:value="54" calcext:value-type="float">
-      <text:p>54</text:p>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p><text:span text:style-name="T1">native-</text:span>54</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>de</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>Veränderungen bei Alterung</text:p>
@@ -1887,11 +2010,13 @@
      <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
       <text:p>2020-08-22</text:p>
      </table:table-cell>
-     <table:table-cell table:number-columns-repeated="1015"/>
+     <table:table-cell table:number-columns-repeated="55"/>
     </table:table-row>
     <table:table-row table:style-name="ro12">
-     <table:table-cell office:value-type="float" office:value="55" calcext:value-type="float">
-      <text:p>55</text:p>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p><text:span text:style-name="T1">native-</text:span>55</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>de</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>Optimale Lagerung</text:p>
@@ -1914,11 +2039,13 @@
      <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
       <text:p>2020-08-22</text:p>
      </table:table-cell>
-     <table:table-cell table:number-columns-repeated="1015"/>
+     <table:table-cell table:number-columns-repeated="55"/>
     </table:table-row>
     <table:table-row table:style-name="ro7">
-     <table:table-cell office:value-type="float" office:value="56" calcext:value-type="float">
-      <text:p>56</text:p>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p><text:span text:style-name="T1">native-</text:span>56</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>de</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>Veränderungen bei Alterung</text:p>
@@ -1944,11 +2071,13 @@
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>Add category “Fresh leeks”, once available in Open Food Facts.</text:p>
      </table:table-cell>
-     <table:table-cell table:number-columns-repeated="1014"/>
+     <table:table-cell table:number-columns-repeated="54"/>
     </table:table-row>
     <table:table-row table:style-name="ro7">
-     <table:table-cell office:value-type="float" office:value="57" calcext:value-type="float">
-      <text:p>57</text:p>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p><text:span text:style-name="T1">native-</text:span>57</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>de</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>Optimale Lagerung</text:p>
@@ -1974,11 +2103,13 @@
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>Add category “Fresh leeks”, once available in Open Food Facts.</text:p>
      </table:table-cell>
-     <table:table-cell table:number-columns-repeated="1014"/>
+     <table:table-cell table:number-columns-repeated="54"/>
     </table:table-row>
     <table:table-row table:style-name="ro13">
-     <table:table-cell office:value-type="float" office:value="58" calcext:value-type="float">
-      <text:p>58</text:p>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p><text:span text:style-name="T1">native-</text:span>58</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>de</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>Veränderungen bei Alterung</text:p>
@@ -2003,11 +2134,13 @@
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>Add category “Fresh avocados”, once available in Open Food Facts.</text:p>
      </table:table-cell>
-     <table:table-cell table:number-columns-repeated="1014"/>
+     <table:table-cell table:number-columns-repeated="54"/>
     </table:table-row>
     <table:table-row table:style-name="ro9">
-     <table:table-cell office:value-type="float" office:value="59" calcext:value-type="float">
-      <text:p>59</text:p>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p><text:span text:style-name="T1">native-</text:span>59</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>de</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>Optimale Lagerung</text:p>
@@ -2032,11 +2165,13 @@
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>Add category “Fresh avocados”, once available in Open Food Facts.</text:p>
      </table:table-cell>
-     <table:table-cell table:number-columns-repeated="1014"/>
+     <table:table-cell table:number-columns-repeated="54"/>
     </table:table-row>
     <table:table-row table:style-name="ro7">
-     <table:table-cell office:value-type="float" office:value="60" calcext:value-type="float">
-      <text:p>60</text:p>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p><text:span text:style-name="T1">native-</text:span>60</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>de</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>Veränderungen bei Alterung</text:p>
@@ -2058,11 +2193,13 @@
      <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
       <text:p>2020-08-22</text:p>
      </table:table-cell>
-     <table:table-cell table:number-columns-repeated="1015"/>
+     <table:table-cell table:number-columns-repeated="55"/>
     </table:table-row>
     <table:table-row table:style-name="ro10">
-     <table:table-cell office:value-type="float" office:value="61" calcext:value-type="float">
-      <text:p>61</text:p>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p><text:span text:style-name="T1">native-</text:span>61</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>de</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>Bis 2 Wochen im Kühlschrank</text:p>
@@ -2084,11 +2221,13 @@
      <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
       <text:p>2020-08-22</text:p>
      </table:table-cell>
-     <table:table-cell table:number-columns-repeated="1015"/>
+     <table:table-cell table:number-columns-repeated="55"/>
     </table:table-row>
     <table:table-row table:style-name="ro6">
-     <table:table-cell office:value-type="float" office:value="62" calcext:value-type="float">
-      <text:p>62</text:p>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p><text:span text:style-name="T1">native-</text:span>62</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>de</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>Mehrere Monate im Rübenkeller</text:p>
@@ -2110,11 +2249,13 @@
      <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
       <text:p>2020-08-22</text:p>
      </table:table-cell>
-     <table:table-cell table:number-columns-repeated="1015"/>
+     <table:table-cell table:number-columns-repeated="55"/>
     </table:table-row>
     <table:table-row table:style-name="ro13">
-     <table:table-cell office:value-type="float" office:value="63" calcext:value-type="float">
-      <text:p>63</text:p>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p><text:span text:style-name="T1">native-</text:span>63</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>de</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>Veränderungen bei Alterung</text:p>
@@ -2139,11 +2280,13 @@
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>Replace category “Watermelons” with “Fresh watermelons”, once available in Open Food Facts.</text:p>
      </table:table-cell>
-     <table:table-cell table:number-columns-repeated="1014"/>
+     <table:table-cell table:number-columns-repeated="54"/>
     </table:table-row>
     <table:table-row table:style-name="ro7">
-     <table:table-cell office:value-type="float" office:value="64" calcext:value-type="float">
-      <text:p>64</text:p>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p><text:span text:style-name="T1">native-</text:span>64</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>de</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>Optimale Lagerbedingungen</text:p>
@@ -2168,11 +2311,13 @@
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>Replace category “Watermelons” with “Fresh watermelons”, once available in Open Food Facts.</text:p>
      </table:table-cell>
-     <table:table-cell table:number-columns-repeated="1014"/>
+     <table:table-cell table:number-columns-repeated="54"/>
     </table:table-row>
     <table:table-row table:style-name="ro2">
-     <table:table-cell office:value-type="float" office:value="65" calcext:value-type="float">
-      <text:p>65</text:p>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p><text:span text:style-name="T1">native-</text:span>65</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>de</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>Melonensaft einfrieren</text:p>
@@ -2198,11 +2343,13 @@
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>Replace category “Watermelons” with “Fresh watermelons”, once available in Open Food Facts.</text:p>
      </table:table-cell>
-     <table:table-cell table:number-columns-repeated="1014"/>
+     <table:table-cell table:number-columns-repeated="54"/>
     </table:table-row>
     <table:table-row table:style-name="ro7">
-     <table:table-cell office:value-type="float" office:value="66" calcext:value-type="float">
-      <text:p>66</text:p>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p><text:span text:style-name="T1">native-</text:span>66</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>de</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>Veränderungen bei Alterung</text:p>
@@ -2224,11 +2371,13 @@
      <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
       <text:p>2020-08-22</text:p>
      </table:table-cell>
-     <table:table-cell table:number-columns-repeated="1015"/>
+     <table:table-cell table:number-columns-repeated="55"/>
     </table:table-row>
     <table:table-row table:style-name="ro10">
-     <table:table-cell office:value-type="float" office:value="67" calcext:value-type="float">
-      <text:p>67</text:p>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p><text:span text:style-name="T1">native-</text:span>67</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>de</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>Optimale Lagerbedingungen</text:p>
@@ -2250,11 +2399,13 @@
      <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
       <text:p>2020-08-22</text:p>
      </table:table-cell>
-     <table:table-cell table:number-columns-repeated="1015"/>
+     <table:table-cell table:number-columns-repeated="55"/>
     </table:table-row>
     <table:table-row table:style-name="ro2">
-     <table:table-cell office:value-type="float" office:value="68" calcext:value-type="float">
-      <text:p>68</text:p>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p><text:span text:style-name="T1">native-</text:span>68</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>de</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>Veränderungen bei Alterung</text:p>
@@ -2279,11 +2430,13 @@
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>Replace category “Grapefruits” with “Fresh grapefruits”, once available in Open Food Facts.</text:p>
      </table:table-cell>
-     <table:table-cell table:number-columns-repeated="1014"/>
+     <table:table-cell table:number-columns-repeated="54"/>
     </table:table-row>
     <table:table-row table:style-name="ro6">
-     <table:table-cell office:value-type="float" office:value="69" calcext:value-type="float">
-      <text:p>69</text:p>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p><text:span text:style-name="T1">native-</text:span>69</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>de</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>Optimale Lagerbedingungen</text:p>
@@ -2305,11 +2458,13 @@
      <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
       <text:p>2020-08-22</text:p>
      </table:table-cell>
-     <table:table-cell table:number-columns-repeated="1015"/>
+     <table:table-cell table:number-columns-repeated="55"/>
     </table:table-row>
     <table:table-row table:style-name="ro13">
-     <table:table-cell office:value-type="float" office:value="70" calcext:value-type="float">
-      <text:p>70</text:p>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p><text:span text:style-name="T1">native-</text:span>70</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>de</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>Veränderungen bei Alterung</text:p>
@@ -2332,11 +2487,13 @@
      <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
       <text:p>2020-08-22</text:p>
      </table:table-cell>
-     <table:table-cell table:number-columns-repeated="1015"/>
+     <table:table-cell table:number-columns-repeated="55"/>
     </table:table-row>
     <table:table-row table:style-name="ro17">
-     <table:table-cell office:value-type="float" office:value="71" calcext:value-type="float">
-      <text:p>71</text:p>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p><text:span text:style-name="T1">native-</text:span>71</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>de</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>Optimale Lagerbedingungen</text:p>
@@ -2359,11 +2516,13 @@
      <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
       <text:p>2020-08-22</text:p>
      </table:table-cell>
-     <table:table-cell table:number-columns-repeated="1015"/>
+     <table:table-cell table:number-columns-repeated="55"/>
     </table:table-row>
     <table:table-row table:style-name="ro13">
-     <table:table-cell office:value-type="float" office:value="72" calcext:value-type="float">
-      <text:p>72</text:p>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p><text:span text:style-name="T1">native-</text:span>72</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>de</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>Bröckeliges Brot</text:p>
@@ -2387,11 +2546,13 @@
      <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
       <text:p>2020-08-22</text:p>
      </table:table-cell>
-     <table:table-cell table:number-columns-repeated="1015"/>
+     <table:table-cell table:number-columns-repeated="55"/>
     </table:table-row>
     <table:table-row table:style-name="ro19">
-     <table:table-cell office:value-type="float" office:value="73" calcext:value-type="float">
-      <text:p>73</text:p>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p><text:span text:style-name="T1">native-</text:span>73</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>de</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>Riechen und Sehen</text:p>
@@ -2413,11 +2574,13 @@
      <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
       <text:p>2020-08-26</text:p>
      </table:table-cell>
-     <table:table-cell table:number-columns-repeated="1015"/>
+     <table:table-cell table:number-columns-repeated="55"/>
     </table:table-row>
     <table:table-row table:style-name="ro2">
-     <table:table-cell office:value-type="float" office:value="74" calcext:value-type="float">
-      <text:p>74</text:p>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p><text:span text:style-name="T1">native-</text:span>74</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>de</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>Haltbarkeit von Pflanzenmilch</text:p>
@@ -2441,11 +2604,13 @@
      <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
       <text:p>2020-08-22</text:p>
      </table:table-cell>
-     <table:table-cell table:number-columns-repeated="1015"/>
+     <table:table-cell table:number-columns-repeated="55"/>
     </table:table-row>
     <table:table-row table:style-name="ro18">
-     <table:table-cell office:value-type="float" office:value="75" calcext:value-type="float">
-      <text:p>75</text:p>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p><text:span text:style-name="T1">native-</text:span>75</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>de</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>Riechen und Sehen</text:p>
@@ -2468,11 +2633,13 @@
      <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
       <text:p>2020-08-22</text:p>
      </table:table-cell>
-     <table:table-cell table:number-columns-repeated="1015"/>
+     <table:table-cell table:number-columns-repeated="55"/>
     </table:table-row>
     <table:table-row table:style-name="ro7">
-     <table:table-cell office:value-type="float" office:value="76" calcext:value-type="float">
-      <text:p>76</text:p>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p><text:span text:style-name="T1">native-</text:span>76</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>de</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>Lagerdauer</text:p>
@@ -2496,11 +2663,13 @@
      <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
       <text:p>2020-08-26</text:p>
      </table:table-cell>
-     <table:table-cell table:number-columns-repeated="1015"/>
+     <table:table-cell table:number-columns-repeated="55"/>
     </table:table-row>
     <table:table-row table:style-name="ro7">
-     <table:table-cell office:value-type="float" office:value="77" calcext:value-type="float">
-      <text:p>77</text:p>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p><text:span text:style-name="T1">native-</text:span>77</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>de</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>Fett- und Zuckerreif</text:p>
@@ -2523,11 +2692,13 @@
      <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
       <text:p>2020-08-22</text:p>
      </table:table-cell>
-     <table:table-cell table:number-columns-repeated="1015"/>
+     <table:table-cell table:number-columns-repeated="55"/>
     </table:table-row>
     <table:table-row table:style-name="ro2">
-     <table:table-cell office:value-type="float" office:value="78" calcext:value-type="float">
-      <text:p>78</text:p>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p><text:span text:style-name="T1">native-</text:span>78</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>de</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>Nicht für Kleinkinder</text:p>
@@ -2551,11 +2722,13 @@
      <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
       <text:p>2020-08-22</text:p>
      </table:table-cell>
-     <table:table-cell table:number-columns-repeated="1015"/>
+     <table:table-cell table:number-columns-repeated="55"/>
     </table:table-row>
     <table:table-row table:style-name="ro20">
-     <table:table-cell office:value-type="float" office:value="79" calcext:value-type="float">
-      <text:p>79</text:p>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p><text:span text:style-name="T1">native-</text:span>79</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>de</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>Typen und Lagerdauer</text:p>
@@ -2578,11 +2751,13 @@
      <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
       <text:p>2020-08-22</text:p>
      </table:table-cell>
-     <table:table-cell table:number-columns-repeated="1015"/>
+     <table:table-cell table:number-columns-repeated="55"/>
     </table:table-row>
     <table:table-row table:style-name="ro9">
-     <table:table-cell office:value-type="float" office:value="80" calcext:value-type="float">
-      <text:p>80</text:p>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p><text:span text:style-name="T1">native-</text:span>80</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>de</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>Lagerung nur im Kühlschrank</text:p>
@@ -2607,11 +2782,13 @@
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>Add category “Cotton seed oils” once available in Open Food Facts.</text:p>
      </table:table-cell>
-     <table:table-cell table:number-columns-repeated="1014"/>
+     <table:table-cell table:number-columns-repeated="54"/>
     </table:table-row>
     <table:table-row table:style-name="ro7">
-     <table:table-cell office:value-type="float" office:value="81" calcext:value-type="float">
-      <text:p>81</text:p>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p><text:span text:style-name="T1">native-</text:span>81</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>de</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>Richtige Lagerung</text:p>
@@ -2633,11 +2810,13 @@
      <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
       <text:p>2020-08-22</text:p>
      </table:table-cell>
-     <table:table-cell table:number-columns-repeated="1015"/>
+     <table:table-cell table:number-columns-repeated="55"/>
     </table:table-row>
     <table:table-row table:style-name="ro15">
-     <table:table-cell office:value-type="float" office:value="82" calcext:value-type="float">
-      <text:p>82</text:p>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p><text:span text:style-name="T1">native-</text:span>82</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>de</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>Nicht zum Braten verwenden</text:p>
@@ -2662,11 +2841,13 @@
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>Add category “Cotton seed oils” once available in Open Food Facts.</text:p>
      </table:table-cell>
-     <table:table-cell table:number-columns-repeated="1014"/>
+     <table:table-cell table:number-columns-repeated="54"/>
     </table:table-row>
     <table:table-row table:style-name="ro10">
-     <table:table-cell office:value-type="float" office:value="83" calcext:value-type="float">
-      <text:p>83</text:p>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p><text:span text:style-name="T1">native-</text:span>83</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>de</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>Richtige Lagerung</text:p>
@@ -2688,11 +2869,13 @@
      <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
       <text:p>2020-08-22</text:p>
      </table:table-cell>
-     <table:table-cell table:number-columns-repeated="1015"/>
+     <table:table-cell table:number-columns-repeated="55"/>
     </table:table-row>
     <table:table-row table:style-name="ro10">
-     <table:table-cell office:value-type="float" office:value="84" calcext:value-type="float">
-      <text:p>84</text:p>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p><text:span text:style-name="T1">native-</text:span>84</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>de</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>Unbedenklich</text:p>
@@ -2717,11 +2900,13 @@
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>Add the English categories corresponding to German “Orangeat” and “Zitronat” once available in Open Food Facts.</text:p>
      </table:table-cell>
-     <table:table-cell table:number-columns-repeated="1014"/>
+     <table:table-cell table:number-columns-repeated="54"/>
     </table:table-row>
     <table:table-row table:style-name="ro7">
-     <table:table-cell office:value-type="float" office:value="85" calcext:value-type="float">
-      <text:p>85</text:p>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p><text:span text:style-name="T1">native-</text:span>85</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>de</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>Vor Gebrauch überprüfen</text:p>
@@ -2744,11 +2929,13 @@
      <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
       <text:p>2020-08-22</text:p>
      </table:table-cell>
-     <table:table-cell table:number-columns-repeated="1015"/>
+     <table:table-cell table:number-columns-repeated="55"/>
     </table:table-row>
     <table:table-row table:style-name="ro7">
-     <table:table-cell office:value-type="float" office:value="86" calcext:value-type="float">
-      <text:p>86</text:p>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p><text:span text:style-name="T1">native-</text:span>86</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>de</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>Vor Gebrauch überprüfen</text:p>
@@ -2771,11 +2958,13 @@
      <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
       <text:p>2020-08-22</text:p>
      </table:table-cell>
-     <table:table-cell table:number-columns-repeated="1015"/>
+     <table:table-cell table:number-columns-repeated="55"/>
     </table:table-row>
     <table:table-row table:style-name="ro7">
-     <table:table-cell office:value-type="float" office:value="87" calcext:value-type="float">
-      <text:p>87</text:p>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p><text:span text:style-name="T1">native-</text:span>87</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>de</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>Vor Gebrauch überprüfen</text:p>
@@ -2798,11 +2987,13 @@
      <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
       <text:p>2020-08-22</text:p>
      </table:table-cell>
-     <table:table-cell table:number-columns-repeated="1015"/>
+     <table:table-cell table:number-columns-repeated="55"/>
     </table:table-row>
     <table:table-row table:style-name="ro21">
-     <table:table-cell office:value-type="float" office:value="88" calcext:value-type="float">
-      <text:p>88</text:p>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p><text:span text:style-name="T1">native-</text:span>88</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>de</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>Ranzigwerden</text:p>
@@ -2824,11 +3015,13 @@
      <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
       <text:p>2020-08-26</text:p>
      </table:table-cell>
-     <table:table-cell table:number-columns-repeated="1015"/>
+     <table:table-cell table:number-columns-repeated="55"/>
     </table:table-row>
     <table:table-row table:style-name="ro17">
-     <table:table-cell office:value-type="float" office:value="89" calcext:value-type="float">
-      <text:p>89</text:p>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p><text:span text:style-name="T1">native-</text:span>89</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>de</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>Legionellen</text:p>
@@ -2851,11 +3044,13 @@
      <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
       <text:p>2020-08-27</text:p>
      </table:table-cell>
-     <table:table-cell table:number-columns-repeated="1015"/>
+     <table:table-cell table:number-columns-repeated="55"/>
     </table:table-row>
     <table:table-row table:style-name="ro22">
-     <table:table-cell office:value-type="float" office:value="90" calcext:value-type="float">
-      <text:p>90</text:p>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p><text:span text:style-name="T1">native-</text:span>90</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>de</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>Salmonellen</text:p>
@@ -2880,11 +3075,13 @@
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>TODO: Is it true that salmonella can affect boiled eggs?</text:p>
      </table:table-cell>
-     <table:table-cell table:number-columns-repeated="1014"/>
+     <table:table-cell table:number-columns-repeated="54"/>
     </table:table-row>
     <table:table-row table:style-name="ro5">
-     <table:table-cell office:value-type="float" office:value="91" calcext:value-type="float">
-      <text:p>91</text:p>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p><text:span text:style-name="T1">native-</text:span>91</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>de</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>Listerien</text:p>
@@ -2909,11 +3106,13 @@
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>Applies to all meat products that have been cut – which means, potentially to all meats, so placing that main category is enough.</text:p>
      </table:table-cell>
-     <table:table-cell table:number-columns-repeated="1014"/>
+     <table:table-cell table:number-columns-repeated="54"/>
     </table:table-row>
     <table:table-row table:style-name="ro23">
-     <table:table-cell office:value-type="float" office:value="92" calcext:value-type="float">
-      <text:p>92</text:p>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p><text:span text:style-name="T1">native-</text:span>92</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>de</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>Schimmel</text:p>
@@ -2938,11 +3137,13 @@
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>TODO: The document said to also include “Butters” here, but that seems rather far fetched?</text:p>
      </table:table-cell>
-     <table:table-cell table:number-columns-repeated="1014"/>
+     <table:table-cell table:number-columns-repeated="54"/>
     </table:table-row>
     <table:table-row table:style-name="ro8">
-     <table:table-cell office:value-type="float" office:value="93" calcext:value-type="float">
-      <text:p>93</text:p>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p><text:span text:style-name="T1">native-</text:span>93</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>de</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>Aflatoxin</text:p>
@@ -2967,11 +3168,13 @@
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>TODO: Add category “oilseeds” once that exists in Open Food Facts.</text:p>
      </table:table-cell>
-     <table:table-cell table:number-columns-repeated="1014"/>
+     <table:table-cell table:number-columns-repeated="54"/>
     </table:table-row>
     <table:table-row table:style-name="ro20">
-     <table:table-cell office:value-type="float" office:value="94" calcext:value-type="float">
-      <text:p>94</text:p>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p><text:span text:style-name="T1">native-</text:span>94</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>de</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>Ochratoxine</text:p>
@@ -2996,11 +3199,13 @@
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>TODO: The original text also contained a category “Fruchtgewürzarten”. What’s that?</text:p>
      </table:table-cell>
-     <table:table-cell table:number-columns-repeated="1014"/>
+     <table:table-cell table:number-columns-repeated="54"/>
     </table:table-row>
     <table:table-row table:style-name="ro6">
-     <table:table-cell office:value-type="float" office:value="95" calcext:value-type="float">
-      <text:p>95</text:p>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p><text:span text:style-name="T1">native-</text:span>95</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>de</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>Patulin</text:p>
@@ -3025,11 +3230,13 @@
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>TODO: Find out what “Fleisch-einkochen” in the list of affected food categories means, and add categories correspondingly.</text:p>
      </table:table-cell>
-     <table:table-cell table:number-columns-repeated="1014"/>
+     <table:table-cell table:number-columns-repeated="54"/>
     </table:table-row>
     <table:table-row table:style-name="ro8">
-     <table:table-cell office:value-type="float" office:value="96" calcext:value-type="float">
-      <text:p>96</text:p>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p><text:span text:style-name="T1">native-</text:span>96</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>de</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>Mutterkornalkaloide und Mutterkorntoxine</text:p>
@@ -3054,11 +3261,13 @@
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>TODO: Add category “Spelt” once it’s added to the Open Food <text:s/>Facts taxonomy.</text:p>
      </table:table-cell>
-     <table:table-cell table:number-columns-repeated="1014"/>
+     <table:table-cell table:number-columns-repeated="54"/>
     </table:table-row>
     <table:table-row table:style-name="ro14">
-     <table:table-cell office:value-type="float" office:value="97" calcext:value-type="float">
-      <text:p>97</text:p>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p><text:span text:style-name="T1">native-</text:span>97</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>de</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>Gefrierbrand</text:p>
@@ -3082,11 +3291,13 @@
      <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
       <text:p>2020-08-27</text:p>
      </table:table-cell>
-     <table:table-cell table:number-columns-repeated="1015"/>
+     <table:table-cell table:number-columns-repeated="55"/>
     </table:table-row>
     <table:table-row table:style-name="ro22">
-     <table:table-cell office:value-type="float" office:value="98" calcext:value-type="float">
-      <text:p>98</text:p>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p><text:span text:style-name="T1">native-</text:span>98</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>de</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>Verfaulen</text:p>
@@ -3108,11 +3319,13 @@
      <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
       <text:p>2020-08-27</text:p>
      </table:table-cell>
-     <table:table-cell table:number-columns-repeated="1015"/>
+     <table:table-cell table:number-columns-repeated="55"/>
     </table:table-row>
     <table:table-row table:style-name="ro24">
-     <table:table-cell office:value-type="float" office:value="99" calcext:value-type="float">
-      <text:p>99</text:p>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p><text:span text:style-name="T1">native-</text:span>99</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>de</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>Pökeln</text:p>
@@ -3138,11 +3351,13 @@
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>TODO: In sentence “Wichtig für die Haltbarkeit ist auch, den PH-Wert im Fleisch zu senken (Absäuerung).”, clarify if this is done by curing the meat with curing salt, or if this needs other processing or additives.</text:p>
      </table:table-cell>
-     <table:table-cell table:number-columns-repeated="1014"/>
+     <table:table-cell table:number-columns-repeated="54"/>
     </table:table-row>
     <table:table-row table:style-name="ro9">
-     <table:table-cell office:value-type="float" office:value="100" calcext:value-type="float">
-      <text:p>100</text:p>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p><text:span text:style-name="T1">native-</text:span>100</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>de</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>Nitrosamine</text:p>
@@ -3169,11 +3384,13 @@
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>TODO: Add “Cured meats” once there is such a category.</text:p>
      </table:table-cell>
-     <table:table-cell table:number-columns-repeated="1014"/>
+     <table:table-cell table:number-columns-repeated="54"/>
     </table:table-row>
     <table:table-row table:style-name="ro25">
-     <table:table-cell office:value-type="float" office:value="101" calcext:value-type="float">
-      <text:p>101</text:p>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p><text:span text:style-name="T1">native-</text:span>101</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>de</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>Einkochen</text:p>
@@ -3195,11 +3412,13 @@
      <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
       <text:p>2020-08-27</text:p>
      </table:table-cell>
-     <table:table-cell table:number-columns-repeated="1015"/>
+     <table:table-cell table:number-columns-repeated="55"/>
     </table:table-row>
     <table:table-row table:style-name="ro8">
-     <table:table-cell office:value-type="float" office:value="102" calcext:value-type="float">
-      <text:p>102</text:p>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p><text:span text:style-name="T1">native-</text:span>102</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>de</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>Pasteurisation</text:p>
@@ -3224,11 +3443,13 @@
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>TODO: Insert internal Hyperlinks to the articles about pasteurizing milk, fish and meat, once a mechanism for such hyperlinks has been developed.</text:p>
      </table:table-cell>
-     <table:table-cell table:number-columns-repeated="1014"/>
+     <table:table-cell table:number-columns-repeated="54"/>
     </table:table-row>
     <table:table-row table:style-name="ro19">
-     <table:table-cell office:value-type="float" office:value="103" calcext:value-type="float">
-      <text:p>103</text:p>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p><text:span text:style-name="T1">native-</text:span>103</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>de</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>Ultrahocherhitzen</text:p>
@@ -3251,11 +3472,13 @@
      <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
       <text:p>2020-08-27</text:p>
      </table:table-cell>
-     <table:table-cell table:number-columns-repeated="1015"/>
+     <table:table-cell table:number-columns-repeated="55"/>
     </table:table-row>
     <table:table-row table:style-name="ro19">
-     <table:table-cell office:value-type="float" office:value="104" calcext:value-type="float">
-      <text:p>104</text:p>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p><text:span text:style-name="T1">native-</text:span>104</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>de</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>Pasteurisieren</text:p>
@@ -3278,11 +3501,13 @@
      <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
       <text:p>2020-08-27</text:p>
      </table:table-cell>
-     <table:table-cell table:number-columns-repeated="1015"/>
+     <table:table-cell table:number-columns-repeated="55"/>
     </table:table-row>
     <table:table-row table:style-name="ro18">
-     <table:table-cell office:value-type="float" office:value="105" calcext:value-type="float">
-      <text:p>105</text:p>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p><text:span text:style-name="T1">native-</text:span>105</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>de</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>Pasteurisieren</text:p>
@@ -3305,11 +3530,13 @@
      <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
       <text:p>2020-08-27</text:p>
      </table:table-cell>
-     <table:table-cell table:number-columns-repeated="1015"/>
+     <table:table-cell table:number-columns-repeated="55"/>
     </table:table-row>
     <table:table-row table:style-name="ro9">
-     <table:table-cell office:value-type="float" office:value="106" calcext:value-type="float">
-      <text:p>106</text:p>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p><text:span text:style-name="T1">native-</text:span>106</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>de</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>Haltbarkeit von kühlpflichtigen Konserven</text:p>
@@ -3332,11 +3559,13 @@
      <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
       <text:p>2020-08-27</text:p>
      </table:table-cell>
-     <table:table-cell table:number-columns-repeated="1015"/>
+     <table:table-cell table:number-columns-repeated="55"/>
     </table:table-row>
     <table:table-row table:style-name="ro26">
-     <table:table-cell office:value-type="float" office:value="107" calcext:value-type="float">
-      <text:p>107</text:p>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p><text:span text:style-name="T1">native-</text:span>107</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>de</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>Dampfentsaften</text:p>
@@ -3358,11 +3587,13 @@
      <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
       <text:p>2020-08-27</text:p>
      </table:table-cell>
-     <table:table-cell table:number-columns-repeated="1015"/>
+     <table:table-cell table:number-columns-repeated="55"/>
     </table:table-row>
     <table:table-row table:style-name="ro9">
-     <table:table-cell office:value-type="float" office:value="108" calcext:value-type="float">
-      <text:p>108</text:p>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p><text:span text:style-name="T1">native-</text:span>108</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>de</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>Säfte pasteurisieren</text:p>
@@ -3388,11 +3619,13 @@
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>TODO: Add category “Fresh vegetable juices” once available in the OFF taxonomy.</text:p>
      </table:table-cell>
-     <table:table-cell table:number-columns-repeated="1014"/>
+     <table:table-cell table:number-columns-repeated="54"/>
     </table:table-row>
     <table:table-row table:style-name="ro25">
-     <table:table-cell office:value-type="float" office:value="109" calcext:value-type="float">
-      <text:p>109</text:p>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p><text:span text:style-name="T1">native-</text:span>109</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>de</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>Dampfsterilisation</text:p>
@@ -3415,11 +3648,13 @@
      <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
       <text:p>2020-08-27</text:p>
      </table:table-cell>
-     <table:table-cell table:number-columns-repeated="1015"/>
+     <table:table-cell table:number-columns-repeated="55"/>
     </table:table-row>
     <table:table-row table:style-name="ro27">
-     <table:table-cell office:value-type="float" office:value="110" calcext:value-type="float">
-      <text:p>110</text:p>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p><text:span text:style-name="T1">native-</text:span>110</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>de</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>Kalträuchern</text:p>
@@ -3444,11 +3679,13 @@
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>TODO: Replace category “Poultries“ with “Fresh poultries”, once available in the OFF taxonomy.</text:p>
      </table:table-cell>
-     <table:table-cell table:number-columns-repeated="1014"/>
+     <table:table-cell table:number-columns-repeated="54"/>
     </table:table-row>
     <table:table-row table:style-name="ro16">
-     <table:table-cell office:value-type="float" office:value="111" calcext:value-type="float">
-      <text:p>111</text:p>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p><text:span text:style-name="T1">native-</text:span>111</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>de</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>Warmräuchern</text:p>
@@ -3473,11 +3710,13 @@
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>TODO: Replace category “Poultries“ with “Fresh poultries”, once available in the OFF taxonomy.</text:p>
      </table:table-cell>
-     <table:table-cell table:number-columns-repeated="1014"/>
+     <table:table-cell table:number-columns-repeated="54"/>
     </table:table-row>
     <table:table-row table:style-name="ro6">
-     <table:table-cell office:value-type="float" office:value="112" calcext:value-type="float">
-      <text:p>112</text:p>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p><text:span text:style-name="T1">native-</text:span>112</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>de</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>Heißräuchern</text:p>
@@ -3502,11 +3741,13 @@
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>TODO: Replace category “Poultries“ with “Fresh poultries”, once available in the OFF taxonomy.</text:p>
      </table:table-cell>
-     <table:table-cell table:number-columns-repeated="1014"/>
+     <table:table-cell table:number-columns-repeated="54"/>
     </table:table-row>
     <table:table-row table:style-name="ro3">
-     <table:table-cell office:value-type="float" office:value="113" calcext:value-type="float">
-      <text:p>113</text:p>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p><text:span text:style-name="T1">native-</text:span>113</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>de</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>Gefriertrocknen</text:p>
@@ -3531,11 +3772,13 @@
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>TODO: Replace category “Poultries“ with “Fresh poultries”, once available in the OFF taxonomy.</text:p>
      </table:table-cell>
-     <table:table-cell table:number-columns-repeated="1014"/>
+     <table:table-cell table:number-columns-repeated="54"/>
     </table:table-row>
     <table:table-row table:style-name="ro20">
-     <table:table-cell office:value-type="float" office:value="114" calcext:value-type="float">
-      <text:p>114</text:p>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p><text:span text:style-name="T1">native-</text:span>114</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>de</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>Lufttrocknen</text:p>
@@ -3558,11 +3801,13 @@
      <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
       <text:p>2020-08-27</text:p>
      </table:table-cell>
-     <table:table-cell table:number-columns-repeated="1015"/>
+     <table:table-cell table:number-columns-repeated="55"/>
     </table:table-row>
     <table:table-row table:style-name="ro26">
-     <table:table-cell office:value-type="float" office:value="115" calcext:value-type="float">
-      <text:p>115</text:p>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p><text:span text:style-name="T1">native-</text:span>115</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>de</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>Lufttrocknen</text:p>
@@ -3584,11 +3829,13 @@
      <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
       <text:p>2020-08-27</text:p>
      </table:table-cell>
-     <table:table-cell table:number-columns-repeated="1015"/>
+     <table:table-cell table:number-columns-repeated="55"/>
     </table:table-row>
     <table:table-row table:style-name="ro12">
-     <table:table-cell office:value-type="float" office:value="116" calcext:value-type="float">
-      <text:p>116</text:p>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p><text:span text:style-name="T1">native-</text:span>116</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>de</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>Dörren</text:p>
@@ -3610,11 +3857,13 @@
      <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
       <text:p>2020-08-27</text:p>
      </table:table-cell>
-     <table:table-cell table:number-columns-repeated="1015"/>
+     <table:table-cell table:number-columns-repeated="55"/>
     </table:table-row>
     <table:table-row table:style-name="ro2">
-     <table:table-cell office:value-type="float" office:value="117" calcext:value-type="float">
-      <text:p>117</text:p>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p><text:span text:style-name="T1">native-</text:span>117</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>de</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>Haltbarkeit getrockneter Lebensmittel</text:p>
@@ -3639,11 +3888,13 @@
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string"><text:p>TODO: Add more details about what means “dry storage”.</text:p><text:p>TODO: Add a category “Dried fishes” once available in the OFF taxonomy.</text:p>
      </table:table-cell>
-     <table:table-cell table:number-columns-repeated="1014"/>
+     <table:table-cell table:number-columns-repeated="54"/>
     </table:table-row>
     <table:table-row table:style-name="ro10">
-     <table:table-cell office:value-type="float" office:value="118" calcext:value-type="float">
-      <text:p>118</text:p>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p><text:span text:style-name="T1">native-</text:span>118</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>de</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>Einlegen</text:p>
@@ -3667,11 +3918,13 @@
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>TODO: Add the correct categories.</text:p>
      </table:table-cell>
-     <table:table-cell table:number-columns-repeated="1014"/>
+     <table:table-cell table:number-columns-repeated="54"/>
     </table:table-row>
     <table:table-row table:style-name="ro4">
-     <table:table-cell office:value-type="float" office:value="119" calcext:value-type="float">
-      <text:p>119</text:p>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p><text:span text:style-name="T1">native-</text:span>119</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>de</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>Fermentieren</text:p>
@@ -3696,11 +3949,13 @@
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>TODO: Currently, “Grains” is a synonym for “Seeds”. That is not exact, and should be made into its own independent category. After that, “Grains” should also be added to the categories of this topic.</text:p>
      </table:table-cell>
-     <table:table-cell table:number-columns-repeated="1014"/>
+     <table:table-cell table:number-columns-repeated="54"/>
     </table:table-row>
     <table:table-row table:style-name="ro10">
-     <table:table-cell office:value-type="float" office:value="120" calcext:value-type="float">
-      <text:p>120</text:p>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p><text:span text:style-name="T1">native-</text:span>120</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>de</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>Kahmschicht beim Fermentieren</text:p>
@@ -3726,11 +3981,13 @@
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>TODO: Add categories of self-fermented food items.</text:p>
      </table:table-cell>
-     <table:table-cell table:number-columns-repeated="1014"/>
+     <table:table-cell table:number-columns-repeated="54"/>
     </table:table-row>
     <table:table-row table:style-name="ro6">
-     <table:table-cell office:value-type="float" office:value="121" calcext:value-type="float">
-      <text:p>121</text:p>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p><text:span text:style-name="T1">native-</text:span>121</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>de</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>Direktentsaften</text:p>
@@ -3752,11 +4009,13 @@
      <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
       <text:p>2020-08-27</text:p>
      </table:table-cell>
-     <table:table-cell table:number-columns-repeated="1015"/>
+     <table:table-cell table:number-columns-repeated="55"/>
     </table:table-row>
     <table:table-row table:style-name="ro4">
-     <table:table-cell office:value-type="float" office:value="122" calcext:value-type="float">
-      <text:p>122</text:p>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p><text:span text:style-name="T1">native-</text:span>122</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>de</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>Fruchtessig</text:p>
@@ -3779,13 +4038,13 @@
      <table:table-cell table:style-name="ce5" office:value-type="string" calcext:value-type="string">
       <text:p>2020-08-27</text:p>
      </table:table-cell>
-     <table:table-cell table:number-columns-repeated="1015"/>
+     <table:table-cell table:number-columns-repeated="55"/>
     </table:table-row>
     <table:table-row table:style-name="ro11" table:number-rows-repeated="1048452">
-     <table:table-cell table:number-columns-repeated="1024"/>
+     <table:table-cell table:number-columns-repeated="65"/>
     </table:table-row>
     <table:table-row table:style-name="ro11">
-     <table:table-cell table:number-columns-repeated="1024"/>
+     <table:table-cell table:number-columns-repeated="65"/>
     </table:table-row>
    </table:table>
    <table:named-expressions/>

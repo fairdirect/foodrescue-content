@@ -32,8 +32,8 @@
 /content-topics-foodkeeper/foodkeeper-*.apk
 
 # Ignore automatically generated files and legacy files related to native topics.
-/content-topics-native/topics-native-en.fods.csv
-/content-topics-native/topics-native-en.odt
+/content-topics-native/topics-native-*.fods.csv
+/content-topics-native/topics-native-de.odt
 
 # Ignore experiments with no re-usable results.
 /experiments/ruby-syntax.rb
