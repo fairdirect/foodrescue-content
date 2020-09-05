@@ -1,0 +1,3636 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<office:document xmlns:presentation="urn:oasis:names:tc:opendocument:xmlns:presentation:1.0" xmlns:grddl="http://www.w3.org/2003/g/data-view#" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xforms="http://www.w3.org/2002/xforms" xmlns:dom="http://www.w3.org/2001/xml-events" xmlns:script="urn:oasis:names:tc:opendocument:xmlns:script:1.0" xmlns:form="urn:oasis:names:tc:opendocument:xmlns:form:1.0" xmlns:math="http://www.w3.org/1998/Math/MathML" xmlns:draw="urn:oasis:names:tc:opendocument:xmlns:drawing:1.0" xmlns:dr3d="urn:oasis:names:tc:opendocument:xmlns:dr3d:1.0" xmlns:text="urn:oasis:names:tc:opendocument:xmlns:text:1.0" xmlns:style="urn:oasis:names:tc:opendocument:xmlns:style:1.0" xmlns:formx="urn:openoffice:names:experimental:ooxml-odf-interop:xmlns:form:1.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:ooo="http://openoffice.org/2004/office" xmlns:loext="urn:org:documentfoundation:names:experimental:office:xmlns:loext:1.0" xmlns:office="urn:oasis:names:tc:opendocument:xmlns:office:1.0" xmlns:fo="urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0" xmlns:field="urn:openoffice:names:experimental:ooo-ms-interop:xmlns:field:1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:meta="urn:oasis:names:tc:opendocument:xmlns:meta:1.0" xmlns:config="urn:oasis:names:tc:opendocument:xmlns:config:1.0" xmlns:calcext="urn:org:documentfoundation:names:experimental:calc:xmlns:calcext:1.0" xmlns:svg="urn:oasis:names:tc:opendocument:xmlns:svg-compatible:1.0" xmlns:of="urn:oasis:names:tc:opendocument:xmlns:of:1.2" xmlns:chart="urn:oasis:names:tc:opendocument:xmlns:chart:1.0" xmlns:rpt="http://openoffice.org/2005/report" xmlns:table="urn:oasis:names:tc:opendocument:xmlns:table:1.0" xmlns:css3t="http://www.w3.org/TR/css3-text/" xmlns:number="urn:oasis:names:tc:opendocument:xmlns:datastyle:1.0" xmlns:ooow="http://openoffice.org/2004/writer" xmlns:oooc="http://openoffice.org/2004/calc" xmlns:tableooo="http://openoffice.org/2009/table" xmlns:drawooo="http://openoffice.org/2010/draw" office:version="1.2" office:mimetype="application/vnd.oasis.opendocument.spreadsheet">
+ <office:meta><dc:date>2020-09-05T13:49:05.710753521</dc:date><dc:creator>Matthias Ansorg</dc:creator><meta:editing-duration>PT2H34M5S</meta:editing-duration><meta:editing-cycles>12</meta:editing-cycles><meta:generator>LibreOffice/6.3.5.2$Linux_X86_64 LibreOffice_project/30$Build-2</meta:generator><meta:document-statistic meta:table-count="1" meta:cell-count="837" meta:object-count="0"/></office:meta>
+ <office:settings>
+  <config:config-item-set config:name="ooo:view-settings">
+   <config:config-item config:name="VisibleAreaTop" config:type="int">0</config:config-item>
+   <config:config-item config:name="VisibleAreaLeft" config:type="int">0</config:config-item>
+   <config:config-item config:name="VisibleAreaWidth" config:type="int">11680</config:config-item>
+   <config:config-item config:name="VisibleAreaHeight" config:type="int">126061</config:config-item>
+   <config:config-item-map-indexed config:name="Views">
+    <config:config-item-map-entry>
+     <config:config-item config:name="ViewId" config:type="string">view1</config:config-item>
+     <config:config-item-map-named config:name="Tables">
+      <config:config-item-map-entry config:name="major-off-categories">
+       <config:config-item config:name="CursorPositionX" config:type="int">1</config:config-item>
+       <config:config-item config:name="CursorPositionY" config:type="int">21</config:config-item>
+       <config:config-item config:name="HorizontalSplitMode" config:type="short">0</config:config-item>
+       <config:config-item config:name="VerticalSplitMode" config:type="short">2</config:config-item>
+       <config:config-item config:name="HorizontalSplitPosition" config:type="int">0</config:config-item>
+       <config:config-item config:name="VerticalSplitPosition" config:type="int">1</config:config-item>
+       <config:config-item config:name="ActiveSplitRange" config:type="short">2</config:config-item>
+       <config:config-item config:name="PositionLeft" config:type="int">0</config:config-item>
+       <config:config-item config:name="PositionRight" config:type="int">0</config:config-item>
+       <config:config-item config:name="PositionTop" config:type="int">0</config:config-item>
+       <config:config-item config:name="PositionBottom" config:type="int">1</config:config-item>
+       <config:config-item config:name="ZoomType" config:type="short">0</config:config-item>
+       <config:config-item config:name="ZoomValue" config:type="int">100</config:config-item>
+       <config:config-item config:name="PageViewZoomValue" config:type="int">60</config:config-item>
+       <config:config-item config:name="ShowGrid" config:type="boolean">true</config:config-item>
+       <config:config-item config:name="AnchoredTextOverflowLegacy" config:type="boolean">false</config:config-item>
+      </config:config-item-map-entry>
+     </config:config-item-map-named>
+     <config:config-item config:name="ActiveTable" config:type="string">major-off-categories</config:config-item>
+     <config:config-item config:name="HorizontalScrollbarWidth" config:type="int">1265</config:config-item>
+     <config:config-item config:name="ZoomType" config:type="short">0</config:config-item>
+     <config:config-item config:name="ZoomValue" config:type="int">100</config:config-item>
+     <config:config-item config:name="PageViewZoomValue" config:type="int">60</config:config-item>
+     <config:config-item config:name="ShowPageBreakPreview" config:type="boolean">false</config:config-item>
+     <config:config-item config:name="ShowZeroValues" config:type="boolean">true</config:config-item>
+     <config:config-item config:name="ShowNotes" config:type="boolean">true</config:config-item>
+     <config:config-item config:name="ShowGrid" config:type="boolean">true</config:config-item>
+     <config:config-item config:name="GridColor" config:type="int">12632256</config:config-item>
+     <config:config-item config:name="ShowPageBreaks" config:type="boolean">true</config:config-item>
+     <config:config-item config:name="HasColumnRowHeaders" config:type="boolean">true</config:config-item>
+     <config:config-item config:name="HasSheetTabs" config:type="boolean">true</config:config-item>
+     <config:config-item config:name="IsOutlineSymbolsSet" config:type="boolean">true</config:config-item>
+     <config:config-item config:name="IsValueHighlightingEnabled" config:type="boolean">false</config:config-item>
+     <config:config-item config:name="IsSnapToRaster" config:type="boolean">false</config:config-item>
+     <config:config-item config:name="RasterIsVisible" config:type="boolean">false</config:config-item>
+     <config:config-item config:name="RasterResolutionX" config:type="int">1000</config:config-item>
+     <config:config-item config:name="RasterResolutionY" config:type="int">1000</config:config-item>
+     <config:config-item config:name="RasterSubdivisionX" config:type="int">1</config:config-item>
+     <config:config-item config:name="RasterSubdivisionY" config:type="int">1</config:config-item>
+     <config:config-item config:name="IsRasterAxisSynchronized" config:type="boolean">true</config:config-item>
+     <config:config-item config:name="AnchoredTextOverflowLegacy" config:type="boolean">false</config:config-item>
+    </config:config-item-map-entry>
+   </config:config-item-map-indexed>
+  </config:config-item-set>
+  <config:config-item-set config:name="ooo:configuration-settings">
+   <config:config-item config:name="SyntaxStringRef" config:type="short">7</config:config-item>
+   <config:config-item config:name="EmbedComplexScriptFonts" config:type="boolean">true</config:config-item>
+   <config:config-item config:name="EmbedAsianScriptFonts" config:type="boolean">true</config:config-item>
+   <config:config-item config:name="EmbedLatinScriptFonts" config:type="boolean">true</config:config-item>
+   <config:config-item config:name="IsDocumentShared" config:type="boolean">false</config:config-item>
+   <config:config-item config:name="LoadReadonly" config:type="boolean">false</config:config-item>
+   <config:config-item config:name="EmbedOnlyUsedFonts" config:type="boolean">false</config:config-item>
+   <config:config-item config:name="AllowPrintJobCancel" config:type="boolean">true</config:config-item>
+   <config:config-item config:name="UpdateFromTemplate" config:type="boolean">true</config:config-item>
+   <config:config-item config:name="IsKernAsianPunctuation" config:type="boolean">false</config:config-item>
+   <config:config-item config:name="CharacterCompressionType" config:type="short">0</config:config-item>
+   <config:config-item config:name="RasterIsVisible" config:type="boolean">false</config:config-item>
+   <config:config-item config:name="SaveVersionOnClose" config:type="boolean">false</config:config-item>
+   <config:config-item config:name="GridColor" config:type="int">12632256</config:config-item>
+   <config:config-item config:name="PrinterName" config:type="string">laserjet-2200-pxlmono</config:config-item>
+   <config:config-item-map-indexed config:name="ForbiddenCharacters">
+    <config:config-item-map-entry>
+     <config:config-item config:name="Language" config:type="string">en</config:config-item>
+     <config:config-item config:name="Country" config:type="string">GB</config:config-item>
+     <config:config-item config:name="Variant" config:type="string"/>
+     <config:config-item config:name="BeginLine" config:type="string"/>
+     <config:config-item config:name="EndLine" config:type="string"/>
+    </config:config-item-map-entry>
+   </config:config-item-map-indexed>
+   <config:config-item config:name="EmbedFonts" config:type="boolean">false</config:config-item>
+   <config:config-item config:name="IsSnapToRaster" config:type="boolean">false</config:config-item>
+   <config:config-item config:name="RasterResolutionX" config:type="int">1000</config:config-item>
+   <config:config-item config:name="RasterResolutionY" config:type="int">1000</config:config-item>
+   <config:config-item config:name="ShowZeroValues" config:type="boolean">true</config:config-item>
+   <config:config-item config:name="ShowNotes" config:type="boolean">true</config:config-item>
+   <config:config-item config:name="ShowGrid" config:type="boolean">true</config:config-item>
+   <config:config-item config:name="ShowPageBreaks" config:type="boolean">true</config:config-item>
+   <config:config-item config:name="HasSheetTabs" config:type="boolean">true</config:config-item>
+   <config:config-item config:name="IsRasterAxisSynchronized" config:type="boolean">true</config:config-item>
+   <config:config-item config:name="LinkUpdateMode" config:type="short">3</config:config-item>
+   <config:config-item config:name="RasterSubdivisionX" config:type="int">1</config:config-item>
+   <config:config-item config:name="HasColumnRowHeaders" config:type="boolean">true</config:config-item>
+   <config:config-item config:name="RasterSubdivisionY" config:type="int">1</config:config-item>
+   <config:config-item config:name="AutoCalculate" config:type="boolean">true</config:config-item>
+   <config:config-item config:name="PrinterSetup" config:type="base64Binary">twH+/2xhc2VyamV0LTIyMDAtcHhsbW9ubwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQ1VQUzpsYXNlcmpldC0yMjAwLXB4bG1vbm8AAAAAAAAWAAMA2AAAAAAAAAAEAAhSAAAEdAAASm9iRGF0YSAxCnByaW50ZXI9bGFzZXJqZXQtMjIwMC1weGxtb25vCm9yaWVudGF0aW9uPVBvcnRyYWl0CmNvcGllcz0xCmNvbGxhdGU9ZmFsc2UKbWFyZ2luZGFqdXN0bWVudD0wLDAsMCwwCmNvbG9yZGVwdGg9MjQKcHNsZXZlbD0wCnBkZmRldmljZT0xCmNvbG9yZGV2aWNlPTAKUFBEQ29udGV4RGF0YQpEdXBsZXg6Tm9uZQBQYWdlU2l6ZTpBNABJbnB1dFNsb3Q6RGVmYXVsdAAAEgBDT01QQVRfRFVQTEVYX01PREUPAER1cGxleE1vZGU6Ok9mZg==</config:config-item>
+   <config:config-item config:name="IsOutlineSymbolsSet" config:type="boolean">true</config:config-item>
+   <config:config-item config:name="PrinterPaperFromSetup" config:type="boolean">false</config:config-item>
+   <config:config-item config:name="ApplyUserData" config:type="boolean">true</config:config-item>
+   <config:config-item config:name="SaveThumbnail" config:type="boolean">true</config:config-item>
+  </config:config-item-set>
+ </office:settings>
+ <office:scripts>
+  <office:script script:language="ooo:Basic">
+   <ooo:libraries xmlns:ooo="http://openoffice.org/2004/office" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <ooo:library-embedded ooo:name="Standard"/>
+   </ooo:libraries>
+  </office:script>
+ </office:scripts>
+ <office:font-face-decls>
+  <style:font-face style:name="Liberation Sans" svg:font-family="&apos;Liberation Sans&apos;" style:font-family-generic="swiss" style:font-pitch="variable"/>
+  <style:font-face style:name="DejaVu Sans" svg:font-family="&apos;DejaVu Sans&apos;" style:font-family-generic="system" style:font-pitch="variable"/>
+  <style:font-face style:name="Mangal" svg:font-family="Mangal" style:font-family-generic="system" style:font-pitch="variable"/>
+  <style:font-face style:name="Noto Sans CJK SC" svg:font-family="&apos;Noto Sans CJK SC&apos;" style:font-family-generic="system" style:font-pitch="variable"/>
+ </office:font-face-decls>
+ <office:styles>
+  <style:default-style style:family="table-cell">
+   <style:paragraph-properties style:tab-stop-distance="1.25cm"/>
+   <style:text-properties style:font-name="Liberation Sans" fo:language="en" fo:country="GB" style:font-name-asian="DejaVu Sans" style:language-asian="zh" style:country-asian="CN" style:font-name-complex="Mangal" style:language-complex="hi" style:country-complex="IN"/>
+  </style:default-style>
+  <number:number-style style:name="N0">
+   <number:number number:min-integer-digits="1"/>
+  </number:number-style>
+  <style:style style:name="Default" style:family="table-cell"/>
+  <style:style style:name="Heading_20__28_user_29_" style:display-name="Heading (user)" style:family="table-cell" style:parent-style-name="Default">
+   <style:text-properties fo:color="#000000" fo:font-size="24pt" fo:font-style="normal" fo:font-weight="bold"/>
+  </style:style>
+  <style:style style:name="Heading_20_1" style:display-name="Heading 1" style:family="table-cell" style:parent-style-name="Heading">
+   <style:text-properties fo:color="#000000" fo:font-size="18pt" fo:font-style="normal" fo:font-weight="normal"/>
+  </style:style>
+  <style:style style:name="Heading_20_2" style:display-name="Heading 2" style:family="table-cell" style:parent-style-name="Heading">
+   <style:text-properties fo:color="#000000" fo:font-size="12pt" fo:font-style="normal" fo:font-weight="normal"/>
+  </style:style>
+  <style:style style:name="Text" style:family="table-cell" style:parent-style-name="Default"/>
+  <style:style style:name="Note" style:family="table-cell" style:parent-style-name="Text">
+   <style:table-cell-properties fo:background-color="#ffffcc" style:diagonal-bl-tr="none" style:diagonal-tl-br="none" fo:border="0.74pt solid #808080"/>
+   <style:text-properties fo:color="#333333" fo:font-size="10pt" fo:font-style="normal" fo:font-weight="normal"/>
+  </style:style>
+  <style:style style:name="Footnote" style:family="table-cell" style:parent-style-name="Text">
+   <style:text-properties fo:color="#808080" fo:font-size="10pt" fo:font-style="italic" fo:font-weight="normal"/>
+  </style:style>
+  <style:style style:name="Hyperlink" style:family="table-cell" style:parent-style-name="Text">
+   <style:text-properties fo:color="#0000ee" fo:font-size="10pt" fo:font-style="normal" style:text-underline-style="solid" style:text-underline-width="auto" style:text-underline-color="#0000ee" fo:font-weight="normal"/>
+  </style:style>
+  <style:style style:name="Status" style:family="table-cell" style:parent-style-name="Default"/>
+  <style:style style:name="Good" style:family="table-cell" style:parent-style-name="Status">
+   <style:table-cell-properties fo:background-color="#ccffcc"/>
+   <style:text-properties fo:color="#006600" fo:font-size="10pt" fo:font-style="normal" fo:font-weight="normal"/>
+  </style:style>
+  <style:style style:name="Neutral" style:family="table-cell" style:parent-style-name="Status">
+   <style:table-cell-properties fo:background-color="#ffffcc"/>
+   <style:text-properties fo:color="#996600" fo:font-size="10pt" fo:font-style="normal" fo:font-weight="normal"/>
+  </style:style>
+  <style:style style:name="Bad" style:family="table-cell" style:parent-style-name="Status">
+   <style:table-cell-properties fo:background-color="#ffcccc"/>
+   <style:text-properties fo:color="#cc0000" fo:font-size="10pt" fo:font-style="normal" fo:font-weight="normal"/>
+  </style:style>
+  <style:style style:name="Warning" style:family="table-cell" style:parent-style-name="Status">
+   <style:text-properties fo:color="#cc0000" fo:font-size="10pt" fo:font-style="normal" fo:font-weight="normal"/>
+  </style:style>
+  <style:style style:name="Error" style:family="table-cell" style:parent-style-name="Status">
+   <style:table-cell-properties fo:background-color="#cc0000"/>
+   <style:text-properties fo:color="#ffffff" fo:font-size="10pt" fo:font-style="normal" fo:font-weight="bold"/>
+  </style:style>
+  <style:style style:name="Accent" style:family="table-cell" style:parent-style-name="Default">
+   <style:text-properties fo:color="#000000" fo:font-size="10pt" fo:font-style="normal" fo:font-weight="bold"/>
+  </style:style>
+  <style:style style:name="Accent_20_1" style:display-name="Accent 1" style:family="table-cell" style:parent-style-name="Accent">
+   <style:table-cell-properties fo:background-color="#000000"/>
+   <style:text-properties fo:color="#ffffff" fo:font-size="10pt" fo:font-style="normal" fo:font-weight="normal"/>
+  </style:style>
+  <style:style style:name="Accent_20_2" style:display-name="Accent 2" style:family="table-cell" style:parent-style-name="Accent">
+   <style:table-cell-properties fo:background-color="#808080"/>
+   <style:text-properties fo:color="#ffffff" fo:font-size="10pt" fo:font-style="normal" fo:font-weight="normal"/>
+  </style:style>
+  <style:style style:name="Accent_20_3" style:display-name="Accent 3" style:family="table-cell" style:parent-style-name="Accent">
+   <style:table-cell-properties fo:background-color="#dddddd"/>
+  </style:style>
+  <style:style style:name="Heading" style:family="table-cell" style:parent-style-name="Default">
+   <style:text-properties fo:color="#000000" fo:font-size="24pt" fo:font-style="normal" fo:font-weight="bold"/>
+  </style:style>
+ </office:styles>
+ <office:automatic-styles>
+  <style:style style:name="co1" style:family="table-column">
+   <style:table-column-properties fo:break-before="auto" style:column-width="1.552cm"/>
+  </style:style>
+  <style:style style:name="co2" style:family="table-column">
+   <style:table-column-properties fo:break-before="auto" style:column-width="6.426cm"/>
+  </style:style>
+  <style:style style:name="co3" style:family="table-column">
+   <style:table-column-properties fo:break-before="auto" style:column-width="3.702cm"/>
+  </style:style>
+  <style:style style:name="co4" style:family="table-column">
+   <style:table-column-properties fo:break-before="auto" style:column-width="2.258cm"/>
+  </style:style>
+  <style:style style:name="ro1" style:family="table-row">
+   <style:table-row-properties style:row-height="0.529cm" fo:break-before="auto" style:use-optimal-row-height="true"/>
+  </style:style>
+  <style:style style:name="ro2" style:family="table-row">
+   <style:table-row-properties style:row-height="0.452cm" fo:break-before="auto" style:use-optimal-row-height="true"/>
+  </style:style>
+  <style:style style:name="ta1" style:family="table" style:master-page-name="Default">
+   <style:table-properties table:display="true" style:writing-mode="lr-tb"/>
+  </style:style>
+  <number:number-style style:name="N2">
+   <number:number number:decimal-places="2" loext:min-decimal-places="2" number:min-integer-digits="1"/>
+  </number:number-style>
+  <style:style style:name="ce1" style:family="table-cell" style:parent-style-name="Default">
+   <style:table-cell-properties style:vertical-align="top"/>
+   <style:text-properties fo:font-size="12pt" fo:font-weight="bold" style:font-size-asian="12pt" style:font-weight-asian="bold" style:font-size-complex="12pt" style:font-weight-complex="bold"/>
+  </style:style>
+  <style:style style:name="ce2" style:family="table-cell" style:parent-style-name="Default">
+   <style:table-cell-properties style:vertical-align="top"/>
+  </style:style>
+  <style:page-layout style:name="pm1">
+   <style:page-layout-properties style:writing-mode="lr-tb"/>
+   <style:header-style>
+    <style:header-footer-properties fo:min-height="0.75cm" fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-bottom="0.25cm"/>
+   </style:header-style>
+   <style:footer-style>
+    <style:header-footer-properties fo:min-height="0.75cm" fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-top="0.25cm"/>
+   </style:footer-style>
+  </style:page-layout>
+  <style:page-layout style:name="pm2">
+   <style:page-layout-properties style:writing-mode="lr-tb"/>
+   <style:header-style>
+    <style:header-footer-properties fo:min-height="0.75cm" fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-bottom="0.25cm" fo:border="2.49pt solid #000000" fo:padding="0.018cm" fo:background-color="#c0c0c0">
+     <style:background-image/>
+    </style:header-footer-properties>
+   </style:header-style>
+   <style:footer-style>
+    <style:header-footer-properties fo:min-height="0.75cm" fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-top="0.25cm" fo:border="2.49pt solid #000000" fo:padding="0.018cm" fo:background-color="#c0c0c0">
+     <style:background-image/>
+    </style:header-footer-properties>
+   </style:footer-style>
+  </style:page-layout>
+ </office:automatic-styles>
+ <office:master-styles>
+  <style:master-page style:name="Default" style:page-layout-name="pm1">
+   <style:header>
+    <text:p><text:sheet-name>???</text:sheet-name></text:p>
+   </style:header>
+   <style:header-left style:display="false"/>
+   <style:footer>
+    <text:p>Page <text:page-number>1</text:page-number></text:p>
+   </style:footer>
+   <style:footer-left style:display="false"/>
+  </style:master-page>
+  <style:master-page style:name="Report" style:page-layout-name="pm2">
+   <style:header>
+    <style:region-left>
+     <text:p><text:sheet-name>???</text:sheet-name><text:s/>(<text:title>???</text:title>)</text:p>
+    </style:region-left>
+    <style:region-right>
+     <text:p><text:date style:data-style-name="N2" text:date-value="2020-09-05">00/00/0000</text:date>, <text:time style:data-style-name="N2" text:time-value="13:47:03.084851521">00:00:00</text:time></text:p>
+    </style:region-right>
+   </style:header>
+   <style:header-left style:display="false"/>
+   <style:footer>
+    <text:p>Page <text:page-number>1</text:page-number><text:s/>/ <text:page-count>99</text:page-count></text:p>
+   </style:footer>
+   <style:footer-left style:display="false"/>
+  </style:master-page>
+ </office:master-styles>
+ <office:body>
+  <office:spreadsheet>
+   <table:calculation-settings table:automatic-find-labels="false" table:use-regular-expressions="false" table:use-wildcards="true"/>
+   <table:table table:name="major-off-categories" table:style-name="ta1">
+    <office:forms form:automatic-focus="false" form:apply-design-mode="false"/>
+    <table:table-column table:style-name="co1" table:default-cell-style-name="ce2"/>
+    <table:table-column table:style-name="co2" table:default-cell-style-name="ce2"/>
+    <table:table-column table:style-name="co3" table:default-cell-style-name="ce2"/>
+    <table:table-column table:style-name="co4" table:number-columns-repeated="55" table:default-cell-style-name="ce2"/>
+    <table:table-row table:style-name="ro1">
+     <table:table-cell table:style-name="ce1" office:value-type="string" calcext:value-type="string">
+      <text:p>Rank</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce1" office:value-type="string" calcext:value-type="string">
+      <text:p>Open Food Facts Category</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce1" office:value-type="string" calcext:value-type="string">
+      <text:p>Products Count</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell office:value-type="float" office:value="1" calcext:value-type="float">
+      <text:p>1</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Plant-based foods and beverages</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="136214" calcext:value-type="float">
+      <text:p>136214</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A2]+1" office:value-type="float" office:value="2" calcext:value-type="float">
+      <text:p>2</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Plant-based foods</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="117363" calcext:value-type="float">
+      <text:p>117363</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A3]+1" office:value-type="float" office:value="3" calcext:value-type="float">
+      <text:p>3</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Snacks</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="65304" calcext:value-type="float">
+      <text:p>65304</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A4]+1" office:value-type="float" office:value="4" calcext:value-type="float">
+      <text:p>4</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Beverages</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="58403" calcext:value-type="float">
+      <text:p>58403</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A5]+1" office:value-type="float" office:value="5" calcext:value-type="float">
+      <text:p>5</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Sweet snacks</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="53428" calcext:value-type="float">
+      <text:p>53428</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A6]+1" office:value-type="float" office:value="6" calcext:value-type="float">
+      <text:p>6</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Dairies</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="49517" calcext:value-type="float">
+      <text:p>49517</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A7]+1" office:value-type="float" office:value="7" calcext:value-type="float">
+      <text:p>7</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Cereals and potatoes</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="39612" calcext:value-type="float">
+      <text:p>39612</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A8]+1" office:value-type="float" office:value="8" calcext:value-type="float">
+      <text:p>8</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Fruits and vegetables based foods</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="39364" calcext:value-type="float">
+      <text:p>39364</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A9]+1" office:value-type="float" office:value="9" calcext:value-type="float">
+      <text:p>9</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Meats</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="36856" calcext:value-type="float">
+      <text:p>36856</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A10]+1" office:value-type="float" office:value="10" calcext:value-type="float">
+      <text:p>10</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Fermented foods</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="35716" calcext:value-type="float">
+      <text:p>35716</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A11]+1" office:value-type="float" office:value="11" calcext:value-type="float">
+      <text:p>11</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Fermented milk products</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="35285" calcext:value-type="float">
+      <text:p>35285</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A12]+1" office:value-type="float" office:value="12" calcext:value-type="float">
+      <text:p>12</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Meals</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="32874" calcext:value-type="float">
+      <text:p>32874</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A13]+1" office:value-type="float" office:value="13" calcext:value-type="float">
+      <text:p>13</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Groceries</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="28608" calcext:value-type="float">
+      <text:p>28608</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A14]+1" office:value-type="float" office:value="14" calcext:value-type="float">
+      <text:p>14</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Spreads</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="27382" calcext:value-type="float">
+      <text:p>27382</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A15]+1" office:value-type="float" office:value="15" calcext:value-type="float">
+      <text:p>15</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Biscuits and cakes</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="25531" calcext:value-type="float">
+      <text:p>25531</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A16]+1" office:value-type="float" office:value="16" calcext:value-type="float">
+      <text:p>16</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Cereals and their products</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="25269" calcext:value-type="float">
+      <text:p>25269</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A17]+1" office:value-type="float" office:value="17" calcext:value-type="float">
+      <text:p>17</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Cheeses</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="23276" calcext:value-type="float">
+      <text:p>23276</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A18]+1" office:value-type="float" office:value="18" calcext:value-type="float">
+      <text:p>18</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Breakfasts</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="22756" calcext:value-type="float">
+      <text:p>22756</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A19]+1" office:value-type="float" office:value="19" calcext:value-type="float">
+      <text:p>19</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Prepared meats</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="21634" calcext:value-type="float">
+      <text:p>21634</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A20]+1" office:value-type="float" office:value="20" calcext:value-type="float">
+      <text:p>20</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Plant-based beverages</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="21320" calcext:value-type="float">
+      <text:p>21320</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A21]+1" office:value-type="float" office:value="21" calcext:value-type="float">
+      <text:p>21</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Fruits based foods</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="20800" calcext:value-type="float">
+      <text:p>20800</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A22]+1" office:value-type="float" office:value="22" calcext:value-type="float">
+      <text:p>22</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Sauces</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="19471" calcext:value-type="float">
+      <text:p>19471</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A23]+1" office:value-type="float" office:value="23" calcext:value-type="float">
+      <text:p>23</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Desserts</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="18811" calcext:value-type="float">
+      <text:p>18811</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A24]+1" office:value-type="float" office:value="24" calcext:value-type="float">
+      <text:p>24</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Vegetables based foods</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="16561" calcext:value-type="float">
+      <text:p>16561</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A25]+1" office:value-type="float" office:value="25" calcext:value-type="float">
+      <text:p>25</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Seafood</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="15579" calcext:value-type="float">
+      <text:p>15579</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A26]+1" office:value-type="float" office:value="26" calcext:value-type="float">
+      <text:p>26</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Sweet spreads</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="15420" calcext:value-type="float">
+      <text:p>15420</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A27]+1" office:value-type="float" office:value="27" calcext:value-type="float">
+      <text:p>27</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Confectioneries</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="15169" calcext:value-type="float">
+      <text:p>15169</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A28]+1" office:value-type="float" office:value="28" calcext:value-type="float">
+      <text:p>28</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Canned foods</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="14633" calcext:value-type="float">
+      <text:p>14633</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A29]+1" office:value-type="float" office:value="29" calcext:value-type="float">
+      <text:p>29</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Frozen foods</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="14121" calcext:value-type="float">
+      <text:p>14121</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A30]+1" office:value-type="float" office:value="30" calcext:value-type="float">
+      <text:p>30</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Plant-based spreads</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="12983" calcext:value-type="float">
+      <text:p>12983</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A31]+1" office:value-type="float" office:value="31" calcext:value-type="float">
+      <text:p>31</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Fishes</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="12798" calcext:value-type="float">
+      <text:p>12798</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A32]+1" office:value-type="float" office:value="32" calcext:value-type="float">
+      <text:p>32</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Biscuits</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="12235" calcext:value-type="float">
+      <text:p>12235</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A33]+1" office:value-type="float" office:value="33" calcext:value-type="float">
+      <text:p>33</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Alcoholic beverages</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="11814" calcext:value-type="float">
+      <text:p>11814</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A34]+1" office:value-type="float" office:value="34" calcext:value-type="float">
+      <text:p>34</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Fats</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="11634" calcext:value-type="float">
+      <text:p>11634</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A35]+1" office:value-type="float" office:value="35" calcext:value-type="float">
+      <text:p>35</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Salty snacks</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="11306" calcext:value-type="float">
+      <text:p>11306</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A36]+1" office:value-type="float" office:value="36" calcext:value-type="float">
+      <text:p>36</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Chocolates</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="11213" calcext:value-type="float">
+      <text:p>11213</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A37]+1" office:value-type="float" office:value="37" calcext:value-type="float">
+      <text:p>37</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Fruit-based beverages</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="11129" calcext:value-type="float">
+      <text:p>11129</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A38]+1" office:value-type="float" office:value="38" calcext:value-type="float">
+      <text:p>38</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Yogurts</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="10946" calcext:value-type="float">
+      <text:p>10946</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A39]+1" office:value-type="float" office:value="39" calcext:value-type="float">
+      <text:p>39</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Condiments</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="10936" calcext:value-type="float">
+      <text:p>10936</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A40]+1" office:value-type="float" office:value="40" calcext:value-type="float">
+      <text:p>40</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Breads</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="10386" calcext:value-type="float">
+      <text:p>10386</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A41]+1" office:value-type="float" office:value="41" calcext:value-type="float">
+      <text:p>41</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Juices and nectars</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="9769" calcext:value-type="float">
+      <text:p>9769</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A42]+1" office:value-type="float" office:value="42" calcext:value-type="float">
+      <text:p>42</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Poultries</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="9352" calcext:value-type="float">
+      <text:p>9352</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A43]+1" office:value-type="float" office:value="43" calcext:value-type="float">
+      <text:p>43</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Legumes and their products</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="9292" calcext:value-type="float">
+      <text:p>9292</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A44]+1" office:value-type="float" office:value="44" calcext:value-type="float">
+      <text:p>44</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Appetizers</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="9042" calcext:value-type="float">
+      <text:p>9042</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A45]+1" office:value-type="float" office:value="45" calcext:value-type="float">
+      <text:p>45</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Nuts and their products</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="8922" calcext:value-type="float">
+      <text:p>8922</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A46]+1" office:value-type="float" office:value="46" calcext:value-type="float">
+      <text:p>46</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Meat-based products</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="8639" calcext:value-type="float">
+      <text:p>8639</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A47]+1" office:value-type="float" office:value="47" calcext:value-type="float">
+      <text:p>47</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Seeds</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="8522" calcext:value-type="float">
+      <text:p>8522</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A48]+1" office:value-type="float" office:value="48" calcext:value-type="float">
+      <text:p>48</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Dried products</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="8371" calcext:value-type="float">
+      <text:p>8371</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A49]+1" office:value-type="float" office:value="49" calcext:value-type="float">
+      <text:p>49</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Cakes</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="8177" calcext:value-type="float">
+      <text:p>8177</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A50]+1" office:value-type="float" office:value="50" calcext:value-type="float">
+      <text:p>50</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Vegetable fats</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="7879" calcext:value-type="float">
+      <text:p>7879</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A51]+1" office:value-type="float" office:value="51" calcext:value-type="float">
+      <text:p>51</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Canned plant-based foods</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="7819" calcext:value-type="float">
+      <text:p>7819</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A52]+1" office:value-type="float" office:value="52" calcext:value-type="float">
+      <text:p>52</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Sweeteners</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="7566" calcext:value-type="float">
+      <text:p>7566</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A53]+1" office:value-type="float" office:value="53" calcext:value-type="float">
+      <text:p>53</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Sweetened beverages</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="7469" calcext:value-type="float">
+      <text:p>7469</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A54]+1" office:value-type="float" office:value="54" calcext:value-type="float">
+      <text:p>54</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Cow cheeses</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="7364" calcext:value-type="float">
+      <text:p>7364</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A55]+1" office:value-type="float" office:value="55" calcext:value-type="float">
+      <text:p>55</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Jams</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="7320" calcext:value-type="float">
+      <text:p>7320</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A56]+1" office:value-type="float" office:value="56" calcext:value-type="float">
+      <text:p>56</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Fruit juices</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="7246" calcext:value-type="float">
+      <text:p>7246</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A57]+1" office:value-type="float" office:value="57" calcext:value-type="float">
+      <text:p>57</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>French cheeses</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="7050" calcext:value-type="float">
+      <text:p>7050</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A58]+1" office:value-type="float" office:value="58" calcext:value-type="float">
+      <text:p>58</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Olive tree products</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="6887" calcext:value-type="float">
+      <text:p>6887</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A59]+1" office:value-type="float" office:value="59" calcext:value-type="float">
+      <text:p>59</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Salted spreads</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="6862" calcext:value-type="float">
+      <text:p>6862</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A60]+1" office:value-type="float" office:value="60" calcext:value-type="float">
+      <text:p>60</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Fresh foods</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="6858" calcext:value-type="float">
+      <text:p>6858</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A61]+1" office:value-type="float" office:value="61" calcext:value-type="float">
+      <text:p>61</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Vegetable oils</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="6785" calcext:value-type="float">
+      <text:p>6785</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A62]+1" office:value-type="float" office:value="62" calcext:value-type="float">
+      <text:p>62</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Legumes</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="6751" calcext:value-type="float">
+      <text:p>6751</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A63]+1" office:value-type="float" office:value="63" calcext:value-type="float">
+      <text:p>63</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Hot beverages</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="6746" calcext:value-type="float">
+      <text:p>6746</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A64]+1" office:value-type="float" office:value="64" calcext:value-type="float">
+      <text:p>64</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Meals with meat</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="6636" calcext:value-type="float">
+      <text:p>6636</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A65]+1" office:value-type="float" office:value="65" calcext:value-type="float">
+      <text:p>65</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Chickens</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="6609" calcext:value-type="float">
+      <text:p>6609</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A66]+1" office:value-type="float" office:value="66" calcext:value-type="float">
+      <text:p>66</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Farming products</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="6384" calcext:value-type="float">
+      <text:p>6384</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A67]+1" office:value-type="float" office:value="67" calcext:value-type="float">
+      <text:p>67</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Breakfast cereals</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="6122" calcext:value-type="float">
+      <text:p>6122</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A68]+1" office:value-type="float" office:value="68" calcext:value-type="float">
+      <text:p>68</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Chips and fries</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="5891" calcext:value-type="float">
+      <text:p>5891</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A69]+1" office:value-type="float" office:value="69" calcext:value-type="float">
+      <text:p>69</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Frozen desserts</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="5711" calcext:value-type="float">
+      <text:p>5711</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A70]+1" office:value-type="float" office:value="70" calcext:value-type="float">
+      <text:p>70</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Wines</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="5521" calcext:value-type="float">
+      <text:p>5521</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A71]+1" office:value-type="float" office:value="71" calcext:value-type="float">
+      <text:p>71</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Fruits</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="5488" calcext:value-type="float">
+      <text:p>5488</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A72]+1" office:value-type="float" office:value="72" calcext:value-type="float">
+      <text:p>72</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Carbonated drinks</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="5474" calcext:value-type="float">
+      <text:p>5474</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A73]+1" office:value-type="float" office:value="73" calcext:value-type="float">
+      <text:p>73</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Milks</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="5396" calcext:value-type="float">
+      <text:p>5396</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A74]+1" office:value-type="float" office:value="74" calcext:value-type="float">
+      <text:p>74</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Nuts</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="5392" calcext:value-type="float">
+      <text:p>5392</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A75]+1" office:value-type="float" office:value="75" calcext:value-type="float">
+      <text:p>75</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Dried plant-based foods</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="5390" calcext:value-type="float">
+      <text:p>5390</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A76]+1" office:value-type="float" office:value="76" calcext:value-type="float">
+      <text:p>76</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Crisps</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="5319" calcext:value-type="float">
+      <text:p>5319</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A77]+1" office:value-type="float" office:value="77" calcext:value-type="float">
+      <text:p>77</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Ice creams and sorbets</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="4947" calcext:value-type="float">
+      <text:p>4947</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A78]+1" office:value-type="float" office:value="78" calcext:value-type="float">
+      <text:p>78</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Chocolate candies</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="4897" calcext:value-type="float">
+      <text:p>4897</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A79]+1" office:value-type="float" office:value="79" calcext:value-type="float">
+      <text:p>79</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Canned vegetables</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="4865" calcext:value-type="float">
+      <text:p>4865</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A80]+1" office:value-type="float" office:value="80" calcext:value-type="float">
+      <text:p>80</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Hams</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="4836" calcext:value-type="float">
+      <text:p>4836</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A81]+1" office:value-type="float" office:value="81" calcext:value-type="float">
+      <text:p>81</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Bee products</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="4808" calcext:value-type="float">
+      <text:p>4808</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A82]+1" office:value-type="float" office:value="82" calcext:value-type="float">
+      <text:p>82</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Dark chocolates</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="4704" calcext:value-type="float">
+      <text:p>4704</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A83]+1" office:value-type="float" office:value="83" calcext:value-type="float">
+      <text:p>83</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Olive oils</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="4582" calcext:value-type="float">
+      <text:p>4582</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A84]+1" office:value-type="float" office:value="84" calcext:value-type="float">
+      <text:p>84</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Soups</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="4519" calcext:value-type="float">
+      <text:p>4519</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A85]+1" office:value-type="float" office:value="85" calcext:value-type="float">
+      <text:p>85</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Sausages</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="4453" calcext:value-type="float">
+      <text:p>4453</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A86]+1" office:value-type="float" office:value="86" calcext:value-type="float">
+      <text:p>86</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Honeys</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="4410" calcext:value-type="float">
+      <text:p>4410</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A87]+1" office:value-type="float" office:value="87" calcext:value-type="float">
+      <text:p>87</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Pastries</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="4390" calcext:value-type="float">
+      <text:p>4390</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A88]+1" office:value-type="float" office:value="88" calcext:value-type="float">
+      <text:p>88</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Cereal grains</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="4374" calcext:value-type="float">
+      <text:p>4374</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A89]+1" office:value-type="float" office:value="89" calcext:value-type="float">
+      <text:p>89</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Candies</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="4363" calcext:value-type="float">
+      <text:p>4363</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A90]+1" office:value-type="float" office:value="90" calcext:value-type="float">
+      <text:p>90</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Dried fruits</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="4205" calcext:value-type="float">
+      <text:p>4205</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A91]+1" office:value-type="float" office:value="91" calcext:value-type="float">
+      <text:p>91</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Viennoiseries</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="4104" calcext:value-type="float">
+      <text:p>4104</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A92]+1" office:value-type="float" office:value="92" calcext:value-type="float">
+      <text:p>92</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Sodas</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="4043" calcext:value-type="float">
+      <text:p>4043</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A93]+1" office:value-type="float" office:value="93" calcext:value-type="float">
+      <text:p>93</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Beers</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="3871" calcext:value-type="float">
+      <text:p>3871</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A94]+1" office:value-type="float" office:value="94" calcext:value-type="float">
+      <text:p>94</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Cooked pressed cheeses</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="3835" calcext:value-type="float">
+      <text:p>3835</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A95]+1" office:value-type="float" office:value="95" calcext:value-type="float">
+      <text:p>95</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Dairy desserts</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="3828" calcext:value-type="float">
+      <text:p>3828</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A96]+1" office:value-type="float" office:value="96" calcext:value-type="float">
+      <text:p>96</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Pickles</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="3747" calcext:value-type="float">
+      <text:p>3747</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A97]+1" office:value-type="float" office:value="97" calcext:value-type="float">
+      <text:p>97</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Unsweetened beverages</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="3581" calcext:value-type="float">
+      <text:p>3581</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A98]+1" office:value-type="float" office:value="98" calcext:value-type="float">
+      <text:p>98</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Tomato sauces</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="3580" calcext:value-type="float">
+      <text:p>3580</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A99]+1" office:value-type="float" office:value="99" calcext:value-type="float">
+      <text:p>99</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Pizzas pies and quiches</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="3520" calcext:value-type="float">
+      <text:p>3520</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A100]+1" office:value-type="float" office:value="100" calcext:value-type="float">
+      <text:p>100</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Teas</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="3518" calcext:value-type="float">
+      <text:p>3518</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A101]+1" office:value-type="float" office:value="101" calcext:value-type="float">
+      <text:p>101</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Plant-based pickles</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="3476" calcext:value-type="float">
+      <text:p>3476</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A102]+1" office:value-type="float" office:value="102" calcext:value-type="float">
+      <text:p>102</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Extra-virgin olive oils</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="3463" calcext:value-type="float">
+      <text:p>3463</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A103]+1" office:value-type="float" office:value="103" calcext:value-type="float">
+      <text:p>103</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Canned fishes</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="3463" calcext:value-type="float">
+      <text:p>3463</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A104]+1" office:value-type="float" office:value="104" calcext:value-type="float">
+      <text:p>104</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Pasta dishes</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="3435" calcext:value-type="float">
+      <text:p>3435</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A105]+1" office:value-type="float" office:value="105" calcext:value-type="float">
+      <text:p>105</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Coffees</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="3368" calcext:value-type="float">
+      <text:p>3368</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A106]+1" office:value-type="float" office:value="106" calcext:value-type="float">
+      <text:p>106</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Bars</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="3355" calcext:value-type="float">
+      <text:p>3355</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A107]+1" office:value-type="float" office:value="107" calcext:value-type="float">
+      <text:p>107</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Bonbons</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="3278" calcext:value-type="float">
+      <text:p>3278</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A108]+1" office:value-type="float" office:value="108" calcext:value-type="float">
+      <text:p>108</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Legume seeds</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="3245" calcext:value-type="float">
+      <text:p>3245</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A109]+1" office:value-type="float" office:value="109" calcext:value-type="float">
+      <text:p>109</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Waters</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="3236" calcext:value-type="float">
+      <text:p>3236</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A110]+1" office:value-type="float" office:value="110" calcext:value-type="float">
+      <text:p>110</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Dietary supplements</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="3195" calcext:value-type="float">
+      <text:p>3195</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A111]+1" office:value-type="float" office:value="111" calcext:value-type="float">
+      <text:p>111</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Herbal teas</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="3155" calcext:value-type="float">
+      <text:p>3155</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A112]+1" office:value-type="float" office:value="112" calcext:value-type="float">
+      <text:p>112</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Spreadable fats</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="3140" calcext:value-type="float">
+      <text:p>3140</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A113]+1" office:value-type="float" office:value="113" calcext:value-type="float">
+      <text:p>113</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Pulses</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="3139" calcext:value-type="float">
+      <text:p>3139</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A114]+1" office:value-type="float" office:value="114" calcext:value-type="float">
+      <text:p>114</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Syrups</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="3137" calcext:value-type="float">
+      <text:p>3137</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A115]+1" office:value-type="float" office:value="115" calcext:value-type="float">
+      <text:p>115</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Dried products to be rehydrated</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="3088" calcext:value-type="float">
+      <text:p>3088</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A116]+1" office:value-type="float" office:value="116" calcext:value-type="float">
+      <text:p>116</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Chocolate biscuits</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="3081" calcext:value-type="float">
+      <text:p>3081</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A117]+1" office:value-type="float" office:value="117" calcext:value-type="float">
+      <text:p>117</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Meals with fish</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="3066" calcext:value-type="float">
+      <text:p>3066</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A118]+1" office:value-type="float" office:value="118" calcext:value-type="float">
+      <text:p>118</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Spices</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="3021" calcext:value-type="float">
+      <text:p>3021</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A119]+1" office:value-type="float" office:value="119" calcext:value-type="float">
+      <text:p>119</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Fruit yogurts</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="2989" calcext:value-type="float">
+      <text:p>2989</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A120]+1" office:value-type="float" office:value="120" calcext:value-type="float">
+      <text:p>120</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Milk chocolates</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="2940" calcext:value-type="float">
+      <text:p>2940</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A121]+1" office:value-type="float" office:value="121" calcext:value-type="float">
+      <text:p>121</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Compotes</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="2928" calcext:value-type="float">
+      <text:p>2928</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A122]+1" office:value-type="float" office:value="122" calcext:value-type="float">
+      <text:p>122</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Salads</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="2887" calcext:value-type="float">
+      <text:p>2887</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A123]+1" office:value-type="float" office:value="123" calcext:value-type="float">
+      <text:p>123</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Berry jams</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="2880" calcext:value-type="float">
+      <text:p>2880</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A124]+1" office:value-type="float" office:value="124" calcext:value-type="float">
+      <text:p>124</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Christmas foods and drinks</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="2817" calcext:value-type="float">
+      <text:p>2817</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A125]+1" office:value-type="float" office:value="125" calcext:value-type="float">
+      <text:p>125</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Microwave meals</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="2720" calcext:value-type="float">
+      <text:p>2720</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A126]+1" office:value-type="float" office:value="126" calcext:value-type="float">
+      <text:p>126</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Milk substitute</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="2696" calcext:value-type="float">
+      <text:p>2696</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A127]+1" office:value-type="float" office:value="127" calcext:value-type="float">
+      <text:p>127</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Salmons</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="2696" calcext:value-type="float">
+      <text:p>2696</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A128]+1" office:value-type="float" office:value="128" calcext:value-type="float">
+      <text:p>128</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Tomatoes and their products</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="2686" calcext:value-type="float">
+      <text:p>2686</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A129]+1" office:value-type="float" office:value="129" calcext:value-type="float">
+      <text:p>129</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Mustards</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="2677" calcext:value-type="float">
+      <text:p>2677</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A130]+1" office:value-type="float" office:value="130" calcext:value-type="float">
+      <text:p>130</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Plant milks</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="2659" calcext:value-type="float">
+      <text:p>2659</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A131]+1" office:value-type="float" office:value="131" calcext:value-type="float">
+      <text:p>131</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Fish and meat and eggs</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="2656" calcext:value-type="float">
+      <text:p>2656</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A132]+1" office:value-type="float" office:value="132" calcext:value-type="float">
+      <text:p>132</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Poultry meals</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="2642" calcext:value-type="float">
+      <text:p>2642</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A133]+1" office:value-type="float" office:value="133" calcext:value-type="float">
+      <text:p>133</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Smoked fishes</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="2635" calcext:value-type="float">
+      <text:p>2635</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A134]+1" office:value-type="float" office:value="134" calcext:value-type="float">
+      <text:p>134</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Tunas</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="2601" calcext:value-type="float">
+      <text:p>2601</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A135]+1" office:value-type="float" office:value="135" calcext:value-type="float">
+      <text:p>135</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Fresh plant-based foods</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="2588" calcext:value-type="float">
+      <text:p>2588</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A136]+1" office:value-type="float" office:value="136" calcext:value-type="float">
+      <text:p>136</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Artificially sweetened beverages</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="2562" calcext:value-type="float">
+      <text:p>2562</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A137]+1" office:value-type="float" office:value="137" calcext:value-type="float">
+      <text:p>137</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Chicken breasts</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="2496" calcext:value-type="float">
+      <text:p>2496</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A138]+1" office:value-type="float" office:value="138" calcext:value-type="float">
+      <text:p>138</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Flakes</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="2474" calcext:value-type="float">
+      <text:p>2474</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A139]+1" office:value-type="float" office:value="139" calcext:value-type="float">
+      <text:p>139</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Squeezed juices</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="2458" calcext:value-type="float">
+      <text:p>2458</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A140]+1" office:value-type="float" office:value="140" calcext:value-type="float">
+      <text:p>140</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Pizzas</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="2456" calcext:value-type="float">
+      <text:p>2456</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A141]+1" office:value-type="float" office:value="141" calcext:value-type="float">
+      <text:p>141</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>White hams</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="2453" calcext:value-type="float">
+      <text:p>2453</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A142]+1" office:value-type="float" office:value="142" calcext:value-type="float">
+      <text:p>142</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Cereal flakes</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="2441" calcext:value-type="float">
+      <text:p>2441</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A143]+1" office:value-type="float" office:value="143" calcext:value-type="float">
+      <text:p>143</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Non-Alcoholic beverages</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="2411" calcext:value-type="float">
+      <text:p>2411</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A144]+1" office:value-type="float" office:value="144" calcext:value-type="float">
+      <text:p>144</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Wines from France</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="2406" calcext:value-type="float">
+      <text:p>2406</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A145]+1" office:value-type="float" office:value="145" calcext:value-type="float">
+      <text:p>145</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Italian cheeses</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="2404" calcext:value-type="float">
+      <text:p>2404</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A146]+1" office:value-type="float" office:value="146" calcext:value-type="float">
+      <text:p>146</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Rices</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="2366" calcext:value-type="float">
+      <text:p>2366</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A147]+1" office:value-type="float" office:value="147" calcext:value-type="float">
+      <text:p>147</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Culinary plants</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="2288" calcext:value-type="float">
+      <text:p>2288</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A148]+1" office:value-type="float" office:value="148" calcext:value-type="float">
+      <text:p>148</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Crackers</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="2286" calcext:value-type="float">
+      <text:p>2286</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A149]+1" office:value-type="float" office:value="149" calcext:value-type="float">
+      <text:p>149</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Animal fats</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="2272" calcext:value-type="float">
+      <text:p>2272</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A150]+1" office:value-type="float" office:value="150" calcext:value-type="float">
+      <text:p>150</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Potato crisps</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="2261" calcext:value-type="float">
+      <text:p>2261</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A151]+1" office:value-type="float" office:value="151" calcext:value-type="float">
+      <text:p>151</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Sandwiches</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="2260" calcext:value-type="float">
+      <text:p>2260</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A152]+1" office:value-type="float" office:value="152" calcext:value-type="float">
+      <text:p>152</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Dairy drinks</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="2259" calcext:value-type="float">
+      <text:p>2259</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A153]+1" office:value-type="float" office:value="153" calcext:value-type="float">
+      <text:p>153</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Frozen ready-made meals</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="2248" calcext:value-type="float">
+      <text:p>2248</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A154]+1" office:value-type="float" office:value="154" calcext:value-type="float">
+      <text:p>154</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Olives</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="2246" calcext:value-type="float">
+      <text:p>2246</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A155]+1" office:value-type="float" office:value="155" calcext:value-type="float">
+      <text:p>155</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Frozen plant-based foods</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="2244" calcext:value-type="float">
+      <text:p>2244</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A156]+1" office:value-type="float" office:value="156" calcext:value-type="float">
+      <text:p>156</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Canned legumes</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="2220" calcext:value-type="float">
+      <text:p>2220</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A157]+1" office:value-type="float" office:value="157" calcext:value-type="float">
+      <text:p>157</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Prepared vegetables</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="2214" calcext:value-type="float">
+      <text:p>2214</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A158]+1" office:value-type="float" office:value="158" calcext:value-type="float">
+      <text:p>158</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Prepared salads</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="2205" calcext:value-type="float">
+      <text:p>2205</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A159]+1" office:value-type="float" office:value="159" calcext:value-type="float">
+      <text:p>159</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Pies</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="2196" calcext:value-type="float">
+      <text:p>2196</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A160]+1" office:value-type="float" office:value="160" calcext:value-type="float">
+      <text:p>160</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Spring waters</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="2180" calcext:value-type="float">
+      <text:p>2180</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A161]+1" office:value-type="float" office:value="161" calcext:value-type="float">
+      <text:p>161</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Dry pasta</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="2173" calcext:value-type="float">
+      <text:p>2173</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A162]+1" office:value-type="float" office:value="162" calcext:value-type="float">
+      <text:p>162</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Baby foods</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="2155" calcext:value-type="float">
+      <text:p>2155</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A163]+1" office:value-type="float" office:value="163" calcext:value-type="float">
+      <text:p>163</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Flours</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="2146" calcext:value-type="float">
+      <text:p>2146</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A164]+1" office:value-type="float" office:value="164" calcext:value-type="float">
+      <text:p>164</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Milkfat</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="2118" calcext:value-type="float">
+      <text:p>2118</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A165]+1" office:value-type="float" office:value="165" calcext:value-type="float">
+      <text:p>165</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Vinegars</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="2118" calcext:value-type="float">
+      <text:p>2118</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A166]+1" office:value-type="float" office:value="166" calcext:value-type="float">
+      <text:p>166</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Dairy spread</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="2106" calcext:value-type="float">
+      <text:p>2106</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A167]+1" office:value-type="float" office:value="167" calcext:value-type="float">
+      <text:p>167</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Butters</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="2104" calcext:value-type="float">
+      <text:p>2104</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A168]+1" office:value-type="float" office:value="168" calcext:value-type="float">
+      <text:p>168</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Fish preparations</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="2103" calcext:value-type="float">
+      <text:p>2103</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A169]+1" office:value-type="float" office:value="169" calcext:value-type="float">
+      <text:p>169</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Pasteurized cheeses</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="2087" calcext:value-type="float">
+      <text:p>2087</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A170]+1" office:value-type="float" office:value="170" calcext:value-type="float">
+      <text:p>170</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Foies gras</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="2087" calcext:value-type="float">
+      <text:p>2087</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A171]+1" office:value-type="float" office:value="171" calcext:value-type="float">
+      <text:p>171</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Vegetable soups</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="2081" calcext:value-type="float">
+      <text:p>2081</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A172]+1" office:value-type="float" office:value="172" calcext:value-type="float">
+      <text:p>172</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Fish fillets</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="2079" calcext:value-type="float">
+      <text:p>2079</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A173]+1" office:value-type="float" office:value="173" calcext:value-type="float">
+      <text:p>173</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Apple compotes</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="2073" calcext:value-type="float">
+      <text:p>2073</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A174]+1" office:value-type="float" office:value="174" calcext:value-type="float">
+      <text:p>174</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Mayonnaises</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="2056" calcext:value-type="float">
+      <text:p>2056</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A175]+1" office:value-type="float" office:value="175" calcext:value-type="float">
+      <text:p>175</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Mueslis</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="2017" calcext:value-type="float">
+      <text:p>2017</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A176]+1" office:value-type="float" office:value="176" calcext:value-type="float">
+      <text:p>176</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Turkeys</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="2003" calcext:value-type="float">
+      <text:p>2003</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A177]+1" office:value-type="float" office:value="177" calcext:value-type="float">
+      <text:p>177</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Rillettes</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="2000" calcext:value-type="float">
+      <text:p>2000</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A178]+1" office:value-type="float" office:value="178" calcext:value-type="float">
+      <text:p>178</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Fresh vegetables</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="1997" calcext:value-type="float">
+      <text:p>1997</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A179]+1" office:value-type="float" office:value="179" calcext:value-type="float">
+      <text:p>179</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Terrines</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="1975" calcext:value-type="float">
+      <text:p>1975</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A180]+1" office:value-type="float" office:value="180" calcext:value-type="float">
+      <text:p>180</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Cream cheeses</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="1961" calcext:value-type="float">
+      <text:p>1961</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A181]+1" office:value-type="float" office:value="181" calcext:value-type="float">
+      <text:p>181</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Smoked salmons</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="1937" calcext:value-type="float">
+      <text:p>1937</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A182]+1" office:value-type="float" office:value="182" calcext:value-type="float">
+      <text:p>182</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Pork</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="1936" calcext:value-type="float">
+      <text:p>1936</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A183]+1" office:value-type="float" office:value="183" calcext:value-type="float">
+      <text:p>183</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Eggs</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="1932" calcext:value-type="float">
+      <text:p>1932</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A184]+1" office:value-type="float" office:value="184" calcext:value-type="float">
+      <text:p>184</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Refrigerated foods</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="1924" calcext:value-type="float">
+      <text:p>1924</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A185]+1" office:value-type="float" office:value="185" calcext:value-type="float">
+      <text:p>185</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Mineral waters</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="1920" calcext:value-type="float">
+      <text:p>1920</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A186]+1" office:value-type="float" office:value="186" calcext:value-type="float">
+      <text:p>186</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Beef</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="1920" calcext:value-type="float">
+      <text:p>1920</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A187]+1" office:value-type="float" office:value="187" calcext:value-type="float">
+      <text:p>187</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Foies gras from ducks</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="1902" calcext:value-type="float">
+      <text:p>1902</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A188]+1" office:value-type="float" office:value="188" calcext:value-type="float">
+      <text:p>188</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Christmas sweets</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="1897" calcext:value-type="float">
+      <text:p>1897</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A189]+1" office:value-type="float" office:value="189" calcext:value-type="float">
+      <text:p>189</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Uncooked pressed cheeses</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="1845" calcext:value-type="float">
+      <text:p>1845</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A190]+1" office:value-type="float" office:value="190" calcext:value-type="float">
+      <text:p>190</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Flavoured syrups</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="1816" calcext:value-type="float">
+      <text:p>1816</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A191]+1" office:value-type="float" office:value="191" calcext:value-type="float">
+      <text:p>191</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Cookies</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="1815" calcext:value-type="float">
+      <text:p>1815</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A192]+1" office:value-type="float" office:value="192" calcext:value-type="float">
+      <text:p>192</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Stuffed pastas</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="1791" calcext:value-type="float">
+      <text:p>1791</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A193]+1" office:value-type="float" office:value="193" calcext:value-type="float">
+      <text:p>193</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Wheat pasta</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="1754" calcext:value-type="float">
+      <text:p>1754</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A194]+1" office:value-type="float" office:value="194" calcext:value-type="float">
+      <text:p>194</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Instant beverages</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="1753" calcext:value-type="float">
+      <text:p>1753</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A195]+1" office:value-type="float" office:value="195" calcext:value-type="float">
+      <text:p>195</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Canned meals</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="1750" calcext:value-type="float">
+      <text:p>1750</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A196]+1" office:value-type="float" office:value="196" calcext:value-type="float">
+      <text:p>196</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Orange juices</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="1737" calcext:value-type="float">
+      <text:p>1737</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A197]+1" office:value-type="float" office:value="197" calcext:value-type="float">
+      <text:p>197</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>French sausages</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="1737" calcext:value-type="float">
+      <text:p>1737</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A198]+1" office:value-type="float" office:value="198" calcext:value-type="float">
+      <text:p>198</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Special breads</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="1720" calcext:value-type="float">
+      <text:p>1720</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A199]+1" office:value-type="float" office:value="199" calcext:value-type="float">
+      <text:p>199</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Apple juices</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="1712" calcext:value-type="float">
+      <text:p>1712</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A200]+1" office:value-type="float" office:value="200" calcext:value-type="float">
+      <text:p>200</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Fruit nectars</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="1681" calcext:value-type="float">
+      <text:p>1681</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A201]+1" office:value-type="float" office:value="201" calcext:value-type="float">
+      <text:p>201</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Frozen vegetables</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="1673" calcext:value-type="float">
+      <text:p>1673</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A202]+1" office:value-type="float" office:value="202" calcext:value-type="float">
+      <text:p>202</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Greek yogurts</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="1667" calcext:value-type="float">
+      <text:p>1667</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A203]+1" office:value-type="float" office:value="203" calcext:value-type="float">
+      <text:p>203</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Noodles</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="1667" calcext:value-type="float">
+      <text:p>1667</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A204]+1" office:value-type="float" office:value="204" calcext:value-type="float">
+      <text:p>204</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Soft cheeses with bloomy rind</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="1634" calcext:value-type="float">
+      <text:p>1634</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A205]+1" office:value-type="float" office:value="205" calcext:value-type="float">
+      <text:p>205</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Ketchup</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="1627" calcext:value-type="float">
+      <text:p>1627</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A206]+1" office:value-type="float" office:value="206" calcext:value-type="float">
+      <text:p>206</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Meat analogues</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="1620" calcext:value-type="float">
+      <text:p>1620</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A207]+1" office:value-type="float" office:value="207" calcext:value-type="float">
+      <text:p>207</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Breaded products</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="1618" calcext:value-type="float">
+      <text:p>1618</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A208]+1" office:value-type="float" office:value="208" calcext:value-type="float">
+      <text:p>208</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Bodybuilding supplements</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="1616" calcext:value-type="float">
+      <text:p>1616</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A209]+1" office:value-type="float" office:value="209" calcext:value-type="float">
+      <text:p>209</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Sardines</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="1611" calcext:value-type="float">
+      <text:p>1611</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A210]+1" office:value-type="float" office:value="210" calcext:value-type="float">
+      <text:p>210</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Chocolate cakes</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="1578" calcext:value-type="float">
+      <text:p>1578</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A211]+1" office:value-type="float" office:value="211" calcext:value-type="float">
+      <text:p>211</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Oilseed purees</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="1566" calcext:value-type="float">
+      <text:p>1566</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A212]+1" office:value-type="float" office:value="212" calcext:value-type="float">
+      <text:p>212</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Creams</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="1555" calcext:value-type="float">
+      <text:p>1555</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A213]+1" office:value-type="float" office:value="213" calcext:value-type="float">
+      <text:p>213</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Durum wheat pasta</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="1549" calcext:value-type="float">
+      <text:p>1549</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A214]+1" office:value-type="float" office:value="214" calcext:value-type="float">
+      <text:p>214</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Tropical fruits</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="1545" calcext:value-type="float">
+      <text:p>1545</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A215]+1" office:value-type="float" office:value="215" calcext:value-type="float">
+      <text:p>215</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Homogenized milks</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="1543" calcext:value-type="float">
+      <text:p>1543</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A216]+1" office:value-type="float" office:value="216" calcext:value-type="float">
+      <text:p>216</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Vegetable rods</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="1541" calcext:value-type="float">
+      <text:p>1541</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A217]+1" office:value-type="float" office:value="217" calcext:value-type="float">
+      <text:p>217</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Shortbread cookies</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="1525" calcext:value-type="float">
+      <text:p>1525</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A218]+1" office:value-type="float" office:value="218" calcext:value-type="float">
+      <text:p>218</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Leaf vegetables</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="1525" calcext:value-type="float">
+      <text:p>1525</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A219]+1" office:value-type="float" office:value="219" calcext:value-type="float">
+      <text:p>219</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Cereal flours</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="1521" calcext:value-type="float">
+      <text:p>1521</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A220]+1" office:value-type="float" office:value="220" calcext:value-type="float">
+      <text:p>220</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Corn chips</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="1514" calcext:value-type="float">
+      <text:p>1514</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A221]+1" office:value-type="float" office:value="221" calcext:value-type="float">
+      <text:p>221</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Madeleines</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="1508" calcext:value-type="float">
+      <text:p>1508</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A222]+1" office:value-type="float" office:value="222" calcext:value-type="float">
+      <text:p>222</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Turrón</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="1479" calcext:value-type="float">
+      <text:p>1479</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A223]+1" office:value-type="float" office:value="223" calcext:value-type="float">
+      <text:p>223</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Beef dishes</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="1474" calcext:value-type="float">
+      <text:p>1474</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A224]+1" office:value-type="float" office:value="224" calcext:value-type="float">
+      <text:p>224</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Iced teas</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="1468" calcext:value-type="float">
+      <text:p>1468</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A225]+1" office:value-type="float" office:value="225" calcext:value-type="float">
+      <text:p>225</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Fresh meals</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="1464" calcext:value-type="float">
+      <text:p>1464</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A226]+1" office:value-type="float" office:value="226" calcext:value-type="float">
+      <text:p>226</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Cooking helpers</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="1463" calcext:value-type="float">
+      <text:p>1463</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A227]+1" office:value-type="float" office:value="227" calcext:value-type="float">
+      <text:p>227</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Canned sardines</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="1461" calcext:value-type="float">
+      <text:p>1461</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A228]+1" office:value-type="float" office:value="228" calcext:value-type="float">
+      <text:p>228</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Meals with chicken</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="1447" calcext:value-type="float">
+      <text:p>1447</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A229]+1" office:value-type="float" office:value="229" calcext:value-type="float">
+      <text:p>229</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Sugars</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="1446" calcext:value-type="float">
+      <text:p>1446</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A230]+1" office:value-type="float" office:value="230" calcext:value-type="float">
+      <text:p>230</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Semi-skimmed milks</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="1426" calcext:value-type="float">
+      <text:p>1426</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A231]+1" office:value-type="float" office:value="231" calcext:value-type="float">
+      <text:p>231</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>UHT Milks</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="1384" calcext:value-type="float">
+      <text:p>1384</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A232]+1" office:value-type="float" office:value="232" calcext:value-type="float">
+      <text:p>232</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Nut butters</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="1375" calcext:value-type="float">
+      <text:p>1375</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A233]+1" office:value-type="float" office:value="233" calcext:value-type="float">
+      <text:p>233</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Fermented drinks</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="1370" calcext:value-type="float">
+      <text:p>1370</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A234]+1" office:value-type="float" office:value="234" calcext:value-type="float">
+      <text:p>234</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Sliced breads</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="1368" calcext:value-type="float">
+      <text:p>1368</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A235]+1" office:value-type="float" office:value="235" calcext:value-type="float">
+      <text:p>235</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Almonds</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="1364" calcext:value-type="float">
+      <text:p>1364</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A236]+1" office:value-type="float" office:value="236" calcext:value-type="float">
+      <text:p>236</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Refrigerated meals</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="1361" calcext:value-type="float">
+      <text:p>1361</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A237]+1" office:value-type="float" office:value="237" calcext:value-type="float">
+      <text:p>237</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Common beans</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="1355" calcext:value-type="float">
+      <text:p>1355</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A238]+1" office:value-type="float" office:value="238" calcext:value-type="float">
+      <text:p>238</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Emmentaler</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="1328" calcext:value-type="float">
+      <text:p>1328</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A239]+1" office:value-type="float" office:value="239" calcext:value-type="float">
+      <text:p>239</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Mushrooms and their products</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="1328" calcext:value-type="float">
+      <text:p>1328</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A240]+1" office:value-type="float" office:value="240" calcext:value-type="float">
+      <text:p>240</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Red wines</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="1320" calcext:value-type="float">
+      <text:p>1320</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A241]+1" office:value-type="float" office:value="241" calcext:value-type="float">
+      <text:p>241</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Chocolate bars</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="1314" calcext:value-type="float">
+      <text:p>1314</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A242]+1" office:value-type="float" office:value="242" calcext:value-type="float">
+      <text:p>242</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Fermented milk drinks</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="1310" calcext:value-type="float">
+      <text:p>1310</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A243]+1" office:value-type="float" office:value="243" calcext:value-type="float">
+      <text:p>243</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Gelified candies</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="1292" calcext:value-type="float">
+      <text:p>1292</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A244]+1" office:value-type="float" office:value="244" calcext:value-type="float">
+      <text:p>244</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Goat cheeses</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="1268" calcext:value-type="float">
+      <text:p>1268</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A245]+1" office:value-type="float" office:value="245" calcext:value-type="float">
+      <text:p>245</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Food additives</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="1268" calcext:value-type="float">
+      <text:p>1268</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A246]+1" office:value-type="float" office:value="246" calcext:value-type="float">
+      <text:p>246</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Dried hams</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="1261" calcext:value-type="float">
+      <text:p>1261</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A247]+1" office:value-type="float" office:value="247" calcext:value-type="float">
+      <text:p>247</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Colas</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="1243" calcext:value-type="float">
+      <text:p>1243</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A248]+1" office:value-type="float" office:value="248" calcext:value-type="float">
+      <text:p>248</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Plant-based meals</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="1239" calcext:value-type="float">
+      <text:p>1239</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A249]+1" office:value-type="float" office:value="249" calcext:value-type="float">
+      <text:p>249</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Salad dressings</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="1222" calcext:value-type="float">
+      <text:p>1222</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A250]+1" office:value-type="float" office:value="250" calcext:value-type="float">
+      <text:p>250</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Puffed cereal cakes</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="1222" calcext:value-type="float">
+      <text:p>1222</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A251]+1" office:value-type="float" office:value="251" calcext:value-type="float">
+      <text:p>251</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Long grain rices</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="1220" calcext:value-type="float">
+      <text:p>1220</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A252]+1" office:value-type="float" office:value="252" calcext:value-type="float">
+      <text:p>252</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Ice cream tubs</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="1219" calcext:value-type="float">
+      <text:p>1219</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A253]+1" office:value-type="float" office:value="253" calcext:value-type="float">
+      <text:p>253</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Mixed cereal flakes</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="1217" calcext:value-type="float">
+      <text:p>1217</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A254]+1" office:value-type="float" office:value="254" calcext:value-type="float">
+      <text:p>254</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Pasta sauces</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="1216" calcext:value-type="float">
+      <text:p>1216</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A255]+1" office:value-type="float" office:value="255" calcext:value-type="float">
+      <text:p>255</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Strawberry jams</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="1187" calcext:value-type="float">
+      <text:p>1187</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A256]+1" office:value-type="float" office:value="256" calcext:value-type="float">
+      <text:p>256</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Canned fruits</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="1179" calcext:value-type="float">
+      <text:p>1179</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A257]+1" office:value-type="float" office:value="257" calcext:value-type="float">
+      <text:p>257</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Plain yogurts</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="1154" calcext:value-type="float">
+      <text:p>1154</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A258]+1" office:value-type="float" office:value="258" calcext:value-type="float">
+      <text:p>258</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Chocolate spreads</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="1143" calcext:value-type="float">
+      <text:p>1143</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A259]+1" office:value-type="float" office:value="259" calcext:value-type="float">
+      <text:p>259</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Pork meals</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="1140" calcext:value-type="float">
+      <text:p>1140</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A260]+1" office:value-type="float" office:value="260" calcext:value-type="float">
+      <text:p>260</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Green olives</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="1131" calcext:value-type="float">
+      <text:p>1131</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A261]+1" office:value-type="float" office:value="261" calcext:value-type="float">
+      <text:p>261</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Cereal bars</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="1121" calcext:value-type="float">
+      <text:p>1121</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A262]+1" office:value-type="float" office:value="262" calcext:value-type="float">
+      <text:p>262</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Green teas</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="1114" calcext:value-type="float">
+      <text:p>1114</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A263]+1" office:value-type="float" office:value="263" calcext:value-type="float">
+      <text:p>263</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Mushrooms</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="1112" calcext:value-type="float">
+      <text:p>1112</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A264]+1" office:value-type="float" office:value="264" calcext:value-type="float">
+      <text:p>264</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Cocoa and chocolate powders</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="1109" calcext:value-type="float">
+      <text:p>1109</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A265]+1" office:value-type="float" office:value="265" calcext:value-type="float">
+      <text:p>265</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Chocolate desserts</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="1099" calcext:value-type="float">
+      <text:p>1099</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A266]+1" office:value-type="float" office:value="266" calcext:value-type="float">
+      <text:p>266</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Sardines in oil</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="1089" calcext:value-type="float">
+      <text:p>1089</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A267]+1" office:value-type="float" office:value="267" calcext:value-type="float">
+      <text:p>267</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Rice dishes</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="1082" calcext:value-type="float">
+      <text:p>1082</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A268]+1" office:value-type="float" office:value="268" calcext:value-type="float">
+      <text:p>268</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Grated cheese</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="1062" calcext:value-type="float">
+      <text:p>1062</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A269]+1" office:value-type="float" office:value="269" calcext:value-type="float">
+      <text:p>269</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Spaghetti</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="1062" calcext:value-type="float">
+      <text:p>1062</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A270]+1" office:value-type="float" office:value="270" calcext:value-type="float">
+      <text:p>270</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Shelled nuts</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="1058" calcext:value-type="float">
+      <text:p>1058</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A271]+1" office:value-type="float" office:value="271" calcext:value-type="float">
+      <text:p>271</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Legume butters</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="1048" calcext:value-type="float">
+      <text:p>1048</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A272]+1" office:value-type="float" office:value="272" calcext:value-type="float">
+      <text:p>272</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Peanut butters</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="1047" calcext:value-type="float">
+      <text:p>1047</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A273]+1" office:value-type="float" office:value="273" calcext:value-type="float">
+      <text:p>273</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Crêpes and galettes</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="1031" calcext:value-type="float">
+      <text:p>1031</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A274]+1" office:value-type="float" office:value="274" calcext:value-type="float">
+      <text:p>274</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Gingerbreads</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="1028" calcext:value-type="float">
+      <text:p>1028</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A275]+1" office:value-type="float" office:value="275" calcext:value-type="float">
+      <text:p>275</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Cream soups</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="1025" calcext:value-type="float">
+      <text:p>1025</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A276]+1" office:value-type="float" office:value="276" calcext:value-type="float">
+      <text:p>276</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Whole foies gras</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="1016" calcext:value-type="float">
+      <text:p>1016</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A277]+1" office:value-type="float" office:value="277" calcext:value-type="float">
+      <text:p>277</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Multifruit juices</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="1012" calcext:value-type="float">
+      <text:p>1012</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=[.$A278]+1" office:value-type="float" office:value="278" calcext:value-type="float">
+      <text:p>278</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Cooked chicken</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="1010" calcext:value-type="float">
+      <text:p>1010</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="55"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2" table:number-rows-repeated="1048296">
+     <table:table-cell table:number-columns-repeated="58"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:number-columns-repeated="58"/>
+    </table:table-row>
+   </table:table>
+   <table:named-expressions/>
+  </office:spreadsheet>
+ </office:body>
+</office:document>
