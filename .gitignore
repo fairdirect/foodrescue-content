@@ -1,11 +1,13 @@
+# Order entries by ascending path length, and within that alphanumerically.
+
+# General: LibreOffice lockfiles while editing a file, anywhere.
+.~lock.*
+
 # General.
 /Gemfile.lock
 /build/
 /doc/
 /.yardoc/
-
-# General: LibreOffice lockfiles while editing a file.
-.~lock.*
 
 # General: Qt Creator project configuration files.
 /foodrescue-content.cflags
@@ -25,13 +27,14 @@
 !/content-products/products-csv.2-filtered.csv
 !/content-products/products-delta.*.2-filtered.json
 
-# Ignore the Android app package from which the FoodKeeper database was extracted.
-/content-topics/topics-foodkeeper-*-1_app.apk
+# Ignore automatically generated files and legacy files related to FoodKeeper topics.
+/content-topics-foodkeeper/foodkeeper-*-extras.fods.csv
+/content-topics-foodkeeper/foodkeeper-*.apk
 
-# Ignore derived and obsolete file formats for food rescue topics.
-/content-topics/topics-foodkeeper-en-source-*-extras.fods.csv
-/content-topics/topics-native-en.fods.csv
-/content-topics/topics-native-en.odt
+# Ignore automatically generated files and legacy files related to native topics.
+/content-topics-native/topics-native-en.fods.csv
+/content-topics-native/topics-native-en.odt
 
 # Ignore experiments with no re-usable results.
 /experiments/ruby-syntax.rb
+/experiments/foodrescue-content-queries.sql

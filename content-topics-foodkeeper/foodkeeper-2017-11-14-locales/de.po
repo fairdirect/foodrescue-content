@@ -1,0 +1,1850 @@
+msgid ""
+msgstr ""
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: POEditor.com\n"
+"Project-Id-Version: Food Rescue Content: FoodKeeper\n"
+"Language: de\n"
+
+#: 
+msgid "dry cereal mixes for babies"
+msgstr "trockene Cerealien für Babys"
+
+#: 
+msgid "baby dinners"
+msgstr "Abendessen für Babies"
+
+#: 
+msgid "baby formulas after preparation"
+msgstr "Säuglingsanfangsnahrung nach der Zubereitung"
+
+#: 
+msgid "fruits (sold as baby food)"
+msgstr "Früchte (als Babynahrung verkauft)"
+
+#: 
+msgid "baby food in jars or pouches"
+msgstr "Babynahrung in Gläsern oder Beuteln"
+
+#: 
+msgid "liquid concentrate baby food or ready-to-feed baby formula"
+msgstr "Flüssigkonzentrat-Babynahrung oder fertige Säuglingsanfangsnahrung"
+
+#: 
+msgid "vegetables (sold as baby food)"
+msgstr "Gemüse (als Babynahrung verkauft)"
+
+#: 
+msgid "cheesecakes"
+msgstr "Käsekuchen"
+
+#: 
+msgid "commercial bread products including pan breads, flat breads, rolls and buns"
+msgstr "kommerzielle Brotprodukte einschließlich Fladenbrote, Rollenbrote und Brötchen"
+
+#: 
+msgid "commercial cakes and muffins"
+msgstr "kommerzielle Kuchen und Muffins"
+
+#: 
+msgid "crispy biscuits with no filling or covering"
+msgstr "knusprige Kekse ohne Füllung oder Überzug"
+
+#: 
+msgid "soft biscuits with no filling or covering"
+msgstr "Weichkekse ohne Füllung oder Überzug"
+
+#: 
+msgid "dairy filled eclairs"
+msgstr "mit Milch gefüllte Eclairs"
+
+#: 
+msgid "doughnuts"
+msgstr "Doughnuts"
+
+#: 
+msgid "fruit cakes"
+msgstr "Obstkuchen"
+
+#: 
+msgid "Danish pastries"
+msgstr "Dänisches Gebäck"
+
+#: 
+msgid "chiffon pies"
+msgstr "Chiffon-Kuchen"
+
+#: 
+msgid "cream pies"
+msgstr "Sahnetorten"
+
+#: 
+msgid "fruit pies"
+msgstr "Obsttorten"
+
+#: 
+msgid "mincemeat pies"
+msgstr "Hackfleischpasteten"
+
+#: 
+msgid "pecan pies"
+msgstr "Pekannusstorten"
+
+#: 
+msgid "pumpkin pies"
+msgstr "Kürbiskuchen"
+
+#: 
+msgid "quiches"
+msgstr "Quiches"
+
+#: 
+msgid "tortillas (without filling)"
+msgstr "Tortillas (ohne Füllung)"
+
+#: 
+msgid "baking powder"
+msgstr "Backpulver"
+
+#: 
+msgid "baking soda"
+msgstr "Backpulver"
+
+#: 
+msgid "biscuit and pancake mixes"
+msgstr "Keks- und Pfannkuchenmischungen"
+
+#: 
+msgid "cake, brownie and bread mixes"
+msgstr "Kuchen"
+
+#: 
+msgid "chili powder"
+msgstr "Chili-Pulver"
+
+#: 
+msgid "unsweetened and semi–sweet baking chocolate in block form"
+msgstr "ungesüßte und halbgesüßte Backschokolade in Blockform"
+
+#: 
+msgid "cocoa powder and cocoa powder mixes"
+msgstr "Kakaopulver und Kakaopulvermischungen"
+
+#: 
+msgid "degerminated regular cornmeal"
+msgstr "entkeimtes reguläres Maismehl"
+
+#: 
+msgid "stone ground or blue cornmeal"
+msgstr "steingemahlenes oder blaues Maismehl"
+
+#: 
+msgid "cornstarch"
+msgstr "Maisstärke"
+
+#: 
+msgid "baking extracts (such as vanilla, lemon etc.)"
+msgstr "Backextrakte (Vanille, Zitrone usw.)"
+
+#: 
+msgid "flavoured mixes and herb mixes for baking and cooking"
+msgstr "Aromamischungen und Kräutermischungen zum Backen und Kochen"
+
+#: 
+msgid "white flour"
+msgstr "Weißmehl"
+
+#: 
+msgid "whole wheat flour"
+msgstr "Weizenvollkornmehl"
+
+#: 
+msgid "cake frosting or icing"
+msgstr "Kuchenglasur oder Zuckerguss"
+
+#: 
+msgid "chopped garlic (commercially packaged in jars)"
+msgstr "gehackter Knoblauch (kommerziell in Gläsern verpackt)"
+
+#: 
+msgid "flavoured gelatin"
+msgstr "aromatisierte Gelatine"
+
+#: 
+msgid "unflavoured gelatin"
+msgstr "Gelatine ohne Geschmack"
+
+#: 
+msgid "dried herbs"
+msgstr "getrocknete Kräuter"
+
+#: 
+msgid "nut oils"
+msgstr "Nussöle"
+
+#: 
+msgid "olive oils and vegetable oils"
+msgstr "Oliven- und Pflanzenöle"
+
+#: 
+msgid "seasoning blends for cooking and baking"
+msgstr "Gewürzmischungen zum Kochen und Backen"
+
+#: 
+msgid "solid shortening for cooking and baking"
+msgstr "festes Backfett zum Kochen und Backen"
+
+#: 
+msgid "ground spices"
+msgstr "gemahlene Gewürze"
+
+#: 
+msgid "spices in whole pieces"
+msgstr "Gewürze in ganzen Stücken"
+
+#: 
+msgid "brown sugar"
+msgstr "brauner Zucker"
+
+#: 
+msgid "powdered sugar"
+msgstr "Puderzucker"
+
+#: 
+msgid "granulated sugar"
+msgstr "granulierter Zucker"
+
+#: 
+msgid "sugar substitutes"
+msgstr "Zuckeraustauschstoffe"
+
+#: 
+msgid "tamarind pastes"
+msgstr "Tamarindenpasten"
+
+#: 
+msgid "tapiocas"
+msgstr "Tapiokas"
+
+#: 
+msgid "vegetable oil sprays"
+msgstr "Pflanzenöl-Sprays"
+
+#: 
+msgid "refrigerated cookie doughs (if commercially made)"
+msgstr "gekühlte Keksteiglinge (falls kommerziell hergestellt)"
+
+#: 
+msgid "ready–to–bake pie crusts"
+msgstr "backfertige Kuchenkrusten"
+
+#: 
+msgid "refrigerated doughs in tube cans, for example for bicuits, rolls and pizza"
+msgstr "gekühlte Teige in Röhrchendosen, zum Beispiel für Kekse, Teilchen und Pizza"
+
+#: 
+msgid "ground coffees (not vacuum packaged)"
+msgstr "gemahlener Kaffee (nicht vakuumverpackt)"
+
+#: 
+msgid "instant coffees"
+msgstr "Instant-Kaffee"
+
+#: 
+msgid "coffee in whole beans"
+msgstr "Kaffee in ganzen Bohnen"
+
+#: 
+msgid "drink powder mixes, including diet powder mixes"
+msgstr "Getränkepulvermischungen"
+
+#: 
+msgid "fruit juice in beverage cartons or punch bags"
+msgstr "Fruchtsaft in Getränkekartons oder Getränketüten"
+
+#: 
+msgid "juice in boxes"
+msgstr "Saft in Getränkekartons"
+
+#: 
+msgid "fruit nectars from papaya, mango, guava or guavabana"
+msgstr "Fruchtnektare aus Papaya, Mango, Guave oder Guanabana"
+
+#: 
+msgid "carbonated sodas and diet sodas, if in bottles or cans"
+msgstr "kohlensäurehaltige Sodas und Diätsodas, wenn in Flaschen oder Dosen"
+
+#: 
+msgid "soy or rice beverages"
+msgstr "Soja- oder Reisgetränke"
+
+#: 
+msgid "teas in tea bags"
+msgstr "Tees in Teebeuteln"
+
+#: 
+msgid "instant tea powders and granules"
+msgstr "Instantteepulver und -granulat"
+
+#: 
+msgid "teas in loose form"
+msgstr "Tees in loser Form"
+
+#: 
+msgid "commercially bottled waters"
+msgstr "kommerziell abgefüllte Wasser"
+
+#: 
+msgid "bottled barbecue sauce"
+msgstr "Barbecue-Sauce in Flaschen"
+
+#: 
+msgid "chutneys"
+msgstr "Chutneys"
+
+#: 
+msgid "cream sauces made from milk solids"
+msgstr "Sahnesaucen aus Milchbestandteilen"
+
+#: 
+msgid "dry gravy mixes"
+msgstr "trockene Soßenmischungen"
+
+#: 
+msgid "gravy in jars or cans"
+msgstr "Soße in Gläsern oder Dosen"
+
+#: 
+msgid "honeys"
+msgstr "Honige"
+
+#: 
+msgid "horseradishes in jars"
+msgstr "Meerrettiche in Gläsern"
+
+#: 
+msgid "jams, jellies, and commercial fruit preserves"
+msgstr "Konfitüren, Gelees und kommerziell hergestellte Fruchtkonserven"
+
+#: 
+msgid "ketchup, cocktail, or chili sauces"
+msgstr "Ketchup-, Cocktail- und Chili-Saucen"
+
+#: 
+msgid "marinades"
+msgstr "Marinaden"
+
+#: 
+msgid "commercially made mayonnaises"
+msgstr "kommerziell hergestellte Mayonnaisen"
+
+#: 
+msgid "mustards"
+msgstr "Senfe"
+
+#: 
+msgid "black and green olives in jars"
+msgstr "schwarze und grüne Oliven in Gläsern"
+
+#: 
+msgid "pickles"
+msgstr "Essiggurken"
+
+#: 
+msgid "commercially made, bottled salad dressings"
+msgstr "kommerziell hergestellte und abgefüllte Salatsoßen"
+
+#: 
+msgid "salsa picante and taco sauces"
+msgstr "Salsa Picante und Taco-Soßen"
+
+#: 
+msgid "sauces without dairy ingredients (such as spaghetti sauce, taco sauce)"
+msgstr "Soßen ohne Milchzutaten (wie Spaghetti-Soße und Taco-Soße)"
+
+#: 
+msgid "soy sauces and teriyaki sauces"
+msgstr "Sojasaucen und Teriyaki-Soßen"
+
+#: 
+msgid "commercially made spaghetti sauces in jars"
+msgstr "kommerziell hergestellte Spaghetti-Soßen in Gläsern"
+
+#: 
+msgid "tahinis"
+msgstr "Tahinis"
+
+#: 
+msgid "vinegars"
+msgstr "Essigsorten"
+
+#: 
+msgid "Worcestershire sauces"
+msgstr "Worcestershire-Soßen"
+
+#: 
+msgid "butters"
+msgstr "Butter"
+
+#: 
+msgid "buttermilks"
+msgstr "Buttermilch"
+
+#: 
+msgid "hard cheeses in block form, such as cheddar, Swiss and parmesan"
+msgstr "Hartkäse in Blockform, wie Cheddar, Schweizer Käse und Parmesan"
+
+#: 
+msgid "shredded or grated parmesan cheese"
+msgstr "gerebelter oder geriebener Parmesankäse"
+
+#: 
+msgid "sliced cheeses"
+msgstr "Scheibenkäse"
+
+#: 
+msgid "shredded soft cheeses such as cheddar and mozzarella"
+msgstr "geriebener Weichkäse wie Cheddar und Mozzarella"
+
+#: 
+msgid "soft cheeses such as brie and bel paese"
+msgstr "Weichkäse wie Brie und Bel Paese"
+
+#: 
+msgid "refrigerated liquid coffee creamers"
+msgstr "gekühlte flüssige Kaffeesahne"
+
+#: 
+msgid "ricotta (“cottage cheese”)"
+msgstr "Ricotta („Hüttenkäse“)"
+
+#: 
+msgid "sweetened whipped creams"
+msgstr "gesüßte Schlagsahne"
+
+#: 
+msgid "creams “half and half”"
+msgstr "Cremes „halb und halb“"
+
+#: 
+msgid "heavy creams"
+msgstr "vollfette Cremes"
+
+#: 
+msgid "light creams"
+msgstr "fettarme Cremes"
+
+#: 
+msgid "ultrapasteurized whipped creams"
+msgstr "ultrapasteurisierte Schlagsahne"
+
+#: 
+msgid "cream cheeses"
+msgstr "Frischkäse"
+
+#: 
+msgid "sour cream based dips"
+msgstr "Dips auf Sauerrahmbasis"
+
+#: 
+msgid "egg dishes"
+msgstr "Eierspeisen"
+
+#: 
+msgid "liquid egg substitutes"
+msgstr "Flüssigei-Ersatzstoffe"
+
+#: 
+msgid "commercial eggnog"
+msgstr "kommerzieller Eierlikör"
+
+#: 
+msgid "hard-boiled eggs"
+msgstr "hart gekochte Eier"
+
+#: 
+msgid "eggs in their shell"
+msgstr "Eier in der Schale"
+
+#: 
+msgid "raw egg whites or yolks"
+msgstr "rohes Eiweiß oder Eigelb"
+
+#: 
+msgid "kefirs"
+msgstr "Kefire"
+
+#: 
+msgid "margarines"
+msgstr "Margarinen"
+
+#: 
+msgid "plain milks and flavoured milks"
+msgstr "Vollmilch und aromatisierte Milch"
+
+#: 
+msgid "puddings"
+msgstr "Pudding"
+
+#: 
+msgid "sour creams"
+msgstr "saure Sahne"
+
+#: 
+msgid "whipped creams in aerosol cans"
+msgstr "Schlagsahne in Sprühdosen"
+
+#: 
+msgid "whipped toppings in aerosol cans"
+msgstr "aufgeschlagene Toppings in Sprühdosen"
+
+#: 
+msgid "whipped toppings in tubs"
+msgstr "aufgeschlagene Garnierungen in Bechern"
+
+#: 
+msgid "yogurts"
+msgstr "Joghurts"
+
+#: 
+msgid "casseroles"
+msgstr "Kasserollen"
+
+#: 
+msgid "commercially vacuum packed dinners"
+msgstr "kommerziell vakuumverpackte Abendessen"
+
+#: 
+msgid "commercially cooked pastas"
+msgstr "kommerziell gekochte Nudeln"
+
+#: 
+msgid "commercially cooked rices"
+msgstr "kommerziell gekochter Reis"
+
+#: 
+msgid "commercially cut fruits"
+msgstr "kommerziell geschnittene Früchte"
+
+#: 
+msgid "guacamoles"
+msgstr "Guacamolen"
+
+#: 
+msgid "pasteurized hummus (with preservatives)"
+msgstr "pasteurisierter Hummus (mit Konservierungsstoffen)"
+
+#: 
+msgid "traditional hummus (not pasteurized and without preservatives)"
+msgstr "traditioneller Hummus (nicht pasteurisiert und ohne Konservierungsstoffe)"
+
+#: 
+msgid "pizza leftovers"
+msgstr "Pizza-Reste"
+
+#: 
+msgid "leftovers with meat, fish, poultry or egg"
+msgstr "Speisereste mit Fleisch"
+
+#: 
+msgid "leftovers without meat, fish, poultry or egg"
+msgstr "Speisereste ohne Fleisch"
+
+#: 
+msgid "pre-packaged lunch meat or poultry"
+msgstr "vorverpacktes Fleisch oder Geflügelfleisch für Mittagessen"
+
+#: 
+msgid "lunch meat or poultry sliced at the point of sale"
+msgstr "Fleisch oder Geflügelfleisch für Mittagessen, am Verkaufsort in Scheiben geschnitten"
+
+#: 
+msgid "main meals, if purchased hot or refrigerated"
+msgstr "Hauptmahlzeiten, sofern heiß oder gekühlt gekauft"
+
+#: 
+msgid "If covered with gravy or broth"
+msgstr "Wenn mit Soße oder Brühe bedeckt"
+
+#: 
+msgid "olives from the olive bar"
+msgstr "Oliven von der Olivenbar"
+
+#: 
+msgid "pates"
+msgstr "Pasteten"
+
+#: 
+msgid "poultry pieces covered with gravy or broth"
+msgstr "Geflügelstücke, mit Soße oder Brühe bedeckt"
+
+#: 
+msgid "salads containing meat, fish, poultry or eggs"
+msgstr "Salate mit Fleisch, Fisch, Geflügel oder Eiern"
+
+#: 
+msgid "vegetable salads (without meat, fish, poultry or eggs)"
+msgstr "Gemüsesalate (ohne Fleisch, Fisch, Geflügel und Eier)"
+
+#: 
+msgid "soups and stews"
+msgstr "Suppen und Eintöpfe"
+
+#: 
+msgid "commercially prepared bread or cookie dough, if purchased frozen"
+msgstr "kommerziell zubereiteter Brot- oder Keksteig, sofern gefroren gekauft"
+
+#: 
+msgid "egg substitutes, if purchased frozen"
+msgstr "Ei-Ersatz, sofern gefroren gekauft"
+
+#: 
+msgid "breaded fishes, if purchased frozen"
+msgstr "panierte Fische, sofern gefroren gekauft"
+
+#: 
+msgid "raw fishes (but headed and gutted), if purchased frozen"
+msgstr "rohe Fische (geköpft und ausgenommen), sofern gefroren gekauft"
+
+#: 
+msgid "potato fries, hashbrowns, tater tots and other potato products, if purchased frozen"
+msgstr "Pommes Frites, Kartoffelpuffer, Kartoffelkroketten und andere Kartoffelprodukte, sofern gefroren gekauft"
+
+#: 
+msgid "pretzels, if purchased frozen"
+msgstr "Brezeln, sofern gefroren gekauft"
+
+#: 
+msgid "frozen fruits, such as berries or melon pieces"
+msgstr "gefrorene Früchte wie Beeren oder Melonenstücke"
+
+#: 
+msgid "ice cream"
+msgstr "Eiscreme"
+
+#: 
+msgid "ice pops"
+msgstr "Wassereis"
+
+#: 
+msgid "frozen juice concentrates"
+msgstr "gefrorene Saftkonzentrate"
+
+#: 
+msgid "lobster tails, if purchased frozen"
+msgstr "Hummerschwänze, sofern gefroren gekauft"
+
+#: 
+msgid "pancakes and waffles, if purchased frozen"
+msgstr "Pfannkuchen und Waffeln, sofern gefroren gekauft"
+
+#: 
+msgid "pre-cooked sausages, if purchased frozen"
+msgstr "vorgekochte Würste, sofern gefroren gekauft"
+
+#: 
+msgid "uncooked sausages, if purchased frozen"
+msgstr "ungekochte Würste, sofern gefroren gekauft"
+
+#: 
+msgid "sorbets"
+msgstr "Sorbets"
+
+#: 
+msgid "shrimps and shellfish, if purchased frozen"
+msgstr "Garnelen und Schalentiere, sofern gefroren gekauft"
+
+#: 
+msgid "soy crumbles and hot dogs, if purchased frozen"
+msgstr "Soja-Streusel und Hot Dogs, sofern gefroren gekauft"
+
+#: 
+msgid "soy meat substitutes, if purchased frozen"
+msgstr "Soja-Fleischersatz, sofern gefroren gekauft"
+
+#: 
+msgid "TV dinners, entrees and breakfast, if purchased frozen"
+msgstr "TV-Abendessen, Hauptgerichte und Frühstücke, sofern gefroren gekauft"
+
+#: 
+msgid "tempeh, if purchased frozen"
+msgstr "Tempeh, sofern gefroren gekauft"
+
+#: 
+msgid "vegetables, if purchased frozen"
+msgstr "Gemüse, sofern gefroren gekauft"
+
+#: 
+msgid "dried beans"
+msgstr "getrocknete Bohnen"
+
+#: 
+msgid "dry egg noodles"
+msgstr "trockene Eiernudeln"
+
+#: 
+msgid "fresh pasta"
+msgstr "frische Nudelteigwaren"
+
+#: 
+msgid "dried lentils"
+msgstr "getrocknete Linsen"
+
+#: 
+msgid "dry pasta (without eggs)"
+msgstr "trockene Teigwaren (ohne Eier)"
+
+#: 
+msgid "dried, split peas"
+msgstr "getrocknete Schälerbsen"
+
+#: 
+msgid "brown rices"
+msgstr "braune Reissorten"
+
+#: 
+msgid "white or wild rices"
+msgstr "weißer und wilde Reissorten"
+
+#: 
+msgid "rib roast beef (bone-in, fresh meat)"
+msgstr "roher Rippenrostbraten mit Knochen"
+
+#: 
+msgid "rib roast beef (boneless and rolled, fresh meat)"
+msgstr "roher Rippenrostbraten (ohne Knochen, gerollt)"
+
+#: 
+msgid "round or rump roast beef (fresh meat)"
+msgstr "rohes Rund- oder Rumpsteak"
+
+#: 
+msgid "short ribs beef (fresh meat)"
+msgstr "rohes Kurzrippen-Rindfleisch"
+
+#: 
+msgid "beef cubes and beef stew (fresh meat)"
+msgstr "rohe Rindfleischwürfel und rohes Rindfleisch für Eintopf"
+
+#: 
+msgid "tenderloin (half, fresh meat)"
+msgstr "rohes Filet (halb)"
+
+#: 
+msgid "tenderloin (whole, fresh meat)"
+msgstr "rohes Filet (ganz)"
+
+#: 
+msgid "chunk roast beef and brisket beef (fresh meat)"
+msgstr "roher Rinderrostbraten in Stücken und frisches Rinderbrustfleisch"
+
+#: 
+msgid "ground beef (fresh meat)"
+msgstr "rohes Rinderhackfleisch"
+
+#: 
+msgid "beef steaks (fresh meat)"
+msgstr "rohe Rindersteaks"
+
+#: 
+msgid "ground goat meat (fresh meat)"
+msgstr "rohes Ziegenhackfleisch"
+
+#: 
+msgid "fresh whole goat meat cuts (less tender pieces such as stew meat, riblets, shanks)"
+msgstr "rohe, ganze Ziegenfleischstücke (weniger zarte Stücke wie Eintopffleisch, Rippchen, Schenkel)"
+
+#: 
+msgid "fresh whole goat meat cuts (tender pieces such as legs, ribs, shoulders, loin)"
+msgstr "rohe, ganze Ziegenfleischstücke (zarte Stücke wie Keulen, Rippen, Schultern, Lende)"
+
+#: 
+msgid "lamb breast (rolled, fresh meat)"
+msgstr "rohe, gerollte Lammbrust"
+
+#: 
+msgid "lamb chops, ribs or loin (fresh meat)"
+msgstr "rohe Lamm-Koteletts, -Rippen oder -Lendenstücke"
+
+#: 
+msgid "lamb leg steaks (fresh meat)"
+msgstr "rohe Lammkeulen-Steaks"
+
+#: 
+msgid "large lamb leg pieces (bone-in, fresh meat)"
+msgstr "rohe, große Lammkeulenstücke (mit Knochen)"
+
+#: 
+msgid "small lamb leg pieces (bone-in, fresh meat))"
+msgstr "rohe, kleine Lammkeulenstücke (mit Knochen)"
+
+#: 
+msgid "lamb leg pieces (boneless and rolled, fresh meat)"
+msgstr "rohe Lammkeulenstücke (ohne Knochen und gerollt)"
+
+#: 
+msgid "lamb shanks (fresh meat)"
+msgstr "rohe Lammhaxen"
+
+#: 
+msgid "lamb stew meat pieces (fresh meat)"
+msgstr "rohe Lammragout-Fleischstücke"
+
+#: 
+msgid "crown roast lamb meats (fresh meat)"
+msgstr "roher Kronenbraten von Lammfleisch"
+
+#: 
+msgid "fresh lamb meat cubes for kabobs"
+msgstr "rohe Lammfleischwürfel für Kebab"
+
+#: 
+msgid "fresh ground lamb meats"
+msgstr "rohes Lamm-Hackfleisch"
+
+#: 
+msgid "fresh lamb shoulder roasts and shanks (halves)"
+msgstr "roher Lammschulterbraten und -schenkel (Hälften)"
+
+#: 
+msgid "fresh pork (large crown roast pieces)"
+msgstr "rohes Schweinefleisch (große Kronenbratenstücke)"
+
+#: 
+msgid "fresh pork (small crown roast pieces)"
+msgstr "rohes Schweinefleisch (kleine Kronenbratenstücke)"
+
+#: 
+msgid "fresh ground pork"
+msgstr "rohes Schweinehackfleisch"
+
+#: 
+msgid "fresh pork (bone-in loin chops)"
+msgstr "rohes Schweinefleisch (Koteletts mit Knochen)"
+
+#: 
+msgid "fresh pork (boneless loin chops)"
+msgstr "rohes Schweinefleisch (Koteletts ohne Knochen)"
+
+#: 
+msgid "fresh pork (bone-in loin roast pieces)"
+msgstr "rohes Schweinefleisch (Lendenbratenstücke mit Knochen)"
+
+#: 
+msgid "fresh pork (boneless loin roast pieces)"
+msgstr "rohes Schweinefleisch (Lendenbratenstücke ohne Knochen)"
+
+#: 
+msgid "fresh pork cubes (loin)"
+msgstr "rohe Schweinefleischwürfel (Lende)"
+
+#: 
+msgid "fresh pork ribs"
+msgstr "rohe Schweinerippchen"
+
+#: 
+msgid "fresh pork shoulders"
+msgstr "rohe Schweineschulterstücke"
+
+#: 
+msgid "fresh pork tenderloin"
+msgstr "rohes Schweinefilet"
+
+#: 
+msgid "fresh pork tenderloin medallions or loin cubes"
+msgstr "rohe Schweinefiletmedaillons oder Lendenwürfel"
+
+#: 
+msgid "variety meats (such as liver, tongue, chitterlings etc.)"
+msgstr "Schlachtnebenprodukte (wie Leber, Zunge, Gekröse usw.)"
+
+#: 
+msgid "fresh ground veal"
+msgstr "rohes Kalbhackfleisch"
+
+#: 
+msgid "fresh veal (leg, boneless, rump or round roast)"
+msgstr "rohes Kalbfleisch (Keule, ohne Knochen, Röstbraten oder rund gebundener Braten)"
+
+#: 
+msgid "fresh veal (loin roast, bone-in)"
+msgstr "rohes Kalbfleisch (Lendenbraten, mit Knochen)"
+
+#: 
+msgid "fresh veal (boneless, shoulder roast)"
+msgstr "rohes Kalbfleisch (ohne Knochen, Schulterröstbraten)"
+
+#: 
+msgid "fresh venison (round, rump, loin or rib roast)"
+msgstr "rohes Rehfleisch (rund gebundener Braten, Röstbraten, Lendenbraten oder Rippenfleischebraten)"
+
+#: 
+msgid "fully cooked bacon"
+msgstr "vollständig gegarter Speck"
+
+#: 
+msgid "ham in shelf-stable cans"
+msgstr "Schinken in lagerfähigen Dosen"
+
+#: 
+msgid "commercially dried jerky"
+msgstr "kommerziell getrocknetes Dörrfleisch"
+
+#: 
+msgid "homemade jerky"
+msgstr "hausgemachtes Dörrfleisch"
+
+#: 
+msgid "canned meat products"
+msgstr "Fleischkonserven"
+
+#: 
+msgid "shelf stable meat in retort pouches or boxes"
+msgstr "lagerfähiges Fleisch in Folienbeuteln oder Schachteln"
+
+#: 
+msgid "smoked or processed bacon"
+msgstr "geräucherter oder verarbeiteter Speck"
+
+#: 
+msgid "corned beef in a pouch with pickling juices"
+msgstr "Corned Beef in einem Beutel mit Pökelflüssigkeit"
+
+#: 
+msgid "canned ham (labelled “keep refrigerated”)"
+msgstr "Dosenschinken (mit der Aufschrift „gekühlt aufbewahren“)"
+
+#: 
+msgid "country ham (whole or half)"
+msgstr "Bauernschinken (ganz oder halb)"
+
+#: 
+msgid "fresh ham (cook-before eating, arm picnic shoulder, boneless)"
+msgstr "roher Schinken (vor dem Essen zu kochen, vom unteren Schulterstück, ohne Knochen)"
+
+#: 
+msgid "fresh ham (cook-before eating, shunk or butt, bone-in)"
+msgstr "roher Schinken (vor dem Essen zu kochen, Hinterschinken, mit Knochen)"
+
+#: 
+msgid "fresh ham (cook-before eating, shoulder roll or butt, boneless)"
+msgstr "roher Schinken (vor dem Essen zu kochen, Schulterstück oder Hinterschinken, ohne Knochen)"
+
+#: 
+msgid "fresh ham (cook-before eating, bone-in, half)"
+msgstr "roher Schinken (vor dem Essen zu kochen, mit Knochen, halb)"
+
+#: 
+msgid "fresh ham (cook-before eating, bone-in, whole)"
+msgstr "roher Schinken (vor dem Essen zu kochen, mit Knochen, ganz)"
+
+#: 
+msgid "fresh ham (uncooked, half leg, bone-in)"
+msgstr "roher Schinken (ungekocht, halbes Bein, mit Knochen)"
+
+#: 
+msgid "fresh ham (uncooked, whole leg, bone-in)"
+msgstr "roher Schinken (ungekocht, halbes Bein, mit Knochen)"
+
+#: 
+msgid "fresh ham (uncooked, whole leg, boneless)"
+msgstr "roher Schinken (ungekocht, halbes Bein, ohne Knochen)"
+
+#: 
+msgid "fully cooked ham (arm picnic shoulder, boneless)"
+msgstr "vollständig gekochter Schinken (vom unteren Schulterstück, ohne Knochen)"
+
+#: 
+msgid "fully cooked ham (canned, labeled “keep refrigerated”, boneless)"
+msgstr "vollständig gekochter Schinken (in Dosen, kühlpflichtig, ohne Knochen)"
+
+#: 
+msgid "fully cooked ham (vacuum packed, boneless)"
+msgstr "vollständig gekochter Schinken (vakuumverpackt, ohne Knochen)"
+
+#: 
+msgid "fully cooked ham (half, bone-in)"
+msgstr "vollständig gekochter Schinken (halb, mit Knochen)"
+
+#: 
+msgid "fully cooked ham (whole, bone-in)"
+msgstr "vollständig gekochter Schinken (ganz, mit Knochen)"
+
+#: 
+msgid "fully cooked ham (half, in slices or spiral cut)"
+msgstr "vollständig gekochter Schinken (halb, in Scheiben oder Spiralschnitt)"
+
+#: 
+msgid "hot dogs"
+msgstr "Hotdogs"
+
+#: 
+msgid "fully cooked, smoked sausages"
+msgstr "vollständig gekochte, geräucherte Würstchen"
+
+#: 
+msgid "sliced hard sausages like pepperoni"
+msgstr "in Scheiben geschnittene Hartwürste wie Peperoni"
+
+#: 
+msgid "raw sausages and patties"
+msgstr "Rohwürste und Frikadellen"
+
+#: 
+msgid "raw kabobs with vegetables"
+msgstr "rohe Kebabs mit Gemüse"
+
+#: 
+msgid "stuffed, raw pork chops"
+msgstr "gefüllte rohe Schweinefleischstücke"
+
+#: 
+msgid "chicken nuggets and patties (cooked or otherwise processed)"
+msgstr "Hühnchen-Nuggets und -Frikadellen (gekocht oder anderweitig zubereitet)"
+
+#: 
+msgid "cooked poultry dishes"
+msgstr "gekochte Geflügelgerichte"
+
+#: 
+msgid "fried chicken"
+msgstr "Brathähnchen"
+
+#: 
+msgid "rotisserie chicken"
+msgstr "Grillhähnchen"
+
+#: 
+msgid "fresh whole capon"
+msgstr "roher ganzer Kapaun"
+
+#: 
+msgid "fresh whole chicken"
+msgstr "rohes ganzes Huhn"
+
+#: 
+msgid "fresh bone-in chicken breast halves"
+msgstr "rohe Hühnerbrusthälften mit Knochen"
+
+#: 
+msgid "fresh boneless chicken breast halves"
+msgstr "rohe Hühnerbrusthälften ohne Knochen"
+
+#: 
+msgid "fresh legs or thighs"
+msgstr "rohe Hühnerbeine oder Hühnerschenkel"
+
+#: 
+# Cornish chicken are simply "the most-used breed in the chicken meat industry",
+# see https://en.wikipedia.org/wiki/Cornish_chicken
+msgid "fresh whole cornish hens"
+msgstr "rohe ganze Fleischhühner"
+
+#: 
+msgid "fresh whole ducklings"
+msgstr "rohe ganze Jungenten"
+
+#: 
+msgid "fresh giblets"
+msgstr "rohe Innereien"
+
+#: 
+msgid "fresh whole goose (domestic or wild)"
+msgstr "rohe ganze Gänse (Haus- oder Wildgänse)"
+
+#: 
+msgid "ground turkey or chicken"
+msgstr "Hackfleisch von Truthahn oder Hühnchen"
+
+#: 
+msgid "young, whole pheasant"
+msgstr "junger, ganzer Fasan"
+
+#: 
+msgid "whole quail"
+msgstr "ganze Wachtel"
+
+#: 
+msgid "fresh whole turkeys"
+msgstr "rohe ganze Truthähne"
+
+#: 
+msgid "fresh turkey parts (bone-in breast halves)"
+msgstr "rohe, nicht entbeinte Putenbrusthälften"
+
+#: 
+msgid "fresh turkey parts (boneless breast halves)"
+msgstr "rohe, entbeinte Putenbrusthälften"
+
+#: 
+msgid "fresh turkey parts (legs or thighs)"
+msgstr "rohe Putenbeine oder -schenkel"
+
+#: 
+msgid "canned chicken"
+msgstr "Hähnchenfleisch in der Dose"
+
+#: 
+msgid "shelf stable poultry meats in retort pouches or boxes"
+msgstr "lagerfähiges Geflügelfleisch in Folienbeuteln oder Behältern"
+
+#: 
+msgid "raw poultry kabobs with vegetables"
+msgstr "rohe Geflügelspieße mit Gemüse"
+
+#: 
+msgid "stuffed, raw chicken breasts"
+msgstr "gefüllte rohe Hühnerbrust"
+
+#: 
+msgid "turducken"
+msgstr "Turducken (Dreivögelbraten)"
+
+#: 
+msgid "fresh apples"
+msgstr "frische Äpfel"
+
+#: 
+msgid "fresh apricots"
+msgstr "frische Aprikosen"
+
+#: 
+msgid "fresh avocados"
+msgstr "frische Avocados"
+
+#: 
+msgid "fresh bananas"
+msgstr "frische Bananen"
+
+#: 
+msgid "fresh blackberries, boysenberries, currant, raspberries and strawberries"
+msgstr "frische Brombeeren, Boysenbeeren, Johannisbeeren, Himbeeren und Erdbeeren"
+
+#: 
+msgid "fresh cherries, goose berries and lychee"
+msgstr "frische Kirschen, Stachelbeeren und Litschis"
+
+#: 
+msgid "fresh chirimuyas"
+msgstr "frische Chirimoyas"
+
+#: 
+msgid "fresh citrus fruits (lemon, lime, orange, grapefruit, tangerines, clementines)"
+msgstr "frische Zitrusfrüchte (Zitrone, Limette, Orange, Grapefruit, Mandarinen, Clementinen)"
+
+#: 
+msgid "fresh shredded coconut pieces"
+msgstr "frische gerebelte Kokosnuss-Stücke"
+
+#: 
+msgid "fresh whole coconuts"
+msgstr "frische ganze Kokosnüsse"
+
+#: 
+msgid "fresh cranberries"
+msgstr "frische Moosbeeren"
+
+#: 
+msgid "fresh dates"
+msgstr "frische Datteln"
+
+#: 
+msgid "fresh grapes"
+msgstr "frische Trauben"
+
+#: 
+msgid "fresh guavas"
+msgstr "frische Guaven"
+
+#: 
+msgid "fresh kiwi fruits"
+msgstr "frische Kiwis"
+
+#: 
+msgid "fresh kumquats"
+msgstr "frische Kumquats"
+
+#: 
+msgid "fresh whole melons"
+msgstr "frische ganze Melonen"
+
+#: 
+msgid "fresh papayas, mangoes and passion fruits"
+msgstr "frische Papayas, Mangos und Passionsfrüchte"
+
+#: 
+msgid "fresh peaches, nectarines, plums, pears and sapote"
+msgstr "frische Pfirsiche, Nektarinen, Pflaumen, Birnen und Sapoten"
+
+#: 
+msgid "fresh pineapples"
+msgstr "frische Ananas"
+
+#: 
+msgid "fresh plantains"
+msgstr "frische Mehlbananen"
+
+#: 
+msgid "fresh pomegranates"
+msgstr "frische Granatäpfel"
+
+#: 
+msgid "fresh whole artichokes"
+msgstr "frische ganze Artischocken"
+
+#: 
+msgid "fresh asparagus"
+msgstr "frischer Spargel"
+
+#: 
+msgid "fresh bagged greens such as leaf spinach and lettuce"
+msgstr "verpackte frisches grünes Blattgemüse wie Blattspinat und Salat"
+
+#: 
+msgid "fresh bamboo shoots"
+msgstr "frische Bambussprossen"
+
+#: 
+msgid "fresh beans and peas (green beans, fava beans, lima beans, soybeans, wax beans)"
+msgstr "frische Bohnen und Erbsen (grüne Bohnen, Ackerbohnen, Limabohnen, Sojabohnen, Wachsbohnen)"
+
+#: 
+msgid "fresh beets"
+msgstr "frische Rüben"
+
+#: 
+msgid "fresh bok choy"
+msgstr "frischer Bok Choi"
+
+#: 
+msgid "fresh broccoli and broccoli raab (rapini)"
+msgstr "frischer Brokkoli und Brokkoliraab (Rapini)"
+
+#: 
+msgid "fresh Brussels sprouts"
+msgstr "frischer Rosenkohl"
+
+#: 
+msgid "fresh cabbage"
+msgstr "frisches Kraut"
+
+#: 
+msgid "fresh carrots and parsnips"
+msgstr "frische Möhren und Pastinaken"
+
+#: 
+msgid "fresh cauliflowers"
+msgstr "frischer Blumenkohl"
+
+#: 
+msgid "fresh celery"
+msgstr "frischer Sellerie"
+
+#: 
+msgid "fresh corn cobs"
+msgstr "frische Maiskolben"
+
+#: 
+msgid "fresh cucumbers"
+msgstr "frische Gurken"
+
+#: 
+msgid "fresh aubergines"
+msgstr "frische Auberginen"
+
+#: 
+msgid "fresh garlic"
+msgstr "frischer Knoblauch"
+
+#: 
+msgid "fresh ginger root"
+msgstr "frische Ingwerwurzel"
+
+#: 
+msgid "fresh greens"
+msgstr "frisches Blattgemüse"
+
+#: 
+msgid "fresh herbs"
+msgstr "frische Kräuter"
+
+#: 
+msgid "fresh leeks"
+msgstr "frischer Lauch"
+
+#: 
+msgid "fresh iceberg or romaine lettuce"
+msgstr "frischer Eisberg- oder Römersalat"
+
+#: 
+msgid "fresh leaf lettuce and fresh spinach"
+msgstr "frischer Blattsalat und frischer Spinat"
+
+#: 
+msgid "fresh mushrooms"
+msgstr "frische Pilze"
+
+#: 
+msgid "fresh okra"
+msgstr "frische Okra"
+
+#: 
+msgid "fresh, dry onions"
+msgstr "frische, trockene Zwiebeln"
+
+#: 
+msgid "fresh spring onions or green onions"
+msgstr "frische Frühlingszwiebeln oder grüne Zwiebeln"
+
+#: 
+msgid "fresh peppers"
+msgstr "frische Paprika"
+
+#: 
+msgid "fresh potatoes"
+msgstr "frische Kartoffeln"
+
+#: 
+msgid "fresh pumpkins"
+msgstr "frische Kürbisse"
+
+#: 
+msgid "fresh radishes"
+msgstr "frische Radieschen"
+
+#: 
+msgid "fresh rhubarb"
+msgstr "frischer Rhabarber"
+
+#: 
+msgid "fresh rutabagas"
+msgstr "frische Kohlrüben"
+
+#: 
+msgid "fresh summer squash and zucchini"
+msgstr "frischer Sommerkürbis und frische Zucchini"
+
+#: 
+msgid "fresh winter squash"
+msgstr "frischer Winterkürbis"
+
+#: 
+msgid "fresh tamarind"
+msgstr "frische Tamarinde"
+
+#: 
+msgid "fresh taro"
+msgstr "frischer Taro"
+
+#: 
+msgid "fresh tomatoes"
+msgstr "frische Tomaten"
+
+#: 
+msgid "fresh turnips"
+msgstr "frische Rüben"
+
+#: 
+msgid "fresh yuca or cassava"
+msgstr "frischer Yuca oder Maniok"
+
+#: 
+msgid "fresh caviar in a jar"
+msgstr "frischer Kaviar im Glas"
+
+#: 
+msgid "cooked fishes of all kinds"
+msgstr "gekochte Fische aller Art"
+
+#: 
+msgid "fresh fatty fish such as bluefish, mackerel, mullet, salmon, tuna, etc."
+msgstr "frischer fetter Fisch wie Blaufisch, Makrele, Meeräsche, Lachs, Thunfisch usw."
+
+#: 
+msgid "fresh lean fish such as cod, flounder, haddock, halibut, sole, etc."
+msgstr "frischer Magerfisch wie Kabeljau, Flunder, Schellfisch, Heilbutt, Seezunge usw."
+
+#: 
+msgid "fresh pollock, ocean perch, rockfish, sea trout"
+msgstr "frischer Pollack („Seelachs“), Rotbarsch, Sebastes, Meerforelle"
+
+#: 
+msgid "fresh surimi seafood"
+msgstr "frische Surimi-Meeresfrüchte"
+
+#: 
+msgid "cooked shellfish of all kinds"
+msgstr "gekochte Meeresfrüchte aller Art"
+
+#: 
+msgid "crab legs (king, dungeness and snow crabs)"
+msgstr "Krebsbeine (Königskrebs, Pazifischer Taschenkrebs, Eismeerkrebs)"
+
+#: 
+msgid "fresh crab meat"
+msgstr "frisches Krebsfleisch"
+
+#: 
+msgid "pasteurized crab meat"
+msgstr "pasteurisiertes Krebsfleisch"
+
+#: 
+msgid "fresh clams, mussels and oysters"
+msgstr "frische Muscheln, Miesmuscheln und Austern"
+
+#: 
+msgid "fresh lobster tails"
+msgstr "frische Hummerschwänze"
+
+#: 
+msgid "fresh whole lobsters, if purchased frozen"
+msgstr "frische ganze Hummer, sofern gefroren gekauft"
+
+#: 
+msgid "fresh whole lobsters, if purchased live"
+msgstr "frische ganze Hummer, sofern lebendig gekauft"
+
+#: 
+msgid "fresh clams, mussels and oysters, if purchased live"
+msgstr "frische Muscheln, Miesmuscheln und Austern, sofern lebendig gekauft"
+
+#: 
+msgid "scallops"
+msgstr "Jakobsmuscheln"
+
+#: 
+msgid "shrimps and crayfishes"
+msgstr "Garnelen und Langusten"
+
+#: 
+msgid "shucked clams, mussels and oysters"
+msgstr "geschälte Muscheln, Miesmuscheln und Austern"
+
+#: 
+msgid "squids"
+msgstr "Tintenfische"
+
+#: 
+msgid "cold smoked, air packed fishes"
+msgstr "kalt geräucherter, nicht vakuumverpackte Fische"
+
+#: 
+msgid "cold smoked, vacuum packed fishes"
+msgstr "kalt geräucherte, vakuumverpackte Fische"
+
+#: 
+msgid "hot smoked, air packed fishes"
+msgstr "heiß geräucherte, nicht vakuumverpackte Fische"
+
+#: 
+msgid "hot smoked, vacuum packed fishes"
+msgstr "heiß geräucherte, vakuumverpackte Fische"
+
+#: 
+msgid "smoked herrings with wine sauce in glass jars"
+msgstr "Räucherheringe mit Weinsauce in Gläsern"
+
+#: 
+msgid "commercially made, shelf stable applesauce"
+msgstr "kommerziell hergestelltes, lagerfähiges Apfelmus"
+
+#: 
+msgid "commercially made, shelf stable bacon bits imitation"
+msgstr "kommerziell hergestellt, lagerfähige Schinkenstückimitate"
+
+#: 
+msgid "high-acid canned foods such as juices, fruit, pickles, sauerkraut, tomato soup, and foods in vinegar–based sauce"
+msgstr "Konserven mit hohem Säuregehalt wie Säfte, Obst, Essiggurken, Sauerkraut, Tomatensuppe und Lebensmittel in Essigsauce"
+
+#: 
+msgid "low-acid canned foods such as meat, poultry, fish, gravy, stew, soups, beans, carrots, corn, pasta, peas, potatoes and spinach"
+msgstr "säurearme Konserven wie Fleisch, Geflügel, Fisch, Bratensoße, Eintopf, Suppen, Bohnen, Karotten, Mais, Nudeln, Erbsen, Kartoffeln und Spinat"
+
+#: 
+msgid "cereals that have to be cooked before eating such as oatmeal"
+msgstr "Cerealien die vor dem Essen gekocht werden, etwa Haferflocken"
+
+#: 
+msgid "ready-to-eat cereals"
+msgstr "verzehrfertige Cerealien"
+
+#: 
+msgid "chocolate syrups"
+msgstr "Schokoladensirupe"
+
+#: 
+msgid "crackers"
+msgstr "Kräcker"
+
+#: 
+msgid "dried fruits"
+msgstr "Trockenfrüchte"
+
+#: 
+msgid "Graham crackers"
+msgstr "Graham-Kräcker"
+
+#: 
+msgid "gummy snacks"
+msgstr "Weingummis"
+
+#: 
+msgid "marshmallow crème"
+msgstr "Marshmallow-Creme"
+
+#: 
+msgid "marshmallows"
+msgstr "Marshmallows"
+
+#: 
+msgid "canned condensed milk"
+msgstr "Kondensmilch in Dosen"
+
+#: 
+msgid "molasses"
+msgstr "Melasse"
+
+#: 
+msgid "dried mushrooms"
+msgstr "Trockenpilze"
+
+#: 
+msgid "nuts in jars or cans"
+msgstr "Nüsse in Gläsern oder Dosen"
+
+#: 
+msgid "commercially made peanut butter"
+msgstr "kommerziell hergestellte Erdnussbutter"
+
+#: 
+msgid "pectin"
+msgstr "Pektin"
+
+#: 
+msgid "commercially popped popcorn in bags"
+msgstr "kommerziell hergestelltes Popcorn in Tüten"
+
+#: 
+msgid "dry popcorn kernels in jars"
+msgstr "trockene Popcorn-Körner in Gläsern"
+
+#: 
+msgid "microwave popcorn packets"
+msgstr "Mikrowellen-Popcorn-Pakete"
+
+#: 
+msgid "potato chips"
+msgstr "Kartoffelchips"
+
+#: 
+msgid "instant mashed potatoes"
+msgstr "Instant-Kartoffelpüree"
+
+#: 
+msgid "shelf-stable pretzels"
+msgstr "lagerfähige Brezeln"
+
+#: 
+msgid "pudding mix powders"
+msgstr "Fertigpudding-Mischungen"
+
+#:
+msgid "dry bouillon soups"
+msgstr "Bouillon-Fertigsuppen"
+
+#:
+msgid "sun dried tomatoes"
+msgstr "sonnengetrocknete Tomaten"
+
+#:
+msgid "syrups"
+msgstr "Sirupe"
+
+#:
+msgid "shelf-stable toaster pastries"
+msgstr "lagerfähiges Toaster-Gebäck"
+
+#:
+msgid "miso"
+msgstr "Miso"
+
+#:
+msgid "re-hydrated textured soy protein"
+msgstr "rehydriertes texturiertes Sojaprotein"
+
+#:
+msgid "full-fat soy flour"
+msgstr "Vollfett-Sojamehl"
+
+#:
+msgid "textured soy protein"
+msgstr "texturiertes Sojaprotein"
+
+#:
+msgid "tofu"
+msgstr "Tofu"
+
+#:
+msgid "After opening time applies to prepared product."
+msgstr "Die Lagerzeit nach dem Öffnen bezieht sich auf das zubereitete Produkt."
+
+#:
+msgid "Applies to unopened coconut."
+msgstr "Bezieht sich auf ungeöffnete Kokosnüsse."
+
+#:
+msgid "Canned items will be safe to eat well past the 'use-by’ or ‘best by’ date as long as the can shows no dents, rust, or swelling."
+msgstr "Dosenartikel können auch nach dem Mindesthaltbarkeitsdatum noch sicher verzehrt werden, solange die Dose keine Beulen, Rost oder Schwellungen aufweist."
+
+#:
+msgid "Canned items will be safe to eat well past the ‘use-by’ or ‘best by’ date as long as the can shows no dents, rust, or swelling."
+msgstr "Dosenartikel können auch nach dem Mindesthaltbarkeitsdatum noch sicher verzehrt werden, solange die Dose keine Beulen, Rost oder Schwellungen aufweist."
+
+#:
+msgid "Freezer timeline applies to cooked and mashed potatoes."
+msgstr "Die Lagerdauer im Gefrierschrank gilt für gekochte und pürierte Kartoffeln."
+
+#:
+msgid "Highly perishable when stored in the pantry."
+msgstr "Leicht verderblich bei Lagerung in der Speisekammer."
+
+#:
+msgid "Just the pulp"
+msgstr "Nur das Fruchtfleisch."
+
+#:
+msgid "Matcha tea is the only tea that can be frozen after opening"
+msgstr "Matcha-Tee ist der einzige Tee, der nach dem Öffnen eingefroren werden kann."
+
+#:
+msgid "May be left at room temperature for 1 - 2 days."
+msgstr "Kann 1 - 2 Tage bei Raumtemperatur belassen werden."
+
+#:
+msgid "Pure vanilla extract lasts indefinitely."
+msgstr "Reiner Vanilleextrakt ist unbegrenzt haltbar."
+
+#:
+msgid "Refrigeration ensures that commercial sauces and condiments stay fresh for a longer period of time. Shelf-stable commercial barbecue sauce is safe when stored at room temperature after opening.  Quality, not safety, is the reason the labels on these products suggest that they be refrigerated after opening."
+msgstr "Die Kühlung sorgt dafür, dass handelsübliche Soßen und Gewürze länger schmackhaft bleiben. Lagerfähige kommerzielle Barbecue-Sauce ist auch dann noch essbar, wenn sie nach dem Öffnen bei Raumtemperatur gelagert wird. Qualität, nicht Sicherheit, ist der Grund dafür, dass die Etiketten auf diesen Produkten darauf hinweisen, dass sie nach dem Öffnen gekühlt werden sollten."
+
+#:
+msgid "Refrigeration ensures that commercial sauces and condiments stay fresh for a longer period of time. Shelf-stable commercial ketchup, cocktail sauce, or chili sauce are safe when stored at room temperature after opening.  Quality, not safety, is the reason the labels on these products suggest that they be refrigerated after opening."
+msgstr "Die Kühlung sorgt dafür, dass handelsübliche Soßen und Gewürze länger schmackhaft bleiben. Lagerfähiger kommerzieller Ketchup, Cocktailsauce oder Chilisauce sind auch dann noch essbar, wenn sie nach dem Öffnen bei Raumtemperatur gelagert werden. Qualität, nicht Sicherheit, ist der Grund dafür, dass die Etiketten auf diesen Produkten darauf hinweisen, dass sie nach dem Öffnen gekühlt werden sollten."
+
+#:
+msgid "Refrigeration ensures that commercial sauces and condiments stay fresh for a longer period of time. Shelf-stable commercial mayonnaise is safe when stored at room temperature after opening.  Quality, not safety, is the reason the labels on these products suggest that they be refrigerated after opening."
+msgstr "Die Kühlung sorgt dafür, dass handelsübliche Soßen und Gewürze länger schmackhaft bleiben. Lagerfähige kommerzielle Mayonnaise ist auch dann noch essbar, wenn sie nach dem Öffnen bei Raumtemperatur gelagert wird.  Qualität, nicht Sicherheit, ist der Grund dafür, dass die Etiketten auf diesen Produkten darauf hinweisen, dass sie nach dem Öffnen gekühlt werden sollten."
+
+#:
+msgid "Refrigeration ensures that commercial sauces and condiments stay fresh for a longer period of time. Shelf-stable commercial mustard is safe when stored at room temperature after opening.  Quality, not safety, is the reason the labels on these products suggest that they be refrigerated after opening."
+msgstr "Die Kühlung sorgt dafür, dass handelsübliche Soßen und Gewürze länger schmackhaft bleiben. Lagerfähiger kommerzieller Senf ist auch dann noch essbar, wenn er nach dem Öffnen bei Raumtemperatur gelagert wird.  Qualität, nicht Sicherheit, ist der Grund dafür, dass die Etiketten auf diesen Produkten darauf hinweisen, dass sie nach dem Öffnen gekühlt werden sollten."
+
+#:
+msgid "Refrigeration ensures that commercial sauces and condiments stay fresh for a longer period of time. Shelf-stable commercial salad dressing is safe when stored at room temperature after opening.  Quality, not safety, is the reason the labels on these products suggest that they be refrigerated after opening."
+msgstr "Die Kühlung sorgt dafür, dass handelsübliche Soßen und Gewürze länger schmackhaft bleiben. Lagerfähige kommerzielle Salatsaucen sind auch dann noch essbar, wenn sie nach dem Öffnen bei Raumtemperatur gelagert werden.  Qualität, nicht Sicherheit, ist der Grund dafür, dass die Etiketten auf diesen Produkten darauf hinweisen, dass sie nach dem Öffnen gekühlt werden sollten."
+
+#:
+msgid "Refrigeration ensures that commercial sauces and condiments stay fresh for a longer period of time. Shelf-stable commercial salsa is safe when stored at room temperature after opening.  Quality, not safety, is the reason the labels on these products suggest that they be refrigerated after opening."
+msgstr "Die Kühlung sorgt dafür, dass handelsübliche Soßen und Gewürze länger schmackhaft bleiben. Lagerfähige kommerzielle Salsa-Sauce ist auch dann noch essbar, wenn sie nach dem Öffnen bei Raumtemperatur gelagert wird.  Qualität, nicht Sicherheit, ist der Grund dafür, dass die Etiketten auf diesen Produkten darauf hinweisen, dass sie nach dem Öffnen gekühlt werden sollten."
+
+#:
+msgid "Refrigeration ensures that commercial sauces and condiments stay fresh for a longer period of time. Shelf-stable commercial soy sauce or teriyaki sauce are safe when stored at room temperature after opening.  Quality, not safety, is the reason the labels on these products suggest that they be refrigerated after opening."
+msgstr "Die Kühlung sorgt dafür, dass handelsübliche Soßen und Gewürze länger schmackhaft bleiben. Lagerfähige kommerzielle Sojasauce oder Teriyaki-Sauce sind auch dann noch essbar, wenn sie nach dem Öffnen bei Raumtemperatur gelagert werden.  Qualität, nicht Sicherheit, ist der Grund dafür, dass die Etiketten auf diesen Produkten darauf hinweisen, dass sie nach dem Öffnen gekühlt werden sollten."
+
+#:
+msgid "Refrigeration ensures that commercial sauces and condiments stay fresh for a longer period of time. Shelf-stable commercial worcestershire sauce is safe when stored at room temperature after opening.  Quality, not safety, is the reason the labels on these products suggest that they be refrigerated after opening."
+msgstr "Die Kühlung sorgt dafür, dass handelsübliche Soßen und Gewürze länger schmackhaft bleiben. Lagerfähige kommerzielle Worcestershire-Sauce ist auch dann noch essbar, wenn sie nach dem Öffnen bei Raumtemperatur gelagert wird.  Qualität, nicht Sicherheit, ist der Grund dafür, dass die Etiketten auf diesen Produkten darauf hinweisen, dass sie nach dem Öffnen gekühlt werden sollten."
+
+#:
+msgid "Refrigeration not highly recommended"
+msgstr "Kühlung nicht dringend empfohlen"
+
+#:
+msgid "Refrigeration time applies to prepared product."
+msgstr "Die Lagerfähigkeit im Kühlschrank gilt für das zubereitete Produkt."
+
+#:
+msgid "Ripe is when this item is tender, fully developed and ready to eat."
+msgstr "Dieses Lebensmittel ist reif, wenn es zart, voll entwickelt und verzehrfertig ist."
+
+#:
+msgid "Ripe is when this item is tender, fully developed and ready to eat. Note, these spoil quickly."
+msgstr "Dieses Lebensmittel ist reif, wenn es zart, voll entwickelt und verzehrfertig ist. Dieses Lebensmittel verdirbt schnell."
+
+#:
+msgid "Should be discarded after use-by date."
+msgstr "Sollte nach Ablauf des Verfallsdatums entsorgt werden."
+
+#:
+msgid "Sugar never spoils, but for best quality use within 2 years of opening."
+msgstr "Zucker verdirbt nie, aber für beste Qualität verwenden Sie ihn innerhalb von 2 Jahren nach Öffnung."
+
+#:
+msgid "The United States Potato Board notes refrigeration can cause potatoes to darken during cooking and to develop an unpleasantly sweet taste."
+msgstr "Das United States Potato Board teilt mit, dass die Kühlung dazu führen kann, dass die Kartoffeln beim Kochen dunkler werden und einen unangenehm süßen Geschmack entwickeln."
+
+#:
+msgid "This is the recommended storage method for whole potatoes."
+msgstr "Dies ist die empfohlene Lagerungsmethode für ganze Kartoffeln."
+
+#:
+msgid "Timeline for refrigerator applies to ripe fruit."
+msgstr "Die angegebene Lagerdauer im Kühlschrank gilt für reife Früchte."
+
+#:
+msgid "Timeline for refrigerator applies to ripe fruit; skin will blacken"
+msgstr "Die angegebene Lagerdauer im Kühlschrank gilt für reife Früchte; die Schale wird bei der Lagerung schwärzlich."
+
+#:
+msgid "Unbroken bulbs"
+msgstr "Unzerbrochene Zehen"
+
+#:
+msgid "Unopened product will last 3 - 5 days after date on bag, after opening it will last 2 days."
+msgstr "Ungeöffnetes Produkt hält 3 - 5 Tage nach dem Datum auf der Verpackung, nach dem Öffnen hält es 2 Tage."
+
+#:
+msgid "Until Ripe, then 1–2 days. Ripe is when this item is tender, fully developed and ready to eat."
+msgstr "Bis zur Reife, dann 1-2 Tage. Reif ist, wenn dieses Lebensmittel zart, voll entwickelt und verzehrfertig ist."
+
+#:
+msgid "Until Ripe, then 7 days. Ripe is when this item is tender, fully developed and ready to eat."
+msgstr "Bis zur Reife, dann 7 Tage. Reif ist, wenn dieses Lebensmittel zart, voll entwickelt und verzehrfertig ist."
+
+#:
+msgid "Until Ripe, then 7 days. Ripe is when this item is tender, fully developed and ready to eat. Refrigeration may affect flavor, USDA recommends pantry storage."
+msgstr "Bis zur Reife, dann 7 Tage. Reif ist, wenn dieses Lebensmittel zart, voll entwickelt und verzehrfertig ist. Kühlung kann den Geschmack beeinträchtigen; USDA empfiehlt die Lagerung in der Speisekammer."
+
+#:
+msgid "Use for cooking"
+msgstr "Verwendung zum Kochen"
+
+#:
+msgid "Water will store indefinitely, though the taste may be impacted by storage conditions, including sunlight, items stored around it and the containers being used to store it."
+msgstr "Wasser ist unbegrenzt lagerfähig, obwohl der Geschmack durch die Lagerungsbedingungen beeinflusst werden kann, einschließlich durch Sonnenlicht, in der Nähe gelagerte Gegenstände und die zur Lagerung verwendeten Behälter."
+
+#:
+msgid "applies to egg dishes after baking"
+msgstr "gilt für Eierspeisen nach dem Backen"
+
+#:
+msgid "as balls"
+msgstr "als Kugeln"
+
+#:
+msgid "for individual cloves"
+msgstr "für einzelne Nelken"
+
+#:
+msgid "in a chilled tank"
+msgstr "in einem gekühlten Tank"
+
+#:
+msgid "just the pulp"
+msgstr "nur das Fruchtfleisch"
+
+#:
+msgid "sliced, with lemon juice and sugar"
+msgstr "in Scheiben geschnitten, mit Zitronensaft und Zucker"
+
+#:
+msgid "when cooked"
+msgstr "wenn gekocht"
+
+#:
+msgid "when whole"
+msgstr "wenn ganz"
+
+#:
+msgid "Storage duration"
+msgstr "Lagerdauer"
+
+#:
+msgid "(Hints: %{hints})"
+msgstr "(Hinweise: %{hints})"
+
+#:
+msgid "For %{name}, the typical storage life is %{shelf_life_text}."
+msgstr "Für %{name} ist die typische Lagerdauer %{shelf_life_text}."
+
+#:
+msgid ", and "
+msgstr ", und "
+
+#:
+msgid "Days"
+msgstr "Tage"
+
+#:
+msgid "Hours"
+msgstr "Stunden"
+
+#:
+msgid "Indefinitely"
+msgstr "Unbegrenzt"
+
+#:
+msgid "Months"
+msgstr "Monate"
+
+#:
+msgid "Not Recommended"
+msgstr "Nicht empfohlen"
+
+#:
+msgid "Package use-by date"
+msgstr "Verbrauchsdatum auf der Packung"
+
+#:
+msgid "Weeks"
+msgstr "Wochen"
+
+#:
+msgid "When Ripe"
+msgstr "Wenn reif"
+
+#:
+msgid "Year"
+msgstr "Jahr"
+
+#:
+msgid "Years"
+msgstr "Jahre"
+
+#:
+msgid "in the pantry, whether sealed or not"
+msgstr "in der Speisekammer, ob versiegelt oder nicht"
+
+#:
+msgid "in the pantry if still sealed"
+msgstr "in der Speisekammer, falls noch versiegelt"
+
+#:
+msgid "in the pantry after opening the package"
+msgstr "in der Speisekammer nach dem Öffnen der Packung"
+
+#:
+msgid "in the fridge, whether sealed or not"
+msgstr "im Kühlschrank, ob versiegelt oder nicht"
+
+#:
+msgid "in the fridge if stored there immediately after purchase, whether sealed or not"
+msgstr "im Kühlschrank, wenn unmittelbar nach dem Kauf dort gelagert, ob versiegelt oder nicht"
+
+#:
+msgid "in the fridge if stored there after opening the package"
+msgstr "im Kühlschrank, wenn dort nach dem Öffnen der Verpackung aufbewahrt"
+
+#:
+msgid "in the fridge if stored there after thawing a frozen item, whether sealed or not"
+msgstr "im Kühlschrank, wenn dort nach dem Auftauen gelagert, ob versiegelt oder nicht"
+
+#:
+msgid "in the freezer, whether sealed or not"
+msgstr "in der Gefriertruhe, ob versiegelt oder nicht"
+
+#:
+msgid "in the freezer if stored there immediately after purchase, whether sealed or not"
+msgstr "in der Tiefkühltruhe, wenn unmittelbar nach dem Kauf dort gelagert, ob versiegelt oder nicht"

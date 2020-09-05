@@ -40,3 +40,9 @@ gem 'asciidoctor'
 
 # Documentation generator for Ruby.
 gem 'yard'
+
+# Internationalization system for string translation.
+gem 'i18n'
+
+# The Ruby version of Make, used as the build system here.
+# gem 'rake'

@@ -13,10 +13,15 @@ require 'csv'
 require 'ox'
 require 'awesome_print'
 require 'date'
+require 'i18n'
 
 # Local, non-gem includes.
 require_relative '../lib/database'
 require_relative '../lib/topic'
+
+# Add translation functions like _(…) to the global namespace.
+#   See: https://www.rubydoc.info/github/svenfuchs/i18n/master/I18n/Gettext/Helpers
+include I18n::Gettext::Helpers
 
 
 #############################################################################
@@ -45,12 +50,15 @@ Examples: For the foodrescue-content repo, the command to run is:
 
 Usage:
   #{__FILE__} DB CSV_IN CSV_OUT
+  #{__FILE__} -t POFILE DB CSV_IN CSV_OUT
   #{__FILE__} -h | --help
   #{__FILE__} -v | --version
 
 Options:
-  -h, --help                     Show this screen.
-  -v, --version                  Show version.
+  -t POFILE, --translations POFILE  Path to a .po file providing string translations. Must be named
+                                    with a two-letter language identifier as a filename, e.g. de.po.
+  -h, --help                        Show this screen.
+  -v, --version                     Show version.
 
 DOCOPT
 
@@ -183,18 +191,14 @@ def import_food_rescue_food_names(csv_path, db)
   db.execute 'PRAGMA synchronous = OFF'
 
   # Create the database table for the category mapping.
-  db.execute 'ALTER TABLE PRODUCTS ADD COLUMN Food_Rescue_Food_Name_en TEXT'
-  db.execute 'ALTER TABLE PRODUCTS ADD COLUMN Food_Rescue_Food_Name_de TEXT'
+  db.execute 'ALTER TABLE PRODUCTS ADD COLUMN Food_Rescue_Food_Name TEXT'
 
   # Import the topic intro texts from the CSV file.
   CSV.foreach(csv_path, { headers: true }) do |row|
     foodkeeper_id = Integer(row['FoodKeeper Product ID'])
 
-    name_en = row['Food Rescue Food Name en']
-    db.execute 'UPDATE PRODUCTS SET Food_Rescue_Food_Name_en = ? WHERE ID = ?', [name_en, foodkeeper_id] unless name_en.nil? or name_en.empty?
-
-    name_de = row['Food Rescue Food Name de']
-    db.execute 'UPDATE PRODUCTS SET Food_Rescue_Food_Name_de = ? WHERE ID = ?', [name_de, foodkeeper_id] unless name_en.nil? or name_en.empty?
+    name = row['Food Rescue Food Name']
+    db.execute 'UPDATE PRODUCTS SET Food_Rescue_Food_Name = ? WHERE ID = ?', [name, foodkeeper_id] unless name.nil? or name.empty?
   end
 
   # Restore synchronous operation, which was disabled at the start of the method.
@@ -269,18 +273,29 @@ def shelf_life(product_id, db, field_prefix)
 
   min_duration = product["#{field_prefix}_Min"]
   max_duration = product["#{field_prefix}_Max"]
+
   duration_metric = product["#{field_prefix}_Metric"]
+  duration_metric = gettext(duration_metric) unless duration_metric.empty?
 
   text_after = case field_prefix
-    when 'Pantry';                      'in the pantry, whether sealed or not'
-    when 'DOP_Pantry';                  'in the pantry if still sealed'
-    when 'Pantry_After_Opening';        'in the pantry after opening the package'
-    when 'Refrigerate';                 'in the fridge, whether sealed or not'
-    when 'DOP_Refrigerate';             'in the fridge if stored there immediately after purchase, whether sealed or not'
-    when 'Refrigerate_After_Opening';   'in the fridge if stored there after opening the package'
-    when 'Refrigerate_After_Thawing';   'in the fridge if stored there after thawing a frozen item, whether sealed or not'
-    when 'Freeze';                      'in the freezer, whether sealed or not'
-    when 'DOP_Freeze';                  'in the freezer if stored there immediately after purchase, whether sealed or not'
+    when 'Pantry'
+      gettext('in the pantry, whether sealed or not')
+    when 'DOP_Pantry'
+      gettext('in the pantry if still sealed')
+    when 'Pantry_After_Opening'
+      gettext('in the pantry after opening the package')
+    when 'Refrigerate'
+      gettext('in the fridge, whether sealed or not')
+    when 'DOP_Refrigerate'
+      gettext('in the fridge if stored there immediately after purchase, whether sealed or not')
+    when 'Refrigerate_After_Opening'
+      gettext('in the fridge if stored there after opening the package')
+    when 'Refrigerate_After_Thawing'
+      gettext('in the fridge if stored there after thawing a frozen item, whether sealed or not')
+    when 'Freeze'
+      gettext('in the freezer, whether sealed or not')
+    when 'DOP_Freeze'
+      gettext('in the freezer if stored there immediately after purchase, whether sealed or not')
   end
 
   if min_duration.empty?
@@ -322,25 +337,34 @@ def topic_text(product_id, db, storage_type: nil)
   shelf_life_text = ''
   column_prefixes[storage_type].each do |prefix|
     shelf_life = shelf_life(product_id, db, prefix)
-    shelf_life_text += ", and " unless (shelf_life_text.empty? or shelf_life.empty?)
+    shelf_life_text += gettext(', and ') unless (shelf_life_text.empty? or shelf_life.empty?)
     shelf_life_text += shelf_life unless shelf_life.empty?
   end
 
   # Name to use for the product in the topic text.
-  if product['Food_Rescue_Food_Name_en'].nil? or product['Food_Rescue_Food_Name_en'].empty?
+  if product['Food_Rescue_Food_Name'].nil? or product['Food_Rescue_Food_Name'].empty?
     name = [category['Category_Name'], category['Subcategory_Name'], product['Name']].join(': ')
     name = "#{name} (#{product['Name_subtitle']})" unless product['Name_subtitle'].empty?
   else
-    name = product['Food_Rescue_Food_Name_en']
+    name = gettext(product['Food_Rescue_Food_Name'])
   end
 
   # Storage tips.
   #   Note that tips fields are either named `*_Tips` or `*_tips`. It should be `*_Tips` everywhere. SQLite3 column names
   #   are case-independent, so this sloppyness is tolerated in the database. But not for the hash keys here.
   tips_field = { pantry: 'Pantry_tips', refrigerator: 'Refrigerate_tips', freezer: 'Freeze_Tips' }[storage_type]
-  tips = if product[tips_field].empty? then '' else "\n\n(Hints: #{product[tips_field]})" end
+  tips = if product[tips_field].empty?
+    then ''
+    else "\n\n" + gettext("(Hints: %{hints})", hints: gettext(product[tips_field]))
+  end
 
-  return "For #{name}, the typical storage life is #{shelf_life_text}.#{tips}"
+  storage_text = gettext(
+    'For %{name}, the typical storage life is %{shelf_life_text}.',
+    name: name,
+    shelf_life_text: shelf_life_text
+  )
+
+  return storage_text + tips
 end
 
 
@@ -356,7 +380,7 @@ end
 def storage_topic(product_id, topic_id, db, storage_type)
   topic = { }
   topic[:id] = topic_id
-  topic[:title] = 'Storage duration'
+  topic[:title] = gettext('Storage duration')
   topic[:abstract] = '' # No abstract by default because FoodKeeper topics are very short already.
   topic[:text] = topic_text(product_id, db, storage_type: storage_type)
   topic[:type] = "#{storage_type}_storage"
@@ -426,6 +450,13 @@ end
 
 # Convert FoodKeeper products to food rescue content in a SQLite3 database.
 begin
+  # Set up string translations.
+  I18n::Backend::Simple.include(I18n::Backend::Gettext)
+  I18n.load_path << args['--translations'] if args.key?('--translations')
+  # Translation files are named {lang}.po as expected by the Gettext backend of the I18n gem. So we
+  # can determine the larget language by looking at the given filename.
+  I18n.locale = File.basename(args['--translations'], ".*").to_sym if args.key?('--translations')
+
   # Create an in-memory database to avoid changing the on-disk database.
   # 
   # This connection must be kept open, because when the last connection to an in-memory database closes, its data is gone. 
