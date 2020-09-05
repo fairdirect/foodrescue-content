@@ -27,36 +27,44 @@ include I18n::Gettext::Helpers
 #############################################################################
 # UTILITIES
 
-version = '0.1'
+version = '0.2'
 
 # Command line documentation that's also the spec for a command line parser.
 # 
 # Format specs: http://docopt.org/
 # Library docs: https://github.com/docopt/docopt.rb
 doc = <<DOCOPT
-Converts the content from the USDA FoodKeeper Android app to SQLite3 format.
+Converts the content from the USDA FoodKeeper Android app to topics for Food Rescue App, in
+CSV+Asciidoctor format.
 
-The script reads the FoodKeeper SQLite3 database from FK_DB, converts it and writes the result to
-the CSV file CSV_OUT using the usual topic CSV format of the foodrescue-content software. The
-script also expects a CSV file CSV_IN with extra data, containing columns "FoodKeeper Product ID",
-"Food Rescue Categories" (a multi-value field) and "Food Rescue Topic Intro".
+The script reads the FoodKeeper SQLite3 database, converts it and writes the result to a CSV file,
+using the usual CSV format of the foodrescue-content software. The script also expects two files
+with additional input data: a .po file with translation strings, and a CSV file with extra data.
 
 Examples: For the foodrescue-content repo, the command to run is:
 
-  scripts/foodkeeper-to-topics \
-    content-topics/topics-foodkeeper-source.sqlite3 \
-    content-topics/topics-foodkeeper-source.csv \
-    content-topics/topics-foodkeeper-en.csv
+  ./foodkeeper-to-topics \
+    -d foodkeeper-2017-11-14-db.sqlite3 \
+    -e foodkeeper-2017-11-14-extras.fods.csv \
+    -t foodkeeper-2017-11-14-locales/en.po \
+    -o topics-foodkeeper-en.csv
+
+For full usage instructions in the context of Food Rescue App content, see:
+https://dynalist.io/d/To5BNup9nYdPq7QQ3KlYa-mA#z=-z4bUBa-OgxdNdk41YixMrzG
 
 Usage:
-  #{__FILE__} DB CSV_IN CSV_OUT
-  #{__FILE__} -t POFILE DB CSV_IN CSV_OUT
+  #{__FILE__} -d DB -e EXTRAS -t PO -o OUTPUT
   #{__FILE__} -h | --help
   #{__FILE__} -v | --version
 
 Options:
-  -t POFILE, --translations POFILE  Path to a .po file providing string translations. Must be named
-                                    with a two-letter language identifier as a filename, e.g. de.po.
+  -d DB, --database DB              SQLite3 database of FoodKeeper.
+  -e EXTRAS, --extras EXTRAS        CSV file with additional information, containing columns
+                                    "FoodKeeper Product ID", "Food Rescue Name" and "Food Rescue
+                                    Categories" (a newline-separated multi-value field).
+  -t PO, --translations PO          Path to a .po file providing string translations. The filename
+                                    must be a two-letter language identifier, for example de.po.
+  -o OUTPUT, --output OUTPUT        The CSV file to write the output to.
   -h, --help                        Show this screen.
   -v, --version                     Show version.
 
@@ -469,18 +477,18 @@ begin
 
   # Fill the in-memory database from the on-disk database.
   # See: https://www.sqlite.org/lang_vacuum.html#vacuuminto, https://stackoverflow.com/a/58932207
-  fk_file_db = SQLite3::Database.new args['DB'], { results_as_hash: true }
+  fk_file_db = SQLite3::Database.new args['--database'], { results_as_hash: true }
   fk_file_db.execute("VACUUM INTO 'file::memory:?cache=shared'")
   fk_file_db.close
 
-  import_food_rescue_categories args['CSV_IN'], fk_mem_db
-  import_food_rescue_food_names args['CSV_IN'], fk_mem_db
+  import_food_rescue_categories args['--extras'], fk_mem_db
+  import_food_rescue_food_names args['--extras'], fk_mem_db
   
   # Load each FoodKeeper product and import it into the database.
   num = 1
   headers = ['ID', 'Locale', 'Title', 'Abstract', 'Text', 'Topic type', 'Categories', 'Author', 'Date added', 'Version date', 'Note']
   csv_write_options = { write_headers: true, headers: headers, force_quotes: true }
-  outfile = CSV.open(args['CSV_OUT'], 'w', csv_write_options)
+  outfile = CSV.open(args['--output'], 'w', csv_write_options)
   count = fk_mem_db.get_first_value('SELECT count() FROM PRODUCTS')
   #
   fk_mem_db.execute('SELECT ID FROM PRODUCTS ORDER BY cast(ID as NUMBER)') do |product|
