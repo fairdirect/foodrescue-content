@@ -375,11 +375,13 @@ end
 #   `product_id` for this purpose.
 # @param db [SQLite3::Database]  The database connection to the FoodKeeper database.
 # @param storage_type [Symbol]  The storage type of the storage topic to generate. One of: `:pantry`, `:refrigerator`, `:freezer`.
+# @param locale [String]  Two-letter language code of the topic's language.
 # @return [Array]  The created topic, using the columns as expected by the CSV file structure. These columns are:
 #   "ID", "Title", "Abstract", "Text", "Topic type", "Categories", "Author", "Date added", "Version date", "Note".
-def storage_topic(product_id, topic_id, db, storage_type)
+def storage_topic(product_id, topic_id, db, storage_type, locale)
   topic = { }
   topic[:id] = topic_id
+  topic[:locale] = locale
   topic[:title] = gettext('Storage duration')
   topic[:abstract] = '' # No abstract by default because FoodKeeper topics are very short already.
   topic[:text] = topic_text(product_id, db, storage_type: storage_type)
@@ -417,16 +419,17 @@ end
 # 
 # @param product_id [Integer]  The FoodKeeper database's `PRODUCTS.ID` value of the product about which the topic will be about.
 # @param fk_db [SQLite3::Database]  The database connection to the FoodKeeper database.
+# @param locale [String]  Two-letter language code of the topic's language.
 # @return [Array[Array]]  An two-dimensional array, containing multiple food rescue topics record,
 #   each record using the columns as expected by the CSV file structure. These columns are:
 #   "ID", "Title", "Abstract", "Text", "Topic type", "Categories", "Author", "Date added", "Version date", "Note".
-def product_to_csv(product_id, fk_db)
+def product_to_csv(product_id, fk_db, locale)
   product = fk_db.get_first_row('SELECT * FROM PRODUCTS WHERE ID = ?', [ product_id ])
   storage_types = storage_types(product_id, fk_db)
 
   topics = []
   storage_types.each do |storage_type|
-    topics << storage_topic(product_id, "foodkeeper-#{product_id}-#{topics.count + 1}", fk_db, storage_type)
+    topics << storage_topic(product_id, "foodkeeper-#{product_id}-#{topics.count + 1}", fk_db, storage_type, locale)
   end
 
   # @todo (later) Add a topic for the "Preparation Instructions" section.
@@ -473,18 +476,18 @@ begin
   import_food_rescue_categories args['CSV_IN'], fk_mem_db
   import_food_rescue_food_names args['CSV_IN'], fk_mem_db
   
-  # Load each (English) FoodKeeper product and import it into the database.
+  # Load each FoodKeeper product and import it into the database.
   num = 1
-  headers = ['ID', 'Title', 'Abstract', 'Text', 'Topic type', 'Categories', 'Author', 'Date added', 'Version date', 'Note']
+  headers = ['ID', 'Locale', 'Title', 'Abstract', 'Text', 'Topic type', 'Categories', 'Author', 'Date added', 'Version date', 'Note']
   csv_write_options = { write_headers: true, headers: headers, force_quotes: true }
   outfile = CSV.open(args['CSV_OUT'], 'w', csv_write_options)
   count = fk_mem_db.get_first_value('SELECT count() FROM PRODUCTS')
+  #
   fk_mem_db.execute('SELECT ID FROM PRODUCTS ORDER BY cast(ID as NUMBER)') do |product|
-
     puts "converting FoodKeeper product #{num} of #{count} (ID #{product['ID']})"
     num += 1
 
-    csv_topics = product_to_csv(product['ID'], fk_mem_db)
+    csv_topics = product_to_csv(product['ID'], fk_mem_db, I18n.locale.to_s)
     csv_topics.each { |topic| outfile << topic }
   end
 
