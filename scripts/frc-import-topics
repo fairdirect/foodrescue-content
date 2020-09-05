@@ -36,6 +36,7 @@ INFILE is expected to have the following header and columns, in any order. Any a
 will be silently ignored.
 
 * ID
+* Locale
 * Title
 * Topic type
 * Categories (multiple values separated by newlines)
@@ -90,10 +91,13 @@ begin
   # To keep the memory footprint small, read one line at a time with CSV.foreach().
   # See: "Processing large CSV files with Ruby", https://dalibornasevic.com/posts/68
   CSV.foreach(args['INFILE'], { headers: true }) do |record|
-    
+    puts "importing topic #{record['ID']} #{record['Locale']}"
+
     topic = FoodRescue::Topic.new
 
+    topic.external_id = record['ID']
     topic.title = record['Title']
+    topic.language = record['Locale']
 
     names = record['Author'].split
     topic.authors = case names.length
@@ -106,7 +110,6 @@ begin
     end
 
     topic.edition = Date.parse(record['Version date']).iso8601 unless record['Version date'].empty?
-
     topic.section = record['Topic type']
 
     categories = if record['Categories'].nil? then [] else record['Categories'].split("\n") end
@@ -130,7 +133,6 @@ begin
     topic.categories = categories
 
     topic.abstract = if record.key?('Abstract') then record['Abstract'] else nil end
-
     topic.content_xbibrefs = if record.key?('Literature') then record['Literature'].split("\n") else nil end
 
     # Not giving a bibliography list will make the database use its existing list to look up 

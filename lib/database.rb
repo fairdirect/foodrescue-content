@@ -70,7 +70,7 @@ class FoodRescue::Database < SQLite3::Database
   #   `results_as_hash: true` is used unless overwritten.
   # @see SQLite3::Database#initialize
   def initialize(dbfile, options = {})
-    options[:results_as_hash] = true unless options.key?(:results_as_hash)
+    options[:results_as_hash] = true unless options.key?( :results_as_hash )
 
     super(dbfile, options)
 
@@ -93,7 +93,7 @@ class FoodRescue::Database < SQLite3::Database
   # @param [Hash] block  A description of the category with the same structure as used in method add_category.
   # @return [Array<String>]  Name and language code of the category's main name.
   # @see #add_category
-  def self.cat_main_name(block)
+  def self.cat_main_name( block )
     # Find the "main" name of the category: English one if existing, otherwise first one.
     full_name = block[:names].select{ |name| name[:lang] == 'en' }.first
     full_name = block[:names][0] if full_name.nil?
@@ -177,6 +177,7 @@ class FoodRescue::Database < SQLite3::Database
     execute "
       CREATE TABLE #{if_not_exists} topics (
         id              INTEGER PRIMARY KEY,  -- alias of ROWID as per https://stackoverflow.com/a/8246737
+        external_id     TEXT UNIQUE,          -- longer ID to trace the origin of the topic; for example 'native-123'
         section         TEXT,                 -- string ID of the section to show the topic in
         version         TEXT                  -- version date in yyyy-mm-dd format
       )"
@@ -195,8 +196,9 @@ class FoodRescue::Database < SQLite3::Database
     execute "
       CREATE TABLE #{if_not_exists} topic_contents (
         topic_id        INTEGER,
-        lang            TEXT,                 -- language tag such as 'en', 'en-GB'
-        title           TEXT,                
+        lang            TEXT,                 -- language tag such as 'en'
+        title           TEXT,
+        abstract        TEXT,
         content         TEXT,                 -- topic main content
         ----
         PRIMARY KEY     (topic_id, lang)
@@ -505,7 +507,7 @@ class FoodRescue::Database < SQLite3::Database
   # 
   # @param id [Integer]  ID database table `authors` of the author record to update.
   # @param fields [Hash<String>]  Hash of author record fieldnames and values to set, keyed by symbol or string.
-  def complete_author id, fields
+  def complete_author(id, fields)
 
     fields.each do |key, value|
       next if value.nil? or value.empty?
@@ -523,7 +525,7 @@ class FoodRescue::Database < SQLite3::Database
   # 
   # @param topic_id [Integer]
   # @param author [Hash]  Author data. For the hash keys, see {FoodRescue::Topic#authors}.
-  def add_author topic_id, author
+  def add_author(topic_id, author)
     # Check if there is a record exactly corresponding to the "identifying" parts of an author. (More than one result would 
     # be an error. Not happening, as we check before adding records.)
     # 
@@ -566,24 +568,26 @@ class FoodRescue::Database < SQLite3::Database
   # @param lang [String]  Language code of the topic's content, for example `en`.
   # @param title [String]  The topic's title, as a plain text string.
   # @param content [Ox::Document]  The topic's content in DocBook 5.1 XML.
-  def add_topic_content topic_id, lang, title, content
+  def add_topic_content(topic_id, lang, title, content)
     execute "
       INSERT INTO topic_contents (topic_id, lang, title, content) VALUES (?, ?, ?, ?)",
       topic_id, lang, title, Ox.dump(content)
   end
 
 
-  # Save one topic of food rescue content to the database.
-  # 
-  # The given topic can mention bibliographic references. If it does, these must already exist in the database. The topic can 
+  # Insert a topic of food rescue content into the database that does not yet exist there.
+  #
+  # The topic, as identified by `topic.external_id`, must not yet exist in the database.
+  #
+  # The given topic can mention bibliographic references. If it does, these must already exist in the database. The topic can
   # also mention an author name. If it exists in the database, it will be referenced, otherwise a new record will be created.
-  # 
+  #
   # @param topic [FoodRescue::Topic]  The topic to add.
-  # @raise [ArgumentError]  If a referenced author or literature record does not exist in the database.
-  def add_topic(topic)
-
-    # Write the topics table entry.
-    execute "INSERT INTO topics (section, version) VALUES (?, ?)", topic.section, topic.edition
+  # @return [Integer]  The database ID of the topic just inserted.
+  # @raise [RuntimeError]  If a referenced author or literature record does not exist in the database.
+  def add_basic_topic(topic)
+    # Write the topic's table entry.
+    execute "INSERT INTO topics (external_id, section, version) VALUES (?, ?, ?)", topic.external_id, topic.section, topic.edition
     topic_id = get_first_value "SELECT last_insert_rowid()"
 
     # Ensure that referenced authors exist in the authors table, if necessary creating them.
@@ -613,17 +617,33 @@ class FoodRescue::Database < SQLite3::Database
 
       if literature_record.empty?
         raise RuntimeError, "Referenced literature work #{bibtex_key} not found in database."
-      else 
+      else
         execute "
-          INSERT INTO topic_literature (topic_id, literature_id) VALUES (?, ?)", 
+          INSERT INTO topic_literature (topic_id, literature_id) VALUES (?, ?)",
           topic_id, bibtex_key
       end
     end
 
-    # @todo Finalize literature references in the topic main text by processing with asciidoctor-bibtex.
+    return topic_id
+  end
+
+  # Save one topic of food rescue content to the database.
+  # 
+  # The given topic can mention bibliographic references. If it does, these must already exist in the database. The topic can 
+  # also mention an author name. If it exists in the database, it will be referenced, otherwise a new record will be created.
+  # 
+  # @param topic [FoodRescue::Topic]  The topic to add.
+  def add_topic(topic)
+
+    # Check if a topic by that ID already exists, create it only if not.
+    topic_id = get_first_value("SELECT id FROM topics WHERE external_id = ?", topic.external_id)
+
+    if topic_id.nil?
+      topic_id = add_basic_topic(topic)
+    end
 
     # Write the topic_contents table entry.
-    add_topic_content topic_id, 'en', topic.title, topic.content
-    # @todo Add multiple topic contents once a topic can contain content and titles for multiple languages.
+    # @todo Finalize literature references in the topic main text by processing with asciidoctor-bibtex.
+    add_topic_content(topic_id, topic.language, topic.title, topic.content)
   end
 end

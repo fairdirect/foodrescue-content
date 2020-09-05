@@ -16,10 +16,11 @@ require_relative '../lib/food_rescue'
 require_relative '../lib/utils'
 
 
-# A topic of food rescue content.
+# A topic of food rescue content (or more specifically, a single language version of a topic).
 # 
 # One FoodRescue::Topic represents one record in database table `topics`. Connected records in other database tables are 
-# referenced by their IDs, without storing their data directly here. (The exception are the author records.)
+# referenced by their IDs, without storing their data directly here. (The exception are the author records and the actual
+# topic content.)
 # 
 # "Topic" means a unit of knowledge about food rescue. The name is in analogy to 
 # [DocBook 5.1 Topics](https://www.xmlmind.com/tutorials/DocBookAssemblies/).
@@ -44,10 +45,24 @@ class FoodRescue::Topic
   end
 
 
+  # The topic's external ID, used to trace the origin of a topic to where it was imported from.
+  #
+  # @return [String]
+  attr_accessor :external_id
+
+
+  # The language of the language version of the topic represented by this FoodRescue::Topic object.
+  #
+  # This defines the language used by the `title`, `abstract` and `content_proper` attributes of this
+  # object.
+  #
+  # @return [String]  A two-letter language code.
+  attr_accessor :language
+
+
   # The topic's title.
   # 
   # @return [String]
-  # @todo Support multiple titles, one per language.
   attr_accessor :title 
 
 
@@ -102,13 +117,44 @@ class FoodRescue::Topic
   attr_accessor :abstract
 
 
-  # The topic's content in DocBook 5.1 XML, excluding parts that are automatically appended such as a list of the literature 
+  # The topic's content in DocBook 5.1 XML, excluding parts that are automatically appended such as a list of the literature
   # used (see {#content_xbibrefs}).
   # 
   # @return [Ox::Document]
-  # @todo Allow providing texts in multiple languages (see database table topic_texts).
   # @todo Rename to "text" to keep in line with the object-relational mapping scheme.
   attr_accessor :content_proper
+
+
+  # Bibliographic references to works used to write this topic in addition to those references contained in the topic text.
+  #
+  # This is used to render a list of additional literature references below the topic text. In contrast to referencing
+  # literature explicitly from inside the topic text, it is not explicated which information in the topic text comes from each
+  # of these extra literature references.
+  #
+  # These extra references refer to works in a topic's bibliography, so works referenced here must also be included into
+  # `#bibliography`.
+  #
+  # @return [Array<Hash>]  The literature works used, with references to which parts were used. Each hash describes one work
+  #   used, with keys as follows:
+  #
+  #   * **`:id`** — Identifies the work via its BibTeX key, as recorded in `literature.id` in the database.
+  #   * **`:ref`** — A reference to a page, chapter or similar part identifier of the work used.
+  #   * **`:ref_details`** — Detailed information about the reference that is only shown when debugging automatically imported
+  #     content. For example, it can contain the database ID of a source record.
+  attr_accessor :content_xbibrefs
+
+
+  # The works of literature referenced in the topic text and in `#xbibrefs`.
+  #
+  # Only include works of literature that are indeed referenced, as otherwise the literature list below a topic becomes
+  # unnecessary long.
+  #
+  # @return [Array<String>]  The literature works in the topic's bibliography, each represented by its BibTeX key, as
+  #   recorded in `literature.id` in the database.
+  # @todo Create bibliography(data_source) to obtain teh actual bibliographic data from either a SQLite3 database or a BibTeX
+  #   file. Given the object-relational mapping scheme used and the independence of FoodRescue::Topics from a database, this
+  #   is the right way to implement this.
+  attr_accessor :bibliography
 
 
   public
@@ -141,25 +187,6 @@ class FoodRescue::Topic
   end
 
 
-  # Bibliographic references to works used to write this topic in addition to those references contained in the topic text.
-  # 
-  # This is used to render a list of additional literature references below the topic text. In contrast to referencing 
-  # literature explicitly from inside the topic text, it is not explicated which information in the topic text comes from each
-  # of these extra literature references.
-  # 
-  # These extra references refer to works in a topic's bibliography, so works referenced here must also be included into 
-  # `#bibliography`.
-  # 
-  # @return [Array<Hash>]  The literature works used, with references to which parts were used. Each hash describes one work 
-  #   used, with keys as follows:
-  # 
-  #   * **`:id`** — Identifies the work via its BibTeX key, as recorded in `literature.id` in the database.
-  #   * **`:ref`** — A reference to a page, chapter or similar part identifier of the work used.
-  #   * **`:ref_details`** — Detailed information about the reference that is only shown when debugging automatically imported
-  #     content. For example, it can contain the database ID of a source record.
-  attr_accessor :content_xbibrefs
-
-
   public
   # Get the complete content field of this food rescue topic, as it would be stored in a database for showing to a user.
   # 
@@ -172,45 +199,38 @@ class FoodRescue::Topic
   #   in the topics come from.
   def content 
 
-    if @content_xbibrefs.nil? or @content_xbibrefs.empty? 
-      return content_proper
+    return content_proper
 
-    else
-      # Render the literature references into a list.
-      list = Ox::Element.new('itemizedlist')
-      # 
-      @content_xbibrefs.each do |item|
-        reference_text = [ item[:ref], item[:ref_details] ].compact.join(', ')
-        reference_text = 
-          if reference_text.empty? 
-            item[:id] 
-          else 
-            "#{item[:id]} (#{reference_text})" 
-          end
+    # The following original implementation has been disabled because (1) this list of literature references is not
+    # i18n'ed and (2) there should be only one bibliography list at the very bottom, referenced with inline literature
+    # links that are already in the topic content.
 
-        list << (
-          Ox::Element.new('listitem') << (
-            Ox::Element.new('para') << reference_text
-          )
-        )
-      end
+#    if @content_xbibrefs.nil? or @content_xbibrefs.empty?
+#      return content_proper
 
-      # << modifies the caller object, so duplicate it to avoid the damage.
-      return content_proper.dup << (Ox::Element.new('simpara') << "Sources used: ") << list
-    end
+#    else
+#      # Render the literature references into a list.
+#      list = Ox::Element.new('itemizedlist')
+#      #
+#      @content_xbibrefs.each do |item|
+#        reference_text = [ item[:ref], item[:ref_details] ].compact.join(', ')
+#        reference_text =
+#          if reference_text.empty?
+#            item[:id]
+#          else
+#            "#{item[:id]} (#{reference_text})"
+#          end
+
+#        list << (
+#          Ox::Element.new('listitem') << (
+#            Ox::Element.new('para') << reference_text
+#          )
+#        )
+#      end
+
+#      # << modifies the caller object, so duplicate it to avoid the damage.
+#      return content_proper.dup << (Ox::Element.new('simpara') << "Sources used: ") << list
+#    end
   end
-
-
-  # The works of literature referenced in the topic text and in `#xbibrefs`.
-  # 
-  # Only include works of literature that are indeed referenced, as otherwise the literature list below a topic becomes 
-  # unnecessary long.
-  # 
-  # @return [Array<String>]  The literature works in the topic's bibliography, each represented by its BibTeX key, as 
-  #   recorded in `literature.id` in the database.
-  # @todo Create bibliography(data_source) to obtain teh actual bibliographic data from either a SQLite3 database or a BibTeX 
-  #   file. Given the object-relational mapping scheme used and the independence of FoodRescue::Topics from a database, this 
-  #   is the right way to implement this.
-  attr_accessor :bibliography
 
 end
