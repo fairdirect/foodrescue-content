@@ -1,0 +1,19 @@
+msgid ""
+msgstr ""
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: vim\n"
+"Project-Id-Version: Food Rescue Content: FoodKeeper\n"
+"Language: en\n"
+
+# This file provides an empty locale "en".
+#   Since messages are identified by their English string in .po files and that 
+#   string is used as the default for untranslated strings, the English locale 
+#   needs no values. Just a single dummy translation to prevent Ruby's i18n gem 
+#   from complaining ":en is not a valid locale".
+
+#: 
+msgid  "-------- a single dummy message ID     --------"
+msgstr "-------- a single dummy message string --------"
+
