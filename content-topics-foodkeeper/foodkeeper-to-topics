@@ -7,17 +7,15 @@
 $VERBOSE = nil
 
 # Gem includes. See Gemfile.
-require 'docopt'
-require 'sqlite3'
-require 'csv'
-require 'ox'
 require 'awesome_print'
+require 'csv'
 require 'date'
+require 'docopt'
 require 'i18n'
+require 'sqlite3'
 
 # Local, non-gem includes.
-require_relative '../lib/database'
-require_relative '../lib/topic'
+# (nothing yet)
 
 # Add translation functions like _(…) to the global namespace.
 #   See: https://www.rubydoc.info/github/svenfuchs/i18n/master/I18n/Gettext/Helpers
