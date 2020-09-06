@@ -310,8 +310,12 @@ def shelf_life(product_id, db, field_prefix)
     # @todo: Adapt #{duration_metric} to the singular if the duration is "1", such as "1 Week".
     "_#{min_duration} #{duration_metric}_ #{text_after}"
   else
-    # An en dash, like here, is the correct typography for a range. See:
-    # https://en.wikipedia.org/wiki/Dash#Ranges_of_values
+    # The underscore markup "_…_" means "italic" in AsciiDoctor, or more precisely, the <emphasis> tag
+    # in DocBook without role="strong".
+    #   See: https://asciidoctor.org/docs/asciidoc-syntax-quick-reference/#formatted-text
+    #
+    # An en dash, like here, is the correct typography for a range.
+    #   See: https://en.wikipedia.org/wiki/Dash#Ranges_of_values
     "_#{min_duration}–#{max_duration} #{duration_metric}_ #{text_after}"
   end
 end
@@ -365,7 +369,10 @@ def topic_text(product_id, db, storage_type: nil)
   end
 
   storage_text = gettext(
-    'For %{name}, the typical storage life is %{shelf_life_text}.',
+    # The underscore markup "__…__" means "italic" in AsciiDoctor with the option to start and stop
+    # within one word. In Docbook, this is the <emphasis> tag without role="strong".
+    #   See: https://asciidoctor.org/docs/asciidoc-syntax-quick-reference/#formatted-text
+    'For __%{name}__, the typical storage life is %{shelf_life_text}.',
     name: name,
     shelf_life_text: shelf_life_text
   )
