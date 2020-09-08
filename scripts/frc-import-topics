@@ -139,7 +139,17 @@ begin
     # literature references.
     topic.bibliography = {}
 
-    topic.import_content_proper record['Text'], format: :asciidoc
+    # Disable the generation of section IDs.
+    #   This is necessary because sections with identical names in different topics (such as "Sources")
+    #   will otherwise lead to invalid XML in the combined document. Syntax as per:
+    #   https://asciidoctor.org/docs/asciidoc-recommended-practices/#document-settings
+    #
+    # @todo: A better solution is to generate unique section IDs by using prefixes, see
+    #   https://asciidoctor.org/docs/asciidoc-recommended-practices/#document-settings . Of even
+    #   better to define manual section IDs because that enables linking from within the same
+    #   document; see https://asciidoctor.org/docs/asciidoc-syntax-quick-reference/#block-id-role-and-options .
+    document_settings = ':sectids!:'
+    topic.import_content_proper document_settings + "\n" + record['Text'], format: :asciidoc
 
     db.add_topic(topic)
   end
