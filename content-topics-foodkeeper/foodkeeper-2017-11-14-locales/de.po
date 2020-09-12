@@ -1766,8 +1766,8 @@ msgid "(Hints: %{hints})"
 msgstr "(Hinweise: %{hints})"
 
 #:
-msgid "For %{name}, the typical storage life is %{shelf_life_text}."
-msgstr "Für %{name} ist die typische Lagerdauer %{shelf_life_text}."
+msgid "For __%{name}__, the typical storage life is %{shelf_life_text}."
+msgstr "Für __%{name}__ ist die typische Lagerdauer %{shelf_life_text}."
 
 #:
 msgid ", and "

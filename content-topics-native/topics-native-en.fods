@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <office:document xmlns:presentation="urn:oasis:names:tc:opendocument:xmlns:presentation:1.0" xmlns:grddl="http://www.w3.org/2003/g/data-view#" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xforms="http://www.w3.org/2002/xforms" xmlns:dom="http://www.w3.org/2001/xml-events" xmlns:script="urn:oasis:names:tc:opendocument:xmlns:script:1.0" xmlns:form="urn:oasis:names:tc:opendocument:xmlns:form:1.0" xmlns:math="http://www.w3.org/1998/Math/MathML" xmlns:draw="urn:oasis:names:tc:opendocument:xmlns:drawing:1.0" xmlns:dr3d="urn:oasis:names:tc:opendocument:xmlns:dr3d:1.0" xmlns:text="urn:oasis:names:tc:opendocument:xmlns:text:1.0" xmlns:style="urn:oasis:names:tc:opendocument:xmlns:style:1.0" xmlns:formx="urn:openoffice:names:experimental:ooxml-odf-interop:xmlns:form:1.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:ooo="http://openoffice.org/2004/office" xmlns:loext="urn:org:documentfoundation:names:experimental:office:xmlns:loext:1.0" xmlns:office="urn:oasis:names:tc:opendocument:xmlns:office:1.0" xmlns:fo="urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0" xmlns:field="urn:openoffice:names:experimental:ooo-ms-interop:xmlns:field:1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:meta="urn:oasis:names:tc:opendocument:xmlns:meta:1.0" xmlns:config="urn:oasis:names:tc:opendocument:xmlns:config:1.0" xmlns:calcext="urn:org:documentfoundation:names:experimental:calc:xmlns:calcext:1.0" xmlns:svg="urn:oasis:names:tc:opendocument:xmlns:svg-compatible:1.0" xmlns:of="urn:oasis:names:tc:opendocument:xmlns:of:1.2" xmlns:chart="urn:oasis:names:tc:opendocument:xmlns:chart:1.0" xmlns:rpt="http://openoffice.org/2005/report" xmlns:table="urn:oasis:names:tc:opendocument:xmlns:table:1.0" xmlns:css3t="http://www.w3.org/TR/css3-text/" xmlns:number="urn:oasis:names:tc:opendocument:xmlns:datastyle:1.0" xmlns:ooow="http://openoffice.org/2004/writer" xmlns:oooc="http://openoffice.org/2004/calc" xmlns:tableooo="http://openoffice.org/2009/table" xmlns:drawooo="http://openoffice.org/2010/draw" office:version="1.2" office:mimetype="application/vnd.oasis.opendocument.spreadsheet">
- <office:meta><meta:initial-creator>POEditor.com</meta:initial-creator><dc:creator>Matthias Ansorg</dc:creator><meta:creation-date>2020-09-06T19:35:36</meta:creation-date><dc:date>2020-09-08T17:45:50.291384110</dc:date><dc:title>tmp - English</dc:title><dc:description>tmp - English</dc:description><dc:subject>tmp - English</dc:subject><meta:generator>LibreOffice/6.3.5.2$Linux_X86_64 LibreOffice_project/30$Build-2</meta:generator><meta:editing-duration>P1DT9H31M43S</meta:editing-duration><meta:editing-cycles>137</meta:editing-cycles><meta:document-statistic meta:table-count="1" meta:cell-count="1143" meta:object-count="0"/><meta:user-defined meta:name="AppVersion">12.0000</meta:user-defined><meta:user-defined meta:name="Company">Microsoft Corporation</meta:user-defined><meta:user-defined meta:name="DocSecurity" meta:value-type="float">0</meta:user-defined><meta:user-defined meta:name="HyperlinksChanged" meta:value-type="boolean">false</meta:user-defined><meta:user-defined meta:name="LinksUpToDate" meta:value-type="boolean">false</meta:user-defined><meta:user-defined meta:name="ScaleCrop" meta:value-type="boolean">false</meta:user-defined><meta:user-defined meta:name="ShareDoc" meta:value-type="boolean">false</meta:user-defined></office:meta>
+ <office:meta><meta:initial-creator>POEditor.com</meta:initial-creator><dc:creator>Matthias Ansorg</dc:creator><meta:creation-date>2020-09-06T19:35:36</meta:creation-date><dc:date>2020-09-09T02:58:14.182242696</dc:date><dc:title>tmp - English</dc:title><dc:description>tmp - English</dc:description><dc:subject>tmp - English</dc:subject><meta:generator>LibreOffice/6.3.5.2$Linux_X86_64 LibreOffice_project/30$Build-2</meta:generator><meta:editing-duration>P1DT9H33M17S</meta:editing-duration><meta:editing-cycles>139</meta:editing-cycles><meta:document-statistic meta:table-count="1" meta:cell-count="1143" meta:object-count="0"/><meta:user-defined meta:name="AppVersion">12.0000</meta:user-defined><meta:user-defined meta:name="Company">Microsoft Corporation</meta:user-defined><meta:user-defined meta:name="DocSecurity" meta:value-type="float">0</meta:user-defined><meta:user-defined meta:name="HyperlinksChanged" meta:value-type="boolean">false</meta:user-defined><meta:user-defined meta:name="LinksUpToDate" meta:value-type="boolean">false</meta:user-defined><meta:user-defined meta:name="ScaleCrop" meta:value-type="boolean">false</meta:user-defined><meta:user-defined meta:name="ShareDoc" meta:value-type="boolean">false</meta:user-defined></office:meta>
  <office:settings>
   <config:config-item-set config:name="ooo:view-settings">
    <config:config-item config:name="VisibleAreaTop" config:type="int">0</config:config-item>
@@ -13,17 +13,17 @@
      <config:config-item config:name="ViewId" config:type="string">view1</config:config-item>
      <config:config-item-map-named config:name="Tables">
       <config:config-item-map-entry config:name="topics-native-en">
-       <config:config-item config:name="CursorPositionX" config:type="int">4</config:config-item>
-       <config:config-item config:name="CursorPositionY" config:type="int">119</config:config-item>
+       <config:config-item config:name="CursorPositionX" config:type="int">6</config:config-item>
+       <config:config-item config:name="CursorPositionY" config:type="int">7</config:config-item>
        <config:config-item config:name="HorizontalSplitMode" config:type="short">0</config:config-item>
        <config:config-item config:name="VerticalSplitMode" config:type="short">2</config:config-item>
        <config:config-item config:name="HorizontalSplitPosition" config:type="int">0</config:config-item>
        <config:config-item config:name="VerticalSplitPosition" config:type="int">1</config:config-item>
        <config:config-item config:name="ActiveSplitRange" config:type="short">2</config:config-item>
-       <config:config-item config:name="PositionLeft" config:type="int">0</config:config-item>
+       <config:config-item config:name="PositionLeft" config:type="int">2</config:config-item>
        <config:config-item config:name="PositionRight" config:type="int">0</config:config-item>
        <config:config-item config:name="PositionTop" config:type="int">0</config:config-item>
-       <config:config-item config:name="PositionBottom" config:type="int">117</config:config-item>
+       <config:config-item config:name="PositionBottom" config:type="int">5</config:config-item>
        <config:config-item config:name="ZoomType" config:type="short">0</config:config-item>
        <config:config-item config:name="ZoomValue" config:type="int">100</config:config-item>
        <config:config-item config:name="PageViewZoomValue" config:type="int">60</config:config-item>
@@ -97,7 +97,7 @@
    <config:config-item config:name="HasColumnRowHeaders" config:type="boolean">true</config:config-item>
    <config:config-item config:name="RasterSubdivisionY" config:type="int">1</config:config-item>
    <config:config-item config:name="AutoCalculate" config:type="boolean">true</config:config-item>
-   <config:config-item config:name="PrinterSetup" config:type="base64Binary">twH+/2xhc2VyamV0LTIyMDAtcHhsbW9ubwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQ1VQUzpsYXNlcmpldC0yMjAwLXB4bG1vbm8AAAAAAAAWAAMA2AAAAAAAAAAEAAhSAAAEdAAASm9iRGF0YSAxCnByaW50ZXI9bGFzZXJqZXQtMjIwMC1weGxtb25vCm9yaWVudGF0aW9uPVBvcnRyYWl0CmNvcGllcz0xCmNvbGxhdGU9ZmFsc2UKbWFyZ2luZGFqdXN0bWVudD0wLDAsMCwwCmNvbG9yZGVwdGg9MjQKcHNsZXZlbD0wCnBkZmRldmljZT0xCmNvbG9yZGV2aWNlPTAKUFBEQ29udGV4RGF0YQpJbnB1dFNsb3Q6RGVmYXVsdABEdXBsZXg6Tm9uZQBQYWdlU2l6ZTpBNAAAEgBDT01QQVRfRFVQTEVYX01PREUPAER1cGxleE1vZGU6Ok9mZg==</config:config-item>
+   <config:config-item config:name="PrinterSetup" config:type="base64Binary">twH+/2xhc2VyamV0LTIyMDAtcHhsbW9ubwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQ1VQUzpsYXNlcmpldC0yMjAwLXB4bG1vbm8AAAAAAAAWAAMA2AAAAAAAAAAEAAhSAAAEdAAASm9iRGF0YSAxCnByaW50ZXI9bGFzZXJqZXQtMjIwMC1weGxtb25vCm9yaWVudGF0aW9uPVBvcnRyYWl0CmNvcGllcz0xCmNvbGxhdGU9ZmFsc2UKbWFyZ2luZGFqdXN0bWVudD0wLDAsMCwwCmNvbG9yZGVwdGg9MjQKcHNsZXZlbD0wCnBkZmRldmljZT0xCmNvbG9yZGV2aWNlPTAKUFBEQ29udGV4RGF0YQpQYWdlU2l6ZTpBNABJbnB1dFNsb3Q6RGVmYXVsdABEdXBsZXg6Tm9uZQAAEgBDT01QQVRfRFVQTEVYX01PREUPAER1cGxleE1vZGU6Ok9mZg==</config:config-item>
    <config:config-item config:name="IsOutlineSymbolsSet" config:type="boolean">true</config:config-item>
    <config:config-item config:name="PrinterPaperFromSetup" config:type="boolean">false</config:config-item>
    <config:config-item config:name="ApplyUserData" config:type="boolean">true</config:config-item>
@@ -565,7 +565,7 @@
      <text:p><text:sheet-name>???</text:sheet-name><text:s/>(<text:title>???</text:title>)</text:p>
     </style:region-left>
     <style:region-right>
-     <text:p><text:date style:data-style-name="N2" text:date-value="2020-09-08">00/00/0000</text:date>, <text:time style:data-style-name="N2" text:time-value="20:36:50.916647369">00:00:00</text:time></text:p>
+     <text:p><text:date style:data-style-name="N2" text:date-value="2020-09-09">00/00/0000</text:date>, <text:time style:data-style-name="N2" text:time-value="02:56:39.703024366">00:00:00</text:time></text:p>
     </style:region-right>
    </style:header>
    <style:header-left style:display="false"/>
@@ -708,7 +708,7 @@
       <text:p>Recognizing spoiled fish</text:p>
      </table:table-cell>
      <table:table-cell/>
-     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p>## Optical features</text:p><text:p/><text:p>* *Eyes.* Fresh fish has bright, clear, slightly bulging eyes with dark pupils. Discoloured, sunken eyes are a clear sign of spoiled fish.</text:p><text:p/><text:p>* *Meat.* The meat is usually light pink or white in colour with a clear film of liquid. When fish begins to spoil, the meat gets a milky colour with partly grey-blue discolouration</text:p><text:p/><text:p>* *Skin.* Fresh fish skin is covered with a clear layer of mucus. Milky mucus is a sign of spoiled fish.</text:p><text:p/><text:p>*Gills.* When fish is fresh, the gills are shiny, bright red on the inside and firm. Mucus in the gill platelets and yellow-brown discolouration are signs of spoilage.</text:p><text:p/><text:p>## Smell</text:p><text:p/><text:p>Fresh fish smells of lake, sea or stream, depending on the species, but never fishy. The more fish smells fishy, the older and less edible it is.</text:p>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p>## Optical features</text:p><text:p/><text:p>* *Eyes.* Fresh fish has bright, clear, slightly bulging eyes with dark pupils. Discoloured, sunken eyes are a clear sign of spoiled fish.</text:p><text:p/><text:p>* *Meat.* The meat is usually light pink or white in colour with a clear film of liquid. When fish begins to spoil, the meat gets a milky colour with partly grey-blue discolouration</text:p><text:p/><text:p>* *Skin.* Fresh fish skin is covered with a clear layer of mucus. Milky mucus is a sign of spoiled fish.</text:p><text:p/><text:p>* *Gills.* When fish is fresh, the gills are shiny, bright red on the inside and firm. Mucus in the gill platelets and yellow-brown discolouration are signs of spoilage.</text:p><text:p/><text:p>## Smell</text:p><text:p/><text:p>Fresh fish smells of lake, sea or stream, depending on the species, but never fishy. The more fish smells fishy, the older and less edible it is.</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>assessment</text:p>
@@ -743,8 +743,7 @@
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>assessment</text:p>
      </table:table-cell>
-     <table:table-cell office:value-type="string" calcext:value-type="string">
-      <text:p>Raw egg</text:p>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p>Raw egg</text:p><text:p>Fresh eggs</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>Micha Gattinger</text:p>
@@ -773,8 +772,7 @@
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>post_spoilage</text:p>
      </table:table-cell>
-     <table:table-cell office:value-type="string" calcext:value-type="string">
-      <text:p>Raw egg</text:p>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p>Raw egg</text:p><text:p>Fresh eggs</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>Micha Gattinger</text:p>
@@ -803,8 +801,7 @@
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>preservation</text:p>
      </table:table-cell>
-     <table:table-cell office:value-type="string" calcext:value-type="string">
-      <text:p>Raw egg</text:p>
+     <table:table-cell office:value-type="string" calcext:value-type="string"><text:p>Raw egg</text:p><text:p>Fresh eggs</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>Micha Gattinger</text:p>

@@ -61,7 +61,7 @@ Options:
                                     "FoodKeeper Product ID", "Food Rescue Name" and "Food Rescue
                                     Categories" (a newline-separated multi-value field).
   -t PO, --translations PO          Path to a .po file providing string translations. The filename
-                                    must be a two-letter language identifier, for example de.po.
+                                    must be a two-letter language identifier, for example "de.po".
   -o OUTPUT, --output OUTPUT        The CSV file to write the output to.
   -h, --help                        Show this screen.
   -v, --version                     Show version.
@@ -369,8 +369,9 @@ def topic_text(product_id, db, storage_type: nil)
   end
 
   storage_text = gettext(
-    # The underscore markup "__…__" means "italic" in AsciiDoctor with the option to start and stop
-    # within one word. In Docbook, this is the <emphasis> tag without role="strong".
+    # The underscore markup "__…__" means "emphasis" (usually using italic text) in AsciiDoctor,
+    # with the option to start and stop within one word. In Docbook, this results in the <emphasis>
+    # tag without role="strong".
     #   See: https://asciidoctor.org/docs/asciidoc-syntax-quick-reference/#formatted-text
     'For __%{name}__, the typical storage life is %{shelf_life_text}.',
     name: name,
