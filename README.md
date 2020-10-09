@@ -5,27 +5,29 @@
 
 **[1. Overview](#1-overview)**
 
-**[2. Repository Structure](#2-repository-structure)**
+**[2. Installation](#2-installation)**
 
-**[3. Installation](#3-installation)**
+**[3. Repository Layout](#3-repository-layout)**
 
-**[4. Usage](#4-usage)**
+**[4. Development Setup](#4-development-setup)**
 
-**[5. Development Guide](#5-development-guide)**
+**[5. Build Process](#5-build process)**
 
-  * [5.1. Content Authoring](#51-content-authoring)
-  * [5.2. Software Design](#52-software-design)
-  * [5.3. Code Style Guide](#53-code-style-guide)
-  * [5.4. Documentation Style Guide](#54-documentation-style-guide)
+**[6. Style Guide](#6-style-guide)**
 
-**[6. License and Credits](#6-license-and-credits)**
+  * [6.1. Content Authoring](#61-content-authoring)
+  * [6.2. Software Design](#62-software-design)
+  * [6.3. Code Style Guide](#63-code-style-guide)
+  * [6.4. Documentation Style Guide](#64-documentation-style-guide)
+
+**[7. License and Credits](#7-license-and-credits)**
 
 ------
 
 
 ## 1. Overview
 
-This repository contains open knowledge about rescueing expired or otherwise tarnished food, and scripts to convert and package this knowledge. The dataset is made for the open source [Food Rescue App](https://fairdirect.org/food-rescue-app).
+This repository contains open knowledge about rescueing expired or otherwise tarnished food, and scripts to convert and package this knowledge. This dataset is made for the open source [Food Rescue App](https://fairdirect.org/food-rescue-app), and the main build output here is the SQLite database used by that app.
 
 In addition, the following re-usable pieces of this repository will be interesting to Open Food Facts developers:
 
@@ -34,21 +36,38 @@ In addition, the following re-usable pieces of this repository will be interesti
 * **Script to filter the Open Food Facts CSV file.** See `scripts/frc-filter-products-csv.rb`. In most cases you'll be better off and faster done using [`csvkit`](https://csvkit.readthedocs.io/), though.
 
 
-## 2. Repository Structure
+## 2. Installation
 
-**A self-contained repository.** Source code is everything to reliably build the outputs. External libraries can be omitted as long as they can be reliably obtained on demand in the required version. The latter is difficult for datasets. For example, the Open Food Facts dataset utilized here does not come in versioned releases. So to make build outputs reproducible and allow error isolation, relevant subsets of the Open Food Facts dataset are included in this repository. That data is not compressed, allowing for space-efficiently handling of revisions by Git.
+The simplest way to install the build outputs from this repository is:
+
+1. **Download a release version.** Go to [foodrescue-content releases](https://github.com/fairdirect/foodrescue-content/releases) and download the release version corresponding to the version of [Food Rescue App](https://github.com/fairdirect/foodrescue-app) that you have built or want to build. Version numbers always corresponds; for example, foodrescue-content v0.3 is meant to be used with foodrescue-app v0.3. In almost all cases, simply download the latest version.
+
+2. **Unzip.** The database is provided as a ZIP compressed file, so you have to unzip it first:
+
+    ```
+    unzip foodrescue-content.sqlite3.zip
+    ```
+
+3. **Place the database into the correct location.** Put it (or symlink it) into the location where Food Rescue App will find it when starting. The location is different for different operating systems, and mentioned in the [Food Rescue App README, section 5. Development Guide](https://github.com/fairdirect/foodrescue-app#5-development-guide) in steps "Install the database.".
+
+
+## 3. Repository Layout
+
+**A self-contained repository.** The source code here is everything to reliably build the outputs. External libraries are omitted as long as they can be reliably obtained on demand in the required version. The latter is difficult for datasets. For example, the Open Food Facts dataset utilized here does not come in versioned releases. So to make build outputs reproducible and allow error isolation, relevant subsets of the Open Food Facts dataset are included in this repository. That data is not compressed, allowing for space-efficient handling of revisions by Git.
 
 **Files and folders.**
 
 @todo
 
 
-## 3. Installation
+## 4. Development Setup
 
 This is a set of Ruby scripts requiring Ruby 2.7 or higher (but only because `Enumerable#filter_map` is used in a few places). Assuming a Debian-esque Linux, Ruby 2.7 and `bundler` are available system-wide, you could just install everything with:
 
 ```
 sudo apt install sqlite3 libsqlite3-dev
+git clone https://github.com/fairdirect/foodrescue-content.git
+cd foodrescue-content
 bundle install
 ```
 
@@ -106,30 +125,67 @@ However, for server environments and also to separate your various Ruby projects
     gem install bundler
     ```
 
-6. **Install the gemset.** In the repos's directory, execute:
+6. **Install the SQLit3.**
 
     ```
     sudo apt install sqlite3 libsqlite3-dev
+    ```
+
+7. **Clone the repository.**
+
+    ```
+    git clone https://github.com/fairdirect/foodrescue-content.git
+    cd foodrescue-content
+    ```
+
+8. **Install the gemset.**
+
+    ```
     bundle install
     ```
 
 
-## 4. Usage
+## 5. Build Process
 
-To generate the food rescue content in all supported formats, run:
+The build output is a SQLite3 database `foodrescue-content.sqlite3`. For now, the instructions below simply link to recipes in the [developer notes for this project](https://dynalist.io/d/To5BNup9nYdPq7QQ3KlYa-mA), because eventually the whole build process will be automated and available as a single `rake` call. For the time being, it's this more manual build process:
 
-```
-./scripts/frc make
-```
+1. **[Import the Open Food Facts categories](https://dynalist.io/d/To5BNup9nYdPq7QQ3KlYa-mA#z=SkWGMKu7dTKGDLzdMeqKXwSR).** Both topics and products depend on categories, so this step has to come first. The output is the SQLite3 database file, for now filled only with the OFF category hierarchy, using category names in all available languages:
 
-See `frc --help` for other ways to use it, namely to generate only a part of the outputs.
+    ```
+    build/foodrescue-content.sqlite3
+    ```
 
-`frc` relies on the other `./scripts/*` files to do its work. You normally do not need to call these other scripts directly, but you can. See the output of `scriptname --help` for usage instructions.
+2. **[Convert the FoodKeeper data to food rescue topics](https://dynalist.io/d/To5BNup9nYdPq7QQ3KlYa-mA#z=-z4bUBa-OgxdNdk41YixMrzG).** The output are the following CSV files, using AsciiDoctor syntax for some column values, wich is the native topic format for this project:
+
+    ```
+    content-topics-foodkeeper/topics-foodkeeper-de.csv
+    content-topics-foodkeeper/topics-foodkeeper-en.csv
+    ```
+
+3. **[Import all food rescue topics](https://dynalist.io/d/To5BNup9nYdPq7QQ3KlYa-mA#z=T-Qjurv_B2Wkh_2SmLafB9sQ).** This imports both the native food rescue topics from `content-topics-native/` and also the topics converted from FoodKeeper content above. It does not create a new build output but adds to the SQLite3 database file:
+
+    ```
+    build/foodrescue-content.sqlite3
+    ```
+
+4. **[Import the Open Food Facts products](https://dynalist.io/d/To5BNup9nYdPq7QQ3KlYa-mA#z=XRDaq0klfoPLh6ak2stvrI19).** This step will take the most time by far (around 60 minutes), so it's good to do it last. It does not create a new build output but completes the SQLite3 database file:
+
+    ```
+    build/foodrescue-content.sqlite3
+    ```
+
+TODO: Improve this build process so that eventually one only has to run `./scripts/frc make` to build everything.
+
+The build scripts have other capabilities that are helpful for example when you want to rebuild only parts of the database content. To learn about these:
+
+* Look at the [list of recipes](https://dynalist.io/d/To5BNup9nYdPq7QQ3KlYa-mA#q=%23foodrescue-content%20) in the developer notes for this project.
+
+* Use the command line option `--help` with any of the custom build scripts in folder `scrips/` to learn about its usage.
 
 
-## 5. Development Guide
+## 6. Style Guide
 
-### 5.1. Content Authoring
+### 6.1. Content Authoring
 
 To contribute new food rescue content to this repository, you can choose between two formats:
 
@@ -198,7 +254,7 @@ To create and edit the content in spreadsheets, collaborators are free to use wh
 * Define the shortnames used in your literature references in a proper bibliography in [BibTeX format](https://ctan.org/pkg/biblatex-cheatsheet).
 
 
-### 5.2. Software Design
+### 6.2. Software Design
 
 * **Database as authoritative data source.** The SQLite3 database is used as intended for a "data base", as the one-and-only authoritative source for food rescue content. So naturally, the tasks of scripts provided in this repository are to (1) first import all data from various source formats to the database, (2) then do anything else using the data in the database, such as export to a minified database, to a book in DocBook format and so on.
 
@@ -215,7 +271,7 @@ To create and edit the content in spreadsheets, collaborators are free to use wh
 * **Data type for DocBook XML content.** `Ox::Document` is meant to store collections of XML elements (inside its `#nodes` array), without being an element itself or rendering to visible XML output. See: `Ox.dump(Ox::Document.new) => "\n"`. So this is used to hand over collections of XML elements, even if this does not represent a fully features XML element. It's cleaner than using the data structure of the `#nodes` arrays directly, which would be `Array<Ox::Element|String>`).
 
 
-### 5.3. Code Style Guide
+### 6.3. Code Style Guide
 
 The guiding idea is to write code that reads almost like natural language. That affects variable and method naming, source code layout and also choice of the logical flow and distributing algorithmic complexity so that one can understand everything while reading through once.
 
@@ -236,7 +292,7 @@ This project relies on [The Ruby Style Guide](https://rubystyle.guide/), but wit
 * **The right shebang.** Executable Ruby scripts start with the shebang line `#!/usr/bin/env ruby`. That selects the first Ruby found in `$PATH` and is standard practice to make a shebang line work with multiple installed Ruby versions and Ruby version switchers like `chruby` ([see](https://stackoverflow.com/a/2792076)).
 
 
-### 5.4. Documentation Style Guide
+### 6.4. Documentation Style Guide
 
 For in-code documentation, we follow The Ruby Style Guide's section "[Comments](https://rubystyle.guide/#comments)". However, while The Ruby Style Guide [is against comments](https://rubystyle.guide/#no-comments) and for self-documenting code, we are for self-documenting code *and* for comments where comments improve the code. That means, where the code becomes more readable, navigable and understandable. The idea is to write for a developer *starting* to dive into your code, and perhaps even into the language. See below for details.
 
@@ -266,7 +322,7 @@ For in-code documentation, we follow The Ruby Style Guide's section "[Comments](
     ```
 
 
-## 6. License and Credits
+## 7. License and Credits
 
 **Licenses.** This repository exclusively contains material under free software licencses, open content licenses and open database licenses. Different licenses apply to different parts, as follows:
 

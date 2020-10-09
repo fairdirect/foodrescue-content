@@ -17,12 +17,12 @@
 /foodrescue-content.files
 /foodrescue-content.includes
 
-# Only keep the processed versions of downloaded category definition files.
+# Only include the relevant versions of category definition files.
 /content-categories/categories-*
 !/content-categories/categories-json.2-pretty.json
 !/content-categories/categories-txt.1-downloaded.txt
 
-# Only keep the processed versions of downloaded products files.
+# Only include the relevant, processed versions of downloaded products files.
 /content-products/products-*
 !/content-products/products-csv.2-filtered.csv
 !/content-products/products-delta.*.2-filtered.json
