@@ -11,7 +11,7 @@
 
 **[4. Development Setup](#4-development-setup)**
 
-**[5. Build Process](#5-build process)**
+**[5. Build Process](#5-build-process)**
 
 **[6. Style Guide](#6-style-guide)**
 
